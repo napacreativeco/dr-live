@@ -1,0 +1,133 @@
+/* 
+*
+* Pagination
+*
+*/
+.swiper-pagination-container {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--transparent-white);
+    backdrop-filter: blur(3px);
+    color: var(--black);
+    border: var(--border-blk);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    transition: all 0.23s ease-in-out;
+
+    .swiper-pagination {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.swiper-pagination-container:hover {
+    background: var(--white);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper-pagination-custom, 
+.swiper-pagination-fraction {
+    bottom: 0;
+    left: 0;
+}
+
+.swiper-pagination-bullet {
+    background: transparent;
+    border: 2px solid var(--black) !important;
+    border-radius: 0px !important;
+    opacity: 1 !important;
+    padding: 4px !important;
+    width: 12px;
+    height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--black) !important;
+    border: 2px solid var(--black) !important;
+}
+
+
+/* 
+*
+* Navigation
+*
+*/
+.swiper-button-next, 
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    width: 44px;
+    height: 48px;
+    background: var(--transparent-white);
+    transition: all 0.23s ease-in-out;
+
+    svg {
+        width: 16px;
+        stroke: var(--black);
+    }
+}
+
+
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+    background: var(--white);
+}
+
+.swiper-button-prev {
+    left: 0;
+    border-top: var(--border-blk);
+    border-right: var(--border-blk);
+    border-bottom: var(--border-blk);
+}
+
+.swiper-button-next {
+    right: 0;
+    border-top: var(--border-blk);
+    border-left: var(--border-blk);
+    border-bottom: var(--border-blk);
+}
+
+/*
+*
+* Large Screens
+*
+*/
+@media screen and (min-width: 1800px) {
+
+    .swiper-pagination-bullet {
+        width: 14px;
+        height: 14px;
+    }
+
+    .swiper-button-next, 
+    .swiper-button-prev {
+        width: 60px;
+        height: 60px;
+
+        svg {
+            width: 30px !important;
+            height: 22px !important;
+        }
+    }
+
+}
+
+/*
+*
+* Mobile
+*
+*/
+@media screen and (max-width: 767px) {
+
+}

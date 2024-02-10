@@ -1,0 +1,64 @@
+{{ 'page--sync-licensing.css' | asset_url | stylesheet_tag }}
+
+<div class="sync-licensing">
+
+    <div class="sync-hero">
+        <div class="hero-wrap">
+            <div class="left" style="background: url('{{ page.metafields.page.featured_image | image_url }}'); background-size: cover; background-position: center center;">
+            </div>
+            <div class="right">
+                <article>
+                    <h3>{{ 'Latest' | escape }}</h3>
+                    <h4>{{ blogs.sync-licensing.articles[0].title }}</h4>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="sync-licensing-wrapper">
+
+        <div class="left">
+            <h1>{{ blogs.sync-licensing.title }}</h1>
+            <span>{{ page.content | newline_to_br }}</span>
+        </div>
+
+        <div class="right">
+            <div class="articles">
+                <ul class="legend">
+                    <li>
+                        {{ 'Headline' }}
+                    </li>
+                    <li>
+                        {{ 'Release' }}
+                    </li>
+                    <li>
+                        {{ 'Company' }}
+                    </li>
+                </ul>
+                <ul class="list">
+                    {% for b in blogs.sync-licensing.articles %}
+                        <li class="item">
+                            <div class="article-wrap">
+                                <div class="title">
+                                    <h2>{{ b.title }}</h2>
+                                </div>
+                                <div class="excerpt">{{ b.excerpt }}</div>
+                                <div class="tags">
+                                    <ul>
+                                        {% for t in b.tags %}
+                                        <li class="tag">{{ t }}{% if forloop.last %} {% else %} {{ ', ' }}{% endif %}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    {% section 'featured-product' %}
+
+</div>

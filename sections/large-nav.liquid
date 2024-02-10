@@ -1,0 +1,13 @@
+<section class="large-nav">
+    <div class="large-nav--wrapper">
+
+        <ul data-aos="fade-in" data-aos-delay="400">
+            {% for link in linklists.large-menu.links %}
+                <li class="{% if link.active %} active{% endif %}}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
+                    <a href="{{ link.url }}">{{ link.title }}</a> <span class="hovered-text"> {{ 'View' | escape }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+</section>

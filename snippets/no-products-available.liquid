@@ -1,0 +1,14 @@
+{{ 'collection--no-products.css' | asset_url | stylesheet_tag }}
+
+<div class="no-products-available">
+    <div class="no-products-wrapper">
+
+        <div class="content">
+            {{ 'There are no products here' | escape }}
+        </div>
+
+    </div>
+
+    {% render 'recommended-products' %}
+    
+</div>

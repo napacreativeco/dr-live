@@ -1,0 +1,27 @@
+{{ 'card--artist-card.css' | asset_url | stylesheet_tag }}
+
+<li class="artist-card">
+    <div class="artist-wrapper">
+
+
+    <div 
+        class="image" 
+        style="background: url('{{ data.image | image_url: width: 900 }}'); background-size: cover; background-position: center center;"
+    >
+        &nbsp;
+        
+        <div class="view-more">
+        <a href="{{ data.url }}" title="{{ data.title }}">
+            {% render 'icon--view-more' %}
+        </a>
+        </div>
+    </div>
+
+    <div class="artist">
+        <a href="{{ data.url }}" title="{{ data.title }}">
+        {{ data.title }}
+        </a>
+    </div>
+
+  </div>
+</li>

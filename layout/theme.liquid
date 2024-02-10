@@ -1,0 +1,559 @@
+{% # theme-check-disable RemoteAsset %}
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+  <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+    <!--[if lt IE 9]>
+      <script src="{{ '//html5shiv.googlecode.com/svn/trunk/html5.js' }}"></script>
+    <![endif]-->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | asset_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-32x32.png' | asset_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon-16x16.png' | asset_url }}">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f9f9f9">
+    <meta name="msapplication-TileColor" content="#f9f9f9">
+    <meta name="theme-color" content="#f9f9f9">
+
+    <title>
+      {{ page_title }}{% if current_tags %}
+        &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
+      {% if current_page != 1 %}
+        &ndash; Page {{ current_page }}{% endif %}
+      {% unless page_title contains shop.name %}
+        &ndash; {{ shop.name }}{% endunless %}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}" />
+    {% endif %}
+
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% render 'open-graph-tags' %}
+    {% render 'twitter-card' %}
+
+    {{ content_for_header }}
+
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    {{ 'typography.css' | asset_url | stylesheet_tag }}
+    {{ 'aos.css' | asset_url | stylesheet_tag }}
+
+    {% if template contains 'customers' %}
+      <script async src="{{ 'customer_area.js' | shopify_asset_url }}"></script>
+    {% endif %}
+    <script async src="{{ 'shopify_common.js' | asset_url }}"></script>
+    <script async src="{{ 'option_selection.js' | shopify_asset_url }}"></script>
+
+    <script src="{{ 'jquery.min.js' | asset_url }}" type="text/javascript"></script>
+
+    {% # theme-check-disable RemoteAsset %}
+      {% comment %} <script async src="https://kit.fontawesome.com/9b03c3187b.js" crossorigin="anonymous"></script> {% endcomment %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    {% # theme-check-enable RemoteAsset %}
+
+    <script type="module">
+        /*
+        *
+        * Color Theme
+        * 
+        */
+        var theme = localStorage.getItem("theme");
+        
+        if (theme == null) {
+          console.log("no theme specified");
+          localStorage.setItem("theme", "lite");
+        } else {
+          console.log(theme);
+        }
+        document.querySelector('body').setAttribute('data-theme', localStorage.getItem("theme"));
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', localStorage.getItem("theme"));
+    </script>
+    <meta name="theme-color" content="var(--white)">
+  </head>
+
+  <body 
+    id="{{ page_title | handle }}" 
+    class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}"
+    data-theme="lite">
+    
+    {% # theme-check-disable RemoteAsset %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {% # theme-check-enable RemoteAsset %}
+    <script src="{{ 'shop.js' | asset_url }}" async></script>
+    <script src="{{ 'index-min.js' | asset_url }}" async></script>
+    <script src="{{ 'aos.js' | asset_url }}"></script>
+    {% # theme-check-disable RemoteAsset %}
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    {% # theme-check-enable RemoteAsset %}
+
+    {% render 'navbar' %}
+    {% render 'navbarmobile' %}
+    {% render 'navbarmobile--overlay' %}
+
+    <main role="main"> 
+      {{ content_for_layout }}
+    </main>
+
+    {% comment %} 
+    *
+    * AOS script
+    *
+    {% endcomment %}
+    <script>
+      AOS.init({
+        disable: false, 
+        startEvent: 'DOMContentLoaded', 
+        initClassName: 'aos-init', 
+        animatedClassName: 'aos-animate', 
+        useClassNames: false, 
+        disableMutationObserver: false, 
+        debounceDelay: 50, 
+        throttleDelay: 99,
+        offset: 120, 
+        delay: 0, 
+        duration: 400,
+        easing: 'easeInOutQuint',
+        once: false,
+        mirror: true,
+        anchorPlacement: 'top-bottom',
+      });
+    </script>
+
+
+    {% comment %}
+    *
+    * Marquee Script
+    *
+    {% endcomment %}
+    <script>
+      const wrapper = document.querySelector(".announcement-marquee-wrapper");
+      const boxes = gsap.utils.toArray(".announcement-marquee-box");
+      
+      let activeElement;
+      const loop = horizontalLoop(boxes, {
+        paused: false, 
+        draggable: false,
+        center: true,
+        onChange: (element, index) => {}
+      });
+      
+      function horizontalLoop(items, config) {
+        items = gsap.utils.toArray(items);
+        config = config || {};
+        let onChange = config.onChange,
+          lastIndex = 0,
+          tl = gsap.timeline({repeat: config.repeat, onUpdate: onChange && function() {
+              let i = tl.closestIndex();
+              if (lastIndex !== i) {
+                lastIndex = i;
+                onChange(items[i], i);
+              }
+            }, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
+          length = items.length,
+          startX = items[0].offsetLeft,
+          times = [],
+          widths = [],
+          spaceBefore = [],
+          xPercents = [],
+          curIndex = 0,
+          indexIsDirty = false,
+          center = config.center,
+          pixelsPerSecond = (config.speed || 1) * {{ settings.marquee_speed | default: '20' }},
+          snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+          timeOffset = 0,
+          container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,
+          totalWidth,
+          getTotalWidth = () => items[length-1].offsetLeft + xPercents[length-1] / 100 * widths[length-1] - startX + spaceBefore[0] + items[length-1].offsetWidth * gsap.getProperty(items[length-1], "scaleX") + (parseFloat(config.paddingRight) || 0),
+          populateWidths = () => {
+            let b1 = container.getBoundingClientRect(), b2;
+            items.forEach((el, i) => {
+              widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
+              xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / widths[i] * 100 + gsap.getProperty(el, "xPercent"));
+              b2 = el.getBoundingClientRect();
+              spaceBefore[i] = b2.left - (i ? b1.right : b1.left);
+              b1 = b2;
+            });
+            gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
+              xPercent: i => xPercents[i]
+            });
+            totalWidth = getTotalWidth();
+          },
+          timeWrap,
+          populateOffsets = () => {
+            timeOffset = center ? tl.duration() * (container.offsetWidth / 2) / totalWidth : 0;
+            center && times.forEach((t, i) => {
+              times[i] = timeWrap(tl.labels["label" + i] + tl.duration() * widths[i] / 2 / totalWidth - timeOffset);
+            });
+          },
+          getClosest = (values, value, wrap) => {
+            let i = values.length,
+              closest = 1e10,
+              index = 0, d;
+            while (i--) {
+              d = Math.abs(values[i] - value);
+              if (d > wrap / 2) {
+                d = wrap - d;
+              }
+              if (d < closest) {
+                closest = d;
+                index = i;
+              }
+            }
+            return index;
+          },
+          populateTimeline = () => {
+            let i, item, curX, distanceToStart, distanceToLoop;
+            tl.clear();
+            for (i = 0; i < length; i++) {
+              item = items[i];
+              curX = xPercents[i] / 100 * widths[i];
+              distanceToStart = item.offsetLeft + curX - startX + spaceBefore[0];
+              distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+              tl.to(item, {xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
+                .fromTo(item, {xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
+                .add("label" + i, distanceToStart / pixelsPerSecond);
+              times[i] = distanceToStart / pixelsPerSecond;
+            }
+            timeWrap = gsap.utils.wrap(0, tl.duration());
+          },
+          refresh = (deep) => {
+            let progress = tl.progress();
+            tl.progress(0, true);
+            populateWidths();
+            deep && populateTimeline();
+            populateOffsets();
+            deep && tl.draggable ? tl.time(times[curIndex], true) : tl.progress(progress, true);
+          },
+          proxy;
+        gsap.set(items, {x: 0});
+        populateWidths();
+        populateTimeline();
+        populateOffsets();
+        window.addEventListener("resize", () => refresh(true));
+        function toIndex(index, vars) {
+          vars = vars || {};
+          (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
+          let newIndex = gsap.utils.wrap(0, length, index),
+            time = times[newIndex];
+          if (time > tl.time() !== index > curIndex && index !== curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
+            time += tl.duration() * (index > curIndex ? 1 : -1);
+          }
+          if (time < 0 || time > tl.duration()) {
+            vars.modifiers = {time: timeWrap};
+          }
+          curIndex = newIndex;
+          vars.overwrite = true;
+          gsap.killTweensOf(proxy);    
+          return vars.duration === 0 ? tl.time(timeWrap(time)) : tl.tweenTo(time, vars);
+        }
+        tl.toIndex = (index, vars) => toIndex(index, vars);
+        tl.closestIndex = setCurrent => {
+          let index = getClosest(times, tl.time(), tl.duration());
+          if (setCurrent) {
+            curIndex = index;
+            indexIsDirty = false;
+          }
+          return index;
+        };
+        tl.current = () => indexIsDirty ? tl.closestIndex(true) : curIndex;
+        tl.next = vars => toIndex(tl.current()+1, vars);
+        tl.previous = vars => toIndex(tl.current()-1, vars);
+        tl.times = times;
+        tl.progress(1, true).progress(0, true); // pre-render for performance
+        if (config.reversed) {
+          tl.vars.onReverseComplete();
+          tl.reverse();
+        }
+        if (config.draggable && typeof(Draggable) === "function") {
+          proxy = document.createElement("div")
+          let wrap = gsap.utils.wrap(0, 1),
+            ratio, startProgress, draggable, dragSnap, lastSnap, initChangeX,
+            align = () => tl.progress(wrap(startProgress + (draggable.startX - draggable.x) * ratio)),
+            syncIndex = () => tl.closestIndex(true);
+          typeof(InertiaPlugin) === "undefined" && console.warn("InertiaPlugin required for momentum-based scrolling and snapping. https://greensock.com/club");
+          draggable = Draggable.create(proxy, {
+            trigger: items[0].parentNode,
+            type: "x",
+            onPressInit() {
+              let x = this.x;
+              gsap.killTweensOf(tl);
+              startProgress = tl.progress();
+              refresh();
+              ratio = 1 / totalWidth;
+              initChangeX = (startProgress / -ratio) - x;
+              gsap.set(proxy, {x: startProgress / -ratio});
+            },
+            onDrag: align,
+            onThrowUpdate: align,
+            overshootTolerance: 0,
+            inertia: true,
+            snap(value) {
+              //note: if the user presses and releases in the middle of a throw, due to the sudden correction of proxy.x in the onPressInit(), the velocity could be very large, throwing off the snap. So sense that condition and adjust for it. We also need to set overshootTolerance to 0 to prevent the inertia from causing it to shoot past and come back
+              if (Math.abs(startProgress / -ratio - this.x) < 10) {
+                return lastSnap + initChangeX
+              }
+              let time = -(value * ratio) * tl.duration(),
+                wrappedTime = timeWrap(time),
+                snapTime = times[getClosest(times, wrappedTime, tl.duration())],
+                dif = snapTime - wrappedTime;
+              Math.abs(dif) > tl.duration() / 2 && (dif += dif < 0 ? tl.duration() : -tl.duration());
+              lastSnap = (time + dif) / tl.duration() / -ratio;
+              return lastSnap;
+            },
+            onRelease() {
+              syncIndex();
+              draggable.isThrowing && (indexIsDirty = true);
+            },
+            onThrowComplete: syncIndex
+          })[0];
+          tl.draggable = draggable;
+        }
+      
+        tl.closestIndex(true);
+        lastIndex = curIndex;
+        onChange && onChange(items[curIndex], curIndex);
+      
+        return tl;
+        
+      }
+    </script>
+
+
+    {% comment %}
+    *
+    * Footer
+    *
+    {% endcomment %}
+    <footer>
+      {% render 'footer' %}
+    </footer>
+
+    
+    {% comment %}
+    *
+    * Swiper
+    *
+    {% endcomment %}
+    <script>
+      (function($) {
+        const swiper = new Swiper('.hero-swiper', {
+          direction: 'horizontal',
+          duration: 1000,
+          spaceBetween: 2,
+          autoplay: {
+            delay: 5000,
+          },
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          grabCursor: false,
+          on: {
+            afterInit: function(e) {
+              var val = $('.swiper-slide-active').attr('data-type');
+              var layout = $('.swiper-slide-active').attr('data-layout');
+              //$('.swiper-pagination-container').attr('data-slide-type', val).attr('data-layout', layout);
+              //$('.swiper-navigation-container').attr('data-slide-type', val).attr('data-layout', layout);
+            },
+            touchStart: function(e) { 
+              console.log('change');
+              //$('.swiper-pagination-container').css('opacity', '0');
+              //$('.swiper-navigation-container').css('opacity', '0');
+            },
+            touchEnd: function(e) {
+              //$('.swiper-pagination-container').css('opacity', '1');
+              //$('.swiper-navigation-container').css('opacity', '1');
+            },
+            slideChangeTransitionStart: function(e) { 
+              var val = $('.swiper-slide-active').attr('data-type');
+              var layout = $('.swiper-slide-active').attr('data-layout');
+              //$('.swiper-pagination-container').css('opacity', '0').attr('data-slide-type', val).attr('data-layout', layout);
+              //$('.swiper-navigation-container').css('opacity', '0').attr('data-slide-type', val).attr('data-layout', layout);
+            },
+            slideChangeTransitionEnd: function(e) {
+              //$('.swiper-pagination-container').css('opacity', '1');
+              //$('.swiper-navigation-container').css('opacity', '1');
+
+              gsap.to('.hero-product', {
+                duration: 0.4,
+                y: 0,
+                opacity: 1
+              });
+
+            },
+            init: function(e) {
+              gsap.from('.hero-product', {
+                duration: 0.4,
+                y: 0,
+                opacity: 1
+              });
+            },
+            slideChange: function(e) {
+              gsap.to('.hero-product', {
+                duration: 0.1,
+                y: 100,
+                opacity: 0
+              });
+            }
+          }
+        });
+
+        const galleryswiper = new Swiper('.product-gallery-swiper', {
+          direction: 'horizontal',
+          loop: true,
+          spaceBetween: 2,
+          navigation: {
+            nextEl: '.product-gallery-next',
+            prevEl: '.product-gallery-prev',
+          },
+          pagination: {
+            el: '.product-gallery-pagination-container',
+            clickable: true
+          },
+        });
+
+
+        const tourswiper = new Swiper('.spotlight-swiper', {
+          direction: 'horizontal',
+          loop: true,
+          autoplay: {
+            delay: 5000,
+          },
+          navigation: {
+            nextEl: '.tour-spotlight-next'
+          }
+        });
+        
+
+        const bandswiper = new Swiper('.bandcamp-swiper', {
+          direction: 'horizontal',
+          loop: true,
+          pagination: {
+            el: '.bandcamp-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.bandcamp-next',
+            prevEl: '.bandcamp-prev',
+          },
+        });
+
+      })(jQuery);
+    </script>
+
+
+    {% comment %} 
+    *
+    * Show / Hide Navigation 
+    * (disabled)
+    *
+    {% endcomment %}
+    <script>
+      //var lastScrollTop;
+      //var navbar = document.getElementById('navbar');
+      //var scrollPos = 0;
+  
+      //window.addEventListener('scroll', function(){
+      //  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      //  if ((document.body.getBoundingClientRect()).top > scrollPos) {
+      // up
+      //    navbar.style.top = '0px';
+      //  } else {
+      // down
+      //    navbar.style.top = '-80px';
+      //  }
+
+      //  scrollPos = (document.body.getBoundingClientRect()).top;
+      // });
+    </script>
+
+  
+    {% comment %}
+    *
+    * AJAX Cart
+    *
+    {% endcomment %}
+    {{ 'liquid-ajax-cart.js' | asset_url | script_tag }}
+  
+    <script type="application/json" data-ajax-cart-initial-state>
+      {{ cart | json }}
+    </script>
+
+    <script type="application/json" data-ajax-cart-configuration>
+      {
+        "addToCartCssClass": "js-my-cart-open"
+      }
+    </script>
+  
+    
+    {% comment %}
+    *
+    * Cart Drawer
+    *
+    {% endcomment %}
+    <div class="cart-drawer">
+      {% section 'cart-drawer' %}
+    </div>
+  
+    {% comment %} 
+    *
+    * AJAX Cart
+    * open drawer on add-to-cart
+    *
+    {% endcomment %}
+    <script type="module">
+      import { subscribeToCartSectionsUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
+  
+      subscribeToCartSectionsUpdate( sections => {
+        console.log('Sections are updated: ', sections);
+      });
+    </script>
+    
+
+    {% comment %} 
+    *
+    * AJAX Cart
+    * subscribe to updates
+    *
+    {% endcomment %}
+    <script type="module">
+      import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
+  
+      // Show a pop-up message after adding to cart
+      subscribeToCartAjaxRequests(( requestState, subscribeToResult ) => {
+        if ( requestState.requestType === 'add' ) {
+          subscribeToResult( requestState => {
+            if ( requestState.responseData?.ok ) {
+
+              let productName = requestState.responseData.body.title;
+              
+              if ( requestState.responseData.body.items?.length === 1 ) {
+                productName = requestState.responseData.body.items[0].title;
+              }
+  
+              //cartSlideOut();
+  
+              console.log(`${ productName ? '«' + productName + '» is' : 'Products are' } successfully added`);
+            }
+          });
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

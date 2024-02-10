@@ -1,0 +1,28 @@
+{% comment %} Bandcamp {% endcomment %}
+{% if product.metafields.dais.bandcamps.value != blank %}
+    <div class="bandcamp">
+
+        <h3>{{ 'Listen' | escape }}</h3>
+
+        <div class="bandcamp-swiper swiper">
+            <div class="swiper-wrapper">
+
+                {% for camp in product.metafields.dais.bandcamps.value %}
+                <div class="swiper-slide">
+                    {{ camp }}
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="actions">
+                <div class="bandcamp-pagination"></div>
+                <div class="controls">
+                <span class="bandcamp-prev"> < </span>
+                <span class="bandcamp-next"> > </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,45 @@
+{{ 'snippet--social-media-dais.css' | asset_url | stylesheet_tag }}
+
+<div class="social-media dais">
+    <div class="social-media-wrapper">
+        <ul>  
+
+            <li class="link bandcamp">
+                <a href="{{ settings.dais_bandcamp }}" title="Bandcamp">
+                    {% render 'icon--bandcamp' %}
+                </a>
+            </li>
+
+            <li class="link instagram">
+                <a href="{{ settings.dais_instagram }}" title="Instagram">
+                    {% render 'icon--instagram' %}
+                </a>
+            </li>
+
+            <li class="link tiktok">
+                <a href="{{ settings.dais_tiktok }}" title="TikTok">
+                    {% render 'icon--tiktok' %}
+                </a>
+            </li>
+
+            <li class="link twitter">
+                <a href="{{ settings.dais_twitter }}" title="Twitter">
+                    {% render 'icon--twitter' %}
+                </a>
+            </li>
+
+            <li class="link facebook">
+                <a href="{{ collection.settings.dais_facebook }}" title="Facebook">
+                    {% render 'icon--facebook' %}
+                </a>
+            </li>
+
+            <li class="link youtube">
+                <a href="{{ collection.settings.dais_youtube }}" title="YouTube">
+                    {% render 'icon--youtube' %}
+                </a>
+            </li>
+        
+        </ul>    
+    </div>
+</div>

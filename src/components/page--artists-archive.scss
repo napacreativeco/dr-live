@@ -1,0 +1,206 @@
+.artists-page {
+    padding: 100px var(--side-padding) 40px var(--side-padding);
+
+    --section-title: 20px;
+    --artist-alumni: 16px;
+    --artist-current: 18px;
+
+
+    .section-title {
+        border-bottom: var(--border-blk);
+        padding: 0 0 10px 0;
+        margin: 0 0 30px 0;
+
+        h1, h2 {
+            font-size: var(--section-title);
+            color: var(--black);
+            text-transform: uppercase;
+        }
+    }
+
+    .artists-wrapper {
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        grid-gap: 60px;
+    }
+
+    /*
+    *
+    * Current
+    *
+    */
+    .current {
+
+        ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 14px;
+        }
+
+        .artist-card {
+            border: var(--border-blk);
+
+            .image {
+                height: auto;
+                width: 100%;
+                aspect-ratio: 4/3;
+                border-bottom: var(--border-blk);
+                cursor: pointer;
+            }
+
+            .data {
+                padding: 10px;
+                color: var(--black);
+            }
+
+            a {
+                cursor: pointer;
+                font-size: var(--artist-current);
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        }
+
+        .artist-card:hover {
+            .image {
+                opacity: 0.7;
+            }
+        }
+
+    }
+
+
+    /*
+    *
+    * Alumni
+    *
+    */
+    .alumni {
+
+        ul  {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        h4 {
+            font-size: var(--artist-alumni);
+            color: var(--black);
+        }
+
+        li {
+            white-space: nowrap;
+            color: var(--black);
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 60px;
+            margin: 0 0 60px 0;
+        }
+
+        .link-block {
+            border-top: var(--border-blk);
+            border-bottom: var(--border-blk);
+            margin: 0 0 8px 0;
+            color: var(--black);
+
+            a {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 10px 0;
+                transition: var(--quick-transition);
+                font-size: var(--section-title);
+            }
+
+            svg {
+                transform: rotate(-90deg);
+                width: 10px;
+                opacity: 0.4;
+            }
+
+        }
+
+        .link-block:hover {
+
+            a {
+                padding: 10px 6px;
+            }
+
+        }
+
+    }
+
+}
+
+/*
+*
+* Large screens
+*
+*/
+@media screen and (min-width: 1800px) {
+
+    .artists-page {
+
+        --section-title: 24px;
+        --artist-alumni: 18px;
+        --artist-current: 18px;
+
+    }
+
+}
+
+/*
+*
+* Small screens
+*
+*/
+@media screen and (max-width: 767px) {
+
+    .artists-page {
+        padding: 100px 0 40px 0;
+
+        --section-title: 20px;
+        --artist-alumni: 18px;
+        --artist-current: 18px;
+
+        .artists-wrapper {
+            grid-template-columns: 100%;
+            padding: 0 var(--side-padding);
+        }
+
+        .current {
+            
+            ul {
+                list-style: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 14px;
+            }
+
+            .artist-card {
+                .image {
+                    width: 100%;
+                    border-bottom: var(--border-blk);
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+
+}

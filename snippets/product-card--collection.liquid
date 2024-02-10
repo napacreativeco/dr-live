@@ -1,0 +1,61 @@
+<li class="product-card collection-card">
+    <div class="product-card-wrapper">
+        <div class="image" onclick="window.location='{{ prod.url }}';">
+            {% if prod.featured_image %}
+                <img 
+                class="product-card-image"
+                src="{{ prod.featured_image | image_url: width: 400 }}" 
+                alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
+                data-first="{{ prod.images[0] | image_url: width: 400 }}"
+                {% if prod.images[1] %}
+                    data-second="{{ prod.images[1] | image_url: width: 400 }}"
+                {% endif %}
+                loading="lazy" />
+            {% else %}
+                {{ 'image' | placeholder_svg_tag }}
+            {% endif %}
+
+            {% if prod.metafields.music.preorder_status == true %}
+                <div class="preorder-label">
+                    <span>{{ 'Preorder' | escape }}</span>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="data">
+            <div class="left">
+                <div class="artist">
+                    <a href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">
+                        <h3>{{ prod.vendor }}</h3>
+                    </a>
+                </div>
+                <div class="title type-writer">
+                    <a href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">
+                        <h4>{{ prod.title }}</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="price type-writer">
+                    <a href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">
+                        {{ prod.price | money_without_trailing_zeros }}
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</li>
+
+<script>
+  $('.product-card-image').on('mouseenter', function() {
+    if ( $(this).attr('data-second') ) { 
+      $(this).attr('src', $(this).attr('data-second'));
+    }
+  });
+  $('.product-card-image').on('mouseleave', function() {
+    if ( $(this).attr('data-second') ) {
+      $(this).attr('src', $(this).attr('data-first'));
+    }
+  });
+</script>

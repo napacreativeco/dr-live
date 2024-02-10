@@ -1,0 +1,101 @@
+<div class="swiper-slide slide__product" data-layout="product" data-type="product">
+
+  <div class="left">
+    <div class="left-wrapper">
+      {% assign collection_image = '' %}
+      {% for prod in block.settings.product %}
+
+        {% comment %} 
+        Pulling collection image for Right side.
+        {% endcomment %}
+        {% for coll in prod.collections %}
+          {% if coll.title == prod.vendor %}
+            {% assign collection_image = coll.image %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} 
+        *
+        * PRODUCT
+        * 
+        {% endcomment %}
+        <div class="hero-product">
+
+          <div class="product-image">
+            {% for image in prod.images limit: 2 %}
+                {% if forloop.index0 == 0 %}
+                  {% assign first = image %}
+                {% endif %}
+                {% if forloop.index0 == 1 %}
+                  {% assign second = image %}
+                {% endif %}
+
+                {% assign length = forloop.length %}
+            {% endfor %}
+
+            <a href="{{ prod.url }}" title="{{ prod.title }} by {{ prod.vendor }}">
+              <img
+                src="{{ first | image_url: width: 600 }}"
+                class="hero-product-image product-image-{{ forloop.index }}" 
+                data-first="{{ first | image_url: width: 600 }}"
+                {% if length == 1 %}
+                  data-second="{{ first | image_url: width: 600 }}"
+                {% else %}
+                  data-second="{{ second | image_url: width: 600 }}"
+                {% endif %}
+                alt="{{ prod.title }} by {{ prod.vendor }}"
+              />
+            </a>
+            
+          </div>
+
+          <div class="data">
+            <div class="product-vendor">
+              {% for collection in prod.collections %}
+                {% if collection.title == prod.vendor %}
+                  <a href="{{ collection.url }}" title="{{ prod.vendor }}">
+                      <h3>{{ prod.vendor }}</h3>
+                  </a>
+                {% endif %}
+              {% endfor %}               
+            </div>
+
+            <div class="product-title">
+              <a href="{{ prod.url }}" title="{{ prod.title }}{{ ' by ' }}{{ prod.vendor }}">
+                <h2>{{ prod.title }}</h2>
+              </a>
+            </div>
+
+            <div class="product-variants">
+              {% render 'music-formats-list' prod: prod %}
+            </div>
+
+            <div class="buttons">
+              <a class="button" href="{{ prod.url }}" title="{{ prod.title }}{{ ' by ' }}{{ prod.vendor }}">
+                {% if prod.metafields.product.preorder_status == true %}
+                  {{ 'Pre-order' | escape }}
+                {% else %}
+                  {{ 'View Product' | escape }}
+                {% endif %}
+              </a>
+            </div>
+            
+          </div>
+
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+
+  {% comment %} 
+  *
+  * Right 
+  *
+  {% endcomment %}
+  <div class="right">
+    <div class="image" style="background-image: url('{{ collection_image | image_url }}'); background-size: cover; background-position: center center;">
+    </div>
+  </div>
+
+</div>

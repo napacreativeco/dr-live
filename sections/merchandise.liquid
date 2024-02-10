@@ -1,0 +1,117 @@
+{{ 'component--merchandise.css' | asset_url | stylesheet_tag }}
+{{ 'card--product-card.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-header', data: section.settings, destination: '/collections/merch' %}
+
+<div class="merchandise--wrapper">
+  {% if section.settings.use_default_collection == false %}
+
+    {% comment %}
+    Selected Collection
+    {% endcomment %}
+    <ul class="product-list selected-collection">
+
+      {% if section.settings.merchandise_collection_rows == 'two' %}
+        {% for prod in collections[section.settings.merchandise_collection].products limit: 8 %}
+          {% render 'product-card--collection', prod: prod %}
+        {% endfor %}
+      {% elsif section.settings.merchandise_collection_rows == 'three' %}
+        {% for prod in collections[section.settings.merchandise_collection].products limit: 12 %}
+          {% render 'product-card--collection', prod: prod %}
+        {% endfor %}
+      {% else %}
+        {% for prod in collections[section.settings.merchandise_collection].products limit: 4 %}
+          {% render 'product-card--collection', prod: prod %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+
+  {% elsif section.settings.use_default_collection == true %}
+
+    {% comment %}
+    Default Collection
+    {% endcomment %}
+    <ul class="product-list default-collection">
+      {% if section.settings.merchandise_collection_rows == 'two' %}
+      
+        {% for prod in collections.merch.products limit: 8 %}
+          {% for tag in prod.tags %}
+            {% if tag == 'merch' %}
+              {% render 'product-card--collection', prod: prod %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+
+      {% elsif section.settings.merchandise_collection_rows == 'three' %}
+
+        {% for prod in collections.merch.products limit: 12 %}
+          {% for tag in prod.tags %}
+            {% if tag == 'merch' %}
+              {% render 'product-card--collection', prod: prod %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+
+      {% else %}
+
+        {% for prod in collections.merch.products limit: 4 %}
+          {% for tag in prod.tags %}
+            {% if tag == 'merch' %}
+              {% render 'product-card--collection', prod: prod %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+
+      {% endif %}
+    </ul>
+
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Merchandise",
+    "tag": "section",
+    "class": "merchandise-section section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_default_collection",
+        "label": "Display default collection instead"
+      },
+      {
+        "type": "collection",
+        "id": "merchandise_collection",
+        "label": "Choose a collection"
+      },
+      {
+        "type": "select",
+        "id": "merchandise_collection_rows",
+        "label": "Number of rows to display",
+        "options": [
+          {
+            "value": "one",
+            "label": "One (4 products)"
+          },
+          {
+            "value": "two",
+            "label": "Two (8 products)"
+          },
+          {
+            "value": "three",
+            "label": "Three (12 products)"
+          }
+        ],
+        "default": "one"
+      }
+    ],
+    "presets": [{
+      "name": "Merchandise"
+    }]
+  }
+{% endschema %}

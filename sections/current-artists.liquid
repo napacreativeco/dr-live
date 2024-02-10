@@ -1,0 +1,92 @@
+{{ 'component--current-artists.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-header', data: section.settings, destination: '/pages/artists' %}
+
+<div class="current-artists--wrapper">
+  <ul class="current-artists--list">
+    {% for product in collections.all.products %}
+
+      {% case product.type %}
+        {% when 'vinyl' %}
+
+              {% for coll in product.collections %}
+
+                {% if coll.title == product.vendor %}
+
+                  {% if coll.metafields.custom.alumni_status == blank or coll.metafields.custom.alumni_status == false %}
+
+                    {% render 'artist-card', data: coll %}
+
+                  {% endif %}
+
+                {% endif %}
+              {% endfor %}
+
+      {% endcase %}
+    {% endfor %}
+  </ul>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Current Artists",
+    "tag": "section",
+    "class": "current-artists-section section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      }, {
+        "type": "page",
+        "id": "link_destination",
+        "label": "Link Destination"
+      }
+    ],
+    "presets": [{
+      "name": "Current Artists",
+      "settings": {
+          "section_title": "Current Artists"
+        }
+    }]
+  }
+{% endschema %}
+
+
+<script>
+  const slider = document.querySelector('.current-artists--list');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (! isDown) 
+      return;
+    
+
+
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3; // scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    console.log(walk);
+  });
+</script>

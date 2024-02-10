@@ -1,0 +1,66 @@
+section.merchandise-section {
+    // padding-top: 40px; 
+
+    /* Body */
+    .merchandise--wrapper {
+        padding: 0 var(--side-padding);
+        width: 100%;
+
+        ul.product-list {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 30px 1%;
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    section.merchandise-section {
+
+        .merchandise--wrapper {
+
+            ul.product-list {
+                list-style: none;
+                margin: 0px;
+                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 30px 3%;
+            }
+            
+
+
+            .release {
+
+                .left {
+                    gap: 0px;
+                }
+
+                .artist {
+                    h3 {
+                        font-size: 1.7rem;
+                    }
+                }
+
+                .title {
+                    h4 {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .info {
+                    padding: 10px 0;
+                }
+            }
+
+            .price {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,181 @@
+{{ 'component--hero-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'component--hero-controls.css' | asset_url | stylesheet_tag }}
+{{ 'component--hero-product-slide.css' | asset_url | stylesheet_tag }}
+{{ 'component--hero-announcement-slide.css' | asset_url | stylesheet_tag }}
+{{ 'component--hero-image-slide.css' | asset_url | stylesheet_tag }}
+
+<div id="hero-swiper" class="hero-swiper swiper">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+
+      {% comment %} 
+      *
+      * Product Slide
+      *
+      {% endcomment %}
+      {% if block.type == 'product' %}
+        {% render 'hero--slide-product', block: block %}
+
+      {% comment %} 
+      *
+      * Announcement Slide
+      * text-right
+      *
+      {% endcomment %}
+      {% elsif block.type == 'announcement' and block.settings.announcement_slide_layout == 'text_right' %}
+        {% render 'hero--slide-text-right', block: block %}
+
+      {% comment %} 
+      *
+      * Announcement Slide
+      * text-left
+      *
+      {% endcomment %}
+      {% elsif block.type == 'announcement' and block.settings.announcement_slide_layout == 'text_left' %}
+        {% render 'hero--slide-text-left', block: block %}
+
+      {% comment %} 
+      *
+      * Image Slide
+      *
+      {% endcomment %}
+      {% elsif block.type == 'image' %}
+        {% render 'hero--slide-image', block: block %}
+
+      {% endif %}
+
+    {% endfor %}
+  </div>
+
+
+  {% comment %} 
+  *
+  * Pagination
+  *
+  {% endcomment %}
+  <div class="swiper-pagination-container">
+    <div class="swiper-pagination"></div>
+  </div>
+
+  {% comment %} 
+  *
+  * Navigation
+  *
+  {% endcomment %}
+  <div class="swiper-button-prev">
+    {% render 'svg--left-arrow' %}
+  </div>
+
+  <div class="swiper-button-next">
+    {% render 'svg--right-arrow' %}
+  </div>
+
+</div>
+
+<script>
+  $('.hero-product-image').on('mouseenter', function() {
+    if ( $(this).attr('data-second') ) { 
+      $(this).attr('src', $(this).attr('data-second'));
+    }
+  });
+  $('.hero-product-image').on('mouseleave', function() {
+    if ( $(this).attr('data-second') ) {
+      $(this).attr('src', $(this).attr('data-first'));
+    }
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Hero Slideshow",
+    "tag": "section",
+    "class": "hero_slideshow",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_hero",
+        "label": "Show Hero",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Product",
+        "type": "product",
+        "settings": [
+          {
+            "type": "product_list",
+            "id": "product",
+            "label": "Product",
+            "limit": 1
+          }
+        ]
+      },
+      {
+        "name": "Announcement",
+        "type": "announcement",
+        "settings": [
+          {
+            "type": "text",
+            "id": "announcement_slide_subtitle",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "announcement_slide_content",
+            "label": "Content"
+          },
+          {
+            "type": "url",
+            "id": "announcement_slide_url",
+            "label": "URL"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "announcement_image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "announcement_slide_layout",
+            "label": "Layout",
+            "info": "Save changes to view changes to this option",
+            "options": [
+              {
+                "value": "text_left",
+                "label": "Text on the Left"
+              },
+              {
+                "value": "text_right",
+                "label": "Text on the Right"
+              }
+            ],
+            "default": "text_right"
+          }
+        ]
+      },
+      {
+        "name": "Image",
+        "type": "image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_slide_image",
+            "label": "Image (Landscape)"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_slide_image_mobile",
+            "label": "Image (Portrait)"
+          },
+          {
+            "type": "url",
+            "id": "image_slide_url",
+            "label": "URL"
+          } 
+        ]
+      }
+    ]
+  }
+{% endschema %}

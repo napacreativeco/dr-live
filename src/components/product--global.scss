@@ -1,0 +1,326 @@
+/*
+*
+* Typography
+*
+*/
+.single-product {
+
+    // Fonts
+    --band-name: 24px;
+    --product-title: 32px;
+    --price: 30px;
+    --variant-title: 16px;
+    --add-to-cart: 16px;
+    --block-title: 20px;
+    --description: 16px;
+    --meta-data: 13px;
+    --tracklist: 14px;
+
+    // Padding
+    --block-padding: 20px 30px;
+
+}
+
+@media screen and (min-width: 1800px) {
+
+    .single-product {
+        --band-name: 32px;
+        --product-title: 36px;
+        
+        --price: 32px;
+        --variant-title: 18px;
+        --add-to-cart: 20px;
+        --block-title: 26px;
+    }
+
+}
+
+/*
+*
+* Globals
+*
+*/
+.single-product {
+    padding-top: 78px;
+
+    // Block Title
+    h3.block-title,
+    a.block-title {
+        display: block;
+        width: 100%;
+        font-size: var(--block-title);
+        letter-spacing: 1px;
+        color: var(--black);
+        margin-top: 10px;
+        margin-bottom: 21px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+}
+
+
+/* 
+*
+* Top 
+*
+*/
+.single-product .product-section-one {
+    width: 100%;
+    max-width: 100%;
+    border-top: var(--border-blk);
+
+    .wrapper  {
+        display: grid;
+        grid-template-columns: 54% 1fr;
+        align-items: flex-start;
+        gap: 4%;
+    }
+
+}
+
+
+/* 
+*
+* Top: Right
+*
+*/
+.single-product .product-section-one .right {
+    padding: 6vw var(--side-padding) 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*
+*
+* Band name
+*
+*/
+.single-product .band-name {
+    margin: 0 0 6px 0;
+
+    h2 {
+        font-size: var(--band-name);
+        color: var(--black);
+        letter-spacing: -2px;
+        text-transform: uppercase;
+    }
+
+}
+
+/*
+*
+* Title
+*
+*/
+.single-product .product-title {
+    margin-top: 4px;
+    margin-bottom: 16px;
+
+    h1 {
+        font-size: var(--product-title);
+        color: var(--black);
+        letter-spacing: -2px;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+
+}
+
+/*
+*
+* Actions
+*
+*/
+.single-product .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 22px;
+    padding: 30px 0 0 0;
+
+    .price {
+        font-size: var(--price);
+        color: var(--black);
+    }
+
+    #product-add {
+        width: 100%;
+    
+        .preorder-status {
+            text-transform: uppercase;
+            font-family: var(--type-writer);
+            display: block;
+            margin: 0 0 6px 0;
+            text-align: left;
+        }
+    
+        input[type="submit"] {
+            background-color: var(--black);
+            font-family: var(--sans-serif);
+            font-weight: normal;
+            color: var(--white);
+            font-size: var(--add-to-cart);
+            padding: 10px 40px;
+            outline: 0;
+            border: var(--border-blk);
+            border-radius: 0px !important;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.13s ease-in-out;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: var(--white);
+            color: var(--black);
+        }
+    
+    }
+
+}
+
+
+/*
+*
+* Variants
+*
+*/
+.single-product #purchase-options {
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 40px auto 0 auto;
+        border-top: var(--border-blk);
+    }
+
+    #product-variants {
+        width: 100%;
+        padding-top: 30px;
+    
+        ul {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+    
+            li {
+                font-family: var(--type-writer);
+                text-transform: uppercase;
+    
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: var(--variant-title);
+                    word-spacing: -3px;
+                    letter-spacing: 0;
+                    color: var(--black);
+                    cursor: pointer;
+                }
+    
+                input[type="radio"] {
+                    appearance: none;
+                    min-width: 15px;
+                    min-height: 15px;
+                    width: 15px;
+                    height: 15px;
+                    max-width: 15px;
+                    max-height: 15px;
+                    border: var(--border-blk);
+                    color: var(--black);
+                    border-radius: 50%;
+                    margin: 0;
+                }
+    
+                input[type="radio"]:checked {
+                    background: var(--black);
+                }
+    
+            }
+    
+            li:hover {
+                label {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+/*
+*
+* Description
+*
+*/
+.single-product .description {
+    margin: 30px 0 0 0;
+    line-height: 1.6;
+    color: var(--black);
+    font-size: var(--description);
+}
+
+/*
+-----------------------------------------------------------------------------------------------
+MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> 
+-----------------------------------------------------------------------------------------------
+*/
+
+/*
+*
+* Min-width: 1920
+*
+*/
+@media screen and (min-width: 1920px) {
+
+    .single-product .product-section-one {
+
+        .wrapper  {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+            gap: 4%;
+        }
+
+    }
+
+}
+
+/*
+*
+* Max-width: 767
+*
+*/
+@media screen and (max-width: 767px) {
+    
+    .single-product.default {
+        padding-top: 0px;
+
+        
+
+    }
+
+    /* Top */
+    .single-product .product-section-one {
+            
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .right {
+            width: 100%;
+            padding: 0 var(--side-padding);
+        }
+    }
+
+}

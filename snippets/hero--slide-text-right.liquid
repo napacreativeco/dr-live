@@ -1,0 +1,26 @@
+{% comment %} 
+*
+*  Announcement Slide
+*  text-right
+*
+{% endcomment %}
+
+<div class="swiper-slide slide__announcement" data-type="announcement" data-layout="{{ block.settings.announcement_slide_layout }}">
+
+    {% comment %} IMAGE {% endcomment %}
+    <div class="slide-image" style="background-image: url('{{ block.settings.announcement_image | image_url }}'); background-size: cover; background-position: center center;">
+    </div>
+
+    {% comment %} CONTENT {% endcomment %}
+    <div class="slide-content">
+      <div class="announcement-subtitle">
+        <span>{{ block.settings.announcement_slide_subtitle | default: 'collborations' }}</span>
+      </div>
+      <div class="announcement-content">
+        <a href="{{ block.settings.announcement_slide_url }}" title="{{ block.settings.announcement_subtitle | default: 'collborations' }}">
+          <h2>{{ block.settings.announcement_slide_content | default: 'collborations' }}</h2>
+        </a>
+      </div>
+    </div>
+
+</div>

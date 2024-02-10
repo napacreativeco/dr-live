@@ -1,0 +1,80 @@
+{% comment %}
+Collection sorting. Needs the JavaScript that is at the bottom of this file.
+{% endcomment %}
+<div class="single-collection-sorting sorting">
+  <div class="wrapper">
+
+    {% comment %} Price Filter {% endcomment %}
+    <h3>Sort</h3>
+
+    {% if collection.products_count == 1 %}
+        <fieldset>
+            <label class="sort-by" value="manual">
+                <input type="radio" value="manual" disabled>
+                Featured
+            </label>
+            <label class="sort-by" value="price-ascending">
+                <input type="radio" value="price-ascending" disabled>
+                Price: low
+            </label>
+            <label class="sort-by" value="price-descending">
+                <input type="radio" value="price-descending" disabled>
+                Price: high
+            </label>
+            <label class="sort-by" value="created-ascending">
+                <input type="radio" value="created-ascending" disabled>
+                Oldest
+            </label>
+            <label class="sort-by" value="created-descending">
+                <input type="radio" value="created-descending" disabled>
+            Newest
+            </label>
+            <label class="sort-by" value="best-selling">
+                <input type="radio" value="best-selling" disabled>
+                Best Selling
+            </label>
+        </fieldset>
+    {% elsif collection.products_count > 1 %}
+        <fieldset >
+            <label class="sort-by" value="manual">
+            <input type="radio" value="manual">
+            Featured
+            </label>
+            <label class="sort-by" value="price-ascending">
+            <input type="radio" value="price-ascending">
+            Price: low
+            </label>
+            <label class="sort-by" value="price-descending">
+            <input type="radio" value="price-descending">
+            Price: high
+            </label>
+            <label class="sort-by" value="created-ascending">
+            <input type="radio" value="created-ascending">
+            Oldest
+            </label>
+            <label class="sort-by" value="created-descending">
+            <input type="radio" value="created-descending">
+            Newest
+            </label>
+            <label class="sort-by" value="best-selling">
+            <input type="radio" value="best-selling">
+            Best Selling
+            </label>
+        </fieldset>
+    {% endif %}
+
+  </div>
+</div>
+
+
+
+{% comment %}
+  JavaScript for collection sorting.
+{% endcomment %}
+<script>
+    jQuery('.sort-by').on('click', function() {
+      
+      Shopify.queryParams.sort_by = jQuery(this).attr('value');
+      location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+    });
+</script>

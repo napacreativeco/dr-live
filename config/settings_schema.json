@@ -1,0 +1,138 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Dais Records",
+    "theme_version": "1.0.0",
+    "theme_author": "Throne",
+    "theme_documentation_url": "https:\/\/throne.work",
+    "theme_support_url": "https:\/\/throne.work"
+  },
+  {
+    "name": "Contact Email",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email",
+        "default": "contact@daisrecords.com"
+      }
+    ]
+  },
+  {
+    "name": "Color Theme",
+    "settings": [
+      {
+        "type": "select",
+        "id": "color_theme",
+        "label": "Color Theme",
+        "options": [
+          {
+            "value": "lite",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "lite"
+      }
+    ]
+  },
+  {
+    "name": "Announcement Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "announcement_marquee_mode",
+        "label": "Mode",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "dais_instagram",
+        "label": "Instgram"
+      },
+      {
+        "type": "text",
+        "id": "dais_twitter",
+        "label": "X"
+      },
+      {
+        "type": "text",
+        "id": "dais_bandcamp",
+        "label": "Instgram"
+      },
+      {
+        "type": "text",
+        "id": "dais_youtube",
+        "label": "YouTube"
+      },
+      {
+        "type": "text",
+        "id": "dais_soundcloud",
+        "label": "Soundcloud"
+      },
+      {
+        "type": "text",
+        "id": "dais_tiktok",
+        "label": "TikTok"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cart_continue_shopping_text",
+        "label": "'Continue Shopping' text",
+        "default": "Continue Shopping"
+      },
+      {
+        "type": "page",
+        "id": "cart_continue_shopping_link",
+        "label": "'Continue Shopping' destination"
+      },
+      {
+        "type": "text",
+        "id": "cart_empty_text",
+        "label": "Empty Cart text",
+        "default": "Your cart is empty"
+      }
+    ]
+  },
+  {
+    "name": "Search",
+    "settings": [
+      {
+        "type": "text",
+        "id": "search_placeholder",
+        "label": "Placeholder",
+        "default": "Start search"
+      },
+      {
+        "type": "text",
+        "id": "search_button",
+        "label": "Button Text: Search",
+        "default": "Start search"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Newsletter Title",
+        "default": "DAIS RECORDS NEWSLETTER"
+      }
+    ]
+  }
+]

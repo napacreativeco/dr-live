@@ -1,0 +1,85 @@
+.artist-card {
+    border: var(--border-blk);
+
+    .image {
+        overflow: hidden;
+        aspect-ratio: 1/1;
+        // width: 350px;
+        width: calc(100vw / 5);
+        margin-bottom: 0px;
+        transition: opacity 0.5 ease-out;
+        transition-delay: 200ms;
+        position: relative;
+        border-bottom: var(--border-blk);
+
+        .view-more {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            background: var(--white);
+            border-radius: 3px;
+            padding: 4px 8px;
+            font-size: 1.8rem;
+            transition: all 0.24s ease-in-out;
+            font-family: var(--type-writer);
+
+            path {
+                stroke-width: 0px;
+            }
+        }
+
+        .view-more:hover {
+            background: var(--grey-light)
+        }
+    }
+
+    .image:hover {
+        .artist-data {
+            opacity: 1;
+        }
+        .view-more {
+            bottom: 12px;
+            opacity: 1;
+        }
+    }
+
+    .artist {
+        padding: 10px;
+
+        a {
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+    }
+
+    .image:hover {
+        opacity: 0.85;
+        cursor: grab;
+    }
+
+    .image:active {
+        cursor: grabbing;
+    }
+
+}
+
+
+@media screen and (min-width: 1800px) {
+    
+    .artist-card {
+        .artist {
+            padding: 12px;
+
+            a {
+                font-size: 22px;
+            }
+        }
+    }
+    
+}

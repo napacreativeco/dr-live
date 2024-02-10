@@ -1,0 +1,306 @@
+{% comment %}  
+* ----------------------------
+* Artist Page
+* collections/artist-name
+* ----------------------------
+{% endcomment %}
+{{ 'collection--single-artist.css' | asset_url | stylesheet_tag }}
+
+<div class="single-artist">
+  <div class="single-artist--wrapper">
+
+    {% comment %} Hero {% endcomment %}
+    <div class="artist-hero">
+
+      <div class="slide-box mobile">
+        <div class="box-wrap">
+          <h1>{{ collection.title }}</h1>
+          {% if collection.metafields.artist.artist_location != blank %}
+            <span class="location">{% render 'icon--crosshair' %}{{ collection.metafields.artist.artist_location.value }}</span>
+          {% endif %}
+        </div>  
+      </div> 
+
+      <div class="single-artist-swiper swiper">
+        <div class="swiper-wrapper">
+
+        {% comment %} DESKTOP {% endcomment %}
+          {% for img in collection.metafields.dais.artist_gallery.value %}
+            <div class="swiper-slide desktop" style="background: url('{{ img | image_url: width: '2400' }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
+              <div class="slide-box desktop">
+                <div class="box-wrap">
+                  <h1>{{ collection.title }}</h1>
+                  {% if collection.metafields.artist.artist_location != blank %}
+                    <span class="location">{% render 'icon--crosshair' %}{{ collection.metafields.artist.artist_location.value }}</span>
+                  {% endif %}
+                </div>  
+              </div> 
+            </div>
+          {% endfor %}
+
+          {% comment %} MOBILE {% endcomment %}
+          {% for imgmobile in collection.metafields.dais.artist_gallery_mobile.value %}
+              <div class="swiper-slide mobile" style="background: url('{{ imgmobile | image_url }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
+                <div class="slide-box desktop">
+                  <div class="box-wrap">
+                    <h1>{{ collection.title }}</h1>
+                    {% if collection.metafields.artist.artist_location != blank %}
+                      <span class="location">{% render 'icon--crosshair' %}{{ collection.metafields.artist.artist_location.value }}</span>
+                    {% endif %}
+                  </div>  
+                </div> 
+              </div>
+          {% endfor %}
+
+        </div>
+
+        <div class="single-artist-pagination-container">
+          <div class="swiper-pagination"></div>
+        </div>
+      
+        <div class="single-artist-navigation-container">
+          <div class="single-artist-prev">
+            {% render 'svg--left-arrow' %}
+          </div>
+          <div class="single-artist-next">
+            {% render 'svg--right-arrow' %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {% comment %}
+    *
+    * Data 
+    *
+    {% endcomment %}
+    <div class="data">
+      <div class="data-wrapper">
+
+        {% comment %} 
+          LEFT 
+        {% endcomment %}
+        <div class="left">
+
+          <div class="section-title">
+            <h3>{{ 'About ' | escape }}{{ collection.products[0].vendor }}</h3>
+          </div>
+
+          <div class="description">
+            <p class="artist-description">
+              {{ collection.description }}
+            </p>
+          </div>
+
+          {% if collection.metafields.custom.social_media_links.value.booking_info != blank or collection.metafields.custom.social_media_links.value != blank %}
+            <div class="meta-blocks">
+              {% if collection.metafields.custom.social_media_links.value.booking_info != blank %}
+                <div class="meta-block">
+                  <h4>{{ 'Booking' | escape }}</h4>
+                  {{ collection.metafields.custom.social_media_links.value.booking_info | metafield_tag }}
+                </div>
+              {% endif %}
+            
+              {% if collection.metafields.custom.social_media_links.value != blank %}
+                <div class="meta-block">
+                  {% render 'social-media' %}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+        </div>
+
+
+        {% comment %} 
+          RIGHT 
+        {% endcomment %}
+        <div class="right">
+
+            {% comment %} Media {% endcomment %}
+            {% for prod in collection.products %}
+              {% for vid in prod.metafields.music.media.value %}
+                {% assign has_media = forloop.length %}
+              {% endfor %}
+            {% endfor %}
+            {% if has_media > 0 %}
+              <div class="media">
+
+                <div class="section-title">
+                  <h3>{{ 'Media' | escape }}</h3>
+                </div>
+
+                <div class="media-wrapper">
+                  {% for prod in collection.products %}
+                    {% for vid in prod.metafields.music.media.value %}
+                      {{ vid }}
+                    {% endfor %}
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+            {% comment %} Releases {% endcomment %}
+            <div class="releases">
+              <div class="section-title">
+                <h3>{{ 'Releases' | escape }}</h3>
+              </div>
+
+              <ul>
+                {% for prod in collection.products %}
+                  {% if prod.type == 'vinyl' or prod.type == 'music' or prod.type == 'Cassette' %}
+                    <li class="item">
+
+                      <div class="image">
+                        <a href="{{ prod.url }}" title="{{ prod.title }}">
+                          <img src="{{ prod.featured_image | img_url: '700x' }}" alt="{{ product.title }}" />
+                        </a>
+                      </div>
+
+                      <div class="vendor">
+                        <a href="{{ prod.url }}" title="{{ prod.vendor }}">
+                          {{ prod.vendor }}
+                        </a>
+                      </div>
+                      <div class="title">
+                        <a href="{{ prod.url }}" title="{{ prod.title }}">
+                          {{ prod.title }}
+                        </a>
+                      </div>
+                      <div class="date">
+                        <a href="{{ prod.url }}" title="{{ prod.title }}">
+                          {{ prod.metafields.music.release_date | date: "%m.%Y" }}
+                        </a>
+                      </div>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+
+            </div>
+
+            {% comment %} Merch {% endcomment %}
+            <div class="merch">
+              {% for prod in collection.products %}
+                {% if prod.type != 'vinyl' and prod.type != 'music' %}
+                  {% assign has_products = forloop.length %}
+                {% endif %}
+              {% endfor %}
+  
+              {% if has_products > 0 %}
+                <div class="products" >
+  
+                  <div class="section-title">
+                    <h3>{{ 'Merch' | escape }}</h3>
+                  </div>
+  
+                  {% paginate collection.products by 10 %}
+  
+                    <ul class="artist-products">
+                      {% for prod in collection.products %}
+  
+                        {% if prod.type != 'vinyl' and prod.type != 'music' %}
+                          <li class="item">
+  
+                            <div class="image">
+                              <a href="{{ prod.url }}" title="{{ prod.title }}">
+                                <img src="{{ prod.featured_image | image_url: 700 }}" alt="{{ product.title }}" />
+                              </a>
+                            </div>
+                            <div class="vendor">
+                              <a href="{{ prod.url }}" title="{{ prod.vendor }}">
+                                {{ prod.vendor }}
+                              </a>
+                            </div>
+                            <div class="title">
+                              <a href="{{ prod.url }}" title="{{ prod.title }}">
+                                {{ prod.title }}
+                              </a>
+                            </div>
+                          </li>
+                        {% endif %}
+  
+                      {% else %}
+   
+                        <li>{{ 'There are no products in this view.' | escape }}</li>
+  
+                      {% endfor %}
+                    </ul>
+  
+                    {% if paginate.pages > 1 %}
+                      {{ paginate | default_pagination }}
+                    {% endif %}
+  
+                  {% endpaginate %}
+                </div>
+              {% endif %}
+            </div>
+
+
+            {% comment %} Tour Dates {% endcomment %}
+            {% for item in collection.metafields.artist.tour_dates.value %}
+              {% assign has_tour_dates = forloop.length %}
+            {% endfor %}
+            {% if has_tour_dates > 0 %}
+              <div class="tour-dates">
+                <div class="section-title">
+                  <h3>{{ 'Tour Dates' | escape }}</h3>
+                </div>
+                <div class="dates-wrapper"> 
+                  {% for item in collection.metafields.artist.tour_dates.value %}
+                      <div class="info">
+          
+                          <div class="title">
+                              <h3>{{ item.title }}</h3>
+                          </div>
+          
+                          <div class="dates">
+                              {{ item.dates | metafield_tag }}
+                          </div>
+          
+                          <div class="flier">
+                              <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
+                          </div>
+                      </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+            
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function($) {
+
+    const artistswiper = new Swiper('.single-artist-swiper', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.single-artist-next',
+        prevEl: '.single-artist-prev',
+      },
+      spaceBetween: 2,
+      pagination: {
+        el: '.single-artist-pagination-container',
+        clickable: true
+      },
+    });
+
+    var amount = artistswiper.slides.length;
+    if (amount > 1) {
+
+    } else {
+      $('.single-artist-pagination-container').hide();
+      $('.single-artist-navigation-container').hide();
+    }
+    console.log(amount);
+  })(jQuery);
+</script>

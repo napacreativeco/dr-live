@@ -1,0 +1,7 @@
+{% comment %} Artist List {% endcomment %}
+<div class="artist-list sorting-block">
+  <h3>Artist</h3>
+  {% for collection in collections %}
+    <a href="{{ collection.url }}" title="">{{ collection.title }}</a>
+  {% endfor %}
+</div>

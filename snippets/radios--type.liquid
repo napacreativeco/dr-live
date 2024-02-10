@@ -1,0 +1,25 @@
+{% comment %} 
+*
+* Type Radios
+*
+{% endcomment %}
+
+<fieldset class="type-radios">
+    {% for l in linklists.product-type-filters.links %}
+        <label value="{{ l.title }}">
+            <input class="type-radio" data-type="{{ l.url }}" type="radio" value="{{ l.title }}">
+            {{ l.title }}
+        </label>
+    {% endfor %}
+</fieldset>
+
+<script>
+(function($) {
+    $(document).ready(function() {
+        $(".type-radio").click(function(){
+            var val =  $(this).attr('data-type');
+            window.location = val;
+        });
+    });
+})(jQuery);
+</script>

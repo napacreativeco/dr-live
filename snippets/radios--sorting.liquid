@@ -1,0 +1,51 @@
+{% if collection.products_count > 1 %}
+    <fieldset class="sorting-radios">
+        <label class="sort-by" value="manual">
+            <input type="radio" value="manual">
+            {{ 'Featured' | escape }}
+        </label>
+        {% comment %}  
+        <label class="sort-by" value="best-selling">
+            <input type="radio" value="best-selling">
+            {{ 'Best Selling' | escape }}
+        </label>
+        {% endcomment %}
+        <label class="sort-by" value="price-ascending">
+            <input type="radio" value="price-ascending">
+            {{ 'Lowest Price' | escape }}
+        </label>
+        <label class="sort-by" value="price-descending">
+            <input type="radio" value="price-descending">
+            {{ 'Highest Price' | escape }}
+        </label>
+        <label class="sort-by" value="created-ascending">
+            <input type="radio" value="created-ascending">
+            {{ 'Date Oldest' | escape }}
+        </label>
+        <label class="sort-by" value="created-descending">
+            <input type="radio" value="created-descending">
+            {{ 'Date Newest' | escape }}
+        </label>
+        <label class="sort-by" value="title-ascending">
+            <input type="radio" value="title-ascending">
+            {{ 'ABC Ascending' | escape }}
+        </label>
+        <label class="sort-by" value="title-descending">
+            <input type="radio" value="title-descending">
+            {{ 'ABC Descending' | escape }}
+        </label>
+
+    </fieldset>
+{% else %}
+
+    <div class="no-filters">
+        {{ 'No available Sorting attributes.' | escape }}
+    </div>
+{% endif %}
+
+<script>
+    jQuery('.sort-by').on('click', function() {
+        Shopify.queryParams.sort_by = jQuery(this).attr('value');
+        location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+    });
+</script>

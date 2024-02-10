@@ -1,0 +1,39 @@
+<div class="product-gallery-swiper swiper">
+    <div class="swiper-wrapper">
+      {% assign today_date = 'now' | date: '%s' %}
+      {% assign preorder_date = product.metafields.music.release_date | date: '%s' %}
+      {% if preorder_date > today_date %}
+        <div class="preorder-status">
+          <span>{{ 'Preorder' | escape }}</span>
+        </div>
+      {% endif %}
+      <script>console.log('{{ today_date | date }}');</script>
+      {% for image in product.media %}
+        <div class="swiper-slide">
+          <div class="view-larger" data-image="{{ image | image_url: width: 1000 }}">   
+            {% render 'icon--view-more' %}
+          </div>
+          <img src="{{ image | image_url: width: 950 }}" alt="{{ product.title }} by {{ product.vendor }}" />
+        </div>
+      {% endfor %}
+    
+    </div>
+
+    {% if product.media > 1 %}
+      <div class="product-gallery-pagination-container">
+        <div class="swiper-pagination"></div>
+      </div>
+    {% endif %}
+  
+    {% if product.media > 1 %}
+      <div class="product-gallery-navigation-container">
+        <div class="product-gallery-prev">
+          {% render 'svg--left-arrow' %}
+        </div>
+        <div class="product-gallery-next">
+          {% render 'svg--right-arrow' %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>

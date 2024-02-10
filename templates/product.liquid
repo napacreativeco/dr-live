@@ -1,0 +1,157 @@
+{% liquid
+  assign add_to_cart = 'Add to cart'
+  assign sold_out = 'Sold Out'
+  assign unavailable = 'Unavailable'
+  assign pre_order = 'Preorder'
+%}
+
+{{ 'product--global.css' | asset_url | stylesheet_tag }}
+
+
+<div class="single-product default">
+  <div class="wrapper">
+
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+    <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
+    
+    <form action="/cart/add" method="post" enctype="multipart/form-data">
+
+      {% comment %} Cart Messages {% endcomment %}
+      <div data-ajax-cart-messages="form"></div>
+
+      <div class="product-section-one">
+        <div class="wrapper">
+
+
+          {% comment %} 
+          *
+          * Left
+          *
+          {% endcomment %}
+          {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+          <div class="left">
+
+            {% render 'product--image-gallery', product: product, variant_images: variant_images %}
+
+          </div>
+
+
+          {% comment %} 
+          *
+          * Right
+          *
+          {% endcomment %}
+          <div class="right">
+
+            {% render 'product--actions', product: product, pre_order: pre_order, add_to_cart: add_to_cart %}
+
+            <div class="description">
+                <p>{{ product.description | newline_to_br }}</p>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+  {% render 'recommended-products' %}
+</div>
+
+{% comment %} 
+*
+* Image Overlay Script
+*
+{% endcomment %}
+<script>
+  (function($) {
+    
+      $('.view-larger').on('click', function() {
+        var img = $(this).attr('data-image');
+
+        $('.image-overlay').css({
+          display: 'block'
+        });
+
+        $('.image-overlay--img').attr('src', img);
+
+        
+        $('.image-overlay--closer').on('click', function() {
+          $('.image-overlay').css('display', 'none');
+        });
+
+      });
+
+  })(jQuery);
+</script>
+
+<script>
+  
+  var selectCallback = function(variant, selector) {
+
+    if (variant) {
+      
+      // Swap image.
+      if (variant.featured_image) {
+        var newImage = variant.featured_image; // New image object.
+        var mainImageDomEl = jQuery('.product-photo-container img')[0]; // DOM element of main image we need to swap.
+        Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+      }
+      
+      // Selected a valid variant that is available.
+      if (variant.available) {
+            
+        // Enabling add to cart button.
+        jQuery('#add').removeClass('disabled').prop('disabled', false).val({{ add_to_cart | json }});
+      
+        // If item is backordered yet can still be ordered, we'll show special message.
+        if (variant.inventory_management && variant.inventory_quantity <= 0) {
+          jQuery('#selected-variant').html({{ product.title | json }}{% unless hide_default_title %} + ' - ' + variant.title{% endunless %});
+          jQuery('#backorder').removeClass("hidden");
+        } else {
+          jQuery('#backorder').addClass("hidden");
+        }
+        
+      } else {
+        // Variant is sold out.
+        jQuery('#backorder').addClass('hidden');
+        jQuery('#add').val({{ sold_out | json }}).addClass('disabled').prop('disabled', true);   
+        console.log('this is sold out')    
+      }
+      
+      // Whether the variant is in stock or not, we can update the price and compare at price.
+      if ( variant.compare_at_price > variant.price ) {
+
+        jQuery('#product-price').html('<span class="product-price on-sale">'+ Shopify.formatMoney(variant.price, "{{ shop.money_format }}") +'</span>'+'&nbsp;<s class="product-compare-price">'+Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}")+ '</s>');
+      } else {
+        jQuery('#product-price').html('<span class="product-price">'+ Shopify.formatMoney(variant.price, "{{ shop.money_format }}") + '</span>' );
+      }        
+
+    } else {
+      // variant doesn't exist.
+      jQuery('#product-price').empty();
+      jQuery('#backorder').addClass('hidden');
+      jQuery('#add').val({{ unavailable | json }}).addClass('disabled').prop('disabled', true);
+    }
+
+  };
+    
+  jQuery(function($) {
+
+    new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
+    
+    // Add label if only one product option and it isn't 'Title'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
+    {% endif %}
+
+  });
+
+  Shopify.Image.preload({{ product.images | json }}, 'grande');
+  Shopify.Image.preload({{ product.images | json }}, '1024x1024');
+
+</script>

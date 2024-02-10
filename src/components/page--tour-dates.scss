@@ -1,0 +1,221 @@
+.tour-page {
+    padding: 78px 0 30px 0;
+
+    .tour-page-wrapper {
+
+        /*
+        *
+        * Hero
+        *
+        */
+        .tour-spotlight {
+            background: var(--black-no-change);
+            color: var(--white-no-change);
+            border-bottom: var(--border-blk);
+
+            .spotlight-swiper {
+                position: relative;
+
+                .swiper-slide {
+                    padding: 80px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 30px;
+
+                    .title {
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: var(--black);
+                    }
+
+                    .body {
+                        text-transform: uppercase;
+                        text-align: center;
+                        max-width: 300px;
+
+                        p {
+                            a { text-decoration: underline; }
+                            color: var(--black);
+                        }
+                    }
+                }
+
+                .tour-spotlight-next {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    margin-top: 0px;
+                    z-index: 10;
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                    background: var(--white-no-change);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-bottom: var(--border-blk);
+                    
+                    svg {
+                        width: 16px;
+                        stroke: var(--black-no-change) !important;
+                    }
+                }
+            }
+        }
+
+
+        /*
+        *
+        * Tour Dates
+        *
+        */
+        .tour-dates-container {
+            padding: 20px 0;
+
+            .tour-dates-wrapper {
+                max-width: calc(100% - 24px);
+                margin: 0 auto;
+
+                ul {
+                    column-count: 3;
+                    column-gap: 10px;
+                    align-content: flex-start;
+                    width: 100%;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                // Date Block
+                li.tour-block {
+                    border: var(--border-blk);
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin: 0 0 1em;
+                    break-inside: avoid;
+
+                    .image {
+                        height: auto;
+                        border-bottom: var(--border-blk);
+                        aspect-ratio: 4/3;
+                    }
+
+                    .artist {
+                        padding: 20px 20px 10px 20px;
+
+                        h2 {
+                            font-size: 24px;
+                            color: var(--black);
+                        }
+                    }
+
+                    .artist:hover {
+                        text-decoration: underline;
+                    }
+        
+                    .info {
+                        padding: 10px 20px 30px 20px;
+            
+                        .title {
+                            padding: 0 0 0px 0;
+                            margin: 0 0 14px 0;
+                            line-height: 1.4;
+                            text-transform: uppercase;
+                            border-bottom: var(--border-blk-thin);
+                            color: var(--black);
+                        }
+
+                        .dates {
+                            line-height: 1.4;
+                            font-size: 13px;
+                            letter-spacing: -0.1px;
+                            font-family: var(--type-writer);
+                            text-transform: uppercase;
+
+                            > div {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 6px;
+                                color: var(--black);
+                            }
+                            
+                        }
+
+                        .flier {
+                            padding: 12px 0 0 0;
+                            text-transform: uppercase;
+                            text-decoration: underline;
+                            font-size: 12px;
+                            color: var(--black);
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .tour-page {
+        padding: 60px 0 30px 0;
+    
+        .tour-page-wrapper {
+    
+            .tour-spotlight {
+    
+                .spotlight-swiper {
+    
+                    .swiper-slide {}
+                }
+            }
+
+            .tour-dates-container {
+                .tour-dates-wrapper {
+                    grid-template-columns: 1fr;
+
+                    ul {
+                        column-count: 1;
+                        column-gap: 0px;
+                        align-content: flex-start;
+                    }
+
+                    .tour-block {
+                        border: var(--border-blk);
+    
+                        .image {
+                            height: 280px;
+                            border-bottom: var(--border-blk);
+                        }
+    
+                        .artist {
+                            padding: 20px 20px 10px 20px;
+    
+                            h2 {
+                                font-size: 20px;
+                            }
+                        }
+            
+                        .info {
+                            padding: 10px 20px 30px 20px;
+                
+                            .title {}
+                
+                            .dates {}
+    
+                            .flier {}
+                        }
+    
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{{ 'page--blog.css' | asset_url | stylesheet_tag }}
+
+<div class="blog-page">
+  <div class="blog-page-wrapper page-wrapper">
+    {% paginate blog.articles by 5 %}
+
+      <header class="page-header" data-aos="fade-down">
+        <div class="header-wrapper">
+
+          {% render 'breadcrumbs' %}
+
+          <h1 class="title">
+            {{ blog.title }}
+          </h1>
+
+        </div>
+      </header>
+
+      <div class="posts" data-aos="fade-down" data-aos-delay="400">
+        {% for article in blog.articles %}
+
+          {% assign article_has_image = false %}
+          {% assign img_tag = '<' | append: 'img' %}
+          {% if article.excerpt_or_content contains img_tag %}
+            {% assign src = article.excerpt_or_content | split: 'src="' %}
+            {% assign src = src[1] | split: '"' | first %}
+            {% if src %}
+              {% assign article_has_image = true %}
+              {% assign image_src = src | replace: '_small', '' | replace: '_compact', '' | replace: '_medium', '' | replace: '_large', '' | replace: '_grande', '' %}
+            {% endif %}
+          {% endif %}
+
+          <div class="post">
+            
+            {% comment %}
+            Image
+            {% endcomment %}
+            <div class="image" onclick="window.location='{{ article.url }}';" style="background: url('{{ article.image | image_url }}'); background-size: cover; background-position: center center;">
+              &nbsp;
+            </div>
+
+            {% comment %}
+            Actions
+            {% endcomment %}
+            <div class="actions">
+
+              {% comment %} Title {% endcomment %}
+              <div class="info">
+                <h2>
+                  <a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
+                </h2>
+                <div class="metadata">
+                  <a href="{{ video.url }}" title="{{ video.title }} by {{ video.tags }}">
+                    <h4>{{ 'By ' | escape }} {{ article.tags }} {{ '|' | escape }} {{ article.metafields.videos.premiere_date.value | date: "%b %d, %y" }}</h4>
+                  </a>
+                </div>
+              </div>
+
+
+              {% comment %} Link {% endcomment %}
+              <div class="read-more">
+                <a href="{{ article.url }}" title="{{ article.title }}">
+                  {{ 'Watch' | escape }}
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        {% endfor %}
+      </div>
+
+      {% if paginate.pages > 1 %}
+        {{ paginate | default_pagination | replace: 'Previous', 'Newer articles' | replace: 'Next', 'Older articles' }}
+      {% endif %}
+
+    {% endpaginate %}
+  </div>
+
+</div>

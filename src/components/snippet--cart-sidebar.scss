@@ -1,0 +1,124 @@
+.cart-sidebar {
+    .sidebar-wrapper {
+
+        .sidebar-title {
+            padding-top: 14px;
+            margin: 0 var(--side-padding) 0px 0;
+            border-top: var(--border-blk);
+
+            h3 {
+                text-transform: uppercase;
+                color: var(--black);
+            }
+        }
+
+        .sidebar-content {
+            padding: 30px var(--side-padding) 30px 0;
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                color: var(--black);
+
+                text-transform: uppercase;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
+                .image {
+                    cursor: pointer;
+                    border: var(--border-blk);
+                    margin: 0 0 4px 0;
+                    transition: var(--image-opacity-transition);
+
+                    img {
+                        max-width: 100%;
+                        display: block;
+                    }
+                }
+
+                .image:hover {
+                    opacity: 0.8;
+                }
+
+                .data {
+                    .left {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+                    }
+
+                    .title {
+                        color: var(--grey);
+                    }
+                    .price {
+                        margin-top: 3px;
+                        color: var(--grey);
+                        pointer-events: none;
+                    }
+                }
+
+
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cart-sidebar {
+        .sidebar-wrapper {
+
+            .sidebar-title {
+                padding-top: 14px;
+                margin: 0 var(--side-padding);
+                border-top: var(--border-blk);
+    
+                h3 {
+                    text-transform: uppercase;
+                    color: var(--black);
+                }
+            }
+    
+            .sidebar-content {
+                padding: 30px var(--side-padding);
+    
+                ul {
+
+                    .image {
+                        border: var(--border-blk);
+                        margin: 0 0 4px 0;
+    
+                        img {
+                            max-width: 100%;
+                            display: block;
+                        }
+                    }
+    
+                    .data {
+                        .left {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3px;
+                        }
+    
+                        .title {
+                            color: var(--grey);
+                        }
+                        .price {
+                            margin-top: 3px;
+                            color: var(--grey);
+                        }
+                    }
+    
+    
+    
+                }
+            }
+
+        }
+    }
+}

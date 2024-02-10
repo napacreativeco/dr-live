@@ -1,0 +1,43 @@
+<div class="contact-wrapper">
+  <ul>
+    {% for block in section.blocks %}
+      <li>
+        <h4>{{ block.settings.name }}</h4>
+        {{ block.settings.link }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+    {
+      "name": "Contact Info",
+      "tag": "section",
+      "class": "contact-info-section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Contact Info"
+        }
+      ],
+      "blocks": [
+         {
+           "name": "Contact Detail",
+           "type": "item",
+           "settings": [
+             {
+               "type": "text",
+               "id": "name",
+               "label": "Name"
+             },
+             {
+               "type": "richtext",
+               "id": "link",
+               "label": "Link"
+             }
+           ]
+         }
+       ]
+    }
+{% endschema %}    

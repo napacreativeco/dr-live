@@ -1,0 +1,336 @@
+{% liquid
+  assign add_to_cart = 'Add to cart'
+  assign sold_out = 'Sold Out'
+  assign unavailable = 'Unavailable'
+  assign pre_order = 'Preorder'
+%}
+
+{% capture preorder_date %}
+  {{ product.metafields.music.release_date.value | date: '%Y' }}
+{% endcapture %}
+
+{% capture today_date %}
+  {{ "now" | date: '%Y' }}
+{% endcapture %}
+
+{{ 'product--global.css' | asset_url | stylesheet_tag }}
+{{ 'product--music.css' | asset_url | stylesheet_tag }}
+
+<div class="single-product music">
+  <div class="single-product-wrapper">
+
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+    <meta itemprop="image" content="{{ product | image_url: 700 }}" />
+    
+    <form action="/cart/add" method="post" enctype="multipart/form-data">
+
+      <div data-ajax-cart-messages="form"></div>
+
+      {% comment %}
+      * 
+      * Top
+      * 
+      {% endcomment %}
+      <div class="product-section-one">
+        <div class="wrapper">
+
+          {% comment %} 
+          *
+          * Left
+          *
+          {% endcomment %}
+          {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+          <div class="left">
+
+            {% render 'product--image-gallery', product: product, variant_images: variant_images, preorder_date: preorder_date, today_date: today_date %}
+
+          </div>
+
+          {% comment %} 
+          *
+          * Right
+          *
+          {% endcomment %}
+          <div class="right">
+
+            {% render 'product--actions', product: product, pre_order: pre_order, add_to_cart: add_to_cart, preorder_date: preorder_date, today_date: today_date %}
+
+          </div>
+
+        </div>
+      </div>
+
+      {% comment %}
+      * 
+      * Bottom
+      * 
+      {% endcomment %}
+      <div class="product-section-two">
+        <div class="wrapper">
+
+
+          {% comment %} 
+          *
+          * Left
+          *
+          {% endcomment %}
+          <div class="left">
+            
+            {% comment %} 
+              Description
+            {% endcomment %}
+            <div class="description">
+              <h3 class="block-title">{{ 'About' | escape }} {{ '"' | escape }}{{ product.title }}{{ '"' | escape }}</h3>
+              <p>{{ product.description | newline_to_br }}</p>
+            </div>
+
+
+            {% comment %} 
+              Videos
+            {% endcomment %}
+            {% for vid in product.metafields.music.media.value %}
+              {% assign has_videos = forloop.length %}
+            {% endfor %}
+
+            {% if has_videos > 0 %}
+              <div class="media">
+
+                <div class="title">
+                  <h3 class="block-title">{{ 'Media' | escape }}</h3>
+                </div>
+
+                <div class="media-wrapper">
+                  {% for vid in product.metafields.music.media.value %}
+                    {{ vid }}
+                  {% endfor %}
+                </div>
+
+              </div>
+            {% endif %}
+
+          </div>
+
+
+          {% comment %} 
+          *
+          * Right
+          *
+          {% endcomment %}
+          <div class="right">
+
+            <div class="tracklisting">
+              <h3 class="block-title">{{ 'Tracklisting' | escape }}</h3>
+
+              {% if product.metafields.dais.tracklisting.value != blank %}
+                <ul class="tracklist">
+                  {% for track in product.metafields.dais.tracklisting.value %}
+                    <li class="track">
+                      {% if forloop.index < 10 %}
+                        0<div class="counter"></div> 
+                      {% elsif forloop.index >= 10 %}
+                        <div class="counter"></div> 
+                      {% endif %}
+
+                      <div class="track-name">{{ track }}</div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <p>Tracklisting coming soon</p>
+              {% endif %}
+            </div>
+
+            <div class="meta-blocks">
+
+              {% comment %} Variants {% endcomment %}
+              <div class="block product-variants">
+
+                <h3 class="block-title">{{ 'Formats' | escape }}</h3>
+
+                <ul class="list">
+                  {% for variant in product.variants %}
+                    <li>    
+                      <span class="variant-name data">{{ variant.title }}</span>              
+                    </li>
+                  {% endfor %}
+                </ul>
+
+              </div>
+
+              {% comment %} Release Date {% endcomment %}
+              {% if product.metafields.music.release_date.value != blank %}
+                <div class="block product-release">
+                  <h3 class="block-title">
+                    {{ 'Release date' | escape }}
+                  </h3>
+                  <span class="data">{{ product.metafields.music.release_date.value | date: "%b %d, %y" }}</span>
+                </div>
+              {% endif %}
+
+              {% comment %} Catalog number {% endcomment %}
+              {% if product.metafields.music.catalog_number.value != blank %}
+                <div class="block catalog-number">
+                  <h3 class="block-title">
+                    {{ 'Catalog No.' | escape }}
+                  </h3>
+                  <span class="data">{{ product.metafields.music.catalog_number.value | escape }}</span>
+                </div>
+              {% endif %}
+
+            </div>
+
+            {% comment %} 
+              Link Block
+            {% endcomment %}
+            <div class="link-block">
+                {% for collection in product.collections %}
+                  {% if collection.title == product.vendor %}
+                    <div class="link">
+                      <a class="block-title" href="{{ collection.url }}" title="{{ 'Artist Page' | escape }}">
+                        {{ 'Artist Page' | escape }} {% render 'icon--link' %}
+                      </a>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+
+                <div class="link">
+                  <a class="block-title" href="{{ shop.url }}/collections/all?filter.p.vendor={{ product.vendor | url_escape }}" title="{{ 'Merchandise' | escape }}">
+                    {{ 'Merchandise' | escape }} {% render 'icon--link' %}
+                  </a>
+                </div>
+
+                <div class="link">
+                  {% for collection in product.collections %}
+                    {% for link in collection.metafields.custom.social_media_links.values %}
+                      {{ link }}
+                    {% endfor %}
+                  {% endfor %}
+                </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+  {% comment %}
+  *
+  * Recommended Products
+  *
+  {% endcomment %}
+  {% render 'recommended-products' %}
+</div>
+
+{% comment %} 
+Image Overlay
+
+<div class="image-overlay">
+  <div class="wrapper">
+
+    <span class="image-overlay--closer">&times;</span>
+
+    <img src="" alt="" class="image-overlay--img" />
+  </div>
+</div>
+{% endcomment %}
+
+{% comment %} 
+  Image Overlay Script
+{% endcomment %}
+<script>
+  (function($) {
+    
+      $('.view-larger').on('click', function() {
+        var img = $(this).attr('data-image');
+
+        $('.image-overlay').css({
+          display: 'block'
+        });
+
+        $('.image-overlay--img').attr('src', img);
+
+        
+        $('.image-overlay--closer').on('click', function() {
+          $('.image-overlay').css('display', 'none');
+        });
+
+      });
+
+  })(jQuery);
+</script>
+
+<script>
+  var selectCallback = function(variant, selector) {
+
+    if (variant) {
+      
+      // Swap image.
+      if (variant.featured_image) {
+        var newImage = variant.featured_image; // New image object.
+        var mainImageDomEl = jQuery('.product-photo-container img')[0]; // DOM element of main image we need to swap.
+        Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+      }
+      
+      // Selected a valid variant that is available.
+
+      {% assign hide_default_title = false %}
+
+
+      if (variant.available) {
+
+        console.log('variant available');
+            
+        // Enabling add to cart button.
+        jQuery('#add').removeClass('disabled').prop('disabled', false).val({{ add_to_cart | json }});
+      
+        // If item is backordered yet can still be ordered, we'll show special message.
+        if (variant.inventory_management && variant.inventory_quantity <= 0) {
+          jQuery('#selected-variant').html({{ product.title | json }}{% unless hide_default_title %} + ' - ' + variant.title{% endunless %});
+          jQuery('#backorder').removeClass("hidden");
+        } else {
+          jQuery('#backorder').addClass("hidden");
+        }
+        
+      } else {
+        // Variant is sold out.
+        jQuery('#backorder').addClass('hidden');
+        jQuery('#add').val({{ sold_out | json }}).addClass('disabled').prop('disabled', true);   
+        console.log('this is sold out')    
+      }
+      
+      // Whether the variant is in stock or not, we can update the price and compare at price.
+      if ( variant.compare_at_price > variant.price ) {
+
+        jQuery('#product-price').html('<span class="product-price on-sale">'+ Shopify.formatMoney(variant.price, "{{ shop.money_format }}") +'</span>'+'&nbsp;<s class="product-compare-price">'+Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}")+ '</s>');
+      } else {
+        jQuery('#product-price').html('<span class="product-price">'+ Shopify.formatMoney(variant.price, "{{ shop.money_format }}") + '</span>' );
+      }        
+
+    } else {
+      // variant doesn't exist.
+      jQuery('#product-price').empty();
+      jQuery('#backorder').addClass('hidden');
+      jQuery('#add').val({{ unavailable | json }}).addClass('disabled').prop('disabled', true);
+    }
+
+  };
+    
+  jQuery(function($) {
+
+    new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
+    
+    // Add label if only one product option and it isn't 'Title'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
+    {% endif %}
+
+  });
+
+  Shopify.Image.preload({{ product.images | json }}, 'grande');
+  Shopify.Image.preload({{ product.images | json }}, '1024x1024');
+
+</script>

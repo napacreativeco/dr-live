@@ -1,0 +1,71 @@
+{{ 'collection--default.css' | asset_url | stylesheet_tag }}
+{{ 'card--product-card.css' | asset_url | stylesheet_tag }}
+
+<div class="default-collection">
+  <div class="default-collection-wrapper">
+
+    {% comment %} Header {% endcomment %}
+    <header>
+      <div class="header-wrapper">
+
+        {% render 'breadcrumbs' %}
+
+        {% if current_tags %}
+          <ul>
+            {% for tags in current_tags %}
+              <li>
+                <h1>{{ tags | capitalize }}{% if forloop.last %} {% else %}, {% endif %}</h1>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <h1>
+            {% if collection.handle == 'all' %}
+              {{ 'All Products' | escape }}
+            {% else %}
+              {{ collection.title }}
+            {% endif %}
+          </h1>
+        {% endif %}
+      </div>
+
+      {% comment %} Description {% endcomment %}
+      {% if collection.description.size > 0 %}
+        <div class="collection-description">
+          <p>{{ collection.description }}</p>
+        </div>
+      {% endif %}
+    </header>
+  
+    {% comment %} Sorting {% endcomment %}
+    {% if collection.handle != 'dais-records' and collection.handle != 'collaboration' %}
+      {% render 'product-sorting' %}
+    {% endif %}
+
+    {% comment %} Products {% endcomment %}
+    {% paginate collection.products by 8 %}
+      
+      {% if collection.products.length > 0 %}
+        <ul class="products">
+          
+          {% for product in collection.products %}
+            {% render 'product-card--collection' prod: product %}
+          {% endfor %}
+    
+        </ul>
+      {% else %}
+
+        {% render 'no-products-available' %}
+        
+      {% endif %}
+
+
+      {% comment %} Pagination {% endcomment %}
+      {% render 'pagination--collection' paginate: paginate %}      
+
+    {% endpaginate %}
+
+  </div>
+</div>
+
+

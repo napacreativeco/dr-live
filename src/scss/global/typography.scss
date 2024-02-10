@@ -1,0 +1,39 @@
+@media (min-width: 1400px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+
+@media (min-width: 1081px) {
+    html {
+        font-size: 55.5%;
+    }
+}
+
+@media (min-width: 350px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+html {
+    font-size: 58%;
+}
+
+html, body {
+    font-family: var(--sans-serif);
+    font-smooth: always;
+    font-weight: 400;
+    letter-spacing: -0.044rem;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* Type Accents */
+.type-writer {
+    font-family: var(--type-writer);
+}

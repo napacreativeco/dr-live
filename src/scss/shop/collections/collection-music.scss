@@ -1,0 +1,71 @@
+.music-collection {
+
+    .music-collection-wrapper {
+        min-height: 100svh;
+
+        header {
+            h1 {
+                font-size: 8vw;
+                letter-spacing: -0.4vw;
+            }
+        }
+
+        header {
+            .header-wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+        .product-section {
+            padding: 40px 0;
+            
+            ul.products {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 20px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                
+            }
+        }
+
+
+    }
+}
+
+
+/*
+---------------------------------------------------------------------------------
+*/
+@media screen and (max-width: 767px) {
+    
+    .music-collection {
+        padding: 0;
+
+        .music-collection-wrapper {
+
+            padding: 100px var(--side-padding) 40px var(--side-padding);
+
+            header {
+                margin: 0 0 20px 0;
+            }
+
+            .product-section {
+
+                padding: 20px 0;
+
+                ul.products {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                }
+    
+            }
+
+        }
+
+    }
+}

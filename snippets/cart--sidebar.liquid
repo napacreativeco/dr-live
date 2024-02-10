@@ -1,0 +1,30 @@
+{{ 'snippet--cart-sidebar.css' | asset_url | stylesheet_tag }}
+
+<div class="cart-sidebar">
+    <div class="sidebar-wrapper">
+
+        <div class="sidebar-title">
+            <h3 class="title" data-aos="fade-down">
+                {{ 'Based on your cart' | escape }}
+            </h3>
+        </div>
+
+        <div class="sidebar-content">
+            <ul>
+                {% if settings.cart_recommended_products != blank %}
+                    {% for product in settings.recommended_products %}
+                    {% endfor %}
+                {% else %}
+                    {% for collection in collections %}
+                        {% case collection.handle %}
+                            {% when 'all' %}
+                                {% for product in collection.products limit: 3 %}
+                                    {% render 'product-card--collection' prod: product %}
+                                {% endfor %}
+                        {% endcase %}
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+{{ 'page--cart.css' | asset_url | stylesheet_tag }}
+
+<div class="cart-page">
+  <div class="cart-wrapper">
+
+    {% comment %} 
+      Header
+    {% endcomment %}
+    <header class="section--header">
+      <div class="section--header-wrapper">
+        <h2 class="title" data-aos="fade-down">
+          {{ 'Shopping Cart' | escape }}
+        </h2>
+      </div>
+    </header>
+
+    {% if cart.item_count > 0 %}
+
+      <div class="cart-holder">
+        <form action="/cart" method="post">
+          
+          <ul class="items-wrapper">
+
+            <li class="cart-item legend">
+              <div class="image">
+                {{ 'Product' | escape }}
+              </div>
+              <div class="title"></div>
+              <div class="quantity">
+                {{ 'Quantity' | escape }}
+              </div>
+              <div class="price">
+                {{ 'Price' | escape }}
+              </div>
+              <div class="delete">
+                {{ 'Remove' | escape }}
+              </div>
+            </li>
+            {% for item in cart.items %}    
+              
+              {% assign collection_url = item.product.collections.last.url %}
+              {% if collection_url == '/collections/frontpage' or collection_url == blank %}
+                {% assign collection_url = '/collections/all' %}
+              {% endif %}
+              
+              <li class="cart-item">
+
+                <div class="image">
+                  <a href="{{ collection_url }}{{ item.url }}">
+                    <img src="{{ item | img_url: 'compact' }}"  alt="{{ item.title | escape }}" />
+                  </a>
+                </div>
+
+                <div class="title">
+                  {% if item.vendor != blank %}
+                    <div class="vendor">
+                      <h3>{{ item.vendor }}</h3>
+                    </div>
+                  {% endif %}
+                  <div class="product">
+                    <h2>
+                      <a href="{{ collection_url }}{{ item.url }}">
+                        {{ item.product.title }}
+                      </a>
+                    </h2>
+                  </div>
+                  <div class="variants">
+                    <ul>
+                      {% for o in item.options_with_values %}
+                        <li>{{ o.value }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="quantity">
+                  <input type="number" name="updates[]" id="updates_{{ item.id }}" class="quantity" value="{{ item.quantity }}" />
+                </div>
+
+                <div class="price">
+                  {{ item.line_price | money }}
+                </div>
+              
+                <div class="delete">
+                  <a href="/cart/change?line={{ forloop.index }}&quantity=0">
+                    &times;
+                  </a>
+                </div>
+                
+              </li>
+        
+            {% endfor %}
+          </ul>
+          
+          {% comment %} Cart Totals {% endcomment %}
+          <div class="cart-totals">
+            <div class="subtotal">
+              <h3>Subtotal</h3>
+              <h3>{{ cart.total_price | money_without_trailing_zeros }}</h3>
+            </div>
+            <div class="update-cart-holder">
+              <input class="update-cart-button" type="submit" name="update" value="Update cart" />
+            </div>
+          </div>
+          
+          {% comment %} Notes {% endcomment %}
+          <details class="additional-notes-holder">
+            <summary>
+              <span>Notes to fulfillment</span>
+              <span class="indicator">&nbsp;</span>
+            </summary>
+            <div class="details-body">
+              <textarea name="note">{{ cart.note }}</textarea>
+            </div>
+          </details>
+
+          {% comment %} Checkout buttons {% endcomment %}
+          <div class="checkout-holder">
+            <input class="checkout-button" type="submit" name="checkout" value="Check out" /> 
+          </div>
+
+          <div class="continue-shopping">
+            <a href="/collections/all" title="Continue Shopping">
+              {{ 'Continue Shopping' }}
+            </a>
+          </div>
+
+          {% comment %} Paypal & Google buttons 
+          <div class="additional-checkout-holder">
+            {% if additional_checkout_buttons %}
+              {{ content_for_additional_checkout_buttons }}
+            {% endif %}
+          </div>
+          {% endcomment %}
+          
+        </form>
+      </div>
+
+    {% else %}
+
+      <div class="cart-empty">
+
+        <div class="empty-wrapper">
+          <div class="empty-card-title">
+            <h2>{{ 'Your cart is empty' }}</h2>
+          </div>
+        </div>
+
+        <div class="continue-shopping">
+          <a 
+            {% if settings.cart_continue_shopping_link == blank %}
+              href="/collections/all"
+            {% else %}
+              href="{{ settings.cart_continue_shopping_link }}"
+            {% endif %}
+            title="{{ settings.cart_continue_shopping_text | default: 'Continue Shopping' }}">
+            {{ settings.cart_continue_shopping_text | default: 'Continue Shopping' }}
+          </a>
+        </div>
+        
+        {% render 'recommended-products' %}
+      </div>
+
+    {% endif %}
+
+  </div>
+
+  {% render 'cart--sidebar' %}
+</div>

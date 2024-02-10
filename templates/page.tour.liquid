@@ -1,0 +1,61 @@
+{{ 'page--tour-dates.css' | asset_url | stylesheet_tag }}
+
+<div class="tour-page">
+    <div class="tour-page-wrapper">
+
+        {% section 'tour-page--hero' %}
+        
+        <div class="tour-dates-container">
+            <div class="tour-dates-wrapper">
+                <ul class="tour-dates-list">
+                    {% for product in collections.all.products %}
+                        {% case product.type %}
+                        {% when 'vinyl' %}
+                            
+                            {% for collection in collections %}
+                                {% if collection.title == product.vendor %}
+                                    {% if collection.metafields.artist.tour_dates != blank %}
+                                    {% comment %} -------------------------------------------------------- {% endcomment %}
+                                        
+                                        <li class="tour-block">
+
+                                            <div class="image" style="background: url('{{ collection.image | image_url }}'); background-size: cover; background-position: center center;">
+                                                &nbsp;
+                                            </div>
+
+                                            <div class="artist">
+                                                <a href="{{ collection.url }}" title="{{ collection.title }}">
+                                                    <h2>{{ collection.title }}</h2>
+                                                </a>                                     
+                                            </div>
+
+                                            {% for item in collection.metafields.artist.tour_dates.value %}
+                                                <div class="info">
+
+                                                    <div class="title">
+                                                        <h3>{{ item.title }}</h3>
+                                                    </div>
+            
+                                                    <div class="dates">
+                                                        {{ item.dates | metafield_tag }}
+                                                    </div>
+
+                                                    <div class="flier">
+                                                        <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </li>
+                                    
+                                    {% comment %} -------------------------------------------------------- {% endcomment %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endcase %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

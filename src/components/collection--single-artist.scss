@@ -1,0 +1,555 @@
+/*
+* ----------------------------
+* Artist Page
+* collections/artist-name
+* ----------------------------
+*/
+.single-artist {
+    width: 100%;
+    // overflow: hidden;
+
+    .swiper-slide.mobile {
+        display: none;
+    }
+    .swiper-slide.desktop {
+        display: block;
+    }
+
+
+    .single-artist--wrapper {
+        padding: 60px 0;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 24px;
+
+        .slide-box.mobile {
+            display: none;
+        }
+
+
+        /* Data */
+        .data {
+            .data-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 100px;
+                padding: 0 34px;
+
+                .section-title {
+                    border-top: var(--border-blk);
+                    padding-top: 12px;
+                    margin: 0 0 24px 0;
+
+                    h3 {
+                        font-size: 20px;
+                        color: var(--black);
+                        line-height: 176%;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .left {
+                    .description {
+                        margin: 0 0 40px 0;
+
+                        p {
+                            line-height: 1.6;
+                            margin-bottom: 14px;
+                            color: var(--black);
+                        }
+                    }
+
+                    .meta-blocks {
+                        display: none;
+                        border: var(--border-blk);
+                        padding: 40px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 60px;
+
+                        .meta-block {
+                            strong {
+                                font-family: var(--sans-serif);
+                                color: var(--black);
+                                font-weight: normal;
+                            }
+
+                            p, a {
+                                margin: 0 0 10px 0;
+                                font-size: var(--18px);
+                                font-family: var(--type-writer);
+                                color: var(--black);
+                            }
+
+                            h4 {
+                                font-size: var(--22px);
+                                display: block;
+                                margin: 0 0 20px 0;
+                                color: var(--black);
+                            }
+
+                            ul {
+                                list-style: none;
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 6px;
+                                color: var(--black);
+                            }
+                        }
+                    }
+
+                }
+
+
+                .right {
+
+                    // Media
+                    .media {
+                        margin: 0 0 40px 0;
+
+                        .media-wrapper {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 10px;
+
+                            iframe {
+                                width: 100%;
+                                max-width: 100%;
+                                max-height: calc(100vw / 6);
+                                border: var(--border-blk);
+                            }
+                        }
+
+                    }
+
+                    // Releases
+                    .releases {
+                        margin: 0 0 40px 0;
+
+                        ul {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            list-style: none;
+    
+                            .image {
+                                margin-bottom: 10px;
+                                border: var(--border-blk);
+
+                                img {
+                                    max-width: 100%;
+                                    display: block;
+                                }
+                            }
+
+                            .vendor {
+                                color: var(--black);
+                                font-size: 14px;
+                                margin-bottom: 4px;
+                            }
+
+                            .title {
+                                color: var(--grey);
+                                font-size: 12px;
+                                margin-bottom: 4px;
+                            }
+
+                            .date {
+                                color: var(--grey);
+                                font-size: 12px;
+                            }
+                            
+                            a {
+                                text-transform: uppercase;
+                                font-family: var(--type-writer);
+                            }
+
+                        }
+                    }
+
+                    // Merch
+                    .merch {
+                        margin: 0 0 40px 0;
+
+                        ul {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            grid-gap: 10px;
+                            list-style: none;
+    
+                            .image {
+                                margin-bottom: 10px;
+                                border: var(--border-blk);
+
+                                img {
+                                    max-width: 100%;
+                                    display: block;
+                                }
+                            }
+
+                            .vendor {
+                                color: var(--black);
+                                font-size: 14px;
+                                margin-bottom: 4px;
+                            }
+
+                            .title {
+                                color: var(--grey);
+                                font-size: 12px;
+                                margin-bottom: 4px;
+                            }
+
+                            a {
+                                text-transform: uppercase;
+                                font-family: var(--type-writer);
+                            }
+                        }
+                    }
+
+                    // Tour Dates
+                    .tour-dates {
+                        .dates-wrapper {
+
+                            .info {
+                                .title {
+                                    margin: 0 0 12px 0;
+                                    text-transform: uppercase;
+                                    color: var(--black);
+                                }
+
+                                .dates {
+                                    font-family: var(--type-writer);
+                                    color: var(--black);
+                                    text-transform: uppercase;
+                                    > div {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 4px;
+                                        font-size: 12px;
+                                        margin: 0 0 14px 0;
+                                    }
+                                }
+
+                                .flier {
+                                    margin: 10px 0 30px 0;
+
+                                    a {
+                                        text-transform: uppercase;
+                                        text-decoration: underline;
+                                        color: var(--black);
+                                    }
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+
+    }
+
+
+    /* Swiper */
+    .single-artist-swiper {
+        position: relative;
+        background-color: var(--black);
+
+        .swiper-slide {
+            position: relative;
+            border-bottom: var(--border-blk);
+            height: calc(100svh - 60px);
+            
+            .slide-box.desktop {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: var(--black-no-change);
+                color: var(--white-no-change);
+                width: 50%;
+
+                .box-wrap {
+                    padding: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 18px;
+                }
+
+                h1 {
+                    font-size: var(--42px);
+                    color: var(--white-no-change);
+                }
+
+                span.location {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 8px;
+                    font-family: var(--type-writer);
+                    color: var(--white-no-change);
+                    white-space: nowrap;
+
+                    svg {
+                        width: 16px !important;
+                        fill: var(--white-no-change);
+                        stroke-width: 0px;
+                    }
+                }
+            }
+        }
+
+        /* Pagination */
+        .single-artist-pagination-container {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            background: var(--white);
+            color: var(--black);
+            border-top: var(--border-blk);
+            border-right: var(--border-blk);
+            border-bottom: var(--border-blk);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            transition: all 0.23s ease-in-out;
+
+            .swiper-pagination-bullet {
+                background: var(--white);
+                border: 2px solid var(--black) !important;
+            }
+
+            .swiper-pagination-bullet-active {
+                background: var(--black) !important;
+                border: 2px solid var(--black) !important;
+            }
+        }
+        
+        /* Navigation */
+        .single-artist-navigation-container {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            right: 0;
+            background: var(--white);
+            color: var(--black);
+            border-top: var(--border-blk);
+            border-left: var(--border-blk);
+            border-bottom: var(--border-blk);
+            border-right: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: all 0.23s ease-in-out;
+
+            .single-artist-prev {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+            }
+
+            .single-artist-next {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-left: var(--border-blk);
+                border-right: 0;
+                cursor: pointer;
+            }
+
+        }
+
+    }
+}
+
+/*
+----------------------------------------------------------------
+*/
+@media screen and (max-width: 767px) {
+    .single-artist {
+
+        .swiper-slide.mobile {
+            display: block;
+        }
+        .swiper-slide.desktop {
+            display: none;
+        }
+
+        .single-artist--wrapper {
+            padding: 0px 0 40px 0;
+
+            .slide-box.mobile {
+                display: block;
+                background: var(--black-no-change);
+                color: var(--white-no-change);
+                //border-bottom: var(--border-blk);
+                width: 100%;
+                
+                .box-wrap {
+                    padding: 40px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 18px;
+                    border-bottom: var(--border-blk);
+                }
+
+                h1 {
+                    font-size: var(--42px);
+                    color: var(--white-no-change);
+                }
+
+                span {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 8px;
+                    font-family: var(--type-writer);
+                    color: var(--white-no-change);
+
+                    svg {
+                        width: 16px !important;
+                        fill: var(--white-no-change);
+                        stroke-width: 0px;
+                    }
+                }
+            }
+            
+            /* Data */
+            .data {
+                .data-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 50px;
+                    padding: 0 var(--side-padding);
+                    
+                    .left {
+                        .description {
+                            margin: 0 0 50px 0;
+                        }
+                    }
+                    .right {
+                        .media {
+                            .media-wrapper {
+                                grid-template-columns: 1fr;
+
+                                iframe {
+                                    max-height: calc(100vw / 2);
+                                }
+                            }
+                        }
+
+                        .releases {
+
+                            ul {
+                                grid-template-columns: 1fr 1fr;
+                            }
+                            
+                        }
+
+                        .products {
+                            ul {
+                                grid-template-columns: 1fr 1fr;
+                            }
+                        }
+
+                        .tour-dates {
+                            .dates-wrapper {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Swiper */
+        .single-artist-swiper {
+            position: relative;
+
+            .swiper-slide {
+                position: relative;
+                // border-right: var(--border-blk);
+                border-bottom: var(--border-blk);
+                height: 60vh;
+
+                .slide-box.desktop {
+                    display: none;
+                }
+            }
+        }
+    
+        /* Pagination */
+        .single-artist-pagination-container {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            background: var(--white);
+            color: var(--black);
+            border-top: var(--border-blk);
+            border-right: var(--border-blk);
+            border-bottom: var(--border-blk);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            transition: all 0.23s ease-in-out;
+
+            .swiper-pagination-bullet {
+                background: var(--white);
+                border: 2px solid var(--black) !important;
+            }
+
+            .swiper-pagination-bullet-active {
+                background: var(--black) !important;
+                border: 2px solid var(--black) !important;
+            }
+        }
+        
+        /* Navigation */
+        .single-artist-navigation-container {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            right: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: all 0.23s ease-in-out;
+
+            .single-artist-prev {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+            }
+
+            .single-artist-next {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-left: var(--border-blk);
+                cursor: pointer;
+            }
+
+        }
+
+    
+    }
+}

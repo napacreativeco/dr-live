@@ -1,0 +1,4 @@
+<form action="/search" method="get" class="search-form right" role="search">
+    <input name="q" type="search" id="search-field" placeholder="{{ settings.search_placeholder | default: text }}" value="{{ search.terms | escape }}" />
+    <input type="submit" id="search-submit" value="{{ settings.search_button | default: 'Start search' }}" />
+</form>

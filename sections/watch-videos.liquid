@@ -1,0 +1,71 @@
+<section class="watch section">
+
+  <header class="section--header" data-aos="fade-down" data-aos-delay="200">
+    <div class="section--header-wrapper">
+      <h2 class="title">{{ section.settings.section_title }}</h2>
+      <a class="view-more" href="/blogs/videos">View more</a>
+    </div>
+  </header>
+
+  <div class="watch--wrapper" data-aos="fade-down" data-aos-delay="200">
+    <ul>
+      {% for video in blogs.videos.articles %}
+        <li>
+          <div class="image" onclick="window.location='{{ video.url }}';" style="background: url('{{ video.image | image_url: width: 900 }}'); background-size: cover;">
+            &nbsp;
+          </div>
+
+          <div class="info">
+            <div class="title">
+              <a href="{{ video.url }}" title="{{ video.title }} by {{ video.tags }}">
+                <h3>{{ video.title }}</h3>
+              </a>
+            </div>
+            <div class="metadata">
+              <a href="{{ video.url }}" title="{{ video.title }} by {{ video.tags }}">
+                <h4>{{ 'By ' | escape }} {{ video.tags }} {{ '|' | escape }} {{ video.metafields.videos.premiere_date.value | date: "%b %d, %y" }}</h4>
+              </a>
+            </div>
+          </div>
+
+        </li>
+
+      {% endfor %}
+    </ul>
+
+  </div>
+
+
+</section>
+
+<div class="videos-link">
+  <a href="/blogs/videos" title="Go to Videos">
+    <span class="text">Go to Videos</span>
+    <span class="right-dash"></span>
+  </a>
+</div>
+
+{% comment %}
+VIDEO POPUP
+{% endcomment %}
+
+
+
+{% schema %}
+  {
+    "name": "Watch",
+    "tag": "section",
+    "class": "watch-videos",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      }, {
+        "type": "page",
+        "id": "link_destination",
+        "label": "Link Destination"
+      }
+    ]
+  }
+{% endschema %}

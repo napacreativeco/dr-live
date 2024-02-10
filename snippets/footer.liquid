@@ -1,0 +1,74 @@
+<div class="footer-wrap">
+
+    <div class="left">
+        <div class="logo-column">
+            <a href="{{ '/' | escape }}">
+                {% render 'dais-full' %}
+            </a>
+        </div>
+        <div class="link-block footer-block">
+
+            {% comment %}  
+            <span class="block-title">
+                {{ 'Label' | escape }}
+            </span>
+            {% endcomment %}
+            
+            <ul>
+                {% for link in linklists.footer-left.links %}
+                    <li>
+                        <a href="{{ link.url }}">{{ link.title }}</a> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="link-block footer-block">
+
+            {% comment %}  
+            <span class="block-title">
+                {{ 'Shop' | escape }}
+            </span>
+            {% endcomment %}
+            
+            <ul>
+                {% for link in linklists.footer-right.links %}
+                    <li>
+                        <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="newsletter-block footer-block">
+            <div class="wrapper">
+
+                <div class="block-title">
+                    <span>{{ settings.newsletter_title | default: 'DAIS RECORDS NEWSLETTER' }}</span>
+                </div>
+
+                <div class="bottom">
+                    {% form 'customer' %}
+                        <div class="email">
+                            <label for="email" style="display: none;">Email</label>
+                            <input type="email" placeholder="peace@love.com" name="contact[email]" />
+                        </div>
+                        
+                        <div class="submit">
+                            <input type="submit" value="Subscribe" />
+                        </div>
+                    {% endform %}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="attribution">
+            {% render 'social-media--dais' %}
+            <span>{{ 'COPYRIGHT © ' | escape }}{{ "now" | date: "%Y" }}{{ ', DAIS RECORDS' }}</span>
+        </div>
+
+    </div>
+
+</div>

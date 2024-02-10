@@ -1,0 +1,125 @@
+.blog-page {
+
+    h1 {
+        color: var(--black);
+    }
+
+    .posts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        padding: 30px 0 30px 0;
+
+        .post {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-family: var(--type-writer);
+
+
+            .posted-at {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                color: var(--black);
+            }
+
+            .image {
+                height: auto;
+                aspect-ratio: 4/3;
+                cursor: pointer;
+                transition: all var(--image-opacity-transition);
+                border: var(--border-blk);
+            }
+
+            .image:hover {
+                opacity: 0.8;
+            }
+
+            .actions {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 20px;
+                width: 100%;
+
+                h2 {
+                    a {
+                        font-family: var(--sans-serif);
+                        font-size: 1.8rem;
+                        color: var(--black);
+                    }
+                }
+
+                h2::before {
+                    content: '\25BA';
+                    color: var(--black);
+                }
+
+                .metadata {
+                    padding: 8px 0 0 0;
+                    text-transform: uppercase;
+                    letter-spacing: 0px;
+                    font-size: 1.4rem;
+                    color: var(--black);
+                }
+
+                .read-more {
+                    text-align: right;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                    letter-spacing: 0px;
+                    font-size: 1.4rem;
+                    color: var(--grey);
+                    margin: 6px 0 0 0;
+                }
+
+                .read-more:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .blog-page{
+    
+        .posts {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            padding: 0px;
+            margin-top: 20px;
+
+            .post {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                font-family: var(--type-writer);
+    
+                .image {
+                    aspect-ratio: 1/1;
+                }
+    
+                .post-title {
+                    font-family: var(--sans-serif);
+                    font-size: 1.8rem;
+                    line-height: 1.2;
+                }
+
+                .posted-at {
+                    font-size: 1.4rem;
+                }
+
+                .actions {
+                    gap: 30px;
+                }
+    
+            }
+    
+        }
+    }
+}

@@ -1,0 +1,142 @@
+{% style %}
+    /* Announcement Bar */
+    #announcement-bar {
+        position: relative;
+        background-color: {{ settings.announcement_background_color | default: 'var(--black-no-change)' }};
+        color: {{ settings.announcement_color | default: 'var(--white-no-change)' }};
+        width: 100%;
+    }
+    #announcement-bar .announcement-wrapper {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    #announcement-bar .announcement-wrapper .close-announcement {
+        background-color: var(--black-no-change);
+        color: var(--white-no-change);
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+    }
+
+
+    /* Marquee */
+    .marquee-holder {
+        position: relative;
+        background-color: black;
+        color: white;
+        z-index: 4;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 4px 0;
+    }
+
+    .close-marquee {
+        background-color: var(--black-no-change);
+        color: var(--white-no-change);
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        cursor: pointer;
+        z-index: 6;
+        display: block;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-left: var(--border-wht);
+        opacity: 0;
+    }
+
+    .marquee-holder:hover .close-marquee {
+        opacity: 1;
+    }
+
+    .announcement-marquee-wrapper {
+        min-width: 100%;
+        max-width: 100%;
+        background: transparent;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+        
+    .announcement-marquee-box {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        flex-shrink: 0;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+        
+    .show-overflow {
+        overflow: visible;
+    }
+{% endstyle %}
+
+{% if settings.announcement_marquee_mode == true %}
+    <div id="announcement-bar--marquee" class="marquee-holder">
+        <div class="close-marquee">
+            <span class="close-marquee-icon">&times;</span>
+        </div>
+
+        <div class="announcement-marquee-wrapper">
+            {% for i in (1..12) %}
+                <div class="announcement-marquee-box">&nbsp;{{ settings.marquee_content | default: ' announcements ' }}</div>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div id="announcement-bar">
+        <div class="announcement-wrapper">
+            {{ settings.announcement_content | default: 'announcements' }}
+
+            <div class="close-announcement">
+                <span class="close-announcement-icon">&times;</span>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+
+<script>
+    /*
+    *  Close Announcements
+    */
+    var announcementBar = document.getElementById('announcement-bar');
+    var closeAnnouncement = function() {
+        announcementBar.style.display = 'none';
+    }
+    document.querySelector('.close-announcement-icon').addEventListener('click', function() {
+        closeAnnouncement();
+    });
+
+    /*
+    *  Close Marquee
+    */ 
+    var marqueeBar = document.getElementById('announcement-bar--marquee');
+    var closeMarquee = function() {
+        marqueeBar.style.display = 'none';
+    }
+    document.querySelector('.close-marquee-icon').addEventListener('click', function() {
+        closeMarquee();
+    });
+</script>
+
+
+

@@ -1,0 +1,216 @@
+/*
+    Main Navigation
+*/
+.navbar {
+    width: 100%;
+    max-width: 100%;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: var(--white);
+    transition: all 0.3s;
+    border-bottom: var(--border-blk);
+
+    --main-link: 18px;
+
+    .navbar--row {
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+        align-items: center;
+        padding: 3px 10px;
+        position: relative;
+    }
+    
+    a {
+        display: block;
+        color: var(--black);
+        font-size: var(--main-link);
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        white-space: nowrap;
+    }
+
+    // Left
+    #logo {
+        padding: 4px 0;
+
+        img, svg {
+            width: 100%;
+            max-width: 40px;
+        }
+    }
+
+    // Links Container
+    .links {
+        flex-grow: 1;
+        height: 100%;
+
+        nav {
+            height: 100%;
+        }
+
+    }
+
+    // Links
+    ul.main-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1%;
+        height: 100%;
+
+        li {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 3px 8px;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background: var(--black);
+            color: var(--white);
+
+            a {
+                color: var(--white);
+            }
+            
+        }
+
+        .more {
+            color: var(--red);
+            display: inline;
+        }
+
+        .submenu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -100%;
+            height: 100%;
+            opacity: 0;
+            display: none;
+            flex-direction: row;
+            justify-content: center;
+            background-color: var(--black);
+            color: var(--white);
+            z-index: 9;
+            border-bottom: 1px solid var(--white);
+    
+            li {
+                border-left: 1px solid var(--white);
+                padding: 3px 16px;
+                cursor: pointer;
+            }
+    
+            li:last-of-type {
+                border-right: 1px solid var(--white);
+            }
+    
+            li:hover {
+                background-color: var(--white) !important;
+                color: var(--black) !important;
+            }
+        }
+
+    }
+
+    // Account
+    .account {
+        svg {
+            width: var(--main-link);
+        }
+    }
+
+
+    // Theme Mode
+    .theme-mode {
+        cursor: pointer;
+        padding-top: 1px;
+        display: flex;
+        align-items: center;
+
+        .dark-mode {
+            svg {
+                transform: rotate(0deg);
+                width: var(--main-link);
+            }
+        }
+
+        .lite-mode {
+            svg {
+                transform: rotate(90deg);
+                width: var(--main-link);
+            }
+        }
+
+    }
+
+
+    // Cart
+    .cart {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        font-size: calc(var(--main-link) - 4px);
+        color: var(--black);
+
+        .cart-link--wrapper {
+            cursor: pointer;
+        }
+
+        .cart-link--wrapper:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+}
+
+.no-dropdown:hover .submenu { display: none !important; }
+.navbar-mobile { display: none; }
+
+/*
+*
+* Large Screen
+*
+*/
+@media screen and (min-width: 1800px) {
+    .navbar {
+
+        --main-link: 24px;
+
+        .navbar--row {
+            display: grid;
+            grid-template-columns: 3fr 6fr 3fr;
+            align-items: center;
+            padding: 6px 20px;
+            position: relative;
+        }
+
+        ul.main-menu {
+            gap: 2%;
+        }
+
+        // Theme Mode
+        .theme-mode {
+            padding-top: 4px;
+        }
+
+    }
+}
+
+/*
+*
+* Mobile
+*
+*/
+@media screen and (max-width: 767px) {
+    .navbar { display: none; }
+    .navbar-mobile { display: block; }
+}

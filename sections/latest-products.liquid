@@ -1,0 +1,131 @@
+{{ 'component--latest-products.css' | asset_url | stylesheet_tag }}
+{{ 'card--product-card.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-header', data: section.settings, destination: '/collections/all/' %}
+
+<div class="latest-products--wrapper">
+  {% if section.settings.use_default_collection == false %}
+
+
+    {% comment %}
+    *
+    * Selected Collection
+    *
+    {% endcomment %}
+    <ul class="product-list selected-collection">
+      {%- if section.settings.latest_collection_rows == 'three' -%}
+
+        {% comment %} 
+        3 rows
+        {% endcomment %}
+        {% for prod in collections[section.settings.latest_collection].products limit: 12 %}
+          {% render 'product-card', prod: prod %}
+        {% endfor %}
+
+      {%- elsif section.settings.latest_collection_rows == 'four' -%}
+
+        {% for prod in collections[section.settings.latest_collection].products limit: 16 %}
+
+          {% comment %} 
+          4 rows
+          {% endcomment %}
+          {% render 'product-card', prod: prod %}
+        {% endfor %}
+
+      {%- else -%}
+
+        {% for prod in collections[section.settings.latest_collection].products limit: 8 %}
+
+          {% comment %} 
+          2 rows
+          {% endcomment %}
+          {% render 'product-card', prod: prod %}
+
+        {% endfor %}
+
+      {%- endif -%}
+    </ul>
+
+
+  {% elsif section.settings.use_default_collection == true %}
+
+
+    {% comment %}
+    *
+    * Default Collection
+    *
+    {% endcomment %}
+    <ul class="product-list default-collection">
+      {%- if section.settings.latest_collection_rows == 'three' -%}
+
+        {% for prod in collections.all.products limit: 12 %}
+          {% render 'product-card', prod: prod %}
+        {% endfor %}
+
+      {%- elsif section.settings.latest_collection_rows == 'four' -%}
+
+        {% for prod in collections.all.products limit: 16 %}
+          {% render 'product-card', prod: prod %}
+        {% endfor %}
+
+      {%- else -%}
+
+        {% for prod in collections.all.products limit: 8 %}
+          {% render 'product-card', prod: prod %}
+        {% endfor %}
+
+      {%- endif -%}
+    </ul>
+
+    
+  {% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Latest Products",
+    "tag": "section",
+    "class": "latest-products-section section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_default_collection",
+        "label": "Display default collection instead"
+      },
+      {
+        "type": "collection",
+        "id": "latest_collection",
+        "label": "Choose a collection"
+      },
+      {
+        "type": "select",
+        "id": "latest_collection_rows",
+        "label": "Number of rows to display",
+        "options": [
+          {
+            "value": "two",
+            "label": "Two (8 products)"
+          },
+          {
+            "value": "three",
+            "label": "Three (12 products)"
+          },
+          {
+            "value": "four",
+            "label": "Four (16 products)"
+          }
+        ],
+        "default": "two"
+      }
+    ],
+    "presets": [{
+      "name": "Latest Products"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,27 @@
+{{ 'component--recommended-products.css' | asset_url | stylesheet_tag }}
+
+<div class="recommended-products">
+    <div class="wrapper">
+        
+        <div class="component-title">
+            <h3>{{ 'Recommended' | escape }}</h3>
+        </div>
+
+        <ul class="products">
+            {% if settings.recommended_products != blank %}
+                {% for product in settings.recommended_products %}
+                {% endfor %}
+            {% else %}
+                {% for collection in collections %}
+                    {% case collection.handle %}
+                        {% when 'all' %}
+                            {% for product in collection.products limit: 6 %}
+                                {% render 'product-card' prod: product %}
+                            {% endfor %}
+                    {% endcase %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+
+    </div>
+</div>

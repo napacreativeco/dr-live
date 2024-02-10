@@ -1,0 +1,101 @@
+{% comment %}
+*
+* Artists Archive
+*
+{% endcomment %}
+{{ 'page--artists-archive.css' | asset_url | stylesheet_tag }}
+
+<div class="artists-page">
+    <div class="artists-wrapper">
+
+        {% comment %} Current {% endcomment %}
+        <div class="left current">
+            <div class="section-title">
+                <h1>{{ 'Current Artists' | escape }}</h1>
+            </div>
+            <ul>
+                {% for product in collections.all.products %}
+                    {% case product.type %}
+                        {% when 'vinyl' %}
+            
+                        {% for collection in collections %}
+                            {% if collection.title == product.vendor %}
+            
+                                {% if collection.metafields.custom.alumni_status == false or collection.metafields.custom.alumni_status == blank %}
+                                    <li class="artist-card">
+                                        <div class="artist-card-wrapper">
+
+                                            <div onclick="window.location='{{ collection.url }}';" class="image" style="background: url('{{ collection.image | image_url: width: 900 }}'); background-size: cover; background-position: center center;">
+                                            </div>
+                    
+                                            <div class="data">
+                                                <h3>
+                                                    <a href="{{ collection.url }}" title="{{ collection.title }}">
+                                                        {{ collection.title }}
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endif %}
+            
+                            {% endif %}
+                        {% endfor %}
+            
+                    {% endcase %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% comment %} Alumni {% endcomment %}
+        <div class="right alumni">
+            <div class="section-title">
+                <h2>{{ 'Full Roster' | escape }}</h2>
+            </div>
+
+            <div class="content">
+                <div class="">
+                    <ul>
+                        {% for product in collections.all.products %}
+                            {% case product.type %}
+                                {% when 'vinyl' %}
+                    
+                                    {% for collection in collections %}
+                
+                                        {% if collection.title == product.vendor %}
+                
+                                            {% case collection.metafields.custom.alumni_status %}
+                                                {% when true %}
+                
+                                                    <li class="artist">
+                                                        <h4>
+                                                            <a href="{{ collection.url }}" title="{{ collection.title }}">
+                                                                {{ collection.title }}
+                                                            </a>
+                                                        </h4>
+                                                    </li>
+                
+                                            {% endcase %}
+                
+                                        {% endif %}
+                                    {% endfor %}
+                            {% endcase %}
+                        {% endfor %}
+                    </ul>
+                </div>
+    
+                <div class="link-blocks">
+                    <div class="link-block">
+                        <a href="/pages/on-tour">{{ 'On Tour' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
+                    </div>
+    
+                    <div class="link-block">
+                        <a href="/collections/merch/">{{ 'Merchandise' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

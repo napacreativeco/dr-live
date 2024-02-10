@@ -1,0 +1,33 @@
+{% comment %} 
+Artist Select Element 
+{% endcomment %}
+<select class="artist-select">
+    {% for product in collections.all.products %}
+
+        {% case product.type %}
+            {% when 'vinyl' %}
+
+                {% for collection in collections %}
+                    {% if collection.title == product.vendor %}
+                        <option value="{{ collection.title }}">{{ collection.title }}</option>
+                    {% endif %}
+                {% endfor %}
+
+
+        {% endcase %}
+    {% endfor %}
+</select>
+
+        
+<script>
+(function($) {
+    $(document).ready(function() {
+        $(".artist-select").change(function(){
+            var val =  $(".artist-select > option:selected").attr('value');
+
+            window.location="?filter.p.vendor=" + val;
+
+        });
+    });
+})(jQuery);
+</script>

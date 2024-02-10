@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "hero-slideshow": {
+      "type": "hero-slideshow",
+      "blocks": {
+        "bd23971f-e6be-4501-8fb6-1bcb089c1c54": {
+          "type": "product",
+          "settings": {
+            "product": [
+              "bitter-reflection"
+            ]
+          }
+        },
+        "62f9da04-db40-4ce1-9ef1-dcc5552e98e8": {
+          "type": "product",
+          "settings": {
+            "product": [
+              "modern-mirror"
+            ]
+          }
+        },
+        "78f58883-44d0-4fbf-9561-343cbb428d7c": {
+          "type": "announcement",
+          "settings": {
+            "announcement_slide_subtitle": "collaborations",
+            "announcement_slide_content": "Dais Records teams up with clothing brand Pleasures for limited release",
+            "announcement_slide_url": "shopify:\/\/collections\/collaboration",
+            "announcement_image": "shopify:\/\/shop_images\/hero.png",
+            "announcement_slide_layout": "text_left"
+          }
+        },
+        "da492805-610a-4de6-9a23-31e5f7fced45": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/high-vis.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/high-vis--mobile.png",
+            "image_slide_url": ""
+          }
+        },
+        "2ef68269-744c-45b3-9e7f-782409cf7f6a": {
+          "type": "announcement",
+          "settings": {
+            "announcement_slide_subtitle": "tour dates",
+            "announcement_slide_content": "Adult. Announces upcoming European Tour Dates",
+            "announcement_slide_url": "",
+            "announcement_image": "shopify:\/\/shop_images\/adult-600-2.webp",
+            "announcement_slide_layout": "text_right"
+          }
+        }
+      },
+      "block_order": [
+        "bd23971f-e6be-4501-8fb6-1bcb089c1c54",
+        "62f9da04-db40-4ce1-9ef1-dcc5552e98e8",
+        "78f58883-44d0-4fbf-9561-343cbb428d7c",
+        "da492805-610a-4de6-9a23-31e5f7fced45",
+        "2ef68269-744c-45b3-9e7f-782409cf7f6a"
+      ],
+      "settings": {
+        "show_hero": true
+      }
+    },
+    "47457f88-b3ab-49ed-b6f1-444987656578": {
+      "type": "latest-products",
+      "settings": {
+        "section_title": "Latest",
+        "use_default_collection": true,
+        "latest_collection": "merch",
+        "latest_collection_rows": "three"
+      }
+    },
+    "3e3c18a1-9a10-442b-8108-d3a92f3d305c": {
+      "type": "current-artists",
+      "settings": {
+        "section_title": "Current Artists",
+        "link_destination": ""
+      }
+    },
+    "f68497a9-3f4f-435b-8c50-90b86a210988": {
+      "type": "merchandise",
+      "settings": {
+        "section_title": "Merchandise",
+        "use_default_collection": false,
+        "merchandise_collection": "merch",
+        "merchandise_collection_rows": "two"
+      }
+    },
+    "6e99a931-ff94-4fd9-961e-f84fb4cbc784": {
+      "type": "block-ad",
+      "settings": {
+        "section_subtitle": "Collaborations",
+        "section_title": "Dais Records teams up with clothing brand Pleasures for limited release",
+        "button_link": "shopify:\/\/collections\/collaboration",
+        "section_image": "shopify:\/\/shop_images\/hero.png",
+        "text_placement": "left"
+      }
+    }
+  },
+  "order": [
+    "hero-slideshow",
+    "47457f88-b3ab-49ed-b6f1-444987656578",
+    "3e3c18a1-9a10-442b-8108-d3a92f3d305c",
+    "f68497a9-3f4f-435b-8c50-90b86a210988",
+    "6e99a931-ff94-4fd9-961e-f84fb4cbc784"
+  ]
+}

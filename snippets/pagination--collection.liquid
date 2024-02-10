@@ -1,0 +1,78 @@
+{{ 'snippet--pagination-collection.css' | asset_url | stylesheet_tag }}
+
+<div class="pagination-section">
+    <div class="pagination-wrapper">
+
+      <div class="title">
+        {{ 'Pages' | escape }}
+      </div>
+
+      <ul class="pagination">
+
+        {% if paginate.current_page > 1 %}
+          <li class="previous-page">
+            <a id="prev-page" href="{{ request.path }}?page={{ paginate.current_page | minus: 1 }}">
+              {{ paginate.current_page | minus: 1 }}
+            </a>
+          </li>
+        {% endif %}
+
+        <li class="current-page">
+          {{ paginate.current_page }}
+        </li>
+
+        {% if paginate.next.is_link %}
+          <li class="next-page">
+            <a href="{{ paginate.next.url }}">
+              {{ paginate.current_page | plus: 1 }}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if paginate.items > 1 %}
+          <li class="elipsis">
+            {{ 'of' | escape }}
+          </li>
+        {% endif %}
+
+        {% if paginate.items > 1 %}
+          <li class="total-pages">
+            <a href="{{ request.path }}?page={{ paginate.pages }}">
+              {{ paginate.pages }}
+            </a>
+          </li>
+        {% endif %}
+
+      </ul>
+
+      <div class="shortcuts">
+        {% if paginate.current_page > 1 %}
+            <div class="pagination-first">
+                <a href="{{ request.path }}?page=1" title="{{ 'First' | escape }}">
+                    {{ 'First' | escape }}
+                </a>
+            </div>
+        {% endif %}
+        {% if paginate.next.is_link == true %}
+            <div class="pagination-next">
+                <a href="{{ paginate.next.url }}" title="{{ 'Next' | escape }}">
+                    {{ 'Next' | escape }}
+                </a>
+            </div>
+        {% endif %}
+        {% if paginate.next.is_link == true %}
+            <div class="pagination-last">
+                <a href="{{ request.path }}?page={{ paginate.pages }}" title="{{ 'Last' | escape }}">
+                    {{ 'Last' | escape }}
+                </a>
+            </div>
+        {% else %}
+            <div class="pagination-end">
+                <span class="end">{{ 'End' | escape }}</span>
+            </div>
+        {% endif %}
+      </div>
+
+    </div>
+    
+  </div>

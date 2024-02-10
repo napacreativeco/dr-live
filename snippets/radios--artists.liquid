@@ -1,0 +1,40 @@
+{% comment %} 
+*
+* Artist Radios 
+*
+{% endcomment %}
+
+<fieldset class="artist-radios">
+    <label value="{{ 'Dais Records' }}">
+        <input class="artist-radio" data-artist="{{ 'Dais Records' }}" type="radio" value="{{ 'Dais Records' }}">
+        {{ 'Dais Records' }}
+    </label>
+    {% for product in collections.all.products %}
+
+        {% case product.type %}
+            {% when 'vinyl' %}
+
+                {% for collection in collections %}
+                    {% if collection.title == product.vendor %}
+                        <label value="{{ collection.title }}">
+                            <input class="artist-radio" data-artist="{{ collection.title }}" type="radio" value="{{ collection.title }}">
+                            {{ collection.title }}
+                        </label>
+                    {% endif %}
+                {% endfor %}
+
+        {% endcase %}
+
+    {% endfor %}
+</fieldset>
+        
+<script>
+(function($) {
+    $(document).ready(function() {
+        $(".artist-radio").click(function(){
+            var val =  $(this).attr('data-artist');
+            window.location="?filter.p.vendor=" + val;
+        });
+    });
+})(jQuery);
+</script>

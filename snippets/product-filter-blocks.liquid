@@ -1,0 +1,110 @@
+{% comment %} 
+---------------
+Filter Blocks
+---------------
+{% endcomment %}
+<form class="filter-blocks">
+    <div class="block-wrapper">
+    {%- for filter in collection.filters -%}
+
+        {% comment %} 
+        Block
+        {% endcomment %}
+        <div class="block">
+
+            {% comment %} Filters {% endcomment %}
+            <div class="filters">
+                {%- case filter.type -%}
+
+                    {% comment %}
+                    =============================
+                    LIST
+                    =============================
+                    {% endcomment %}
+                    {%- when 'boolean' or 'list' -%}
+
+                        {%- case filter.label -%}
+                            {% when 'Artist' %}
+
+                        
+                            {% else %}
+                                <ul class="filter-group filter-list checkboxes">
+                                    {%- for filter_value in filter.values -%}
+                                        <li class="item">
+                                            <label class="checkbox-label" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                                                <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                                {% if filter_value.active -%}checked{%- endif %}
+                                                {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                                                {{ filter_value.label }}
+                                            </label>
+                                        </li>
+                                    {%- endfor -%}
+                                </ul>
+
+                                <div class="filter-group-display__submit">
+                                    <input type="submit" value="Apply">
+                                </div>
+                        {% endcase %}
+
+                    {% comment %}
+                    =============================
+                    PRICE RANGE
+                    =============================
+                    {% endcomment %}
+                    {%- when 'price_range' -%}
+
+                        <div class="price-range">
+
+                            {% comment %} From {% endcomment %}
+                            <div class="filter-group-display__price-range-from">
+                                <span>{{ cart.currency.symbol }}</span>
+
+                                <input name="{{ filter.min_value.param_name }}"
+                                    id="Filter-{{ filter.min_value.param_name }}"
+                                    {% if filter.min_value.value -%}
+                                        value="{{ filter.min_value.value | money_without_trailing_zeros | replace: ',', '' }}"
+                                    {%- endif %}
+                                    type="number"
+                                    placeholder="0.0"
+                                    min="0"
+                                    max="{{ filter.range_max | money_without_trailing_zeros | replace: ',', '' }}">
+                                <label for="Filter-{{ filter.min_value.param_name }}">
+                                    {{ 'Min.' | escape }}</label>
+                            </div>
+
+                            {% comment %} To {% endcomment %}
+                            <div class="filter-group-display__price-range-to">
+                                <span>{{ cart.currency.symbol }}</span>
+
+                                <input name="{{ filter.max_value.param_name }}"
+                                    id="Filter-{{ filter.max_value.param_name }}"
+                                    {% if filter.max_value.value -%}
+                                        value="{{ filter.max_value.value | money_without_trailing_zeros | replace: ',', '' }}"
+                                    {%- endif %}
+                                    type="number"
+                                    placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                    min="0"
+                                    max="{{ filter.range_max | money_without_trailing_zeros | replace: ',', '' }}">
+
+                                <label for="Filter-{{ filter.max_value.param_name }}">
+                                    {{ 'Max' | escape }}</label>
+                            </div>
+                            
+                        </div>
+
+                        <div class="filter-group-display__submit">
+                            <input type="submit" value="Apply">
+                        </div>
+
+                
+                {%- endcase -%}
+            </div>
+
+        </div>
+
+    {%- endfor -%}
+    </div>
+
+
+
+</form>

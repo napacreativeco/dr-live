@@ -1,0 +1,74 @@
+<div class="social-block">
+    <div class="social-block-wrapper">
+    <div><h4>{{ 'Follow ' | escape }}</h4></div>
+    <div class="links">
+        <ul>  
+
+            {% if collection.metafields.custom.social_media_links.value.website != blank %}
+                <li class="link website">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.website }}" title="Website">
+                        {{ 'Website' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.bandcamp != blank %}
+                <li class="link bandcamp">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.bandcamp }}" title="Bandcamp">
+                        {{ 'Bandcamp' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.soundcloud != blank %}
+                <li class="link soundcloud">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.soundcloud }}" title="Soundcloud">
+                        {{ 'Soundcloud' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.instagram != blank %}
+                <li class="link instagram">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.instagram }}" title="Instagram">
+                        {{ 'Instagram' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.tiktok != blank %}
+                <li class="link tiktok">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.tiktok }}" title="TikTok">
+                        {{ 'TikTok' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.twitter != blank %}
+                <li class="link twitter">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.twitter }}" title="Twitter">
+                        {{ 'Twitter' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.facebook != blank %}
+                <li class="link facebook">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.facebook }}" title="Facebook">
+                        {{ 'Facebook' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.youtube != blank %}
+                <li class="link youtube">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.youtube }}" title="YouTube">
+                        {{ 'YouTube' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+        
+        </ul>
+    </div>
+    </div>
+</div>

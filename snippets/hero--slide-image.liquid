@@ -1,0 +1,21 @@
+{% comment %} 
+*
+*  Image Slide
+*
+{% endcomment %}
+
+<style>
+    .swiper-slide {
+      --background: url('{{ block.settings.image_slide_image | image_url }}');
+    }
+    @media screen and (max-width: 767px) {
+      .swiper-slide {
+        --background: url('{{ block.settings.image_slide_image_mobile | image_url }}');
+      }
+    }
+</style>
+
+<div class="swiper-slide slide__image" data-type="image">
+    <div class="slide-image" data-type="image" data-layout="image" style="background-image: var(--background); background-size: cover; background-position: center center;">
+    </div>
+</div>

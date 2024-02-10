@@ -1,0 +1,38 @@
+{{ 'page--blog-post.css' | asset_url | stylesheet_tag }}
+
+<div class="blog-post">
+  <div class="blog-post-wrapper page-wrapper"> 
+    {% paginate article.comments by 50 %}
+
+      <article>
+
+        <header>
+          <div class="meta">
+            <span>{{ blog.title }}</span> /
+            <span class="date-posted">
+              <time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%b, %Y' }}</time>
+            </span>
+          </div>
+
+          <h1>{{ article.title }}</h1>
+
+        </header>
+
+        <div class="article-body">
+          {{ article.content }}
+        </div>
+      
+
+        {% if blog.next_article or blog.previous_article %}
+          {% if blog.next_article %}
+            {{ 'Next Post' | link_to: blog.next_article }}
+          {% endif %}    
+          {% if blog.previous_article %}
+            {{ 'Previous Post' | link_to: blog.previous_article }}
+          {% endif %}
+        {% endif %}
+      </article>
+
+    {% endpaginate %}
+  </div>
+</div>

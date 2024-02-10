@@ -1,0 +1,90 @@
+{{ 'snippet--collection-sorting.css' | asset_url | stylesheet_tag }}
+
+<div class="product-sorting">
+  
+  {% comment %} 
+  *
+  * Title Bar
+  *
+  {% endcomment %}
+  <div class="sorting-title">
+
+    <div class="filter-title">
+      <div class="filter-trigger">
+        <span class="filter-icon">{% render 'icon--filter' %}</span>
+        <span class="close-filters">{% render 'icon--close' %}</span> 
+        <span>{{ 'Filters' | escape }}</span>
+      </div>
+    </div>
+
+    <div class="search-title search-trigger">
+      {{ 'Search' | escape }} 
+      <span class="search-icon">{% render 'icon--search' %}</span>
+      <span class="close-search">{% render 'icon--close' %}</span>
+    </div>
+
+  </div>
+
+  {% comment %} 
+  *
+  * Sorting Modules
+  *
+  {% endcomment %}
+  <div class="sorting-wrapper">
+
+    <div class="sort-by-attribute">
+      <span class="title">{{ 'Sort' | escape }}</span>
+      {% render 'radios--sorting' %}
+    </div>
+
+    <div class="sort-by-artist">
+      <span class="title">{{ 'Artist' | escape }}</span>
+      {% render 'radios--artists' %}
+    </div>
+
+    <div class="sort-by-type">
+      <span class="title">{{ 'Type' | escape }}</span>
+      {% render 'radios--type' %}
+    </div>
+
+  </div>
+
+  {% comment %} 
+  *
+  * Search Module
+  *
+  {% endcomment %}
+  <div class="search-wrapper">
+    {% render 'searchbar--collection' text: "Try 'Drab Majesty T-shirts'" %}
+  </div>
+
+</div>
+
+
+{% comment %} 
+*
+* Active Filter
+*
+{% endcomment %}
+<ul class="active-filters">
+  {%- for filter in collection.filters -%}
+      {%- if filter.type == "price_range" -%}
+        {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+            <li class="active-filters__remove-filter">
+                {%- assign min_value = filter.min_value.value | default: 0 -%}
+                {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                {{ min_value | money }} - {{ max_value | money }} <span class="icon"><a href="{{ filter.url_to_remove }}" title="">&times;</a></span>
+            </li>
+        {%- endif -%}
+      {%- else -%}
+        {%- for filter_value in filter.active_values -%}
+            <li class="active-filter active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
+              <span class="filter-name">{{ filter_value.label }}</span>
+              <span class="icon">
+                <a href="{{ filter.url_to_remove }}" title="">&times;</a>
+              </span>
+            </li>
+        {%- endfor -%}
+      {%- endif- %}
+  {%- endfor -%}
+</ul>

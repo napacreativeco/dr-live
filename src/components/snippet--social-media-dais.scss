@@ -1,0 +1,16 @@
+.social-media {
+    margin-top: 40px;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        list-style: none;
+
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+}

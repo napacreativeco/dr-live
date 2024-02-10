@@ -1,0 +1,17 @@
+{% comment %} Current/Alumni Links {% endcomment %}
+{% for collect in collections %}
+    {% case collect.id %}
+        {% when collection.id %}
+        {% case collect.metafields.custom.alumni_status %}
+            {% when blank or false %}
+            <div class="status current">
+                <a href="/pages/current-artists" title="Current Artists">Current Artists</a>
+            </div>
+
+            {% else %}
+            <div class="status alumni">
+                <a href="/pages/alumni-artists" title="Artist Alumni">Artist Alumni</a>
+            </div>
+        {% endcase %}
+    {% endcase %}
+{% endfor %}

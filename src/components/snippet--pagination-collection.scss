@@ -1,0 +1,91 @@
+/* Pagination */
+.pagination-section {
+    width: 100%;
+    display: block;
+    margin: 30px 0 0px 0;
+    border-top: var(--border-blk);
+
+    .pagination-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 4fr 2fr;
+        align-items: center;
+
+        .title {
+            text-transform: uppercase;
+            color: var(--grey);
+            font-family: var(--type-writer);
+            padding: 20px 0 20px 10px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            list-style: none;
+            color: var(--black);
+
+            li.current-page {
+                position: relative;
+            }
+
+            li.current-page::before {
+                content: '';
+                width: 18px;
+                height: 18px;
+                border: var(--border-blk);
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .shortcuts {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+
+            a, span.end {
+                display: block;
+                padding: 20px;
+                color: var(--black);
+            }
+
+            a:hover {
+                background: var(--black);
+                color: var(--white);
+            }
+
+            .pagination-first a {
+                border-left: var(--border-blk);
+            }
+
+            .pagination-next a {
+                border-right: var(--border-blk);
+                border-left: var(--border-blk);
+            }
+
+            .pagination-end {
+                border-left: var(--border-blk);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .pagination-section {
+        margin: 30px 0 0 0;
+        border-bottom: 0px;
+
+        .pagination-wrapper {
+    
+            .title {
+                padding: 20px 0 20px 10px;
+            }
+        }
+    }
+}

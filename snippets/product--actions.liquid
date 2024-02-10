@@ -1,0 +1,236 @@
+{% comment %} 
+    ARTIST
+{% endcomment %}
+<div class="band-name">
+    <a href="/collections/{{ product.vendor | handleize }}" title={{ product.vendor }}"><h2>{{ product.vendor }}</h2></a>
+</div>
+
+{% comment %} 
+    TITLE
+{% endcomment %}
+<div class="product-title">
+    <h1>{{ '"' | escape }}{{ product.title }}{{ '"' | escape }}</h1>
+</div>
+
+<div class="actions">
+
+    {% comment %} 
+    PRICE
+    {% endcomment %}
+    <div id="product-price" class="price price-field">
+        {% assign found_available_variant = false %}
+        {% assign variant = product.selected_or_first_available_variant %}
+        <span class="price-read">
+            {{ product.variant.price | money_without_trailing_zeros }}
+        </span>
+    </div>
+    
+    {% comment %} 
+    ADD TO CART
+    {% endcomment %}
+    <div id="product-add">
+
+
+        {% if product.metafields.music.preorder_status == true %}
+            <div class="preorder-status">
+                <span>{{ 'Ships ' | escape }}{{ product.metafields.music.release_date | date: '%m.%d.%y' }}</span>
+            </div>
+        {% endif %}
+
+        {% assign variant = product.selected_or_first_available_variant %}
+        <input 
+            type="submit" 
+            name="add" 
+            id="add" 
+            value="{% if product.metafields.music.preorder_status == true %}{{ pre_order | escape }}{% else %}{{ add_to_cart | escape }}{% endif %}" />                
+    </div>
+
+</div>
+
+{% comment %} 
+*
+* Purchase Options 
+*
+{% endcomment %}
+<div id="purchase-options" class="section-three">
+    <div class="wrapper">
+
+        {% comment %} Title {% endcomment %}
+        <h3 class="block-title">
+            {{ 'Product Options' | escape }}
+        </h3>
+
+        {% comment %} Messages {% endcomment %}
+        <div data-ajax-cart-messages="{{ item.key }}"></div>          
+
+        {% comment %} Variants {% endcomment %}
+        <div id="product-variants" class="variants {% if hide_default_title %} hidden{% endif %}">
+
+
+            {% comment %} 
+            *
+            * Hide 'Default' from Variants
+            *
+            {% endcomment %}
+            {% assign hide_default_title = false %}
+            {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+                {% assign hide_default_title = true %}
+            {% endif %}     
+
+
+            {% if product.variants.size > 1 %} 
+
+                {% comment %} 
+                *
+                * Variant Scripts
+                *
+                {% endcomment %}
+                <script type="text/javascript" charset="utf-8">
+                    jQuery(function() { 
+
+                        var first_variant_price = jQuery("ul li input[type='radio']:checked").attr("data-price");
+                        var first_variant_compare_at_price = jQuery("ul li input[type='radio']:checked").attr("data-compare-at-price") || ''; 
+
+                        jQuery(".price-field span").html(first_variant_price);
+
+                        jQuery(".price-field del").html(first_variant_compare_at_price);
+
+                        /*
+                        *
+                        * Radio Links
+                        * 
+                        */
+                        jQuery("input[type='radio']").click(function() {
+
+                            var variant_price = jQuery(this).attr("data-price");
+                            jQuery(".price-field span").html(variant_price);
+                            
+                            var variant_compare_at_price = jQuery(this).attr("data-compare-at-price") || '';
+                            jQuery(".price-field del").html(variant_compare_at_price);
+
+                            //  Update Price
+                            jQuery('.price-read').html(variant_price);
+
+                            // Update Image
+                            var variant_image = jQuery(this).attr('data-image');
+                            if (variant_image) {
+                                jQuery('#featured_image_element').attr('src', variant_image);
+                            }
+
+                            // Update Checked
+                            if ( jQuery(this).attr('checked') == false) {
+                                jQuery(this).attr('checked', true);
+                            } else {
+                                jQuery(this).attr('checked', false);
+                            }
+                            
+                            
+                            //console.log(variant_image);
+
+                        });
+
+                        /*
+                        *
+                        * Thumbnail Links
+                        * 
+                        */
+                        jQuery('.variant-thumbnail').on('click', function(e) {
+                            var variant_price = jQuery(this).attr("data-price");
+                            var t = e.currentTarget;
+                            var targ = $(this).attr('data-id');
+                            //console.log(targ);
+
+                            // Update Image
+                            var variant_image = jQuery(this).attr('data-image');
+                            if (variant_image) {
+                                jQuery('#featured_image_element').attr('src', variant_image);
+                            }
+
+                            //  Update Price
+                            jQuery('.price-read').html(variant_price);
+
+                            jQuery('input[type="radio"]').prop('checked', false);
+
+                            // Update Checked
+                            jQuery('input[value="' + targ + '"]').prop('checked', true);
+
+                            console.log('#' + targ)
+
+                        });
+
+                    });
+                </script>
+
+
+                {% comment %} 
+                *
+                * Variant List
+                *
+                {% endcomment %}
+                <ul class="variants-list">
+                    {% assign found_available_variant = false %}
+                    {% for variant in product.variants %}
+                        <li class="switch-field">
+
+                            {% if variant.available %}
+
+                                {% comment %} 
+                                *
+                                * Available
+                                *
+                                {% endcomment %}
+                                <label for="{{ variant.id }}">
+
+                                    <input type="radio" 
+                                           {% if variant.compare_at_price > variant.price %}
+                                            data-compare-at-price="{{ variant.compare_at_price | money_without_trailing_zeros }}"
+                                           {% endif %} 
+                                           data-price="{{ variant.price | money_without_trailing_zeros }}" 
+                                           data-image="{% if variant.featured_image %} {{ variant.featured_image | image_url: width: 700 }} {% endif %}"
+                                           id="{{ variant.id }}" 
+                                           value="{{ variant.id }}" 
+                                           name="id"
+                                           {% if variant.selected %}
+                                            checked="checked"
+                                           {% endif %}
+                                           {% if found_available_variant == false %}
+                                             {% assign found_available_variant = true %} 
+                                              
+                                           {% endif %} 
+                                    />
+
+                                    <span class="variant-name">
+                                        {{ variant.title }}
+                                    </span>
+
+                                </label>
+
+                            {% else %}
+
+
+                                {% comment %} 
+                                *
+                                * Sold Out
+                                *
+                                {% endcomment %}
+                                <label for="{{ variant.id }}" class="out-of-stock">
+                                    <input type="radio" class="out-of-stock" id="{{ variant.id }}" value="{{ variant.id }}" name="id" /> 
+                                    <span class="variant-name">{{ variant.title }}</span>
+                                </label>
+
+                            {% endif %}
+
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            {% else %}
+        
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+        
+            {% endif %}
+
+        </div>
+    
+    </div>
+</div>

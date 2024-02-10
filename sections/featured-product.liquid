@@ -1,0 +1,68 @@
+{{ 'component--featured-product.css' | asset_url | stylesheet_tag }}
+
+<div class="featured-product-wrapper">
+  {% for collect in section.settings.featured_product.collections %}
+    {% case collect.title %}
+      {% when section.settings.featured_product.vendor %}
+  
+        <div class="product">
+          <div class="wrap">
+
+            <div class="image">
+              <img src="{{ section.settings.featured_product.media[1] | image_url: width: 400 }}" alt="{{ img.alt }}" />
+            </div>
+
+            <div class="artist">
+              <h5>{{ collect.title }}</h5>
+            </div>
+
+            <div class="title">
+              <h4>{{ section.settings.featured_product.title }}</h4>
+            </div>
+
+            <div class="product-variants">
+              {% render 'music-formats-list' prod: section.settings.featured_product %}
+            </div>
+
+            <div class="actions">
+              <a class="button" href="{{ prod.url }}" title="{{ prod.title }}{{ ' by ' }}{{ prod.vendor }}">
+                {% if prod.metafields.product.preorder_status == true %}
+                  {{ 'Pre-order' | escape }}
+                {% else %}
+                  {{ 'View Product' | escape }}
+                {% endif %}
+              </a>
+            </div>
+
+          </div>
+        </div>
+  
+        {% for c in collect.metafields.dais.artist_gallery.value limit: 1 %}
+          <div class="featured-product-image" style="background: url('{{ c | image_url: width: 800 }}'); background-size: cover;"></div>
+        {% endfor %}
+ 
+    {% endcase %}
+  {% endfor %}
+</div>
+
+
+{% schema %}
+    {
+      "name": "Featured Product",
+      "tag": "section",
+      "class": "featured-product-section section",
+      "settings": [
+        {
+          "type": "product",
+          "id": "featured_product",
+          "label": "Featured Product"
+        }
+      ],
+      "presets": [{
+        "name": "Featured Product"
+      }],
+      "enabled_on": {
+        "templates": ["page"]
+      }
+    }
+{% endschema %}

@@ -1,0 +1,9 @@
+{
+  "shopify": {
+    "filters": {
+      "vendor": {
+        "label": "Artist"
+      }
+    }
+  }
+}

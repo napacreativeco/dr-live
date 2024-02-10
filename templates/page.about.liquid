@@ -1,0 +1,31 @@
+{{ 'page--about.css' | asset_url | stylesheet_tag }}
+
+<div class="info-page">
+    <div class="page-wrapper">
+        <div class="left">
+            <div class="section-title">
+                <h1>{{ 'About' | escape }}</h1>
+            </div>
+    
+            <div class="about">
+                {{ page.content }}
+            </div>
+
+            <div class="meta-block">
+                <div class="content">
+                    {% section 'contact-info' %}
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="section-title">
+                <h3>{{ 'Frequently Asked Questions' | escape }}</h3>
+            </div>
+            {% section 'faq' %}
+
+            {% render 'social-media--dais' %}
+        </div>
+        
+    </div>
+</div>

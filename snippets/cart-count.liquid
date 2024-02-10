@@ -1,0 +1,12 @@
+<div class="cart-link--wrapper" data-ajax-cart-toggle-class-button="js-my-cart-open">
+    {{ 'CART' | escape }}
+    <span class="type-writer cart-link">
+        {% if cart.item_count < 10 and cart.item_count > 0 %}
+            [0{{ cart.item_count }}]
+        {% elsif cart.item_count < 1 %}
+            [{{ cart.item_count }}]
+        {% else %}
+            [{{ cart.item_count }}]
+        {% endif %}
+    </span>
+</div>

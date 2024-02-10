@@ -1,0 +1,6 @@
+<!-- Product Metatags -->
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+<meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+<meta property="og:title" content="{{ product.title }}">
+<meta property="og:image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+<meta property="og:url" content="{{ shop.url }}{{ product.url }}">

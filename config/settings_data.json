@@ -1,0 +1,144 @@
+{
+  "current": {
+    "contact_info": "<p>General<\/p><p>contact@daisrecords.com<\/p><p><\/p><p>Sync<\/p><p><a href=\"https:\/\/www.terrorbird.com\" target=\"_blank\" title=\"https:\/\/www.terrorbird.com\">Terrorbird Media<\/a><\/p><p><\/p><p>Distribution<\/p><p><a href=\"http:\/\/www.secretlydistribution.com\/\" target=\"_blank\" title=\"http:\/\/www.secretlydistribution.com\/\">Secretly Distribution<\/a><\/p>",
+    "customer_layout": "theme",
+    "example_option": "option",
+    "sections": {
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
+        }
+      },
+      "featured-product": {
+        "type": "featured-product",
+        "settings": {
+          "featured_product": "modern-mirror"
+        }
+      },
+      "tour-page--hero": {
+        "type": "tour-page--hero",
+        "blocks": {
+          "8afbea95-7b9d-4550-9207-db7165b76560": {
+            "type": "slide",
+            "settings": {
+              "title": "<p>Substance Festival<\/p><p>11.09 - 11.10<\/p>",
+              "body": "<p>featuring cold gawd, auragraph, High-functioning flesh <a href=\"https:\/\/www.substancefestival.com\/\" target=\"_blank\" title=\"Substance Festival\">& more<\/a><\/p>"
+            }
+          },
+          "ebde7d32-bc58-4cf6-923d-f4abb5816ed7": {
+            "type": "slide",
+            "settings": {
+              "title": "<p>ADULT. <\/p><p>Tour Dates<\/p>",
+              "body": "<p>October \/ November supporting My Life With The Thrill Kill Kult<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "8afbea95-7b9d-4550-9207-db7165b76560",
+          "ebde7d32-bc58-4cf6-923d-f4abb5816ed7"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "faq": {
+        "type": "faq",
+        "blocks": {
+          "5542c4de-44dd-4b03-bb8f-30fcef0812a4": {
+            "type": "accordion",
+            "settings": {
+              "title": "Do all my items ship together, or separately?",
+              "body": "<p>All orders placed will ship when all items ordered become available and are in stock. We do not offer split delivery of single orders.  Keep this in mind if your order contains products which are out now alongside pre-order items - as your package will only ship once every item is available. Thank you!<\/p>"
+            }
+          },
+          "94ccfa26-1dcb-46ed-9425-a71a082b78b6": {
+            "type": "accordion",
+            "settings": {
+              "title": "Can I return merch or apparel?",
+              "body": "<p>No, we cannot offer returns for merch or apparel.  Sizing is listed on each item.  If you have questions about specific pieces, please email in advance.<\/p>"
+            }
+          },
+          "136346a8-c7d0-4288-9e61-b98420b3ac5e": {
+            "type": "accordion",
+            "settings": {
+              "title": "My package was stolen, can you replace it?",
+              "body": "<p>We are not responsible for the safety of packages if left on your doorstep or lobby unattended.  Please ensure you ship your packages to a safe, secure location.<\/p>"
+            }
+          },
+          "1af742b7-ef51-432b-9d61-270a7a7968d5": {
+            "type": "accordion",
+            "settings": {
+              "title": "My package is being returned to you, what now?",
+              "body": "<p>Customers with packages that are returned to us due to incorrect addresses, undeliverable addresses, or refusal of pickup at customs will be refunded the cost of the items, and can request a reshipment for an additional shipping cost. Please ensure your address is correct, and if you're moving, let us know so we can update the address - especially for pre-orders with longer delivery windows!<\/p>"
+            }
+          },
+          "559f9a96-b34a-4e9b-9397-4178c8a8156e": {
+            "type": "accordion",
+            "settings": {
+              "title": "Why does my vinyl color look different than the mockup?",
+              "body": "<p>Our product images are mockups we design in collaboration with our pressing plant.  They are an approximation of color and pattern, and the final product you receive may look slightly different in pattern and tone.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "5542c4de-44dd-4b03-bb8f-30fcef0812a4",
+          "94ccfa26-1dcb-46ed-9425-a71a082b78b6",
+          "136346a8-c7d0-4288-9e61-b98420b3ac5e",
+          "1af742b7-ef51-432b-9d61-270a7a7968d5",
+          "559f9a96-b34a-4e9b-9397-4178c8a8156e"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "contact-info": {
+        "type": "contact-info",
+        "blocks": {
+          "ed56b59d-0c48-4589-a38f-d9de7ba597c2": {
+            "type": "item",
+            "settings": {
+              "name": "Contact",
+              "link": "<p>contact@daisrecords.com<\/p>"
+            }
+          },
+          "bfcc0765-93cd-4c94-948c-b83b5d96614b": {
+            "type": "item",
+            "settings": {
+              "name": "Licensing",
+              "link": "<p><a href=\"https:\/\/www.terrorbird.com\" target=\"_blank\" title=\"https:\/\/www.terrorbird.com\">Terrorbird Media<\/a><\/p>"
+            }
+          },
+          "4f23f43d-87d6-45c2-8710-59d887a0a22e": {
+            "type": "item",
+            "settings": {
+              "name": "Distribution",
+              "link": "<p><a href=\"http:\/\/www.secretlydistribution.com\/\" target=\"_blank\" title=\"http:\/\/www.secretlydistribution.com\/\">Secretly Distribution<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "ed56b59d-0c48-4589-a38f-d9de7ba597c2",
+          "bfcc0765-93cd-4c94-948c-b83b5d96614b",
+          "4f23f43d-87d6-45c2-8710-59d887a0a22e"
+        ],
+        "settings": {
+          "title": ""
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Standard": {
+      "customer_layout": "theme",
+      "example_option": "option"
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "\/* test *\/"
+    ]
+  }
+}
