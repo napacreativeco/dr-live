@@ -19,7 +19,7 @@
         display: grid;
         grid-template-columns: 3fr 6fr 3fr;
         align-items: center;
-        padding: 3px 10px;
+        padding: 0px 10px;
         position: relative;
     }
     
@@ -99,6 +99,7 @@
             background-color: var(--black);
             color: var(--white);
             z-index: 9;
+            border-top: 1px solid var(--white);
             border-bottom: 1px solid var(--white);
     
             li {
@@ -114,6 +115,7 @@
             li:hover {
                 background-color: var(--white) !important;
                 color: var(--black) !important;
+                //border-top: var(--border-blk);
             }
         }
 

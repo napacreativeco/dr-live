@@ -7,14 +7,29 @@
         
         var title = $(this).attr('data-title');
 
-        gsap.to( $('[data-menu="'+ title +'"]'), {
+        $('[data-menu="'+ title +'"]').css({
             display: 'flex',
             opacity: 1,
-            duration: 0.3
+            transition: 'all 0.3s ease-in-out'
         });
+
+        // gsap.to( $('[data-menu="'+ title +'"]'), {
+        //     display: 'flex',
+        //     opacity: 1,
+        //     duration: 0.3
+        // });
 
         $('.more').css({
             color: 'var(--white)'
+        });
+
+        $('.no-dropdown').on('mouseenter', function() {
+
+            $('.submenu').css({
+                display: 'none',
+                transition: 'all 0.3s ease-in-out'
+            });
+            
         });
 
     });
@@ -22,17 +37,23 @@
     // //////////////////////////////
     // NAVBAR - MOUSE OUT          //
     // //////////////////////////////    
-    $('.nav-link').mouseleave(function() {
+    $('#navbar').mouseleave(function() {
 
-        gsap.to( '.submenu', {
+        $('.submenu').css({
             display: 'none',
-            duration: 0.3
+            transition: 'all 0.3s ease-in-out'
         });
+        // gsap.to( '.submenu', {
+        //     display: 'none',
+        //     duration: 0.3
+        // });
         
         $('.more').css({
             color: 'var(--red)'
         });
     });
+
+
 
 
     // //////////////////////////////
@@ -132,9 +153,12 @@
     $('.filter-trigger').on('click', function() {
         if ( $('.sorting-wrapper').hasClass('opened') ) {
             
-            gsap.to('.sorting-wrapper', {
-                height: '0px',
+            $('.sorting-wrapper').css({
+                height: '0px'
             });
+            // gsap.to('.sorting-wrapper', {
+            //     height: '0px',
+            // });
             $('.filter-icon').show();
             $('.close-filters').hide();
 
@@ -144,9 +168,12 @@
 
             $('.sorting-wrapper').addClass('opened');
 
-            gsap.to('.sorting-wrapper', {
-                height: 'auto',
+            $('.sorting-wrapper').css({
+                height: 'auto'
             });
+            // gsap.to('.sorting-wrapper', {
+            //     height: 'auto',
+            // });
             
             $('.filter-icon').hide();
             $('.close-filters').show();
@@ -161,25 +188,41 @@
         if ( $('.search-wrapper').hasClass('opened') ) {
             $('.search-wrapper').removeClass('opened');
 
-            gsap.to('.search-wrapper', {
-                height: '0px',
+            $('.search-wrapper').css({
+                height: '0px'
             });
+
+            // gsap.to('.search-wrapper', {
+            //     height: '0px',
+            // });
+
             $('.close-search').hide();
             $('.search-icon').show();
         } else {
             $('.search-wrapper').addClass('opened');
 
-            gsap.to('.search-wrapper', {
-                height: 'auto',
+            $('.search-wrapper').css({
+                height: 'auto'
             });
-            gsap.to('.search-title > svg', {
-                rotateY: '180deg',
-                duration: 0.3,
-                onComplete: function() {
-                    $('.close-search').show();
-                    $('.search-icon').hide();
-                }
+            // gsap.to('.search-wrapper', {
+            //     height: 'auto',
+            // });
+
+            $('.search-title > svg').css({
+                transform: 'rotate(180deg)'
+            }, function() {
+                $('.close-search').show();
+                $('.search-icon').hide();
             });
+
+            // gsap.to('.search-title > svg', {
+            //     rotateY: '180deg',
+            //     duration: 0.3,
+            //     onComplete: function() {
+            //         $('.close-search').show();
+            //         $('.search-icon').hide();
+            //     }
+            // });
         }
     });
 

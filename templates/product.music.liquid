@@ -81,7 +81,7 @@
             {% endcomment %}
             <div class="description">
               <h3 class="block-title">{{ 'About' | escape }} {{ '"' | escape }}{{ product.title }}{{ '"' | escape }}</h3>
-              <p>{{ product.description | newline_to_br }}</p>
+              <p>{{ product.description }}</p>
             </div>
 
 
@@ -121,10 +121,14 @@
             <div class="tracklisting">
               <h3 class="block-title">{{ 'Tracklisting' | escape }}</h3>
 
+              {% comment %} TRACKLISTING {% endcomment %}
               {% if product.metafields.dais.tracklisting.value != blank %}
+
                 <ul class="tracklist">
                   {% for track in product.metafields.dais.tracklisting.value %}
+
                     <li class="track">
+                      
                       {% if forloop.index < 10 %}
                         0<div class="counter"></div> 
                       {% elsif forloop.index >= 10 %}
@@ -133,10 +137,14 @@
 
                       <div class="track-name">{{ track }}</div>
                     </li>
+
                   {% endfor %}
                 </ul>
+
               {% else %}
+
                 <p>Tracklisting coming soon</p>
+
               {% endif %}
             </div>
 

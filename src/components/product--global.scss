@@ -267,6 +267,10 @@
     line-height: 1.6;
     color: var(--black);
     font-size: var(--description);
+
+    ul {
+        list-style-position: inside;
+    }
 }
 
 /*
