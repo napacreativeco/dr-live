@@ -185,63 +185,63 @@
             </div>
 
             {% comment %} Merch {% endcomment %}
-            <div class="merch">
-              {% for prod in collection.products %}
-                {% if prod.type != 'vinyl' and prod.type != 'music' %}
-                  {% assign has_products = forloop.length %}
-                {% endif %}
-              {% endfor %}
-  
-              {% if has_products > 0 %}
-                <div class="products" >
-  
-                  <div class="section-title">
-                    <h3>{{ 'Merch' | escape }}</h3>
-                  </div>
-  
-                  {% paginate collection.products by 10 %}
-  
-                    <ul class="artist-products">
-                      {% for prod in collection.products %}
-  
-                        {% comment %} {% if prod.type != 'vinyl' and prod.type != 'music' %} {% endcomment %}
-                        {% if prod.type == 'Apparel' %}
-                          <li class="item">
-  
-                            <div class="image">
-                              <a href="{{ prod.url }}" title="{{ prod.title }}">
-                                <img src="{{ prod.featured_image | img_url: '700x' }}" alt="{{ product.title }}" />
-                              </a>
-                            </div>
-                            <div class="vendor">
-                              <a href="{{ prod.url }}" title="{{ prod.vendor }}">
-                                {{ prod.vendor }}
-                              </a>
-                            </div>
-                            <div class="title">
-                              <a href="{{ prod.url }}" title="{{ prod.title }}">
-                                {{ prod.title }}
-                              </a>
-                            </div>
-                          </li>
-                        {% endif %}
-  
-                      {% else %}
-   
-                        <li>{{ 'There are no products in this view.' | escape }}</li>
-  
-                      {% endfor %}
-                    </ul>
-  
-                    {% if paginate.pages > 1 %}
-                      {{ paginate | default_pagination }}
-                    {% endif %}
-  
-                  {% endpaginate %}
-                </div>
+            {% for prod in collection.products %}
+              {% if prod.type == 'Apparel' %}
+                {% assign has_products = forloop.length %}
               {% endif %}
-            </div>
+            {% endfor %}
 
+            {% if has_products > 0 %}
+              <div class="merch">
+                  <div class="products" >
+    
+                    <div class="section-title">
+                      <h3>{{ 'Merch' | escape }}</h3>
+                    </div>
+    
+                    {% paginate collection.products by 10 %}
+    
+                      <ul class="artist-products">
+                        {% for prod in collection.products %}
+    
+                          {% comment %} {% if prod.type != 'vinyl' and prod.type != 'music' %} {% endcomment %}
+                          {% if prod.type == 'Apparel' %}
+                            <li class="item">
+    
+                              <div class="image">
+                                <a href="{{ prod.url }}" title="{{ prod.title }}">
+                                  <img src="{{ prod.featured_image | img_url: '700x' }}" alt="{{ product.title }}" />
+                                </a>
+                              </div>
+                              <div class="vendor">
+                                <a href="{{ prod.url }}" title="{{ prod.vendor }}">
+                                  {{ prod.vendor }}
+                                </a>
+                              </div>
+                              <div class="title">
+                                <a href="{{ prod.url }}" title="{{ prod.title }}">
+                                  {{ prod.title }}
+                                </a>
+                              </div>
+                            </li>
+                          {% endif %}
+    
+                        {% else %}
+    
+                          <li>{{ 'There are no products in this view.' | escape }}</li>
+    
+                        {% endfor %}
+                      </ul>
+    
+                      {% if paginate.pages > 1 %}
+                        {{ paginate | default_pagination }}
+                      {% endif %}
+    
+                    {% endpaginate %}
+                  </div>
+                
+              </div>
+            {% endif %}
 
             {% comment %} Tour Dates {% endcomment %}
             {% for item in collection.metafields.artist.tour_dates.value %}
