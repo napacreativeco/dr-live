@@ -10,10 +10,26 @@
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS188_SITE-MOBILE.jpg",
             "image_slide_url": "shopify:\/\/products\/coil-moons-milk-in-four-phases"
           }
+        },
+        "image_NFWUP7": {
+          "type": "image",
+          "settings": {
+            "image_slide_url": ""
+          }
+        },
+        "image_8bMx74": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS224_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS224_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify:\/\/products\/vr-sex-hard-copy"
+          }
         }
       },
       "block_order": [
-        "da492805-610a-4de6-9a23-31e5f7fced45"
+        "da492805-610a-4de6-9a23-31e5f7fced45",
+        "image_NFWUP7",
+        "image_8bMx74"
       ],
       "settings": {
         "show_hero": true
