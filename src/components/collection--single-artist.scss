@@ -62,7 +62,7 @@
                     .meta-blocks {
                         display: none;
                         border: var(--border-blk);
-                        padding: 40px;
+                        padding: 30px;
                         display: flex;
                         flex-direction: column;
                         gap: 60px;
@@ -76,16 +76,18 @@
 
                             p, a {
                                 margin: 0 0 10px 0;
-                                font-size: var(--18px);
+                                font-size: 14px;
+                                text-transform: uppercase;
                                 font-family: var(--type-writer);
                                 color: var(--black);
                             }
 
                             h4 {
-                                font-size: var(--22px);
-                                display: block;
-                                margin: 0 0 20px 0;
+                                font-size: 20px;
                                 color: var(--black);
+                                line-height: 176%;
+                                text-transform: uppercase;
+                                margin: 0 0 24px 0;
                             }
 
                             ul {
