@@ -5,7 +5,6 @@
       "blocks": {
         "da492805-610a-4de6-9a23-31e5f7fced45": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS188_SITE.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS188_SITE-MOBILE.jpg",
