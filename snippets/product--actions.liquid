@@ -212,11 +212,12 @@
                                 *
                                 * Sold Out
                                 *
-                                {% endcomment %}
+                                
                                 <label for="{{ variant.id }}" class="out-of-stock">
                                     <input type="radio" class="out-of-stock" id="{{ variant.id }}" value="{{ variant.id }}" name="id" /> 
                                     <span class="variant-name">{{ variant.title }}</span>
                                 </label>
+                                {% endcomment %}
 
                             {% endif %}
 

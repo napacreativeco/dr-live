@@ -163,16 +163,19 @@
                           {{ prod.vendor }}
                         </a>
                       </div>
+
                       <div class="title">
                         <a href="{{ prod.url }}" title="{{ prod.title }}">
                           {{ prod.title }}
                         </a>
                       </div>
+
                       <div class="date">
                         <a href="{{ prod.url }}" title="{{ prod.title }}">
                           {{ prod.metafields.music.release_date | date: "%m.%Y" }}
                         </a>
                       </div>
+                      
                     </li>
                   {% endif %}
                 {% endfor %}
