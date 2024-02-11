@@ -3,6 +3,14 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_8bMx74": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS224_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS224_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify:\/\/products\/vr-sex-hard-copy"
+          }
+        },
         "da492805-610a-4de6-9a23-31e5f7fced45": {
           "type": "image",
           "settings": {
@@ -14,22 +22,16 @@
         "image_NFWUP7": {
           "type": "image",
           "settings": {
-            "image_slide_url": ""
-          }
-        },
-        "image_8bMx74": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS224_SITE.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS224_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/products\/vr-sex-hard-copy"
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS223_SITE_ee139338-acb5-4794-8cb0-6a25d963870d.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS223_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify:\/\/products\/cassette-player-and-tape-compilation-bundle"
           }
         }
       },
       "block_order": [
+        "image_8bMx74",
         "da492805-610a-4de6-9a23-31e5f7fced45",
-        "image_NFWUP7",
-        "image_8bMx74"
+        "image_NFWUP7"
       ],
       "settings": {
         "show_hero": true
