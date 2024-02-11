@@ -1,11 +1,22 @@
 .artist-card {
     border: var(--border-blk);
 
+    .artist-wrapper {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: 100%;
+    }
+
+
+    /*
+    * IMAGE
+    */
     .image {
         overflow: hidden;
         aspect-ratio: 1/1;
         // width: 350px;
-        width: calc(100vw / 5);
+        //width: calc(100vw / 5);
+        width: 100%;
         margin-bottom: 0px;
         transition: opacity 0.5 ease-out;
         transition-delay: 200ms;
@@ -36,6 +47,8 @@
     }
 
     .image:hover {
+        opacity: 0.85;
+        
         .artist-data {
             opacity: 1;
         }
@@ -45,26 +58,24 @@
         }
     }
 
+    /*
+    * NAME
+    */
+    .data,
     .artist {
         padding: 10px;
-
-        a {
-            font-size: 16px;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-        
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
-    .image:hover {
-        opacity: 0.85;
-        cursor: grab;
+    a {
+        font-size: 14px;
+        letter-spacing: -0.5px;
     }
 
-    .image:active {
-        cursor: grabbing;
+    a:hover {
+        text-decoration: underline;
     }
 
 }
@@ -73,12 +84,9 @@
 @media screen and (min-width: 1800px) {
     
     .artist-card {
-        .artist {
-            padding: 12px;
-
-            a {
-                font-size: 22px;
-            }
+ 
+        a {
+            font-size: 22px;
         }
     }
     

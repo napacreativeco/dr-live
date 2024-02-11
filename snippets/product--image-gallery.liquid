@@ -8,7 +8,7 @@
     *
     {% endcomment %}
     <div class="featured-image">
-        <img id="featured_image_element" src="{{ product.featured_image | image_url: width: '2000' }}" />
+        <img id="featured_image_element" src="{{ product.featured_image | image_url: width: '1000' }}" />
 
         {% if product.metafields.music.preorder_status == true %}
             <div class="preorder-label">
@@ -29,7 +29,7 @@
 
                 {% if v.available == true %}
                     <div class="variant-thumbnail" data-id="{{ v.id }}" data-image="{{ v.featured_image | image_url }}" data-price="{{ v.price |  money_without_trailing_zeros }}">
-                        <img src="{{ v.featured_image | image_url }}" />
+                        <img src="{{ v.featured_image | image_url: width: '500' }}" />
                     </div>
                 {% endif %}
             {% endfor %}

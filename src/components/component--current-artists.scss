@@ -4,6 +4,7 @@
     width: 100%;
     max-width: 100%;
     padding: 0 var(--side-padding);
+ 
 
     ul {
         display: flex;
@@ -13,6 +14,10 @@
         min-width: 100%;
         overflow-x: scroll;
         list-style: none;
+
+        .image {
+            width: calc(100vw / 4.5 - var(--side-padding));
+        }
 
         a {
             color: var(--black);
@@ -34,6 +39,14 @@
     }
 
     ul.active {
+        cursor: grabbing;
+    }
+
+    .image:hover {
+        cursor: grab;
+    }
+
+    .image:active {
         cursor: grabbing;
     }
 
