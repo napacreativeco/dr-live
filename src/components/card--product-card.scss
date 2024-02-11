@@ -105,9 +105,10 @@
     .price {
         text-align: right;
         pointer-events: none;
+        line-height: 0.5;
 
         a {
-            font-size: var(--font-size--other);
+            font-size: 11px;
             color: var(--grey);
             font-family: var(--type-writer);
         }
