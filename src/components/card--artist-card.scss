@@ -22,6 +22,7 @@
         transition-delay: 200ms;
         position: relative;
         border-bottom: var(--border-blk);
+        cursor: pointer;
 
         .view-more {
             position: absolute;
@@ -72,6 +73,7 @@
     a {
         font-size: 14px;
         letter-spacing: -0.5px;
+        cursor: pointer;
     }
 
     a:hover {
