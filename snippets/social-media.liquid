@@ -12,22 +12,6 @@
                 </li>
             {% endif %}
 
-            {% if collection.metafields.custom.social_media_links.value.bandcamp != blank %}
-                <li class="link bandcamp">
-                    <a href="{{ collection.metafields.custom.social_media_links.value.bandcamp }}" title="Bandcamp">
-                        {{ 'Bandcamp' | escape }}
-                    </a>
-                </li>
-            {% endif %}
-
-            {% if collection.metafields.custom.social_media_links.value.soundcloud != blank %}
-                <li class="link soundcloud">
-                    <a href="{{ collection.metafields.custom.social_media_links.value.soundcloud }}" title="Soundcloud">
-                        {{ 'Soundcloud' | escape }}
-                    </a>
-                </li>
-            {% endif %}
-
             {% if collection.metafields.custom.social_media_links.value.instagram != blank %}
                 <li class="link instagram">
                     <a href="{{ collection.metafields.custom.social_media_links.value.instagram }}" title="Instagram">
@@ -36,18 +20,26 @@
                 </li>
             {% endif %}
 
-            {% if collection.metafields.custom.social_media_links.value.tiktok != blank %}
-                <li class="link tiktok">
-                    <a href="{{ collection.metafields.custom.social_media_links.value.tiktok }}" title="TikTok">
-                        {{ 'TikTok' | escape }}
+            {% if collection.metafields.custom.social_media_links.value.bandcamp != blank %}
+                <li class="link bandcamp">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.bandcamp }}" title="Bandcamp">
+                        {{ 'Bandcamp' | escape }}
                     </a>
                 </li>
             {% endif %}
 
-            {% if collection.metafields.custom.social_media_links.value.twitter != blank %}
-                <li class="link twitter">
-                    <a href="{{ collection.metafields.custom.social_media_links.value.twitter }}" title="Twitter">
-                        {{ 'Twitter' | escape }}
+            {% if collection.metafields.custom.social_media_links.value.spotify != blank %}
+                <li class="link spotify">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.spotify }}" title="Spotify">
+                        {{ 'Spotify' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.apple_music != blank %}
+                <li class="link apple-music">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.apple_music }}" title="Apple Music">
+                        {{ 'Apple Music' | escape }}
                     </a>
                 </li>
             {% endif %}
@@ -56,6 +48,14 @@
                 <li class="link facebook">
                     <a href="{{ collection.metafields.custom.social_media_links.value.facebook }}" title="Facebook">
                         {{ 'Facebook' | escape }}
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if collection.metafields.custom.social_media_links.value.tiktok != blank %}
+                <li class="link tiktok">
+                    <a href="{{ collection.metafields.custom.social_media_links.value.tiktok }}" title="TikTok">
+                        {{ 'TikTok' | escape }}
                     </a>
                 </li>
             {% endif %}

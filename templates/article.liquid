@@ -10,7 +10,9 @@
           <div class="meta">
             <span>{{ blog.title }}</span> /
             <span class="date-posted">
-              <time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%b, %Y' }}</time>
+              <time pubdate datetime="{{ article.metafields.videos.premiere_date | date: '%Y-%m-%d' }}">
+                {{ article.metafields.videos.premiere_date | date: '%B %d, %Y' }}
+              </time>
             </span>
           </div>
 
