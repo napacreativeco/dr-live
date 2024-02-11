@@ -8,7 +8,9 @@
 
         <header>
           <div class="meta">
-            <span>{{ blog.title }}</span> /
+            <a href="{{ blog.url }}" title="Back to {{ blog.title }}">
+              <span>{{ blog.title }}</span>
+            </a> /
             <span class="date-posted">
               <time pubdate datetime="{{ article.metafields.videos.premiere_date | date: '%Y-%m-%d' }}">
                 {{ article.metafields.videos.premiere_date | date: '%B %d, %Y' }}

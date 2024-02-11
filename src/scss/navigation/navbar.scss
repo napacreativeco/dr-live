@@ -13,18 +13,18 @@
     transition: all 0.3s;
     border-bottom: var(--border-blk);
 
-    --main-link: 18px;
+    --main-link: 16px;
 
     .navbar--row {
         display: grid;
-        grid-template-columns: 3fr 6fr 3fr;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
         padding: 0px 10px;
         position: relative;
     }
     
     a {
-        display: block;
+        display: inline;
         color: var(--black);
         font-size: var(--main-link);
         display: flex;
@@ -39,7 +39,7 @@
 
         img, svg {
             width: 100%;
-            max-width: 40px;
+            max-height: 34px;
         }
     }
 

@@ -1,95 +1,16 @@
-{% style %}
-    /* Announcement Bar */
+{{ 'component--announcement-bar.css'| asset_url| stylesheet_tag }}
+
+<style>
     #announcement-bar {
-        position: relative;
         background-color: {{ settings.announcement_background_color | default: 'var(--black-no-change)' }};
         color: {{ settings.announcement_color | default: 'var(--white-no-change)' }};
-        width: 100%;
     }
-    #announcement-bar .announcement-wrapper {
-        padding: 10px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-    #announcement-bar .announcement-wrapper .close-announcement {
-        background-color: var(--black-no-change);
-        color: var(--white-no-change);
-        position: absolute;
-        right: 10px;
-        cursor: pointer;
-    }
-
-
-    /* Marquee */
-    .marquee-holder {
-        position: relative;
-        background-color: black;
-        color: white;
-        z-index: 4;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        max-width: 100%;
-        padding: 4px 0;
-    }
-
-    .close-marquee {
-        background-color: var(--black-no-change);
-        color: var(--white-no-change);
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        cursor: pointer;
-        z-index: 6;
-        display: block;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        border-left: var(--border-wht);
-        opacity: 0;
-    }
-
-    .marquee-holder:hover .close-marquee {
-        opacity: 1;
-    }
-
-    .announcement-marquee-wrapper {
-        min-width: 100%;
-        max-width: 100%;
-        background: transparent;
-        position: relative;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-    }
-        
-    .announcement-marquee-box {
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        flex-shrink: 0;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-    }
-        
-    .show-overflow {
-        overflow: visible;
-    }
-{% endstyle %}
+</style>
 
 {% if settings.announcement_marquee_mode == true %}
+    <script>
+        document.getElementsByTagName('body').classList.add("marquee-enabled");
+    </script>
     <div id="announcement-bar--marquee" class="marquee-holder">
         <div class="close-marquee">
             <span class="close-marquee-icon">&times;</span>

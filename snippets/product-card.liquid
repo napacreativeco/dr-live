@@ -1,21 +1,39 @@
 <li class="product-card collection-card">
     <div class="product-card-wrapper">
         <div class="image" onclick="window.location='{{ prod.url }}';">
-            {% if prod.featured_image %}
-                <img 
-                class="product-card-image"
-                src="{{ prod.featured_image | image_url: width: 400 }}" 
-                alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
-                data-first="{{ prod.images[0] | image_url: width: 400 }}"
-                {% if prod.images[1] %}
-                    data-second="{{ prod.images[1] | image_url: width: 400 }}"
+
+          
+            {% for variant in prod.variants %}
+
+                {% if variant.available %}
+                    {% assign second_image = variant.image %}
                 {% endif %}
-                loading="lazy" />
+
+            {% endfor %}
+
+
+
+            {% if prod.has_only_default_variant == false %}
+                <img 
+                    class="product-card-image has-variants"
+                    src="{{ prod.featured_image | image_url: width: '400' }}" 
+                    alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
+                    data-first="{{ prod.featured_image | image_url: width: '400' }}"
+            data-second="{% if second_image %}{{ second_image | image_url: width: '400' }}{% else %}{{ prod.featured_image | image_url: width: '400' }}{% endif %}"
+                />
+                {{ variant.type }}
             {% else %}
-                {{ 'image' | placeholder_svg_tag }}
+
+                <img 
+                    class="product-card-image no-variants"
+                    src="{{ prod.featured_image | image_url: width: '400' }}" 
+                    alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
+                    data-first="{{ prod.featured_image | image_url: width: '400' }}"
+                    data-second="{{ prod.featured_image | image_url: width: '400' }}"
+                />
+
             {% endif %}
-
-
+    
             {% if prod.metafields.music.preorder_status == true %}
                 <div class="preorder-label">
                     <span>{{ 'Preorder' | escape }}</span>
@@ -25,17 +43,21 @@
 
         <div class="data">
             <div class="left">
+
                 <div class="artist">
                     <a href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">
                         <h3>{{ prod.vendor }}</h3>
                     </a>
                 </div>
+
                 <div class="title type-writer">
                     <a href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">
                         <h4>{{ prod.title }}</h4>
                     </a>
                 </div>
+
             </div>
+
             <div class="right">
                 <div class="price type-writer">
                     <a href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">

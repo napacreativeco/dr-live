@@ -247,6 +247,7 @@
             {% for item in collection.metafields.artist.tour_dates.value %}
               {% assign has_tour_dates = forloop.length %}
             {% endfor %}
+            
             {% if has_tour_dates > 0 %}
               <div class="tour-dates">
                 <div class="section-title">

@@ -38,6 +38,7 @@
     --side-padding: 12px;
     --input-padding: 6px 12px;
     --top-padding: 100px;
+    --nav-height: 42px;
 
     /* Type */
     --section-title: 4.8rem;
@@ -167,6 +168,10 @@ body {
 
 *:focus {
     outline: none;
+}
+
+main {
+    padding-top: calc(var(--nav-height) + 34px);
 }
 
 /* Change Autocomplete styles in Chrome*/

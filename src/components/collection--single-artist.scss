@@ -17,7 +17,7 @@
 
 
     .single-artist--wrapper {
-        padding: 60px 0;
+        padding: 60px 0 60px 0;
         display: flex;
         flex-direction: column;
         grid-gap: 24px;
@@ -272,7 +272,6 @@
                 right: 0;
                 background: var(--black-no-change);
                 color: var(--white-no-change);
-                width: 50%;
 
                 .box-wrap {
                     padding: 60px;
