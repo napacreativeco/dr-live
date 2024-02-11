@@ -124,6 +124,7 @@
                 {% assign has_media = forloop.length %}
               {% endfor %}
             {% endfor %}
+
             {% if has_media > 0 %}
               <div class="media">
 
@@ -149,7 +150,7 @@
 
               <ul>
                 {% for prod in collection.products %}
-                  {% if prod.type == 'vinyl' or prod.type == 'music' or prod.type == 'Cassette' or prod.type == 'Digital Album' %}
+                  {% if prod.type == 'Vinyl' or prod.type == 'music' or prod.type == 'Cassette' or prod.type == 'Digital Album' %}
                     <li class="item">
 
                       <div class="image">
