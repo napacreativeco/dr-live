@@ -175,9 +175,9 @@
                     <ul class="variants-list">
                         {% assign found_available_variant = false %}
                         {% for variant in product.variants %}
-                            <li class="switch-field">
 
-                                {% if variant.available %}
+                            {% if variant.available %}
+                                <li class="switch-field">
 
                                     {% comment %} 
                                     *
@@ -209,23 +209,11 @@
 
                                     </label>
 
-                                {% else %}
+                                </li>
 
+                            {% endif %}
 
-                                    {% comment %} 
-                                    *
-                                    * Sold Out
-                                    *
-                                    
-                                    <label for="{{ variant.id }}" class="out-of-stock">
-                                        <input type="radio" class="out-of-stock" id="{{ variant.id }}" value="{{ variant.id }}" name="id" /> 
-                                        <span class="variant-name">{{ variant.title }}</span>
-                                    </label>
-                                    {% endcomment %}
-
-                                {% endif %}
-
-                            </li>
+                            
                         {% endfor %}
                     </ul>
 
