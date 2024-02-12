@@ -41,7 +41,7 @@
       "type": "latest-products",
       "settings": {
         "section_title": "Latest",
-        "use_default_collection": true,
+        "use_default_collection": false,
         "latest_collection": "frontpage",
         "latest_collection_rows": "three"
       }
