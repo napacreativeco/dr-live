@@ -14,7 +14,7 @@
         {% case coll.template_suffix %}
             {% when 'artist' %}
                 <label value="{{ coll.title }}">
-                    <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ collection.title }}">
+                    <input class="artist-radio" data-artist="{{ coll.title | url_encode }}" type="radio" value="{{ collection.title }}">
                     {{ coll.title }}
                 </label>
         {% endcase %}
@@ -48,7 +48,8 @@
     $(document).ready(function() {
         $(".artist-radio").click(function(){
             var val =  $(this).attr('data-artist');
-            window.location="?filter.p.vendor=" + val;
+            window.location="?filter.p.vendor=" + val.replace('.', '');
+            //window.location="?filter.p.collection=" + val;
         });
     });
 })(jQuery);
