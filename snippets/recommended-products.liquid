@@ -15,7 +15,7 @@
                 {% for collection in collections %}
                     {% case collection.handle %}
                         {% when 'all' %}
-                            {% for product in collection.products limit: 6 %}
+                            {% for product in collection.products limit: 4 %}
                                 {% render 'product-card' prod: product %}
                             {% endfor %}
                     {% endcase %}
