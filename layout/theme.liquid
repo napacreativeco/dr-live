@@ -425,7 +425,6 @@
           },
         });
 
-
         const tourswiper = new Swiper('.spotlight-swiper', {
           direction: 'horizontal',
           loop: true,
@@ -436,51 +435,9 @@
             nextEl: '.tour-spotlight-next'
           }
         });
-        
-
-        const bandswiper = new Swiper('.bandcamp-swiper', {
-          direction: 'horizontal',
-          loop: true,
-          pagination: {
-            el: '.bandcamp-pagination',
-            clickable: true
-          },
-          navigation: {
-            nextEl: '.bandcamp-next',
-            prevEl: '.bandcamp-prev',
-          },
-        });
 
       })(jQuery);
     </script>
-
-
-    {% comment %} 
-    *
-    * Show / Hide Navigation 
-    * (disabled)
-    *
-    {% endcomment %}
-    <script>
-      //var lastScrollTop;
-      //var navbar = document.getElementById('navbar');
-      //var scrollPos = 0;
-  
-      //window.addEventListener('scroll', function(){
-      //  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      //  if ((document.body.getBoundingClientRect()).top > scrollPos) {
-      // up
-      //    navbar.style.top = '0px';
-      //  } else {
-      // down
-      //    navbar.style.top = '-80px';
-      //  }
-
-      //  scrollPos = (document.body.getBoundingClientRect()).top;
-      // });
-    </script>
-
   
     {% comment %}
     *

@@ -241,6 +241,12 @@
                 input[type="radio"]:checked {
                     background: var(--black);
                 }
+        
+                label:hover {
+                    input[type="radio"] {
+                        background: var(--black);
+                    }
+                }
     
             }
     

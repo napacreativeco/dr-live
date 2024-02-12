@@ -13,12 +13,6 @@
             transition: 'all 0.3s ease-in-out'
         });
 
-        // gsap.to( $('[data-menu="'+ title +'"]'), {
-        //     display: 'flex',
-        //     opacity: 1,
-        //     duration: 0.3
-        // });
-
         $('.more').css({
             color: 'var(--white)'
         });
@@ -43,10 +37,6 @@
             display: 'none',
             transition: 'all 0.3s ease-in-out'
         });
-        // gsap.to( '.submenu', {
-        //     display: 'none',
-        //     duration: 0.3
-        // });
         
         $('.more').css({
             color: 'var(--red)'
@@ -156,9 +146,7 @@
             $('.sorting-wrapper').css({
                 height: '0px'
             });
-            // gsap.to('.sorting-wrapper', {
-            //     height: '0px',
-            // });
+
             $('.filter-icon').show();
             $('.close-filters').hide();
 
@@ -171,9 +159,6 @@
             $('.sorting-wrapper').css({
                 height: 'auto'
             });
-            // gsap.to('.sorting-wrapper', {
-            //     height: 'auto',
-            // });
             
             $('.filter-icon').hide();
             $('.close-filters').show();
@@ -192,10 +177,6 @@
                 height: '0px'
             });
 
-            // gsap.to('.search-wrapper', {
-            //     height: '0px',
-            // });
-
             $('.close-search').hide();
             $('.search-icon').show();
         } else {
@@ -204,9 +185,6 @@
             $('.search-wrapper').css({
                 height: 'auto'
             });
-            // gsap.to('.search-wrapper', {
-            //     height: 'auto',
-            // });
 
             $('.search-title > svg').css({
                 transform: 'rotate(180deg)'
@@ -215,14 +193,6 @@
                 $('.search-icon').hide();
             });
 
-            // gsap.to('.search-title > svg', {
-            //     rotateY: '180deg',
-            //     duration: 0.3,
-            //     onComplete: function() {
-            //         $('.close-search').show();
-            //         $('.search-icon').hide();
-            //     }
-            // });
         }
     });
 
