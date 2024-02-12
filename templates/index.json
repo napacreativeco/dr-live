@@ -42,7 +42,7 @@
       "settings": {
         "section_title": "Latest",
         "use_default_collection": true,
-        "latest_collection": "merch",
+        "latest_collection": "frontpage",
         "latest_collection_rows": "three"
       }
     },
