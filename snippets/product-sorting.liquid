@@ -81,6 +81,11 @@
 
       {%- else -%}
 
+        {% comment %} 
+        *
+        * FILTERS active label
+        *
+        {% endcomment %}
         {%- for filter_value in filter.active_values -%}
             <li class="active-filter active-filters__remove-filter">
               <span class="filter-name">{{ filter_value.label }}</span>
@@ -94,16 +99,46 @@
 
   {%- endfor -%}
 
+  {% comment %} 
+  *
+  * SORTING label
+  *
+  {% endcomment %}
   {% if collection.sort_by != '' %}
       <li class="active-filter active-filters__remove-filter">
         <span class="filter-name">
-          {{ collection.sort_by }}
+          {% case collection.sort_by %}
+
+          {% when 'manual' %}
+            {{ 'Featured' | escape }}
+
+          {% when 'title-descending' %}
+            {{ 'Title (z-a)' | escape }}
+
+            {% when 'title-ascending' %}
+              {{ 'Title (a-z)' | escape }}
+
+            {% when 'price-ascending' %}
+              {{ 'Price (Lowest)' | escape }}
+
+            {% when 'price-descending' %}
+              {{ 'Price (Highest)' }}
+
+            {% when 'created-ascending' %}
+              {{ 'Date (Oldest)' }}
+
+            {% when 'created-descending' %}
+              {{ 'Date (Newest)' }}
+
+            {% else %}
+              {{ collection.sort_by }}
+
+          {% endcase %}
         </span>
         <span class="icon">
           <a href="{{ collection.url }}" title="">&times;</a>
         </span>
       </li>
   {% endif %}
-
 
 </ul>
