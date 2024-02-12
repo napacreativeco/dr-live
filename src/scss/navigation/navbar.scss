@@ -15,15 +15,12 @@
 
     --main-link: 16px;
 
-
-    
     a {
         display: inline;
         color: var(--black);
         font-size: var(--main-link);
         display: flex;
         flex-direction: row;
-
         gap: 6px;
         white-space: nowrap;
     }

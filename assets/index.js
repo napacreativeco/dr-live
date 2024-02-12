@@ -1,6 +1,28 @@
 (function($) {
 
     // //////////////////////////////
+    // ANNOUNCEMENT BAR - CLOSE    //
+    // //////////////////////////////
+    $('.close-announcement-icon').on('click', function() {
+        $('#announcement-bar').css({
+            display: 'none'
+        });
+
+        $('main').css({
+            paddingTop: 'var(--nav-height)'
+        })
+    });
+    
+    // //////////////////////////////
+    // MARQUEE - CLOSE             //
+    // //////////////////////////////
+    $('.close-marquee-icon').on('click', function() {
+        $('#announcement-bar--marquee').css({
+            display: 'none'
+        });
+    });
+
+    // //////////////////////////////
     // NAVBAR - MOUSE IN           //
     // //////////////////////////////
     $('.has-dropdown').mouseenter(function() {
@@ -42,9 +64,6 @@
             color: 'var(--red)'
         });
     });
-
-
-
 
     // //////////////////////////////
     // MOBILE NAV                  //
