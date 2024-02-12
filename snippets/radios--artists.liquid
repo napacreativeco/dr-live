@@ -9,10 +9,22 @@
         <input class="artist-radio" data-artist="{{ 'Dais Records' }}" type="radio" value="{{ 'Dais Records' }}">
         {{ 'Dais Records' }}
     </label>
+
+    {% for coll in collections %}
+        {% case coll.template_suffix %}
+            {% when 'artist' %}
+                <label value="{{ coll.title }}">
+                    <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ collection.title }}">
+                    {{ coll.title }}
+                </label>
+        {% endcase %}
+    {% endfor %}
+    
+    {% comment %}  
     {% for product in collections.all.products %}
 
         {% case product.type %}
-            {% when 'vinyl' %}
+            {% when 'Vinyl' %}
 
                 {% for collection in collections %}
                     {% if collection.title == product.vendor %}
@@ -26,6 +38,9 @@
         {% endcase %}
 
     {% endfor %}
+    {% endcomment %}
+
+
 </fieldset>
         
 <script>

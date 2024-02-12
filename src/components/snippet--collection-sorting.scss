@@ -173,6 +173,29 @@
                 padding: 10px 0;
                 color: var(--black);
             }
+
+            fieldset {
+                overflow-y: scroll;
+                height: 300px;
+            }
+
+            fieldset {
+                scrollbar-width: thin;
+                scrollbar-color: transparent;
+            }
+            
+            /* Works on Chrome, Edge, and Safari */
+            fieldset::-webkit-scrollbar {
+                display: none;
+            }
+            
+            fieldset::-webkit-scrollbar-track {
+                display: none;
+            }
+            
+            fieldset::-webkit-scrollbar-thumb {
+                display: none;
+            }
         }
 
         /*
