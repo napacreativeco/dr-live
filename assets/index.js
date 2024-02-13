@@ -71,6 +71,29 @@
     });
 
     // //////////////////////////////
+    // COLLECTION - SHOW SEARCH    //
+    // //////////////////////////////
+    $('.search-icon').on('click', function() {
+        $('.search-form-component').css({
+            width: 'auto'
+        });
+
+        $(this).css({
+            display: 'none'
+        });
+    });
+
+    $('.search-component-close').on('click', function() {
+        $('.search-form-component').css({
+            width: '0px'
+        });
+
+        $('.search-icon').css({
+            display: 'block'
+        })
+    });
+
+    // //////////////////////////////
     // MOBILE NAV                  //
     // ////////////////////////////// 
     $('.menu-button').on('click', function() {
@@ -219,5 +242,8 @@
 
         }
     });
+
+
+
 
 })(jQuery);

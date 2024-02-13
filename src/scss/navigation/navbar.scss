@@ -166,6 +166,10 @@
 
         .cart-link--wrapper {
             cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: nowrap;
         }
 
         .cart-link--wrapper:hover {

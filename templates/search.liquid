@@ -15,10 +15,16 @@
     {% if search.performed %}
       {% paginate search.results by 10 %}
         
-        {% if search.results_count == 0 %}  
-          Your search for "{{ search.terms }}" did not yield any results.          
+        {% if search.results_count == 0 %} 
+
+          <div class="no-results">
+            Your search for "{{ search.terms }}" did not yield any results.    
+          </div>       
+
         {% else %}
+
           <ul class="results">
+
             {% for item in search.results %}      
               <li class="result">
 
@@ -53,7 +59,9 @@
                    
               </li>
             {% endfor %}
+
           </ul>
+          
         {% endif %}    
         
         {% render 'pagination--collection' paginate: paginate %}
