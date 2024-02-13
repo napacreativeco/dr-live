@@ -41,46 +41,46 @@
 //     color: var(--black);
 // }
 
-.product-sorting {
+// .product-sorting {
 
-    // Layout
-    .switch-field label {
-        margin-top: 1em;
-        cursor: pointer;
-    }
+//     // Layout
+//     .switch-field label {
+//         margin-top: 1em;
+//         cursor: pointer;
+//     }
 
-    .switch-field label {
-        display: grid;
-        grid-template-columns: 20px auto;
-        gap: 20px;
-        font-size: 1.8rem;
-    }
+//     .switch-field label {
+//         display: grid;
+//         grid-template-columns: 20px auto;
+//         gap: 20px;
+//         font-size: 1.8rem;
+//     }
 
 
-    // Checked
-    input[type="radio"]::before {
-        content: "";
-        width: 0.65em;
-        height: 0.65em;
-        border-radius: 50%;
-        transform: scale(0);
-        transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em var(--black);
-    }
+//     // Checked
+//     input[type="radio"]::before {
+//         content: "";
+//         width: 0.65em;
+//         height: 0.65em;
+//         border-radius: 50%;
+//         transform: scale(0);
+//         transition: 120ms transform ease-in-out;
+//         box-shadow: inset 1em 1em var(--black);
+//     }
     
-    input[type="radio"]:checked::before {
-        transform: scale(1);
-    }
+//     input[type="radio"]:checked::before {
+//         transform: scale(1);
+//     }
 
-    label:has(input[type="radio"]:checked)  {
+//     label:has(input[type="radio"]:checked)  {
 
-        .variant-name {
-            display: inline;
-            width: auto;
-            text-decoration: underline;
-        }
+//         .variant-name {
+//             display: inline;
+//             width: auto;
+//             text-decoration: underline;
+//         }
         
-    }
+//     }
     
-}
+// }
 

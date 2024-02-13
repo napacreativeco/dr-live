@@ -1,7 +1,7 @@
 {{ 'page--blog.css' | asset_url | stylesheet_tag }}
 
 <div class="blog-page">
-  <div class="blog-page-wrapper page-wrapper">
+  <div class="blog-page-wrapper">
     {% paginate blog.articles by 6 %}
 
       <header class="page-header" data-aos="fade-down">
@@ -71,9 +71,9 @@
 
         {% endfor %}
       </div>
-
+      
       {% if paginate.pages > 1 %}
-        {{ paginate | default_pagination | replace: 'Previous', 'Newer articles' | replace: 'Next', 'Older articles' }}
+        {% render 'pagination--collection' paginate: paginate %}    
       {% endif %}
 
     {% endpaginate %}
