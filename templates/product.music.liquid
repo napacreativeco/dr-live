@@ -68,7 +68,6 @@
       <div class="product-section-two">
         <div class="wrapper">
 
-
           {% comment %} 
           *
           * Left
@@ -118,36 +117,36 @@
           {% endcomment %}
           <div class="right">
 
-            <div class="tracklisting">
-              <h3 class="block-title">{{ 'Tracklisting' | escape }}</h3>
+            {% comment %} TRACKLISTING {% endcomment %}
+            {% if product.metafields.dais.tracklisting.value != blank %}
 
-              {% comment %} TRACKLISTING {% endcomment %}
-              {% if product.metafields.dais.tracklisting.value != blank %}
+              <div class="tracklisting">
+                <h3 class="block-title">{{ 'Tracklisting' | escape }}</h3>
 
-                <ul class="tracklist">
-                  {% for track in product.metafields.dais.tracklisting.value %}
+                  <ul class="tracklist">
+                    {% for track in product.metafields.dais.tracklisting.value %}
 
-                    <li class="track">
-                      
-                      {% if forloop.index < 10 %}
-                        0<div class="counter"></div> 
-                      {% elsif forloop.index >= 10 %}
-                        <div class="counter"></div> 
-                      {% endif %}
+                      <li class="track">
+                        
+                        {% if forloop.index < 10 %}
+                          0<div class="counter"></div> 
+                        {% elsif forloop.index >= 10 %}
+                          <div class="counter"></div> 
+                        {% endif %}
 
-                      <div class="track-name">{{ track }}</div>
-                    </li>
+                        <div class="track-name">{{ track }}</div>
+                      </li>
 
-                  {% endfor %}
-                </ul>
+                    {% endfor %}
+                  </ul>
 
-              {% else %}
+              </div>
 
-                <p>Tracklisting coming soon</p>
+            {% else %}
 
-              {% endif %}
-            </div>
+            {% endif %}
 
+            {% comment %} Meta-blocks {% endcomment %}
             <div class="meta-blocks">
 
               {% comment %} Variants {% endcomment %}
