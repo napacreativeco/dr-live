@@ -5,9 +5,10 @@
 
     .search-icon {
         cursor: pointer;
+        padding-top: 2px;
 
         svg {
-            width: 18px;
+            width: 16px;
         }
     }
 
@@ -46,11 +47,11 @@
         background: transparent;
         padding: 0;
         border: 0;
-        padding: 0;
+        padding: 2px 0 0 0;
         cursor: pointer;
 
         svg {
-            width: 18px;
+            width: 16px;
         }
     }
 
