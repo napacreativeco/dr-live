@@ -44,6 +44,13 @@
     "settings": [
       {
         "type": "checkbox",
+        "id": "announcement_showhide",
+        "label": "Show / Hide",
+        "Description": "False: hide Announcement Bar",
+        "default": false
+      },
+      {
+        "type": "checkbox",
         "id": "announcement_marquee_mode",
         "label": "Mode",
         "default": false
