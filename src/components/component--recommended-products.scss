@@ -37,7 +37,7 @@
 
     ul.products {
         list-style: none;
-        padding: 0;
+        padding: 0 var(--side-padding);
         margin: 0;
         display: grid;
         grid-template-columns: repeat(6, 1fr);

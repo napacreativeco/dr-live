@@ -7,9 +7,7 @@
 
 {{ 'product--global.css' | asset_url | stylesheet_tag }}
 
-<script>
-  console.log('{{ product | json }}');
-  </script>
+
 <div class="single-product default">
   <div class="wrapper">
 
@@ -61,7 +59,7 @@
 
   </div>
 
-  {% render 'recommended-products' %}
+  {% render 'recommended-products', limit_number: 6 %}
 </div>
 
 {% comment %} 

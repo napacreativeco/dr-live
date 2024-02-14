@@ -182,6 +182,22 @@
 
 }
 
+.sold-out {
+    opacity: 0.6;
+
+    .variant-name {
+        text-decoration: line-through;
+    }
+}
+
+
+.soldout-label {
+    background: var(--black);
+    color: var(--white);
+    padding: 3px 6px;
+    font-size: 10px;
+}
+
 
 /*
 *
