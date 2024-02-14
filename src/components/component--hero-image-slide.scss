@@ -13,11 +13,18 @@
         grid-template-columns: 1fr;
         align-items: stretch;
         height: 100%;
+        position: relative;
 
         .slide-image {
             width: 100%;
             height: calc( 100vh );
             object-position: 0% 0%;
+        }
+
+        .slide-box {
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
 
     }
