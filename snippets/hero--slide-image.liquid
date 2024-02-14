@@ -28,25 +28,32 @@
     <div class="slide-image mobile" data-type="image" data-layout="image" style="background-image: url('{{ block.settings.image_slide_image_mobile | image_url }}'); background-size: cover; background-position: top center;">
     </div>
 
-    {% comment %} Slide Box 
-    <div class="slide-box">
-      <div class="box-wrap">
+    {% comment %} Slide Box {% endcomment %}
+    {% if block.settings.image_slide_subtitle != empty and block.settings.image_slide_title != empty and block.settings.image_slide_text_body != empty and block.settings.image_slide_url != empty %}
+      <div class="slide-box">
+        <div class="box-wrap">
 
-        <div class="titles">
-          <span class="subtitle">
-            {{ block.settings.image_slide_subtitle }}
-          </span>
-          <h1 class="title">
-            {{ block.settings.image_slide_title }}
-          </h1>
-        </div>
+          <div class="titles">
+            <a href="{{ block.settings.image_slide_url }}">
+              <span class="subtitle">
+                {{ block.settings.image_slide_subtitle }}
+              </span>
+            </a>
 
-        <div class="texts">
-          {{ block.settings.image_slide_text_body | newline_to_br }}
-        </div>
+            <h1 class="title">
+              <a href="{{ block.settings.image_slide_url }}">{{ block.settings.image_slide_title }}</a>
+            </h1>
+          </div>
 
-      </div>  
-    </div> 
-    {% endcomment %}
+          <div class="texts">
+            <a href="{{ block.settings.image_slide_url }}">
+              {{ block.settings.image_slide_text_body | newline_to_br }}
+            </a>
+          </div>
+
+        </div>  
+      </div> 
+    {% endif %}
+    
 
 </div>
