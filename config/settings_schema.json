@@ -47,6 +47,11 @@
         "id": "announcement_marquee_mode",
         "label": "Mode",
         "default": false
+      },
+      {
+        "type": "textarea",
+        "id": "announcement_content",
+        "label": "Announcement Text"
       }
     ]
   },

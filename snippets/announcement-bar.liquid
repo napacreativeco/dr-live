@@ -18,7 +18,7 @@
 
         <div class="announcement-marquee-wrapper">
             {% for i in (1..12) %}
-                <div class="announcement-marquee-box">&nbsp;{{ settings.marquee_content | default: ' announcements ' }}</div>
+                <div class="announcement-marquee-box">&nbsp;{{ settings.announcement_content | default: ' announcements ' }}</div>
             {% endfor %}
         </div>
     </div>
