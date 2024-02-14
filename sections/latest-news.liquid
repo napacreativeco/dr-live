@@ -1,0 +1,46 @@
+{{ 'component--current-artists.css' | asset_url | stylesheet_tag }}
+{{ 'card--artist-card.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-header', data: section.settings, destination: '/pages/artists' %}
+
+<div class="current-artists--wrapper">
+  <ul class="current-artists--list">
+    {% for coll in collections %}
+      {% case coll.template_suffix %}
+          {% when 'artist' %}
+          
+              {% if coll.metafields.custom.alumni_status == false or coll.metafields.custom.alumni_status == blank %}
+                    {% render 'artist-card', data: coll %}
+              {% endif %}
+            
+
+      {% endcase %}
+    {% endfor %}
+  </ul>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Latest News",
+    "tag": "section",
+    "class": "latest-news-section section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      }, {
+        "type": "page",
+        "id": "link_destination",
+        "label": "Link Destination"
+      }
+    ],
+    "presets": [{
+      "name": "Current Artists",
+      "settings": {
+          "section_title": "Current Artists"
+        }
+    }]
+  }
+{% endschema %}
