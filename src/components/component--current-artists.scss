@@ -4,7 +4,26 @@
     width: 100%;
     max-width: 100%;
     padding: 0 var(--side-padding);
- 
+    position: relative;
+
+    .controls {
+        position: absolute;
+        bottom: 16px;
+        right: var(--side-padding);
+        z-index: 8;
+
+        .next,
+        .prev {
+            background: var(--transparent-white);
+            backdrop-filter: blur(3px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: var(--border-blk);
+            cursor: pointer;
+        }
+    }
 
     ul {
         display: flex;
@@ -14,6 +33,7 @@
         min-width: 100%;
         overflow-x: scroll;
         list-style: none;
+        transition: all 0.2s ease-in-out;
 
         .image {
             width: calc(100vw / 4.5 - var(--side-padding));

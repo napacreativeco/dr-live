@@ -244,6 +244,20 @@
     });
 
 
+    var left = $('.current-artists--list').scrollLeft();
+
+    $('.next').on('click', function() {
+        left = left + 200;
+        $('.current-artists--list').scrollLeft(left);
+        console.log('next')
+    }); 
+
+    $('.prev').on('click', function() {
+        left = left - 200;
+        $('.current-artists--list').scrollLeft(left);
+        console.log('prev')
+    }); 
+
 
 
 })(jQuery);
