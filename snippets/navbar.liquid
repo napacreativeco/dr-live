@@ -1,6 +1,28 @@
 <div id="navbar" class="navbar">
     
-    {% render 'announcement-bar' %}
+    {% if settings.announcement_showhide == true %}
+        <style>
+            main {
+                padding-top: calc(var(--nav-height) + 34px);
+            }
+        </style>
+
+        {% render 'announcement-bar' %}
+    {% else %}
+
+        <style>
+            main {
+                padding-top: calc(var(--nav-height));
+            }
+
+            @media screen and (max-width: 767px) {
+                main {
+                    padding-top: 0;
+                }
+            }
+        </style>
+
+    {% endif %}
 
     <div class="navbar--row">
 

@@ -46,7 +46,6 @@
         "type": "checkbox",
         "id": "announcement_showhide",
         "label": "Show / Hide",
-        "Description": "False: hide Announcement Bar",
         "default": false
       },
       {

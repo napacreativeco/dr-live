@@ -170,16 +170,6 @@ body {
     outline: none;
 }
 
-main {
-    padding-top: calc(var(--nav-height) + 34px);
-}
-
-@media screen and (max-width: 767px) {
-    main {
-        padding-top: 0;
-    }
-}
-
 /* clears the ‘X’ from Internet Explorer */
 input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
 input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
