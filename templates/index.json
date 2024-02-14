@@ -8,7 +8,10 @@
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS224_SITE.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS224_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/products\/vr-sex-hard-copy"
+            "image_slide_url": "shopify:\/\/products\/vr-sex-hard-copy",
+            "image_slide_subtitle": "PREORDER",
+            "image_slide_title": "\"Hard Copy\"",
+            "image_slide_text_body": "<p>Preorders for the latest release from VR Sex, \"Hard Copy\" available now<\/p>"
           }
         },
         "da492805-610a-4de6-9a23-31e5f7fced45": {
@@ -16,7 +19,10 @@
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS188_SITE.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS188_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/products\/coil-moons-milk-in-four-phases"
+            "image_slide_url": "shopify:\/\/products\/coil-moons-milk-in-four-phases",
+            "image_slide_subtitle": "",
+            "image_slide_title": "",
+            "image_slide_text_body": ""
           }
         },
         "image_NFWUP7": {
@@ -24,7 +30,10 @@
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS223_SITE_ee139338-acb5-4794-8cb0-6a25d963870d.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS223_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/products\/cassette-player-and-tape-compilation-bundle"
+            "image_slide_url": "shopify:\/\/products\/cassette-player-and-tape-compilation-bundle",
+            "image_slide_subtitle": "",
+            "image_slide_title": "",
+            "image_slide_text_body": ""
           }
         }
       },
