@@ -16,7 +16,7 @@
 
         .slide-image {
             width: 100%;
-            height: calc( 100vh - var(--nav-height) );
+            height: calc( 100svh - var(--nav-height) );
             object-position: 0% 0%;
         }
 
@@ -52,7 +52,7 @@
     
             .slide-image {
                 width: 100%;
-                height: calc(100svh - 70px);
+                height: calc(100svh - var(--nav-height) );
                 object-fit: cover;
             }
     
