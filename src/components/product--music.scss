@@ -68,6 +68,8 @@
             iframe {
                 width: 100%;
                 max-width: 100%;
+                height: auto;
+                aspect-ratio: 16/9;
                 border: var(--border-blk);
             }
 
@@ -197,15 +199,14 @@
                     .product-gallery-swiper {
                         height: 100%;
 
+                        .preorder-status {
 
-                    .preorder-status {
-
-                        span {
-                            font-size: 12px;
-                            width: 80px;
-                            height: 80px;
+                            span {
+                                font-size: 12px;
+                                width: 80px;
+                                height: 80px;
+                            }
                         }
-                    }
                     }
                 }
 
