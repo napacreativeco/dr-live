@@ -1,20 +1,13 @@
-{{ 'component--current-artists.css' | asset_url | stylesheet_tag }}
-{{ 'card--artist-card.css' | asset_url | stylesheet_tag }}
+{{ 'component--latest-news.css' | asset_url | stylesheet_tag }}
 
-{% render 'section-header', data: section.settings, destination: '/pages/artists' %}
 
-<div class="current-artists--wrapper">
-  <ul class="current-artists--list">
-    {% for coll in collections %}
-      {% case coll.template_suffix %}
-          {% when 'artist' %}
-          
-              {% if coll.metafields.custom.alumni_status == false or coll.metafields.custom.alumni_status == blank %}
-                    {% render 'artist-card', data: coll %}
-              {% endif %}
-            
+{% render 'section-header', data: section.settings, destination: '/blogs/news' %}
 
-      {% endcase %}
+<div class="latest-news--wrapper">
+
+  <ul class="latest-news--list">
+    {% for post in blogs.news.articles %}
+      {% render 'article-card', post: post %}
     {% endfor %}
   </ul>
 
@@ -37,9 +30,9 @@
       }
     ],
     "presets": [{
-      "name": "Current Artists",
+      "name": "Latest News",
       "settings": {
-          "section_title": "Current Artists"
+          "section_title": "News"
         }
     }]
   }
