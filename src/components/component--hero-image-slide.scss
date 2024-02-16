@@ -27,8 +27,11 @@
             right: 0;
             background: var(--black-no-change);
             color: var(--white-no-change);
-            padding: 30px 30px 40px 30px;
             max-width: 40%;
+
+            .box-wrap {
+                padding: 30px 30px 40px 30px;
+            }
 
             .subtitle {
                 font-family: var(--type-writer);
@@ -83,8 +86,14 @@
     
             .slide-image {
                 width: 100%;
-                height: calc(100vh - var(--nav-height) );
+                height: calc(100svh - var(--nav-height) );
                 object-fit: cover;
+            }
+
+            .slide-box {
+                display: block;
+                width: 100%;
+                max-width: 100%;
             }
     
         }
