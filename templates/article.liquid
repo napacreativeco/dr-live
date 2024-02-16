@@ -1,40 +1,46 @@
 {{ 'page--blog-post.css' | asset_url | stylesheet_tag }}
 
 <div class="blog-post">
-  <div class="blog-post-wrapper page-wrapper"> 
+  <div class="blog-post-wrapper"> 
     {% paginate article.comments by 50 %}
 
       <article>
 
         <header>
-          <div class="meta">
-            <a href="{{ blog.url }}" title="Back to {{ blog.title }}">
-              <span>{{ blog.title }}</span>
-            </a> /
-            <span class="date-posted">
-              <time pubdate datetime="{{ article.metafields.videos.premiere_date | date: '%Y-%m-%d' }}">
-                {{ article.metafields.videos.premiere_date | date: '%B %d, %Y' }}
-              </time>
-            </span>
+          <div class="wrap">
+            
+            <div class="meta">
+              <a href="{{ blog.url }}" title="Back to {{ blog.title }}">
+                <span>{{ blog.title }}</span>
+              </a> /
+              <span class="date-posted">
+                <time pubdate datetime="{{ article.metafields.videos.premiere_date | date: '%Y-%m-%d' }}">
+                  {{ article.metafields.videos.premiere_date | date: '%B %d, %Y' }}
+                </time>
+              </span>
+            </div>
+  
+            <h1>{{ article.title }}</h1>
+
           </div>
-
-          <h1>{{ article.title }}</h1>
-
         </header>
 
         <div class="article-body">
-          {{ article.content }}
+          {{ article.content | newline_to_br }}
         </div>
       
 
-        {% if blog.next_article or blog.previous_article %}
-          {% if blog.next_article %}
-            {{ 'Next Post' | link_to: blog.next_article }}
-          {% endif %}    
-          {% if blog.previous_article %}
-            {{ 'Previous Post' | link_to: blog.previous_article }}
+        <div class="pagination">
+          {% if blog.next_article or blog.previous_article %}
+            {% if blog.next_article %}
+              {{ 'NEXT' | link_to: blog.next_article }}
+            {% endif %}    
+            {% if blog.previous_article %}
+              {{ 'PREV' | link_to: blog.previous_article }}
+            {% endif %}
           {% endif %}
-        {% endif %}
+        </div>
+
       </article>
 
     {% endpaginate %}
