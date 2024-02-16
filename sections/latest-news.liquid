@@ -5,8 +5,8 @@
 
 <div class="latest-news--wrapper">
 
-  <ul class="latest-news--list">
-    {% for post in blogs.news.articles %}
+  <ul class="list">
+    {% for post in blogs.news.articles limit: 4 %}
       {% render 'article-card', post: post %}
     {% endfor %}
   </ul>
