@@ -41,19 +41,26 @@
     {% endcomment %}
     <div id="product-add">
 
-
         {% if product.metafields.music.preorder_status == true %}
             <div class="preorder-status">
                 <span>{{ 'Ships ' | escape }}{{ product.metafields.music.release_date | date: '%m.%d.%y' }}</span>
             </div>
         {% endif %}
 
+        {% if product.available == false %}
+            <div class="preorder-status">
+                <span>{{ 'Sold Out' | escape }}</span>
+            </div>
+        {% endif %}
+
         {% assign variant = product.selected_or_first_available_variant %}
-        <input 
-            type="submit" 
-            name="add" 
-            id="add" 
-            value="{% if product.metafields.music.preorder_status == true %}{{ pre_order | escape }}{% else %}{{ add_to_cart | escape }}{% endif %}" />                
+        {% if variant %}
+            <input 
+                type="submit" 
+                name="add" 
+                id="add" 
+                value="{{ add_to_cart | escape }}" />
+        {% endif %}                
     </div>
 
 </div>
@@ -258,7 +265,7 @@
 
                 {% else %}
             
-                    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                    <input type="hidden" name="id" value="{{ product.id }}" checked="checked" />
             
                 {% endif %}
 
@@ -266,4 +273,7 @@
         
         </div>
     </div>
+
+{% else %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
 {% endif %}
