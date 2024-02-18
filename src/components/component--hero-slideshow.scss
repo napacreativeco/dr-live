@@ -33,6 +33,9 @@
     #hero-swiper {
         //overflow: visible;
 
+        height: calc(100svh - 50px);
+        margin-top: 50px;
+        
         .slide-box { 
             width: 90vw;
         }
