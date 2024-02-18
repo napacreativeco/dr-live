@@ -109,12 +109,13 @@
 
 @media screen and (max-width: 767px) {
     .blog-page{
+        margin-top: 60px;
     
         .posts {
             display: grid;
             grid-template-columns: 1fr;
-            grid-gap: 20px;
-            padding: 0px;
+            grid-gap: 60px 20px;
+            padding: 0px var(--side-padding);
             margin-top: 20px;
 
             .post {
@@ -129,12 +130,12 @@
     
                 .post-title {
                     font-family: var(--sans-serif);
-                    font-size: 1.8rem;
+                    font-size: 14px;
                     line-height: 1.2;
                 }
 
                 .posted-at {
-                    font-size: 1.4rem;
+                    font-size: 10px;
                 }
 
                 .actions {
