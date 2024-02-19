@@ -1,12 +1,12 @@
 .single-product .image-gallery {
     padding: 20px 0 20px var(--side-padding);
-    max-height: 100vh;
     
     .featured-image {
         width: 100%;
         object-fit: cover;
         border: var(--border-blk);
         position: relative;
+        max-height: 100vh;
 
         #featured_image_element {
             display: block;
