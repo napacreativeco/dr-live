@@ -43,6 +43,7 @@
                 align-self: flex-start;
                 transition: 0.24s ease-in-out;
                 position: absolute;
+                z-index: 9999;
                 left: 10px;
                 top: 14px;
             }
@@ -245,11 +246,18 @@ form.js-ajax-cart-form-in-progress:after {
     display: block; 
 }
 
+
+
+/*
+-----------------------------------------------------------------------------------------------
+MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> 
+-----------------------------------------------------------------------------------------------
+*/
 @media screen and (max-width: 767px) {
 
     .cart-drawer {
-        max-width: 80vw;
-        transform: translateX(80vw);
+        max-width: 100vw;
+        transform: translateX(100vw);
     }
 
     .js-my-cart-open .cart-drawer {
