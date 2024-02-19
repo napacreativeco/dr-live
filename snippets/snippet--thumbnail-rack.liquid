@@ -1,0 +1,14 @@
+<div class="thumbnail-rack">
+
+{% for v in product.variants %}
+    {% if v.available == true %}
+        <div class="variant-thumbnail" data-id="{{ v.id }}" data-image="{{ v.featured_image | image_url }}" data-price="{{ v.price |  money_without_trailing_zeros }}">
+            
+            {% if v.featured_image != empty %}
+                <img src="{{ v.featured_image | image_url: width: '500' }}" />
+            {% endif %}
+        </div>
+    {% endif %}
+{% endfor %}
+
+</div>

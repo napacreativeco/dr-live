@@ -23,20 +23,16 @@
     *
     {% endcomment %}
     {% if variant_images.size > 0 %}
-        <div class="thumbnail-rack">
 
-            {% for v in product.variants %}
-                {% if v.available == true %}
-                    <div class="variant-thumbnail" data-id="{{ v.id }}" data-image="{{ v.featured_image | image_url }}" data-price="{{ v.price |  money_without_trailing_zeros }}">
-                        
-                        {% if v.featured_image != empty %}
-                            <img src="{{ v.featured_image | image_url: width: '500' }}" />
-                        {% endif %}
-                    </div>
-                {% endif %}
-            {% endfor %}
+        {% render 'snippet--thumbnail-rack', product: product %}    
 
-        </div>
+    {% else %}
+
+     no variant images
+     {% if product.media.size > 0 %}
+        {% render 'snippet--thumbnail-rack-media', product: product %} 
+     {% endif %}
+
     {% endif %}
 
 </div>
