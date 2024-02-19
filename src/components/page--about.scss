@@ -10,94 +10,117 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-gap: 80px;
+    }
 
-        .section-title {
-            h1, h3 {
-                font-size: 20px;
-                text-transform: uppercase;
-                display: block;
-                margin: 0 0 20px 0;
-                color: var(--black);
-            }
+    .section-title {
+        h1, h3 {
+            font-size: 20px;
+            text-transform: uppercase;
+            display: block;
+            margin: 0 0 20px 0;
+            color: var(--black);
         }
+    }
 
-        .left {
-            padding: 0px 0 0 0;
+    .left {
+        padding: 0px 0 0 0;
+    }
 
-            .about {
-                font-size: 36px;
-                line-height: 1;
-                color: var(--black);
-            }
+    .about {
+        font-size: 36px;
+        line-height: 1;
+        color: var(--black);
+    }
 
-            .meta-block {
-                margin: 60px 0 0 0;
-                border: var(--border-blk);
-                padding: 40px;
+    .meta-block {
+        margin: 60px 0 0 0;
+        border: var(--border-blk);
+        padding: 40px;
 
-                .content {
+        .content {
 
-                    .contact-wrapper {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                list-style: none;
 
-                        ul {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 20px;
-                            list-style: none;
+                li {
+                    color: var(--black) !important;
+                    h4 {
+                        text-transform: uppercase;
+                        margin: 0 0 6px 0;
+                        color: var(--black);
+                    }
 
-                            li {
-                                color: var(--black) !important;
-                                h4 {
-                                    text-transform: uppercase;
-                                    margin: 0 0 6px 0;
-                                    color: var(--black);
-                                }
+                    a {
+                        color: var(--black);
+                    }
 
-                                a {
-                                    color: var(--black);
-                                }
-
-                                a:hover {
-                                    text-decoration: underline;
-                                }
-                            }
-                        }
-
+                    a:hover {
+                        text-decoration: underline;
                     }
                 }
             }
+
         }
-
-        .right {
-            padding: 20px 0 0 0;
-            //border-top: var(--border-blk);
-            color: var(--black);
-
-            details {
-                border-bottom: var(--border-blk);
-                color: var(--black);
-
-                > summary {
-                    padding: 20px 0;
-                    list-style: none;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 10px;
-                    cursor: pointer;
-                    color: var(--black);
-                }
-
-                summary:hover {
-                    text-decoration: underline;
-                }
-
-                .faq-body {
-                    padding: 0 0 20px 0;
-                }
-            }
-        }
-        
     }
+
+    .right {
+        padding: 20px 0 0 0;
+        //border-top: var(--border-blk);
+        color: var(--black);
+    }
+
+    details {
+        border-bottom: var(--border-blk);
+        color: var(--black);
+
+        > summary {
+            padding: 20px 0;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: var(--black);
+        }
+
+        summary:hover {
+            text-decoration: underline;
+        }
+
+        .faq-body {
+            padding: 0 0 20px 0;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+    
+    .info-page {
+
+        .page-wrapper {
+            padding: 90px var(--side-padding) 30px var(--side-padding);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 40px;
+        }
+
+        .about {
+            font-size: 28px;
+            line-height: 1;
+            color: var(--black);
+        }
+
+        .social-media {
+            display: none;
+        }
+
+    }
+
 }
