@@ -158,7 +158,8 @@
             text-align: left;
         }
     
-        input[type="submit"] {
+        input[type="submit"],
+        .soldout--button span {
             background-color: var(--black);
             font-family: var(--sans-serif);
             font-weight: normal;
@@ -173,7 +174,8 @@
             transition: all 0.13s ease-in-out;
         }
     
-        input[type="submit"]:hover {
+        input[type="submit"]:hover,
+        .soldout--button:hover {
             background-color: var(--white);
             color: var(--black);
         }

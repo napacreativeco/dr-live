@@ -1,5 +1,5 @@
 .single-product .image-gallery {
-    padding: 20px;
+    padding: 20px 0 20px var(--side-padding);
     
     .featured-image {
         width: 100%;
@@ -61,4 +61,13 @@
     }
 
 
+}
+
+
+@media screen and (max-width: 767px) {
+    
+    .single-product .image-gallery {
+        margin-top: 80px;
+        padding: var(--side-padding);
+    }
 }

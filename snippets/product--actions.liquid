@@ -47,19 +47,18 @@
             </div>
         {% endif %}
 
+        {% assign variant = product.selected_or_first_available_variant %}
         {% if product.available == false %}
-            <div class="preorder-status">
+            <div class="soldout--button">
                 <span>{{ 'Sold Out' | escape }}</span>
             </div>
-        {% endif %}
-
-        {% assign variant = product.selected_or_first_available_variant %}
-
+        {% else %}
             <input 
                 type="submit" 
                 name="add" 
                 id="add" 
                 value="{{ add_to_cart | escape }}" />
+        {% endif %}
              
     </div>
 
