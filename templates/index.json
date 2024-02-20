@@ -3,6 +3,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_nLEzDC": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS227_SITE_6517b7e2-e0a7-487b-a28c-7bc7d0418642.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS227_SITE-MOBILE_c8696f7e-43ea-4ef1-a99d-bffea7bc2f0a.jpg",
+            "image_slide_url": "",
+            "image_slide_subtitle": "PRE ORDER",
+            "image_slide_title": "",
+            "image_slide_text_body": ""
+          }
+        },
         "image_8bMx74": {
           "type": "image",
           "settings": {
@@ -38,6 +49,7 @@
         }
       },
       "block_order": [
+        "image_nLEzDC",
         "image_8bMx74",
         "da492805-610a-4de6-9a23-31e5f7fced45",
         "image_NFWUP7"
