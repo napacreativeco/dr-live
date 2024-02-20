@@ -1,10 +1,17 @@
 <div class="cart-drawer--wrapper">
 
     <div class="cart-drawer--header">
-      <span class="cart-drawer--close">
-        &times;
-      </span>
-      <h3 class="cart-title">{{ 'Shopping Cart' | escape }}</h3>
+      
+      <div>
+        <span class="cart-drawer--close">
+          &times;
+        </span>
+      </div>
+
+      <div>
+        <h3 class="cart-title">{{ 'Shopping Cart' | escape }}</h3>
+      </div>
+      
     </div>    
 
     <form action="{{ routes.cart_url }}" method="post" class="my-cart">
