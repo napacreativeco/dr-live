@@ -204,7 +204,7 @@
             $('.sorting-wrapper').addClass('opened');
 
             $('.sorting-wrapper').css({
-                height: 'auto'
+                height: '100%'
             });
             
             $('.filter-icon').hide();
@@ -218,6 +218,7 @@
     // //////////////////////////////
     $('.search-trigger').on('click', function() {
         if ( $('.search-wrapper').hasClass('opened') ) {
+
             $('.search-wrapper').removeClass('opened');
 
             $('.search-wrapper').css({
@@ -226,11 +227,12 @@
 
             $('.close-search').hide();
             $('.search-icon').show();
+
         } else {
             $('.search-wrapper').addClass('opened');
 
             $('.search-wrapper').css({
-                height: 'auto'
+                height: '100%'
             });
 
             $('.search-title > svg').css({
