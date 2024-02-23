@@ -78,7 +78,7 @@
             width: 'auto'
         });
 
-        $(this).css({
+        $('.search-icon-nav').css({
             display: 'none'
         });
     });
@@ -88,7 +88,7 @@
             width: '0px'
         });
 
-        $('.search-icon').css({
+        $('.search-icon-nav').css({
             display: 'block'
         })
     });
