@@ -9,12 +9,20 @@
   {% endcomment %}
   <div class="sorting-title">
 
+    {% comment %} FILTER {% endcomment %}
     <div class="filter-title">
-        <div class="filter-icon filter-trigger">{% render 'icon--filter' %}</div>
-        <div class="close-filters">{% render 'icon--close' %}</div> 
-        <div class="filter-trigger">{{ 'Filters' | escape }}</div>
+        <div class="filter-icon filter-trigger">
+          {% render 'icon--filter' %}
+        </div>
+        <div class="close-filters">
+          {% render 'icon--close' %}
+        </div> 
+        <div class="filter-trigger">
+          {{ 'Filters' | escape }}
+        </div>
     </div>
 
+    {% comment %} SEARCH {% endcomment %}
     <div class="search-title search-trigger">
       <div class="search-trigger">{{ 'Search' | escape }}</div> 
       <div class="search-icon search-trigger">{% render 'icon--search' %}</div>
