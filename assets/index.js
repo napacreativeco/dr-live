@@ -222,12 +222,8 @@
                 height: '100%'
             });
 
-            $('.search-title > svg').css({
-                transform: 'rotate(180deg)'
-            }, function() {
-                $('.close-search').show();
-                $('.search-icon').hide();
-            });
+            $('.close-search').show();
+            $('.search-icon').hide();
 
     });
 
