@@ -1,13 +1,18 @@
 {{ 'component--search.css' | asset_url | stylesheet_tag }}
 
 <div class="search-component">
+
     <div class="search-icon-nav">
         {% render 'icon--search' %}
     </div>
+
     <div class="search-form-component-nav">
         <div class="search-component-close">
             &times;
         </div>
-        {% render 'searchbar', text: 'Search the store'  %}
+        <div class="bar">
+            {% render 'searchbar', text: 'Search the store'  %}
+        </div>
     </div>
+
 </div>
