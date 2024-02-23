@@ -206,6 +206,9 @@
         $('.sorting-wrapper').css({
             height: '0px'
         });
+
+        $('.filter-icon').show();
+        $('.close-filters').hide();
     });
 
     // //////////////////////////////
