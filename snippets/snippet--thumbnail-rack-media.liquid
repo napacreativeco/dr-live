@@ -1,11 +1,11 @@
 <div class="thumbnail-rack media">
 
-{% for m in product.media %}
-   
-    <div class="media-thumbnail" data-id="{{ v.id }}" data-image="{{ m | image_url }}">
-        <img src="{{ m | image_url: width: '500' }}" />
-    </div>
+    {% for m in product.media %}
+    
+        <div class="media-thumbnail" data-id="{{ v.id }}" data-image="{{ m | image_url }}">
+            <img src="{{ m | image_url: width: '500' }}" />
+        </div>
 
-{% endfor %}
+    {% endfor %}
 
 </div>
