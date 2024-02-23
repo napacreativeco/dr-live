@@ -188,29 +188,24 @@
     // COLLECTION - SHOW FILTERS   //
     // //////////////////////////////
     $('.filter-trigger').on('click', function() {
-        if ( $('.sorting-wrapper').hasClass('opened') ) {
+
+        $('.sorting-wrapper').addClass('opened');
+
+        $('.sorting-wrapper').css({
+            height: '100%'
+        });
+        
+        $('.filter-icon').hide();
+        $('.close-filters').show();
             
-            $('.sorting-wrapper').css({
-                height: '0px'
-            });
+    });
 
-            $('.filter-icon').show();
-            $('.close-filters').hide();
+    $('.close-filters').on('click', function() {
+        $('.sorting-wrapper').removeClass('opened');
 
-            $('.sorting-wrapper').removeClass('opened');
-
-        } else {
-
-            $('.sorting-wrapper').addClass('opened');
-
-            $('.sorting-wrapper').css({
-                height: '100%'
-            });
-            
-            $('.filter-icon').hide();
-            $('.close-filters').show();
-            
-        }
+        $('.sorting-wrapper').css({
+            height: '0px'
+        });
     });
 
     // //////////////////////////////
