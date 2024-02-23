@@ -27,19 +27,19 @@
             color: var(--black);
             transition: all 0.3s ease-in-out;
             cursor: pointer;
-
-            .filter-trigger {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 12px;
-            }
-
-            .close-filters {
-                display: none;
-            }
-
         }            
+
+
+        .filter-trigger {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .close-filters {
+            display: none;
+        }
         
         .filter-title:hover {
             padding-left: 5px;
