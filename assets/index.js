@@ -71,10 +71,10 @@
     });
 
     // //////////////////////////////
-    // COLLECTION - SHOW SEARCH    //
+    // NAVBAR - SHOW SEARCH    //
     // //////////////////////////////
-    $('.search-icon').on('click', function() {
-        $('.search-form-component').css({
+    $('.search-icon-nav').on('click', function() {
+        $('.search-form-component-nav').css({
             width: 'auto'
         });
 
@@ -84,7 +84,7 @@
     });
 
     $('.search-component-close').on('click', function() {
-        $('.search-form-component').css({
+        $('.search-form-component-nav').css({
             width: '0px'
         });
 
