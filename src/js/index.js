@@ -215,18 +215,7 @@
     // COLLECTION - SHOW SEARCH    //
     // //////////////////////////////
     $('.search-trigger').on('click', function() {
-        if ( $('.search-wrapper').hasClass('opened') ) {
 
-            $('.search-wrapper').removeClass('opened');
-
-            $('.search-wrapper').css({
-                height: '0px'
-            });
-
-            $('.close-search').hide();
-            $('.search-icon').show();
-
-        } else {
             $('.search-wrapper').addClass('opened');
 
             $('.search-wrapper').css({
@@ -240,7 +229,17 @@
                 $('.search-icon').hide();
             });
 
-        }
+    });
+
+    $('.close-search').on('click', function() {
+        $('.search-wrapper').removeClass('opened');
+
+        $('.search-wrapper').css({
+            height: '0px'
+        });
+
+        $('.search-icon').show();
+        $('.close-search').hide();
     });
 
 
