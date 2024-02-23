@@ -10,15 +10,15 @@
   <div class="sorting-title">
 
     <div class="filter-title filter-trigger">
-        <div class="filter-icon">{% render 'icon--filter' %}</div>
+        <div class="filter-icon filter-trigger">{% render 'icon--filter' %}</div>
         <div class="close-filters">{% render 'icon--close' %}</div> 
-        <div>{{ 'Filters' | escape }}</div>
+        <div class="filter-trigger">{{ 'Filters' | escape }}</div>
     </div>
 
     <div class="search-title search-trigger">
-      <div>{{ 'Search' | escape }}</div> 
-      <div class="search-icon">{% render 'icon--search' %}</div>
-      <div class="close-search">{% render 'icon--close' %}</div>
+      <div class="search-trigger">{{ 'Search' | escape }}</div> 
+      <div class="search-icon search-trigger">{% render 'icon--search' %}</div>
+      <div class="close-search search-trigger">{% render 'icon--close' %}</div>
     </div>
 
   </div>
