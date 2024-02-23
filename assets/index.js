@@ -185,33 +185,6 @@
     });
 
     // //////////////////////////////
-    // COLLECTION - SHOW FILTERS   //
-    // //////////////////////////////
-    $('.filter-trigger').on('click', function() {
-
-        $('.sorting-wrapper').addClass('opened');
-
-        $('.sorting-wrapper').css({
-            height: '100%'
-        });
-        
-        $('.filter-icon').hide();
-        $('.close-filters').show();
-            
-    });
-
-    $('.close-filters').on('click', function() {
-        $('.sorting-wrapper').removeClass('opened');
-
-        $('.sorting-wrapper').css({
-            height: '0px'
-        });
-
-        $('.filter-icon').show();
-        $('.close-filters').hide();
-    });
-
-    // //////////////////////////////
     // COLLECTION - SHOW SEARCH    //
     // //////////////////////////////
     $('.search-trigger').on('click', function() {

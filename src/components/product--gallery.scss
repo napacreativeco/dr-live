@@ -1,12 +1,14 @@
 .single-product .image-gallery {
     padding: 20px 0 20px var(--side-padding);
     
+    
     .featured-image {
         width: 100%;
+        //max-width: 800px;
         object-fit: cover;
         border: var(--border-blk);
         position: relative;
-        max-height: 100vh;
+        //max-height: 100vh;
 
         #featured_image_element {
             display: block;
@@ -35,12 +37,16 @@
     }
 
     .thumbnail-rack {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-gap: 4px;
+        // display: grid;
+        // grid-template-columns: repeat(6, 1fr);
+        // grid-gap: 4px;
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
         margin-top: 10px;
 
         .variant-thumbnail {
+            max-width: 120px;
             border: var(--border-blk);
             aspect-ratio: 1/1;
             overflow: hidden;

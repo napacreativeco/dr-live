@@ -383,7 +383,7 @@
               //$('.swiper-navigation-container').attr('data-slide-type', val).attr('data-layout', layout);
             },
             touchStart: function(e) { 
-              console.log('change');
+              //console.log('change');
               //$('.swiper-pagination-container').css('opacity', '0');
               //$('.swiper-navigation-container').css('opacity', '0');
             },
@@ -401,26 +401,45 @@
               //$('.swiper-pagination-container').css('opacity', '1');
               //$('.swiper-navigation-container').css('opacity', '1');
 
-              gsap.to('.hero-product', {
-                duration: 0.4,
-                y: 0,
+              // gsap.to('.hero-product', {
+              //   duration: 0.4,
+              //   y: 0,
+              //   opacity: 1
+              // });
+
+              $('.hero-product').css({
+                transform: 'translateY(0)',
                 opacity: 1
               });
 
             },
             init: function(e) {
-              gsap.from('.hero-product', {
-                duration: 0.4,
-                y: 0,
+
+              // gsap.from('.hero-product', {
+              //   duration: 0.4,
+              //   y: 0,
+              //   opacity: 1
+              // });
+              
+              $('.hero-product').css({
+                transform: 'translateY(0)',
                 opacity: 1
               });
+
             },
             slideChange: function(e) {
-              gsap.to('.hero-product', {
-                duration: 0.1,
-                y: 100,
+
+              // gsap.to('.hero-product', {
+              //   duration: 0.1,
+              //   y: 100,
+              //   opacity: 0
+              // });
+
+              $('.hero-product').css({
+                transform: 'translateY(100px)',
                 opacity: 0
               });
+
             }
           }
         });
@@ -489,9 +508,9 @@
     <script type="module">
       import { subscribeToCartSectionsUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
   
-      subscribeToCartSectionsUpdate( sections => {
-        console.log('Sections are updated: ', sections);
-      });
+      //subscribeToCartSectionsUpdate( sections => {
+        //console.log('Sections are updated: ', sections);
+      //});
     </script>
     
 
@@ -523,6 +542,35 @@
           });
         }
       });
+    </script>
+
+    <script>
+    // //////////////////////////////
+    // COLLECTION - SHOW FILTERS   //
+    // //////////////////////////////
+    $('.filter-trigger').on('click', function() {
+
+      $('.sorting-wrapper').addClass('opened');
+
+      $('.sorting-wrapper').css({
+          height: '100%'
+      });
+
+      $('.filter-icon').hide();
+      $('.close-filters').show();
+          
+    });
+
+    $('.close-filters').on('click', function() {
+      $('.sorting-wrapper').removeClass('opened');
+
+      $('.sorting-wrapper').css({
+          height: '0px'
+      });
+
+      $('.filter-icon').show();
+      $('.close-filters').hide();
+    });
     </script>
 
   </body>
