@@ -28,9 +28,9 @@
 
     {% else %}
 
-     {% if product.media.size > 0 %}
-        {% render 'snippet--thumbnail-rack-media', product: product %} 
-     {% endif %}
+        {% if product.media.size > 1 %}
+            {% render 'snippet--thumbnail-rack-media', product: product %} 
+        {% endif %}
 
     {% endif %}
 
