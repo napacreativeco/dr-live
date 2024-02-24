@@ -166,7 +166,14 @@
     // //////////////////////////////
     $('.cart-nav-opener').on('click', function() {
         $('body').addClass('js-my-cart-open');
+
+        $(document).on('click', function(e) {
+            if ( $(this).not('.cart-drawer--wrapper') ) {
+                $('body').removeClass('js-my-cart-open');
+            }
+        });
     });
+    
     $('.cart-drawer--close').on('mousedown', function() {
         $('body').removeClass('js-my-cart-open');
     });

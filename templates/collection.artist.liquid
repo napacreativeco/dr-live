@@ -185,7 +185,7 @@
 
             {% comment %} Merch {% endcomment %}
             {% for prod in collection.products %}
-              {% if prod.type == 'Apparel' %}
+              {% if prod.type == 'Merch' %}
                 {% assign has_products = forloop.length %}
               {% endif %}
             {% endfor %}
@@ -204,7 +204,7 @@
                         {% for prod in collection.products %}
     
                           {% comment %} {% if prod.type != 'vinyl' and prod.type != 'music' %} {% endcomment %}
-                          {% if prod.type == 'Apparel' %}
+                          {% if prod.type == 'Merch' %}
                             <li class="item">
     
                               <div class="image">
