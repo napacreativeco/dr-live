@@ -550,24 +550,23 @@
     // //////////////////////////////
     $('.filter-trigger').on('click', function() {
 
+      // close other panels
+      if ( $('.search-wrapper').hasClass('opened') ) {
+        $('.search-wrapper').removeClass('opened');
+        $('.close-search').hide();
+        $('.search-icon').show();
+      }
+
       $('.sorting-wrapper').addClass('opened');
-
-      $('.sorting-wrapper').css({
-          height: '100%'
-      });
-
       $('.filter-icon').hide();
       $('.close-filters').show();
-          
     });
 
+    // //////////////////////////////
+    // COLLECTION - HIDE FILTERS   //
+    // //////////////////////////////
     $('.close-filters').on('click', function() {
       $('.sorting-wrapper').removeClass('opened');
-
-      $('.sorting-wrapper').css({
-          height: '0px'
-      });
-
       $('.filter-icon').show();
       $('.close-filters').hide();
     });
@@ -577,24 +576,24 @@
     // //////////////////////////////
     $('.search-trigger').on('click', function() {
 
-            $('.search-wrapper').addClass('opened');
+        // Filter Panel
+        if ( $('.sorting-wrapper').hasClass('opened') ) {
+          $('.sorting-wrapper').removeClass('opened');
+          $('.filter-icon').show();
+          $('.close-filters').hide();
+        }
 
-            $('.search-wrapper').css({
-                height: '100%'
-            });
-
-            $('.close-search').show();
-            $('.search-icon').hide();
+        $('.search-wrapper').addClass('opened');
+        $('.close-search').show();
+        $('.search-icon').hide();
 
     });
 
+    // //////////////////////////////
+    // COLLECTION - CLOSE SEARCH   //
+    // //////////////////////////////
     $('.close-search').on('click', function() {
         $('.search-wrapper').removeClass('opened');
-
-        $('.search-wrapper').css({
-            height: '0px'
-        });
-
         $('.search-icon').show();
         $('.close-search').hide();
     });
