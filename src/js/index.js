@@ -44,14 +44,14 @@
             color: 'var(--white)'
         });
 
-        $('.no-dropdown').on('mouseenter', function() {
+        // $('.no-dropdown').on('mouseenter', function() {
 
-            $('.submenu').css({
-                display: 'none',
-                transition: 'all 0.3s ease-in-out'
-            });
+        //     $('.submenu').css({
+        //         display: 'none',
+        //         transition: 'all 0.3s ease-in-out'
+        //     });
             
-        });
+        // });
 
     });
 
@@ -183,34 +183,6 @@
             $('body').attr('data-theme', localStorage.getItem("theme"));
         }
     });
-
-    // //////////////////////////////
-    // COLLECTION - SHOW SEARCH    //
-    // //////////////////////////////
-    $('.search-trigger').on('click', function() {
-
-            $('.search-wrapper').addClass('opened');
-
-            $('.search-wrapper').css({
-                height: '100%'
-            });
-
-            $('.close-search').show();
-            $('.search-icon').hide();
-
-    });
-
-    $('.close-search').on('click', function() {
-        $('.search-wrapper').removeClass('opened');
-
-        $('.search-wrapper').css({
-            height: '0px'
-        });
-
-        $('.search-icon').show();
-        $('.close-search').hide();
-    });
-
 
     // //////////////////////////////
     // MODULE - CURRENT ARTISTS    //

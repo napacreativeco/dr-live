@@ -571,6 +571,34 @@
       $('.filter-icon').show();
       $('.close-filters').hide();
     });
+
+    // //////////////////////////////
+    // COLLECTION - SHOW SEARCH    //
+    // //////////////////////////////
+    $('.search-trigger').on('click', function() {
+
+            $('.search-wrapper').addClass('opened');
+
+            $('.search-wrapper').css({
+                height: '100%'
+            });
+
+            $('.close-search').show();
+            $('.search-icon').hide();
+
+    });
+
+    $('.close-search').on('click', function() {
+        $('.search-wrapper').removeClass('opened');
+
+        $('.search-wrapper').css({
+            height: '0px'
+        });
+
+        $('.search-icon').show();
+        $('.close-search').hide();
+    });
+
     </script>
 
   </body>
