@@ -115,7 +115,7 @@
     
                 <div class="link-blocks">
                     <div class="link-block">
-                        <a href="/pages/on-tour">{{ 'On Tour' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
+                        <a href="{{ pages['tours'].url | default: '/pages/tours' }}">{{ 'On Tour' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
                     </div>
     
                     <div class="link-block">
