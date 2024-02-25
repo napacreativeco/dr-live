@@ -13,10 +13,23 @@
     {% for coll in collections %}
         {% case coll.template_suffix %}
             {% when 'artist' %}
-                <label value="{{ coll.title }}">
-                    <input class="artist-radio" data-artist="{{ coll.title | url_encode }}" type="radio" value="{{ collection.title }}">
-                    {{ coll.title }}
-                </label>
+
+              
+                {% for prod in coll.products %}
+                    {% if prod.available == true %}
+                        {% assign stock = true %}
+                    {% else %}
+                        {% assign stock = false %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if stock == true %}
+                    <label value="{{ coll.title }}">
+                        <input class="artist-radio" data-artist="{{ coll.title | url_encode }}" type="radio" value="{{ collection.title }}">
+                        {{ coll.title }}
+                    </label>
+                {% endif %}
+
         {% endcase %}
     {% endfor %}
     
