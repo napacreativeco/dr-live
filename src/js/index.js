@@ -166,14 +166,22 @@
     // //////////////////////////////
     $('.cart-nav-opener').on('click', function() {
         $('body').addClass('js-my-cart-open');
-
-        $(document).on('click', function(e) {
-            if ( $(this).not('.cart-drawer--wrapper') ) {
-                $('body').removeClass('js-my-cart-open');
-            }
-        });
     });
-    
+
+    // close cart from clicking outside
+    $("main").on("click",function(e) {
+        var cl = document.body.classList;
+        var tl = e.currentTarget.classList;
+
+        if (tl.contains('cart-drawer--wrapper')) {
+
+        } else {
+            if (cl.contains('js-my-cart-open')) {
+                cl.remove('js-my-cart-open');
+            }
+        }
+    })
+
     $('.cart-drawer--close').on('mousedown', function() {
         $('body').removeClass('js-my-cart-open');
     });
