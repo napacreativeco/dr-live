@@ -168,7 +168,9 @@
         $('body').addClass('js-my-cart-open');
     });
 
-    // close cart from clicking outside
+    // //////////////////////////////
+    // CART - CLOSE ON OUTSIDE CLIC//
+    // //////////////////////////////
     $("main").on("click",function(e) {
         var cl = document.body.classList;
         var tl = e.currentTarget.classList;
@@ -182,6 +184,9 @@
         }
     })
 
+    // //////////////////////////////
+    // CART - CLOSE                //
+    // //////////////////////////////
     $('.cart-drawer--close').on('mousedown', function() {
         $('body').removeClass('js-my-cart-open');
     });
@@ -202,17 +207,47 @@
     // //////////////////////////////
     // MODULE - CURRENT ARTISTS    //
     // //////////////////////////////
+    $.fn.extend({
+        scrollRight: function (val) {
+            if (val === undefined) {
+                return this[0].scrollWidth - (this[0].scrollLeft + this[0].clientWidth) + 1;
+            }
+            return this.scrollLeft(this[0].scrollWidth - this[0].clientWidth - val);
+        }
+    });
+
     var left = $('.current-artists--list').scrollLeft();
+    var right = $('.current-artists--list').scrollRight();
+    var amountToScroll = window.innerWidth - 30;
+    var containerWidth = $('.current-artists--list').css('width');
 
-    $('.next').on('click', function() {
-        left = left + 200;
-        $('.current-artists--list').scrollLeft(left);
-    }); 
-
+    // PREV
     $('.prev').on('click', function() {
-        left = left - 200;
+
+        if (left < 0) {
+            left = 0;
+        } else {
+            left = left - amountToScroll;
+        }
+
         $('.current-artists--list').scrollLeft(left);
     }); 
+
+    
+    // NEXT
+    $('.next').on('click', function() {
+
+        if (left >= right ) {
+   
+        } else {
+            left = left + amountToScroll;
+            $('.current-artists--list').scrollLeft(left);
+        }
+        
+        
+    }); 
+
+
 
 
 
