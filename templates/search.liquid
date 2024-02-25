@@ -13,7 +13,7 @@
     </div>
 
     {% if search.performed %}
-      {% paginate search.results by 10 %}
+      {% paginate search.results by 100 %}
         
         {% if search.results_count == 0 %} 
 
@@ -23,41 +23,68 @@
 
         {% else %}
 
+          {% for item in search.results %} 
+            {% if item.object_type == 'page' and item.handle == 'tours' %}
+              <div class="on-tour-notifier">
+                <a href="/pages/tours/"><p>This artist has Tour Dates</p>{% render 'icon--arrow-right' %}</a>
+              </div>
+            {% endif %}
+          {% endfor %}
+
           <ul class="results">
 
             {% for item in search.results %}      
-              <li class="result">
 
-                <div class="image">
-                  <img src="{{ item | image_url: width: 300 }}" alt="{{ item.featured_image.alt  }}" />
-                </div>
+              {% if item.object_type == 'page' and item.handle == 'tours' %}
+              {% else %}
 
-                <div class="title">
-                  {% if item.vendor %}
-                    <h3 class="vendor">{{ item.vendor | link_to: item.url }}</h3>
+                <li>
+
+                  {% comment %} IMAGE {% endcomment %}
+                  {% if item.object_type == 'product' %}
+                    <div class="image" onclick="window.location='{{ item.url }}';" style="background: url('{{ item.featured_image | image_url: width: '500' }}'); background-size: cover; background-position: center center;"></div>
                   {% endif %}
-                  <h2>{{ item.title | link_to: item.url }}</h2>
-                </div>
-
-                <div class="type">
-                  {% if item.price %}
-                    <span>{{ 'Product' | link_to: item.url }}</span>
+                  {% if item.object_type == 'article' %}
+                    <div class="image" onclick="window.location='{{ item.url }}';" style="background: url('{{ item.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;"></div>
                   {% endif %}
-                  {% if item.object_type == 'article' -%}
-                  {% assign trim = item.title | handleize %}
-                    <a href="/blogs/{{ item.handle | remove: '/' | remove: trim }}" title="{{ item.handle | remove: '/' | remove: trim }}">
-                      {{ item.handle | remove: '/' | remove: trim }}
-                    </a>
-                  {% endif %}
-                </div>
 
-                <script>console.log({{ item | json }})</script>
-                
-                <div class="actions">
-                  {{ 'View' | link_to: item.url }}
-                </div>
-                   
-              </li>
+                  {% comment %} NEWS {% endcomment %}
+                  {% if item.object_type == 'article' %}
+                    <div class="subtitle">
+                      <a href="{{ blogs['news'].url }}">{{ 'News' | escape }}</a>
+                    </div>
+                  {% endif %}
+
+
+                  {% comment %} TITLE {% endcomment %}
+                  <div class="title">
+                    <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+                  </div>
+
+
+                  {% comment %} PRICE {% endcomment %}
+                  {% if item.object_type == 'product' %}
+                    <div class="price">
+                      {{ item.price | money_without_trailing_zeros }}
+                    </div>
+                  {% endif %}
+
+                  {% if item.object_type == 'product' %}
+                    <ul class="tags">
+                      {% for tag in item.tags %}
+                        {% if tag != 'OOP' %}
+                          <li>{{ tag |  capitalize }}{% if forloop.last %}{% else %}{{',' |  escape }}&nbsp;{% endif %}</li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+
+
+                </li>
+
+              {% endif %}
+
+
             {% endfor %}
 
           </ul>

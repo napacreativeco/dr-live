@@ -1,22 +1,24 @@
-<article class="article-card">
-    <div class="wrap">
-        <div class="chopper">
-            <div class="image" onclick="window.location='{{ post.url }}';" style="background: url('{{ post.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;">
+<li>
+    <article class="article-card">
+        <div class="wrap">
+            <div class="chopper">
+                <div class="image" onclick="window.location='{{ post.url }}';" style="background: url('{{ post.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;">
+                </div>
+            </div>
+    
+            <div class="data">
+                <div class="date">
+                    {{ post.metafields.videos.premiere_date | date: '%b.%m.%y' }}
+                </div>
+                <div class="title">
+                    <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                </div>
+                <div class="tags">
+                    {% for tag in post.tags %}
+                        {{ tag }}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-
-        <div class="data">
-            <div class="date">
-                {{ post.metafields.videos.premiere_date | date: '%b.%m.%y' }}
-            </div>
-            <div class="title">
-                <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-            </div>
-            <div class="tags">
-                {% for tag in post.tags %}
-                    {{ tag }}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</article>
+    </article>
+</li>

@@ -96,7 +96,6 @@
                     {% assign hide_default_title = true %}
                 {% endif %}     
 
-
                 {% if product.variants.size > 1 %} 
 
                     {% comment %} 
@@ -188,6 +187,7 @@
                     {% endcomment %}
                     <ul class="variants-list">
                         {% assign found_available_variant = false %}
+
                         {% for variant in product.variants %}
 
                             {% if variant.available == true %}
@@ -209,7 +209,7 @@
                                             id="{{ variant.id }}" 
                                             value="{{ variant.id }}" 
                                             name="id"
-                                            {% if variant.selected %}
+                                            {% if variant.selected or product.selected_or_first_available_variant %}
                                                 checked="checked"
                                             {% endif %}
                                             {% if found_available_variant == false %}
@@ -272,7 +272,7 @@
 
                 {% else %}
             
-                    <input type="hidden" name="id" value="{{ product.id }}" checked="checked" />
+                    {% comment %} <input type="hidden" name="id" value="{{ product.id }}" checked="checked" /> {% endcomment %}
             
                 {% endif %}
 
@@ -282,5 +282,9 @@
     </div>
 
 {% else %}
-    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
+    <label for="{{ variant.id }}">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
+    </label>
+    
+
 {% endif %}

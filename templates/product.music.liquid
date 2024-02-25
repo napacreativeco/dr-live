@@ -24,8 +24,6 @@
     
     <form action="/cart/add" method="post" enctype="multipart/form-data">
 
-      <div data-ajax-cart-messages="form"></div>
-
       {% comment %}
       * 
       * Top
@@ -55,7 +53,13 @@
 
             {% render 'product--actions', product: product, pre_order: pre_order, add_to_cart: add_to_cart, preorder_date: preorder_date, today_date: today_date %}
 
+            <div class="product-form-errors">
+              <div data-ajax-cart-messages="form"></div>
+            </div>
+            
           </div>
+
+
 
         </div>
       </div>

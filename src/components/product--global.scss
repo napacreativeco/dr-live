@@ -56,6 +56,20 @@
         text-transform: uppercase;
         text-align: left;
     }
+
+    .product-form-errors {
+        position: relative;
+        display: block;
+        margin-top: 20px;
+
+        div[data-ajax-cart-messages="form"] {
+            border: var(--border-blk);
+            padding: 10px 14px;
+        }
+        div[data-ajax-cart-messages="form"]:empty {
+            display: none;
+        }
+    }
 }
 
 

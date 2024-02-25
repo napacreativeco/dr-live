@@ -1,0 +1,32 @@
+<li class="result">
+
+<div class="image">
+  <img src="{{ item | image_url: width: 300 }}" alt="{{ item.featured_image.alt  }}" />
+</div>
+
+<div class="title">
+  {% if item.vendor %}
+    <h3 class="vendor">{{ item.vendor | link_to: item.url }}</h3>
+  {% endif %}
+  <h2>{{ item.title | link_to: item.url }}</h2>
+</div>
+
+<div class="type">
+  {% if item.price %}
+    <span>{{ 'Product' | link_to: item.url }}</span>
+  {% endif %}
+  {% if item.object_type == 'article' -%}
+  {% assign trim = item.title | handleize %}
+    <a href="/blogs/{{ item.handle | remove: '/' | remove: trim }}" title="{{ item.handle | remove: '/' | remove: trim }}">
+      {{ item.handle | remove: '/' | remove: trim }}
+    </a>
+  {% endif %}
+</div>
+
+<script>console.log({{ item | json }})</script>
+
+<div class="actions">
+  {{ 'View' | link_to: item.url }}
+</div>
+   
+</li>
