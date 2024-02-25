@@ -271,7 +271,40 @@
                     </ul>
 
                 {% else %}
-            
+                    <ul>
+                        {% for variant in product.variants %}
+                            {% if variant.available == true %}
+                                <li class="switch-field">
+                                    <label for="{{ variant.id }}">
+    
+                                        <input type="radio" 
+                                            {% if variant.compare_at_price > variant.price %}
+                                                data-compare-at-price="{{ variant.compare_at_price | money_without_trailing_zeros }}"
+                                            {% endif %} 
+                                            data-price="{{ variant.price | money_without_trailing_zeros }}" 
+                                            data-image="{% if variant.featured_image %} {{ variant.featured_image | image_url: width: 700 }} {% endif %}"
+                                            id="{{ variant.id }}" 
+                                            value="{{ variant.id }}" 
+                                            name="id"
+                                            {% if variant.selected or product.selected_or_first_available_variant %}
+                                                checked="checked"
+                                            {% endif %}
+                                            {% if found_available_variant == false %}
+                                                {% assign found_available_variant = true %} 
+                                            {% endif %} 
+                                        />
+    
+                                        <span class="variant-name">
+                                            {{ variant.title }}
+                                        </span>
+    
+                                    </label>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+
+
                     {% comment %} <input type="hidden" name="id" value="{{ product.id }}" checked="checked" /> {% endcomment %}
             
                 {% endif %}
