@@ -11,7 +11,83 @@
     justify-content: space-between;
     padding: 0 var(--side-padding);
 
-    // Title Bar
+    span.title {
+        text-transform: uppercase;
+        font-size: var(--block-title-size);
+        color: var(--black);
+        display: block;
+        margin: 10px 0 30px 0;
+    }
+
+    label {
+        font-size: var(--block-option-size);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        cursor: pointer;
+    }
+
+    input[type="radio"] {
+        appearance: none;
+        min-width: 15px;
+        min-height: 15px;
+        width: 15px;
+        height: 15px;
+        max-width: 15px;
+        max-height: 15px;
+        border: var(--border-blk);
+        color: var(--black);
+        border-radius: 50%;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    input[type="radio"]:checked {
+        background: var(--black);
+    }
+
+    label:hover {
+        input[type="radio"] {
+            background: var(--black);
+        }
+    }
+
+    fieldset {
+        overflow-y: scroll;
+        height: 300px;
+    }
+
+    fieldset {
+        scrollbar-width: thin;
+        scrollbar-color: transparent;
+    }
+    
+    /* Works on Chrome, Edge, and Safari */
+    fieldset::-webkit-scrollbar {
+        display: block;
+        width: 12px;
+        background: var(--white);
+    }
+    
+    fieldset::-webkit-scrollbar-track {
+        display: block;
+        background: var(--white);
+        border: var(--border-blk);
+    }
+    
+    fieldset::-webkit-scrollbar-thumb {
+        display: block;
+        background-color: var(--black);
+    }
+
+
+    /* 
+    *
+    * Title Bar
+    *
+    */
     .sorting-title {
         display: flex;
         flex-direction: row;
@@ -70,9 +146,10 @@
 
     }
 
+
     /* 
     *
-    * Sorting Blocks
+    * Blocks
     *
     */
     .sorting-wrapper {
@@ -91,49 +168,6 @@
 
         .filter-icon { display: none; }
         .close-filters { display: block; }
-    }
-
-    span.title {
-        text-transform: uppercase;
-        font-size: var(--block-title-size);
-        color: var(--black);
-        display: block;
-        margin: 10px 0 30px 0;
-    }
-
-    label {
-        font-size: var(--block-option-size);
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 12px;
-        cursor: pointer;
-    }
-
-    input[type="radio"] {
-        appearance: none;
-        min-width: 15px;
-        min-height: 15px;
-        width: 15px;
-        height: 15px;
-        max-width: 15px;
-        max-height: 15px;
-        border: var(--border-blk);
-        color: var(--black);
-        border-radius: 50%;
-        margin: 0;
-        cursor: pointer;
-    }
-
-    input[type="radio"]:checked {
-        background: var(--black);
-    }
-
-    label:hover {
-        input[type="radio"] {
-            background: var(--black);
-        }
     }
 
     /*
@@ -190,28 +224,6 @@
             color: var(--black);
         }
 
-        fieldset {
-            overflow-y: scroll;
-            height: 300px;
-        }
-
-        fieldset {
-            scrollbar-width: thin;
-            scrollbar-color: transparent;
-        }
-        
-        /* Works on Chrome, Edge, and Safari */
-        fieldset::-webkit-scrollbar {
-            display: none;
-        }
-        
-        fieldset::-webkit-scrollbar-track {
-            display: none;
-        }
-        
-        fieldset::-webkit-scrollbar-thumb {
-            display: none;
-        }
     }
 
     /*
@@ -321,7 +333,9 @@ li.active-filter {
 }
 
 /*
------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> 
+-----------------------------------------------------------------------------------------------
 */
 @media screen and (max-width: 767px) {
     
