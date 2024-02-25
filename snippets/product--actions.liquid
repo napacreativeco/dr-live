@@ -114,7 +114,7 @@
                             jQuery(".price-field del").html(first_variant_compare_at_price);
 
                             /*
-                            * Radio Links
+                            * Radio Click
                             */
                             jQuery("input[type='radio']").click(function() {
 
@@ -143,13 +143,12 @@
                             });
 
                             /*
-                            * Thumbnail Links
+                            * Thumbnail Click
                             */
                             jQuery('.variant-thumbnail').on('click', function(e) {
                                 var variant_price = jQuery(this).attr("data-price");
                                 var t = e.currentTarget;
                                 var targ = $(this).attr('data-id');
-                                //console.log(targ);
 
                                 // Update Image
                                 var variant_image = jQuery(this).attr('data-image');
@@ -165,10 +164,11 @@
                                 // Update Checked
                                 jQuery('input[value="' + targ + '"]').prop('checked', true);
 
-                                console.log('#' + targ)
-
                             });
 
+                            /*
+                            * Media Thumbnail Click
+                            */
                             jQuery('.media-thumbnail').on('click', function() {
 
                                 var targ = jQuery(this).attr('data-image');
@@ -271,6 +271,7 @@
                     </ul>
 
                 {% else %}
+
                     <ul>
                         {% for variant in product.variants %}
                             {% if variant.available == true %}
@@ -314,7 +315,16 @@
         </div>
     </div>
 
+
+
 {% else %}
+
+
+    {% comment %} 
+    *
+    * HAS ONLY DEFAULT
+    *
+    {% endcomment %}
     <label for="{{ variant.id }}">
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
     </label>

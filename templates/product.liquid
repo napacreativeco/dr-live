@@ -7,17 +7,13 @@
 
 {{ 'product--global.css' | asset_url | stylesheet_tag }}
 
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+<meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
 
 <div class="single-product default">
   <div class="wrapper">
 
-    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
-    <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
-    
     <form action="/cart/add" method="post" enctype="multipart/form-data">
-
-      {% comment %} Cart Messages {% endcomment %}
-      <div data-ajax-cart-messages="form"></div>
 
       <div class="product-section-one">
         <div class="wrapper">
@@ -31,6 +27,11 @@
           {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
           <div class="left">
 
+            {% comment %}
+            * 
+            * Gallery
+            *
+            {% endcomment %}
             {% render 'product--image-gallery', product: product, variant_images: variant_images %}
 
           </div>
@@ -43,8 +44,27 @@
           {% endcomment %}
           <div class="right">
 
+            {% comment %}
+            * 
+            * Actions
+            *
+            {% endcomment %}
             {% render 'product--actions', product: product, pre_order: pre_order, add_to_cart: add_to_cart %}
 
+            {% comment %}
+            * 
+            * Messages
+            *
+            {% endcomment %}
+            <div class="product-form-errors">
+              <div data-ajax-cart-messages="form"></div>
+            </div>
+
+            {% comment %}
+            * 
+            * Description
+            *
+            {% endcomment %}
             <div class="description">
                 <p>{{ product.description }}</p>
             </div>
@@ -151,7 +171,7 @@
 
   });
 
-  Shopify.Image.preload({{ product.images | json }}, 'grande');
-  Shopify.Image.preload({{ product.images | json }}, '1024x1024');
+  //Shopify.Image.preload({{ product.images | json }}, 'grande');
+  //Shopify.Image.preload({{ product.images | json }}, '1024x1024');
 
 </script>
