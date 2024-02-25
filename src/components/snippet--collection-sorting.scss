@@ -60,21 +60,21 @@
     }
 
     fieldset {
-        scrollbar-width: thin;
-        scrollbar-color: transparent;
+        scrollbar-width: 10px;
+        //scrollbar-color: var(--black);
     }
     
     /* Works on Chrome, Edge, and Safari */
     fieldset::-webkit-scrollbar {
         display: block;
         width: 12px;
-        background: var(--white);
+        background: transparent;
     }
     
     fieldset::-webkit-scrollbar-track {
         display: block;
-        background: var(--white);
-        border: var(--border-blk);
+        background: transparent;
+        //border: var(--border-blk);
     }
     
     fieldset::-webkit-scrollbar-thumb {
@@ -208,7 +208,7 @@
     */
     .sort-by-artist {
         height: 100%;
-        padding: 0px var(--side-padding);
+        padding: 0px 0px 0px var(--side-padding);
         border-right: var(--border-blk);
         border-bottom: var(--border-blk);
         display: flex;
@@ -233,7 +233,7 @@
     */
     .sort-by-type {
         height: 100%;
-        padding: 0px var(--side-padding);
+        padding: 0px 0px 0px var(--side-padding);
         border-bottom: var(--border-blk);
         display: flex;
         flex-direction: column;
