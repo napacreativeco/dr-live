@@ -2,7 +2,7 @@
     width: 100%;
     height: calc(100vh - var(--nav-height));
     overflow: hidden;
-    background: var(--black);
+    background: var(--black-no-change);
 
     .swiper-slide {
         width: 100%;
@@ -32,7 +32,7 @@
     
     #hero-swiper {
         height: calc(100svh - 50px);
-        margin-top: 50px;
+        margin-top: 73px;
 
         .slide-box { 
             width: 90vw;

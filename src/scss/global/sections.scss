@@ -24,12 +24,14 @@ section.section {
             text-transform: uppercase;
             padding-bottom: 18px;
             border-bottom: var(--border-blk);
+            user-select: none;
         }
 
         a.view-more {
             font-size: var(--link);
             color: var(--black);
             text-transform: uppercase;
+            user-select: none;
         }
         a.view-more:hover {
             text-decoration: underline;

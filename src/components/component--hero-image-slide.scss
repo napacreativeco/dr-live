@@ -84,10 +84,13 @@
         }
 
         .slide__image.swiper-slide {
+            display: grid;
+            grid-template-rows: 80% auto;
+            height: calc(100svh - 73px );
     
             .slide-image {
                 width: 100%;
-                height: calc(100svh - var(--nav-height) );
+                height: 100%;
                 object-fit: cover;
             }
 
@@ -95,6 +98,13 @@
                 display: block;
                 width: 100%;
                 max-width: 100%;
+                padding: 30px;
+                position: relative;
+                height: 100%;
+
+                .box-wrap {
+                    padding: 0px;
+                }
             }
     
         }
