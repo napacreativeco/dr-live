@@ -1,18 +1,28 @@
 <div class="theme-mode">
+
+    {% comment %} 
+    *
+    * Dark
+    *
+    {% endcomment %}
     <div class="dark-mode">
-        <span class="icon">
-            {% render 'icon--moon' %}
-        </span>
+        {% render 'icon--moon' %}
+
         {% if location == 'mobile-overlay' %}
             <p>{{ 'Dark mode' | escape }}</p>
         {% endif %}
     </div>
+
+    {% comment %} 
+    *
+    * Lite
+    *
+    {% endcomment %}
     <div class="lite-mode">
-        <span class="icon">
-            {% render 'icon--sun' %}
-        </span>
+        {% render 'icon--sun' %}
         {% if location == 'mobile-overlay' %}
             <p>{{ 'Lite mode' | escape }}</p>
         {% endif %}
     </div>
+
 </div>
