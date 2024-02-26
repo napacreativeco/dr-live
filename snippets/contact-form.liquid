@@ -1,5 +1,9 @@
 {% form 'contact' %}
     {{ form.errors | default_errors }}
+
+    {% if form.posted_successfully? %}
+      <p>Thanks for contacting us! We will get in touch with you shortly.</p>
+    {% endif %}
   
     <div class="first-name">
       <label for="first-name">First name</label>
