@@ -29,40 +29,6 @@
     });
 
     // //////////////////////////////
-    // NAVBAR - MOUSE IN           //
-    // //////////////////////////////
-    $('.has-dropdown').mouseenter(function() {
-        
-        var title = $(this).attr('data-title');
-
-        $('[data-menu="'+ title +'"]').css({
-            display: 'flex',
-            opacity: 1,
-            transition: 'all 0.3s ease-in-out'
-        });
-
-        $('.more').css({
-            color: 'var(--white)'
-        });
-
-    });
-
-    // //////////////////////////////
-    // NAVBAR - MOUSE OUT          //
-    // //////////////////////////////    
-    $('#navbar').mouseleave(function() {
-
-        $('.submenu').css({
-            display: 'none',
-            transition: 'all 0.3s ease-in-out'
-        });
-        
-        $('.more').css({
-            color: 'var(--red)'
-        });
-    });
-
-    // //////////////////////////////
     // NAVBAR - SHOW SEARCH        //
     // //////////////////////////////
     $('.search-icon-nav').on('click', function() {
