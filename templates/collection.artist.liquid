@@ -21,12 +21,17 @@
         </div>  
       </div> 
 
-      <div class="single-artist-swiper swiper">
+      {% comment %} 
+      *
+      * Desktop
+      *
+      {% endcomment %}
+      <div class="single-artist-swiper swiper desktop">
         <div class="swiper-wrapper">
 
         {% comment %} DESKTOP {% endcomment %}
           {% for img in collection.metafields.dais.artist_gallery.value %}
-            <div class="swiper-slide desktop" style="background: url('{{ img | image_url: width: '2400' }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
+            <div class="swiper-slide" style="background: url('{{ img | image_url: width: '2400' }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
               <div class="slide-box desktop">
                 <div class="box-wrap">
                   <h1>{{ collection.title }}</h1>
@@ -37,21 +42,6 @@
               </div> 
             </div>
           {% endfor %}
-
-          {% comment %} MOBILE {% endcomment %}
-          {% for imgmobile in collection.metafields.dais.artist_gallery_mobile.value %}
-              <div class="swiper-slide mobile" style="background: url('{{ imgmobile | image_url }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
-                <div class="slide-box desktop">
-                  <div class="box-wrap">
-                    <h1>{{ collection.title }}</h1>
-                    {% if collection.metafields.artist.artist_location != blank %}
-                      <span class="location">{% render 'icon--crosshair' %}{{ collection.metafields.artist.artist_location.value }}</span>
-                    {% endif %}
-                  </div>  
-                </div> 
-              </div>
-          {% endfor %}
-
         </div>
 
         <div class="single-artist-pagination-container">
@@ -68,6 +58,41 @@
         </div>
 
       </div>
+
+      {% comment %} 
+      *
+      * Mobile
+      *
+      {% endcomment %}
+      <div class="single-artist-swiper-mobile swiper mobile">
+        <div class="swiper-wrapper">
+
+          {% comment %} Slides {% endcomment %}
+          {% for imgmobile in collection.metafields.dais.artist_gallery_mobile.value %}
+              <div class="swiper-slide" style="background: url('{{ imgmobile | image_url }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
+              </div>
+          {% endfor %}
+
+        </div>
+
+        {% comment %} Pagination {% endcomment %}
+        <div class="single-artist-pagination-mobile">
+          <div class="swiper-pagination"></div>
+        </div>
+      
+        {% comment %} Navigation {% endcomment %}
+        <div class="single-artist-navigation-container">
+          <div class="single-artist-prev">
+            {% render 'svg--left-arrow' %}
+          </div>
+          <div class="single-artist-next">
+            {% render 'svg--right-arrow' %}
+          </div>
+        </div>
+
+      </div>
+
+
     </div>
 
     {% comment %}
@@ -291,6 +316,21 @@
       },
     });
 
+
+    const artistswipermobile = new Swiper('.single-artist-swiper-mobile', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.single-artist-next',
+        prevEl: '.single-artist-prev',
+      },
+      spaceBetween: 2,
+      pagination: {
+        el: '.single-artist-pagination-mobile',
+        clickable: true
+      },
+    });
+
     var amount = artistswiper.slides.length;
     if (amount > 1) {
 
@@ -298,6 +338,5 @@
       $('.single-artist-pagination-container').hide();
       $('.single-artist-navigation-container').hide();
     }
-    
   })(jQuery);
 </script>
