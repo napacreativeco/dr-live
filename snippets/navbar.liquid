@@ -102,7 +102,18 @@
 
             {% render 'theme-mode' location: 'navbar' %}
 
-            {% render 'cart-count' %}
+            <div class="cart-link--wrapper" data-ajax-cart-toggle-class-button="js-my-cart-open">
+                <div>{{ 'CART' | escape }}</div>
+                <div class="type-writer cart-link">
+                    {% if cart.item_count < 10 and cart.item_count > 0 %}
+                        [0<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>]
+                    {% elsif cart.item_count < 1 %}
+                        [<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>]
+                    {% else %}
+                        [<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>]
+                    {% endif %}
+                </div>
+            </div>
             
         </div>
 

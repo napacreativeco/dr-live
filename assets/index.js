@@ -4,6 +4,7 @@
     // ANNOUNCEMENT BAR - CLOSE    //
     // //////////////////////////////
     $('.close-announcement-icon').on('click', function() {
+
         $('#announcement-bar').css({
             display: 'none'
         });
@@ -43,15 +44,6 @@
         $('.more').css({
             color: 'var(--white)'
         });
-
-        // $('.no-dropdown').on('mouseenter', function() {
-
-        //     $('.submenu').css({
-        //         display: 'none',
-        //         transition: 'all 0.3s ease-in-out'
-        //     });
-            
-        // });
 
     });
 
@@ -116,6 +108,9 @@
 
     });
 
+    // //////////////////////////////
+    // MOBILE NAV - CLOSE          //
+    // ////////////////////////////// 
     $('.close-overlay').on('click', function() {
         gsap.to( '.navbar-mobile--overlay', {
             display: 'none',
@@ -162,36 +157,6 @@
     });
 
     // //////////////////////////////
-    // CART                        //
-    // //////////////////////////////
-    $('.cart-nav-opener').on('click', function() {
-        $('body').addClass('js-my-cart-open');
-    });
-
-    // //////////////////////////////
-    // CART - CLOSE ON OUTSIDE CLIC//
-    // //////////////////////////////
-    $("main").on("click",function(e) {
-        var cl = document.body.classList;
-        var tl = e.currentTarget.classList;
-
-        if (tl.contains('cart-drawer--wrapper')) {
-
-        } else {
-            if (cl.contains('js-my-cart-open')) {
-                cl.remove('js-my-cart-open');
-            }
-        }
-    });
-
-    // //////////////////////////////
-    // CART - CLOSE                //
-    // //////////////////////////////
-    $('.cart-drawer--close').on('click', function() {
-        $('body').removeClass('js-my-cart-open');
-    });
-
-    // //////////////////////////////
     // THEME MODE                  //
     // //////////////////////////////
     $('.theme-mode').on('click', function() {
@@ -205,7 +170,7 @@
     });
 
     // //////////////////////////////
-    // MODULE - CURRENT ARTISTS    //
+    // CURRENT ARTISTS             //
     // //////////////////////////////
     $.fn.extend({
         scrollRight: function (val) {
@@ -215,13 +180,14 @@
             return this.scrollLeft(this[0].scrollWidth - this[0].clientWidth - val);
         }
     });
-
     var left = $('.current-artists--list').scrollLeft();
     var right = $('.current-artists--list').scrollRight();
     var amountToScroll = window.innerWidth - 30;
     var containerWidth = $('.current-artists--list').css('width');
 
-    // PREV
+    // //////////////////////////////
+    // CURRENT ARTISTS - PREV      //
+    // //////////////////////////////
     $('.prev').on('click', function() {
 
         if (left < 0) {
@@ -233,8 +199,9 @@
         $('.current-artists--list').scrollLeft(left);
     }); 
 
-    
-    // NEXT
+    // //////////////////////////////
+    // CURRENT ARTISTS - NEXT      //
+    // //////////////////////////////
     $('.next').on('click', function() {
 
         if (left >= right ) {
@@ -244,11 +211,7 @@
             $('.current-artists--list').scrollLeft(left);
         }
         
-        
     }); 
-
-
-
 
 
 })(jQuery);
