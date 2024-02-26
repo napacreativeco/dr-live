@@ -136,6 +136,17 @@
     ]
   },
   {
+    "name": "Contact Form",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_form_success",
+        "label": "Success Message",
+        "default": "Thanks for contacting us! We will get in touch with you shortly."
+      }
+    ]
+  },
+  {
     "name": "Footer",
     "settings": [
       {
