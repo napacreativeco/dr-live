@@ -42,7 +42,23 @@
 
                   {% comment %} IMAGE {% endcomment %}
                   {% if item.object_type == 'product' %}
-                    <div class="image" onclick="window.location='{{ item.url }}';" style="background: url('{{ item.featured_image | image_url: width: '500' }}'); background-size: cover; background-position: center center;"></div>
+                    
+                    <div class="image" onclick="window.location='{{ item.url }}';" style="background: url('{{ item.featured_image | image_url: width: '500' }}'); background-size: cover; background-position: center center;">
+                      
+                      {% comment %} SOLDOUT? {% endcomment %}
+                      {% if item.object_type == 'product' %}
+                        {% if item.available == false %}
+                          <div class="soldout-tag">
+                            <span class="tag">
+                              {{ 'Sold Out' | escape }}
+                            </span>
+                          </div>
+                        {% endif %}
+                      {% endif %}
+
+                    </div>
+
+
                   {% endif %}
                   {% if item.object_type == 'article' %}
                     <div class="image" onclick="window.location='{{ item.url }}';" style="background: url('{{ item.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;"></div>
