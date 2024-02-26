@@ -147,6 +147,17 @@
     ]
   },
   {
+    "name": "Newsletter Form",
+    "settings": [
+      {
+        "type": "text",
+        "id": "newsletter_form_success",
+        "label": "Success Message",
+        "default": "Thanks for signing up!"
+      }
+    ]
+  },
+  {
     "name": "Footer",
     "settings": [
       {

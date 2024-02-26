@@ -2,7 +2,7 @@
     {{ form.errors | default_errors }}
 
     {% if form.posted_successfully? %}
-      <p>{{ settings.contact_form_success }}</p>
+      <div class="form-success">{{ settings.contact_form_success }}</div>
     {% endif %}
   
     <div class="first-name">

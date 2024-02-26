@@ -50,6 +50,11 @@
 
                 <div class="bottom">
                     {% form 'customer' %}
+
+                        {% if form.posted_successfully? %}
+                            <div class="form-success">{{ settings.newsletter_form_success }}</div>
+                          {% endif %}
+
                         <div class="email">
                             <label for="email" style="display: none;">Email</label>
                             <input type="email" placeholder="peace@love.com" name="contact[email]" />
