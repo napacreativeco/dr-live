@@ -71,7 +71,7 @@
     });
 
     // //////////////////////////////
-    // NAVBAR - SHOW SEARCH    //
+    // NAVBAR - SHOW SEARCH        //
     // //////////////////////////////
     $('.search-icon-nav').on('click', function() {
         $('.search-form-component-nav').css({
@@ -182,12 +182,12 @@
                 cl.remove('js-my-cart-open');
             }
         }
-    })
+    });
 
     // //////////////////////////////
     // CART - CLOSE                //
     // //////////////////////////////
-    $('.cart-drawer--close').on('mousedown', function() {
+    $('.cart-drawer--close').on('click', function() {
         $('body').removeClass('js-my-cart-open');
     });
 

@@ -357,12 +357,12 @@ MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDI
         .wrapper {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 0px;
         }
 
         .right {
             width: 100%;
-            padding: 0 var(--side-padding);
+            padding: 40px var(--side-padding);
         }
     }
 

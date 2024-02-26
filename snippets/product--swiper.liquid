@@ -7,7 +7,7 @@
           <span>{{ 'Preorder' | escape }}</span>
         </div>
       {% endif %}
-      <script>console.log('{{ today_date | date }}');</script>
+
       {% for image in product.media %}
         <div class="swiper-slide">
           <div class="view-larger" data-image="{{ image | image_url: width: 1000 }}">   

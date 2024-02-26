@@ -17,8 +17,6 @@ jQuery(function() {
 
     jQuery('.media-thumbnail').on('click', function(e) {
 
-        console.log('clicked');
-
         var targ = jQuery(this).attr('data-image');
         jQuery('#featured_image_element').attr('src', targ);
 

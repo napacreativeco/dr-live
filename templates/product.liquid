@@ -137,10 +137,11 @@
         }
         
       } else {
+        
         // Variant is sold out.
         jQuery('#backorder').addClass('hidden');
         jQuery('#add').val({{ sold_out | json }}).addClass('disabled').prop('disabled', true);   
-        console.log('this is sold out')    
+          
       }
       
       // Whether the variant is in stock or not, we can update the price and compare at price.
