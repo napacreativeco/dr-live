@@ -163,15 +163,19 @@
             {% endcomment %}
             <div class="meta-blocks">
 
-              {% comment %} Formats {% endcomment %}
+              {% comment %}
+              *
+              * Formats
+              *
+              {% endcomment %}
               <div class="block product-variants">
 
                 <h3 class="block-title">{{ 'Formats' | escape }}</h3>
 
                 <ul class="list">
-                  {% for variant in product.variants %}
+                  {% for variant in product.metafields.music.release_formats.value %}
                     <li>    
-                      <span class="variant-name data">{{ variant.title }}</span>              
+                      <span class="variant-name data">{{ variant }}</span>              
                     </li>
                   {% endfor %}
                 </ul>
