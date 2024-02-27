@@ -13,14 +13,15 @@
     {% for coll in collections %}
         {% case coll.template_suffix %}
             {% when 'artist' %}
-
               
                 {% for prod in coll.products %}
-                    {% if prod.available == true %}
-                        {% assign stock = true %}
-                    {% else %}
-                        {% assign stock = false %}
-                    {% endif %}
+                    {% for vari in prod.variants %}
+                        {% if vari.inventory_quantity > 1 %}
+                            {% assign stock = true %}
+                        {% else %}
+                            {% assign stock = false %}
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
 
                 {% if stock == true %}
