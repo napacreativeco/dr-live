@@ -344,6 +344,7 @@ form#customer_login {
     //padding: 60px 0 60px 0;
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 var(--side-padding);
 
     .large_form {
         width: 100%;
@@ -409,6 +410,7 @@ body#challenge {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        padding: 0 var(--side-padding);
     }
 
     input[type="submit"] {
