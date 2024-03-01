@@ -29,29 +29,6 @@
     });
 
     // //////////////////////////////
-    // NAVBAR - SHOW SEARCH        //
-    // //////////////////////////////
-    $('.search-icon-nav').on('click', function() {
-        $('.search-form-component-nav').css({
-            width: 'auto'
-        });
-
-        $('.search-icon-nav').css({
-            display: 'none'
-        });
-    });
-
-    $('.search-component-close').on('click', function() {
-        $('.search-form-component-nav').css({
-            width: '0px'
-        });
-
-        $('.search-icon-nav').css({
-            display: 'block'
-        })
-    });
-
-    // //////////////////////////////
     // MOBILE NAV                  //
     // ////////////////////////////// 
     $('.menu-button').on('click', function() {
