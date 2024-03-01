@@ -25,8 +25,8 @@
                 {% endfor %}
 
                 {% if stock == true %}
-                    <label for="{{ coll.title }}">
-                        <input class="artist-radio" data-artist="{{ coll.title | url_escape | replace: '.', ' ' }}" type="radio" value="{{ coll.title }}">
+                    <label class="artist-label" for="{{ coll.title }}">
+                        <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
                         {{ coll.title }}
                     </label>
                 {% endif %}
@@ -60,8 +60,8 @@
 <script>
 (function($) {
     $(document).ready(function() {
-        $(".artist-radio").click(function(){
-            var val =  $(this).attr('data-artist');
+        $(".artist-label").click(function(){
+            var val =  $(this).find('input[type="radio"]').attr('data-artist');
             window.location="?filter.p.vendor=" + val;
             //window.location="?filter.p.collection=" + val;
         });

@@ -13,34 +13,32 @@
     *
     {% endcomment %}
     <ul class="product-list selected-collection">
+
+      {% comment %} 
+      3 rows
+      {% endcomment %}
       {%- if section.settings.latest_collection_rows == 'three' -%}
 
-        {% comment %} 
-        3 rows
-        {% endcomment %}
         {% for prod in collections[section.settings.latest_collection].products limit: 12 %}
           {% render 'product-card', prod: prod %}
         {% endfor %}
 
+      {% comment %} 
+      4 rows
+      {% endcomment %}
       {%- elsif section.settings.latest_collection_rows == 'four' -%}
 
         {% for prod in collections[section.settings.latest_collection].products limit: 16 %}
-
-          {% comment %} 
-          4 rows
-          {% endcomment %}
           {% render 'product-card', prod: prod %}
         {% endfor %}
 
       {%- else -%}
 
+        {% comment %} 
+        2 rows
+        {% endcomment %}
         {% for prod in collections[section.settings.latest_collection].products limit: 8 %}
-
-          {% comment %} 
-          2 rows
-          {% endcomment %}
           {% render 'product-card', prod: prod %}
-
         {% endfor %}
 
       {%- endif -%}
