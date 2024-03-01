@@ -16,7 +16,7 @@
               
                 {% for prod in coll.products %}
                     {% for vari in prod.variants %}
-                        {% if vari.inventory_quantity > 1 %}
+                        {% if vari.inventory_quantity > 0 %}
                             {% assign stock = true %}
                         {% else %}
                             {% assign stock = false %}
@@ -25,8 +25,8 @@
                 {% endfor %}
 
                 {% if stock == true %}
-                    <label value="{{ coll.title }}">
-                        <input class="artist-radio" data-artist="{{ coll.title | url_escape }}" type="radio" value="{{ collection.title }}">
+                    <label for="{{ coll.title }}">
+                        <input class="artist-radio" data-artist="{{ coll.title | url_escape | replace: '.', '' }}" type="radio" value="{{ coll.title }}">
                         {{ coll.title }}
                     </label>
                 {% endif %}

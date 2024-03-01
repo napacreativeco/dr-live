@@ -25,7 +25,7 @@
     <div onclick="window.location='{{ block.settings.image_slide_url }}';" class="slide-image desktop" data-type="image" data-layout="image" style="background-image: url('{{ block.settings.image_slide_image | image_url }}'); background-size: cover; background-position: top center;">
     </div>
 
-    <div onclick="window.location='{{ block.settings.image_slide_url }}';" class="slide-image mobile" data-type="image" data-layout="image" style="background-image: url('{{ block.settings.image_slide_image_mobile | image_url }}'); background-size: cover; background-position: top center;">
+    <div onclick="window.location='{{ block.settings.image_slide_url }}';" class="slide-image mobile" data-type="image" data-layout="image" style="background-image: url('{{ block.settings.image_slide_image_mobile | image_url }}'); background-size: cover; background-position: {{ block.settings.image_slide_image_mobile.presentation.focal_point }};">
     </div>
 
     {% comment %} Slide Box {% endcomment %}

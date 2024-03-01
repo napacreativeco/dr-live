@@ -278,7 +278,7 @@
         .swiper-slide {
             position: relative;
             border-bottom: var(--border-blk);
-            height: calc(100svh - 60px);
+            height: calc(100svh - var(--nav-height) );
             
             .slide-box.desktop {
                 position: absolute;
@@ -406,7 +406,7 @@
         }
 
         .single-artist--wrapper {
-            padding: 73px 0 40px 0;
+            padding: var(--nav-height) 0 40px 0;
 
             .slide-box.mobile {
                 display: block;
