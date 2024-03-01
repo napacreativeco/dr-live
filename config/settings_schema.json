@@ -167,5 +167,16 @@
         "default": "DAIS RECORDS NEWSLETTER"
       }
     ]
+  },
+  {
+    "name": "Customer Login",
+    "settings": [
+      {
+        "type": "text",
+        "id": "customer_login_link",
+        "label": "Link URL",
+        "default": "https://shopify.com/2512828/account"
+      }
+    ]
   }
 ]
