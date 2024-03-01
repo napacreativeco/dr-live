@@ -98,9 +98,9 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ 'shop.js' | asset_url }}" async></script>
-    <script src="{{ 'index-min.js' | asset_url }}" async></script>
     <script src="{{ 'aos.js' | asset_url }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="{{ 'index-min.js' | asset_url }}"></script>
 
     {% render 'navbar' %}
     {% render 'navbarmobile' %}
@@ -710,6 +710,24 @@
 
       })(jQuery);
     </script>
+
+    <script type="text/javascript">
+      (function($) {
+
+        $('.tour-modal').on('click', function() {
+            $('.tour-modal').css('display', 'none');
+        });
+
+        $('.flier-trigger').on('click', function() {
+          var modal = $(this).attr('data-image');
+
+          $('.tour-modal').css('display', 'flex').html('<img src="' + modal + '" />');
+        });
+
+      })(jQuery);
+    </script>
+
+  
 
   </body>
 

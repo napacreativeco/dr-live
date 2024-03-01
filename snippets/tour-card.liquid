@@ -5,7 +5,7 @@
     * Image
     *
     {% endcomment %}
-    <div class="image" style="background: url('{{ coll.image | image_url: width: '700' }}'); background-size: cover; background-position: center center;">
+    <div class="image" style="background: url('{{ coll.image | image_url: width: '700' }}'); background-size: cover; background-position: {{ coll.image.presentation.focal_point }};">
         &nbsp;
     </div>
 
@@ -53,9 +53,14 @@
                 {{ item.dates | metafield_tag }}
             </div>
 
-            <div class="flier">
-                <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
+            {% if item.flier.value != blank %}
+            <div class="flier flier-trigger" data-image="{{ item.flier.value | image_url: width: '900' }}">
+                <p>Tour Flier</p>
             </div>
+            {% endif %}
+
+            <div class="tour-modal"></div>
+
         </div>
     {% endfor %}
 
