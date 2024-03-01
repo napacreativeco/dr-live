@@ -77,15 +77,15 @@
 
         {% comment %} Pagination {% endcomment %}
         <div class="single-artist-pagination-mobile">
-          <div class="swiper-pagination"></div>
+          <div class="single-artist-pagination-mobile-controls"></div>
         </div>
       
         {% comment %} Navigation {% endcomment %}
         <div class="single-artist-navigation-container">
-          <div class="single-artist-prev">
+          <div class="single-artist-prev-mobile">
             {% render 'svg--left-arrow' %}
           </div>
-          <div class="single-artist-next">
+          <div class="single-artist-next-mobile">
             {% render 'svg--right-arrow' %}
           </div>
         </div>
@@ -373,12 +373,12 @@
       direction: 'horizontal',
       loop: true,
       navigation: {
-        nextEl: '.single-artist-next',
-        prevEl: '.single-artist-prev',
+        nextEl: '.single-artist-next-mobile',
+        prevEl: '.single-artist-prev-mobile',
       },
       spaceBetween: 2,
       pagination: {
-        el: '.single-artist-pagination-mobile',
+        el: '.single-artist-pagination-mobile-controls',
         clickable: true
       },
     });

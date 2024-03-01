@@ -26,7 +26,7 @@
 
                 {% if stock == true %}
                     <label for="{{ coll.title }}">
-                        <input class="artist-radio" data-artist="{{ coll.title | url_escape | replace: '.', '' }}" type="radio" value="{{ coll.title }}">
+                        <input class="artist-radio" data-artist="{{ coll.title | url_escape | replace: '.', ' ' }}" type="radio" value="{{ coll.title }}">
                         {{ coll.title }}
                     </label>
                 {% endif %}

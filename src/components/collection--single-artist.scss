@@ -516,10 +516,46 @@
             .swiper-slide {
                 height: 48vh;
             }
+
+            /* Navigation */
+            .single-artist-navigation-container {
+                position: absolute;
+                z-index: 3;
+                bottom: 0;
+                right: 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                transition: all 0.23s ease-in-out;
+                background: var(--white);
+                border-bottom: var(--border-blk);
+                border-left: var(--border-blk);
+                border-top: var(--border-blk);
+
+                .single-artist-prev-mobile {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                }
+
+                .single-artist-next-mobile {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-left: var(--border-blk);
+                    cursor: pointer;
+                }
+
+            }
+
         }
     
         /* Pagination */
-        .single-artist-pagination-container {
+        .single-artist-pagination-mobile {
             position: absolute;
             z-index: 3;
             bottom: 0;
