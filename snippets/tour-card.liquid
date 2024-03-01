@@ -22,23 +22,6 @@
 
     {% comment %}
     *
-    * Lineup
-    *
-    {% endcomment %}
-    {% for item in coll.metafields.artist.tour_dates.value %}
-        <div class="lineup">
-            {% for lineup in item.lineup.value %}
-                {% if forloop.last %}
-                    {{ lineup }}
-                {% else %}
-                    {{ lineup }}{{  ',&nbsp;' |  escape_html }}
-                {% endif %}
-            {% endfor %}
-        </div>
-    {% endfor %}
-
-    {% comment %}
-    *
     * Dates
     *
     {% endcomment %}
@@ -48,6 +31,23 @@
             <div class="title">
                 <h3>{{ item.title }}</h3>
             </div>
+
+            {% if item.lineup.value != blank %}
+                <div class="lineup">
+                    <div class="icon">
+                        &plus;
+                    </div>
+                    <div class="list">
+                        {% for lineup in item.lineup.value %}
+                            {% if forloop.last %}
+                                {{ lineup }}
+                            {% else %}
+                                {{ lineup }}{{  ',&nbsp;' |  escape_html }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
 
             <div class="dates">
                 {{ item.dates | metafield_tag }}

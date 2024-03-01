@@ -106,18 +106,28 @@
                     }
 
                     .lineup {
-                        padding: 10px 0px;
+                        padding: 0px 0px 10px 0;
+                        margin: 0 0 10px 0;
+                        border-bottom: var(--border-blk);
                         display: flex;
                         flex-direction: row;
-                        justify-content: flex-start;
-                        font-family: var(--type-writer);
-                        word-spacing: -2px;
-                        font-size: 12px;
-                        letter-spacing: -0.5px;
-                        line-height: 1.2;
-                        border-top: var(--border-blk);
-                        border-bottom: var(--border-blk);
-                        margin: 0 20px;
+                        align-items: center;
+                        gap: 4px;
+
+                        .icon {
+                            font-weight: 900;
+                        }
+
+                        .list {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            word-spacing: -2px;
+                            font-size: 12px;
+                            letter-spacing: -0.5px;
+                            line-height: 1.2;
+                        }
+
                     }
 
                     .artist {
