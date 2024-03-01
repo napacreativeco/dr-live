@@ -372,6 +372,10 @@
         }
 
     }
+
+    .single-artist-swiper-mobile {
+        display: none;
+    }
 }
 
 /*
@@ -478,6 +482,7 @@
         /* Swiper */
         .single-artist-swiper {
             position: relative;
+            display: none;
 
             .swiper-slide {
                 position: relative;
@@ -488,6 +493,14 @@
                 .slide-box.desktop {
                     display: none;
                 }
+            }
+        }
+
+        .single-artist-swiper-mobile {
+            display: block;
+
+            .swiper-slide {
+                height: 48vh;
             }
         }
     
