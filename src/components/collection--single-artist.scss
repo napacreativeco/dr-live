@@ -16,6 +16,7 @@
     }
 
 
+    /* Artist Content */
     .single-artist--wrapper {
         padding: 0px 0 60px 0;
         display: flex;
@@ -26,251 +27,252 @@
             display: none;
         }
 
-
         /* Data */
         .data {
+
             .data-wrapper {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 100px;
                 padding: 0 34px;
+            }
 
-                .section-title {
-                    border-top: var(--border-blk);
-                    padding-top: 12px;
-                    margin: 0 0 24px 0;
+            .section-title {
+                border-top: var(--border-blk);
+                padding-top: 12px;
+                margin: 0 0 24px 0;
 
-                    h3 {
-                        font-size: 20px;
+                h3 {
+                    font-size: 20px;
+                    color: var(--black);
+                    line-height: 176%;
+                    text-transform: uppercase;
+                }
+            }
+
+            .left {
+                .description {
+                    margin: 0 0 40px 0;
+
+                    p {
+                        line-height: 1.6;
+                        margin-bottom: 14px;
                         color: var(--black);
-                        line-height: 176%;
-                        text-transform: uppercase;
                     }
                 }
 
-                .left {
-                    .description {
-                        margin: 0 0 40px 0;
+                .meta-blocks {
+                    display: none;
+                    border: var(--border-blk);
+                    padding: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 60px;
 
-                        p {
-                            line-height: 1.6;
-                            margin-bottom: 14px;
+                    .meta-block {
+                        strong {
+                            font-family: var(--sans-serif);
+                            color: var(--black);
+                            font-weight: normal;
+                        }
+
+                        p, a {
+                            margin: 0 0 10px 0;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-family: var(--type-writer);
+                            color: var(--black);
+                        }
+
+                        h4 {
+                            font-size: 20px;
+                            color: var(--black);
+                            line-height: 176%;
+                            text-transform: uppercase;
+                            margin: 0 0 24px 0;
+                        }
+
+                        ul {
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 6px;
                             color: var(--black);
                         }
                     }
+                }
 
-                    .meta-blocks {
-                        display: none;
-                        border: var(--border-blk);
-                        padding: 30px;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 60px;
+            }
 
-                        .meta-block {
-                            strong {
-                                font-family: var(--sans-serif);
-                                color: var(--black);
-                                font-weight: normal;
-                            }
 
-                            p, a {
-                                margin: 0 0 10px 0;
-                                font-size: 14px;
-                                text-transform: uppercase;
-                                font-family: var(--type-writer);
-                                color: var(--black);
-                            }
+            .right {
 
-                            h4 {
-                                font-size: 20px;
-                                color: var(--black);
-                                line-height: 176%;
-                                text-transform: uppercase;
-                                margin: 0 0 24px 0;
-                            }
+                // Media
+                .media {
+                    margin: 0 0 40px 0;
 
-                            ul {
-                                list-style: none;
-                                margin: 0;
-                                padding: 0;
-                                display: flex;
-                                flex-direction: column;
-                                gap: 6px;
-                                color: var(--black);
-                            }
+                    .media-wrapper {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 10px;
+
+                        iframe {
+                            width: 100%;
+                            max-width: 100%;
+                            max-height: calc(100vw / 6);
+                            border: var(--border-blk);
                         }
                     }
 
                 }
 
+                // Releases
+                .releases {
+                    margin: 0 0 40px 0;
 
-                .right {
+                    ul {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 10px;
+                        list-style: none;
 
-                    // Media
-                    .media {
-                        margin: 0 0 40px 0;
+                        .image {
+                            margin-bottom: 10px;
+                            border: var(--border-blk);
+                            position: relative;
 
-                        .media-wrapper {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr;
-                            grid-gap: 10px;
-
-                            iframe {
-                                width: 100%;
+                            img {
                                 max-width: 100%;
-                                max-height: calc(100vw / 6);
-                                border: var(--border-blk);
-                            }
-                        }
-
-                    }
-
-                    // Releases
-                    .releases {
-                        margin: 0 0 40px 0;
-
-                        ul {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr 1fr;
-                            grid-gap: 10px;
-                            list-style: none;
-    
-                            .image {
-                                margin-bottom: 10px;
-                                border: var(--border-blk);
-                                position: relative;
-
-                                img {
-                                    max-width: 100%;
-                                    display: block;
-                                }
-
-                                .soldout-label {
-                                    position: absolute;
-                                    top: 10px;
-                                    right: 10px;
-                                    background: var(--black);
-                                    color: var(--white);
-                                    border: var(--border-wht);
-                                    padding: 4px 6px;
-                                    text-transform: uppercase;
-                                    font-family: var(--type-writer);
-                                    z-index: 3;
-                                }
+                                display: block;
                             }
 
-                            .vendor {
-                                color: var(--black);
-                                font-size: 14px;
-                                margin-bottom: 4px;
-                            }
-
-                            .title {
-                                color: var(--grey);
-                                font-size: 12px;
-                                margin-bottom: 4px;
-                            }
-
-                            .date {
-                                color: var(--grey);
-                                font-size: 12px;
-                            }
-                            
-                            a {
+                            .soldout-label {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                background: var(--black);
+                                color: var(--white);
+                                border: var(--border-wht);
+                                padding: 4px 6px;
                                 text-transform: uppercase;
                                 font-family: var(--type-writer);
+                                z-index: 3;
                             }
+                        }
 
+                        .vendor {
+                            color: var(--black);
+                            font-size: 14px;
+                            margin-bottom: 4px;
+                        }
+
+                        .title {
+                            color: var(--grey);
+                            font-size: 12px;
+                            margin-bottom: 4px;
+                        }
+
+                        .date {
+                            color: var(--grey);
+                            font-size: 12px;
+                        }
+                        
+                        a {
+                            text-transform: uppercase;
+                            font-family: var(--type-writer);
+                        }
+
+                    }
+                }
+
+                // Merch
+                .merch {
+                    margin: 0 0 40px 0;
+
+                    ul {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 10px;
+                        list-style: none;
+
+                        .image {
+                            margin-bottom: 10px;
+                            border: var(--border-blk);
+
+                            img {
+                                max-width: 100%;
+                                display: block;
+                            }
+                        }
+
+                        .vendor {
+                            color: var(--black);
+                            font-size: 14px;
+                            margin-bottom: 4px;
+                        }
+
+                        .title {
+                            color: var(--grey);
+                            font-size: 12px;
+                            margin-bottom: 4px;
+                        }
+
+                        a {
+                            text-transform: uppercase;
+                            font-family: var(--type-writer);
                         }
                     }
+                }
 
-                    // Merch
-                    .merch {
-                        margin: 0 0 40px 0;
+                // Tour Dates
+                .tour-dates {
+                    .dates-wrapper {
 
-                        ul {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr 1fr;
-                            grid-gap: 10px;
-                            list-style: none;
-    
-                            .image {
-                                margin-bottom: 10px;
-                                border: var(--border-blk);
-
-                                img {
-                                    max-width: 100%;
-                                    display: block;
-                                }
-                            }
-
-                            .vendor {
-                                color: var(--black);
-                                font-size: 14px;
-                                margin-bottom: 4px;
-                            }
-
+                        .info {
                             .title {
-                                color: var(--grey);
-                                font-size: 12px;
-                                margin-bottom: 4px;
-                            }
-
-                            a {
+                                margin: 0 0 12px 0;
                                 text-transform: uppercase;
+                                color: var(--black);
+                            }
+
+                            .dates {
                                 font-family: var(--type-writer);
-                            }
-                        }
-                    }
-
-                    // Tour Dates
-                    .tour-dates {
-                        .dates-wrapper {
-
-                            .info {
-                                .title {
-                                    margin: 0 0 12px 0;
-                                    text-transform: uppercase;
-                                    color: var(--black);
-                                }
-
-                                .dates {
-                                    font-family: var(--type-writer);
-                                    color: var(--black);
-                                    text-transform: uppercase;
-                                    > div {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 4px;
-                                        font-size: 12px;
-                                        margin: 0 0 14px 0;
-                                    }
-                                }
-
-                                .flier {
-                                    margin: 10px 0 30px 0;
-
-                                    a {
-                                        text-transform: uppercase;
-                                        text-decoration: underline;
-                                        color: var(--black);
-                                    }
+                                color: var(--black);
+                                text-transform: uppercase;
+                                > div {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 4px;
+                                    font-size: 12px;
+                                    margin: 0 0 14px 0;
                                 }
                             }
-                            
+
+                            .flier {
+                                margin: 10px 0 30px 0;
+
+                                a {
+                                    text-transform: uppercase;
+                                    text-decoration: underline;
+                                    color: var(--black);
+                                }
+                            }
                         }
                         
                     }
-
+                    
                 }
+
             }
+
         }
 
     }
 
 
-    /* Swiper */
+    /* Swiper Desktop */
     .single-artist-swiper {
         position: relative;
         background-color: var(--black);
@@ -387,13 +389,18 @@
 
     }
 
+    /* Swiper Mobile */
     .single-artist-swiper-mobile {
         display: none;
     }
 }
 
+
+
 /*
-----------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> 
+-----------------------------------------------------------------------------------------------
 */
 @media screen and (max-width: 767px) {
     .single-artist {
@@ -446,54 +453,58 @@
             
             /* Data */
             .data {
+
                 .data-wrapper {
                     display: grid;
                     grid-template-columns: 1fr;
                     gap: 50px;
                     padding: 0 var(--side-padding);
-                    
-                    .left {
-                        .description {
-                            margin: 0 0 50px 0;
+                }
+
+                .left {
+                    .description {
+                        margin: 0 0 50px 0;
+                    }
+                }
+
+                .right {
+
+                    .media {
+                        .media-wrapper {
+                            grid-template-columns: 1fr;
+
+                            iframe {
+                                max-height: calc(100vw / 2);
+                            }
                         }
                     }
-                    .right {
-                        .media {
-                            .media-wrapper {
-                                grid-template-columns: 1fr;
 
-                                iframe {
-                                    max-height: calc(100vw / 2);
-                                }
-                            }
+                    .releases {
+
+                        ul {
+                            grid-template-columns: 1fr 1fr;
                         }
+                        
+                    }
 
-                        .releases {
-
-                            ul {
-                                grid-template-columns: 1fr 1fr;
-                            }
-                            
+                    .products {
+                        ul {
+                            grid-template-columns: 1fr 1fr;
                         }
+                    }
 
-                        .products {
-                            ul {
-                                grid-template-columns: 1fr 1fr;
-                            }
-                        }
-
-                        .tour-dates {
-                            .dates-wrapper {
-                                display: grid;
-                                grid-template-columns: 1fr;
-                            }
+                    .tour-dates {
+                        .dates-wrapper {
+                            display: grid;
+                            grid-template-columns: 1fr;
                         }
                     }
                 }
+
             }
         }
 
-        /* Swiper */
+        /* Swiper Desktop */
         .single-artist-swiper {
             position: relative;
             display: none;
@@ -510,6 +521,7 @@
             }
         }
 
+        /* Swiper Mobile */
         .single-artist-swiper-mobile {
             display: block;
 
@@ -615,6 +627,5 @@
 
         }
 
-    
     }
 }

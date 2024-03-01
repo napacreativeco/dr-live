@@ -29,7 +29,6 @@
       <div class="single-artist-swiper swiper desktop">
         <div class="swiper-wrapper">
 
-        {% comment %} DESKTOP {% endcomment %}
           {% for img in collection.metafields.dais.artist_gallery.value %}
             <div class="swiper-slide" style="background: url('{{ img | image_url: width: '2400' }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
               <div class="slide-box desktop">
@@ -179,19 +178,21 @@
 
                       <div class="image">
                         <a href="{{ prod.url }}" title="{{ prod.title }}">
-                          <img src="{{ prod.featured_image | img_url: '700x' }}" alt="{{ product.title }}" />
+                          <img src="{{ prod.featured_image | image_url: width: '700' }}" alt="{{ product.title }}" />
                         </a>
                       
                         {% for vari in prod.variants %}
-                            {% if vari.inventory_quantity > 1 %}
+                            {% if vari.inventory_quantity > 0 %}
                                 {% assign stock = true %}
                             {% else %}
                                 {% assign stock = false %}
                             {% endif %}
                         {% endfor %}
                       
-                        {% if stock == false and prod.type != 'Digital' %}
-                          <span class="soldout-label">{{ 'Sold Out' | escape }}</span>
+                        {% if prod.available == false %}
+                          {% if prod.type != 'Digital' %}
+                            <span class="soldout-label">{{ 'Sold Out' | escape }}</span>
+                          {% endif %}
                         {% endif %}
 
                       </div>
