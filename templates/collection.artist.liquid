@@ -112,14 +112,26 @@
             <h3>{{ 'About ' | escape }}{{ collection.products[0].vendor }}</h3>
           </div>
 
+          {% comment %}
+          *
+          * Description
+          *
+          {% endcomment %}
           <div class="description">
             <p class="artist-description">
               {{ collection.description }}
             </p>
           </div>
 
+
           {% if collection.metafields.custom.social_media_links.value.booking_info != blank or collection.metafields.custom.social_media_links.value != blank %}
             <div class="meta-blocks">
+
+              {% comment %}
+              *
+              * Booking
+              *
+              {% endcomment %}
               {% if collection.metafields.custom.social_media_links.value.booking_info != blank %}
                 <div class="meta-block">
                   <h4>{{ 'Booking' | escape }}</h4>
@@ -127,11 +139,17 @@
                 </div>
               {% endif %}
             
+              {% comment %}
+              *
+              * Social Media
+              *
+              {% endcomment %}
               {% if collection.metafields.custom.social_media_links.value != blank %}
                 <div class="meta-block">
                   {% render 'social-media' %}
                 </div>
               {% endif %}
+
             </div>
           {% endif %}
 
@@ -143,8 +161,13 @@
         {% endcomment %}
         <div class="right">
 
-            {% comment %} Releases {% endcomment %}
+            {% comment %}
+            *
+            * Releases
+            *
+            {% endcomment %}
             <div class="releases">
+
               <div class="section-title">
                 <h3>{{ 'Releases' | escape }}</h3>
               </div>
@@ -170,7 +193,7 @@
                         {% if stock == false %}
                           <span class="soldout-label">{{ 'Sold Out' | escape }}</span>
                         {% endif %}
-                        
+
                       </div>
 
                       <div class="vendor">
@@ -197,7 +220,11 @@
               </ul>
             </div>
 
-            {% comment %} Media {% endcomment %}
+            {% comment %}
+            *
+            * Media
+            *
+            {% endcomment %}
             {% for prod in collection.products %}
               {% for vid in prod.metafields.music.media.value %}
                 {% assign has_media = forloop.length %}
@@ -221,7 +248,11 @@
               </div>
             {% endif %}
 
-            {% comment %} Merch {% endcomment %}
+            {% comment %}
+            *
+            * Merch
+            *
+            {% endcomment %}
             {% for prod in collection.products %}
               {% if prod.type == 'Merch' %}
                 {% assign has_products = forloop.length %}
@@ -272,16 +303,22 @@
               </div>
             {% endif %}
 
-            {% comment %} Tour Dates {% endcomment %}
+            {% comment %}
+            *
+            * Tour Dates
+            *
+            {% endcomment %}
             {% for item in collection.metafields.artist.tour_dates.value %}
               {% assign has_tour_dates = forloop.length %}
             {% endfor %}
             
             {% if has_tour_dates > 0 %}
               <div class="tour-dates">
+
                 <div class="section-title">
                   <h3>{{ 'Tour Dates' | escape }}</h3>
                 </div>
+
                 <div class="dates-wrapper"> 
                   {% for item in collection.metafields.artist.tour_dates.value %}
                       <div class="info">
@@ -294,9 +331,12 @@
                               {{ item.dates | metafield_tag }}
                           </div>
           
-                          <div class="flier">
-                              <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
-                          </div>
+                          {% if item.flier %}
+                            <div class="flier">
+                             
+                                <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
+                            </div>
+                          {% endif %}
                       </div>
                   {% endfor %}
                 </div>
@@ -329,7 +369,6 @@
       },
     });
 
-
     const artistswipermobile = new Swiper('.single-artist-swiper-mobile', {
       direction: 'horizontal',
       loop: true,
@@ -351,5 +390,6 @@
       $('.single-artist-pagination-container').hide();
       $('.single-artist-navigation-container').hide();
     }
+
   })(jQuery);
 </script>
