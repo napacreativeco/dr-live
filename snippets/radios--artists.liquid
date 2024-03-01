@@ -62,7 +62,7 @@
     $(document).ready(function() {
         $(".artist-radio").click(function(){
             var val =  $(this).attr('data-artist');
-            window.location="?filter.p.vendor=" + val.replace('.', '');
+            window.location="?filter.p.vendor=" + val;
             //window.location="?filter.p.collection=" + val;
         });
     });

@@ -116,6 +116,9 @@
             border-bottom: 1px solid var(--white);
     
             li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 border-left: 1px solid var(--white);
                 padding: 3px 16px;
                 cursor: pointer;
