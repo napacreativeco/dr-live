@@ -265,50 +265,6 @@ body[data-theme="dark"] {
 }
 
 
-input, textarea {
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: var(--border-blk);
-    background: transparent;
-}
-
-input:-webkit-autofill,
-input:focus {
-    background: transparent !important;
-}
-
-input:-webkit-autofill { 
-    box-shadow: 0px 0px 0px rgba(255, 255, 255, 0) inset; 
-    -webkit-box-shadow: 0px 0px 0px rgba(255, 255, 255, 0) inset;
-}
-
-input::placeholder,
-textarea::placeholder {
-    text-transform: uppercase;
-    color: var(--grey);
-    font-family: var(--sans-serif);
-}
-
-textarea {
-    max-width: 100%;
-}
-
-input[type="submit"] {
-    background: var(--black);
-    color: var(--white);
-    text-transform: uppercase;
-    padding: 12px;
-    display: block;
-    border: var(--border-blk);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-input[type="submit"]:hover {
-    background: var(--white);
-    color: var(--black);
-}
 
 
 /*

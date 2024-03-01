@@ -24,7 +24,7 @@
         {% if product.has_only_default_variant == true %}
 
             <span class="price-read">
-                {{ product.first_available_variant.price |  money_without_trailing_zeros}}
+                {{ product.first_available_variant.price |  money_without_trailing_zeros }}
             </span>
             
         {% else %}
@@ -96,7 +96,7 @@
                     {% assign hide_default_title = true %}
                 {% endif %}     
 
-                {% if product.variants.size > 1 %} 
+                {% if product.variants.size >= 1 %} 
 
                     {% comment %} 
                     *
@@ -116,7 +116,7 @@
                             /*
                             * Radio Click
                             */
-                            jQuery("input[type='radio']").click(function() {
+                            jQuery(".switch-field").on('click', function() {
 
                                 var variant_price = jQuery(this).attr("data-price");
                                 jQuery(".price-field span").html(variant_price);
@@ -134,10 +134,10 @@
                                 }
 
                                 // Update Checked
-                                if ( jQuery(this).attr('checked') == false) {
-                                    jQuery(this).attr('checked', true);
+                                if ( jQuery(this).find('input[type="radio"]').attr('checked') == false) {
+                                    jQuery(this).find('input[type="radio"]').attr('checked', true);
                                 } else {
-                                    jQuery(this).attr('checked', false);
+                                    jQuery(this).find('input[type="radio"]').attr('checked', false);
                                 }
 
                             });
@@ -205,11 +205,11 @@
                                                 data-compare-at-price="{{ variant.compare_at_price | money_without_trailing_zeros }}"
                                             {% endif %} 
                                             data-price="{{ variant.price | money_without_trailing_zeros }}" 
-                                            data-image="{% if variant.featured_image %} {{ variant.featured_image | image_url: width: 700 }} {% endif %}"
+                                            data-image="{% if variant.featured_image %} {{ variant.featured_image | image_url: width: '700' }} {% endif %}"
                                             id="{{ variant.id }}" 
                                             value="{{ variant.id }}" 
                                             name="id"
-                                            {% if variant.selected or product.selected_or_first_available_variant %}
+                                            {% if variant.selected or product.selected_or_first_available_variant == true %}
                                                 checked="checked"
                                             {% endif %}
                                             {% if found_available_variant == false %}
@@ -228,7 +228,7 @@
 
                                 {% comment %} 
                                 *
-                                * Sold Out
+                                * Sold Out (Merch only)
                                 *
                                 {% endcomment %}
                                 {% if product.template_suffix != 'music' %}

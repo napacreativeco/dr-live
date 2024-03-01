@@ -503,7 +503,7 @@
     </script>
 
 
-    <script>
+    <script type="text/javascript">
       (function($) {
 
         // //////////////////////////////
@@ -550,60 +550,63 @@
     * Collection Filters
     *
     {% endcomment %}
-    <script>
-      // //////////////////////////////
-      // COLLECTION - SHOW FILTERS   //
-      // //////////////////////////////
-      $('.filter-trigger').on('click', function() {
+    <script type="text/javascript">
+      (function($) {
 
-        // close other panels
-        if ( $('.search-wrapper').hasClass('opened') ) {
-          $('.search-wrapper').removeClass('opened');
-          $('.close-search').hide();
-          $('.search-icon').show();
-        }
+        // //////////////////////////////
+        // COLLECTION - SHOW FILTERS   //
+        // //////////////////////////////
+        $('.filter-trigger').on('click', function() {
 
-        $('.sorting-wrapper').addClass('opened');
-        $('.filter-icon').hide();
-        $('.close-filters').show();
-      });
-
-      // //////////////////////////////
-      // COLLECTION - HIDE FILTERS   //
-      // //////////////////////////////
-      $('.close-filters').on('click', function() {
-        $('.sorting-wrapper').removeClass('opened');
-        $('.filter-icon').show();
-        $('.close-filters').hide();
-      });
-
-      // //////////////////////////////
-      // COLLECTION - SHOW SEARCH    //
-      // //////////////////////////////
-      $('.search-trigger').on('click', function() {
-
-          // Filter Panel
-          if ( $('.sorting-wrapper').hasClass('opened') ) {
-            $('.sorting-wrapper').removeClass('opened');
-            $('.filter-icon').show();
-            $('.close-filters').hide();
+          // close other panels
+          if ( $('.search-wrapper').hasClass('opened') ) {
+            $('.search-wrapper').removeClass('opened');
+            $('.close-search').hide();
+            $('.search-icon').show();
           }
 
-          $('.search-wrapper').addClass('opened');
-          $('.close-search').show();
-          $('.search-icon').hide();
+          $('.sorting-wrapper').addClass('opened');
+          $('.filter-icon').hide();
+          $('.close-filters').show();
+        });
 
-      });
+        // //////////////////////////////
+        // COLLECTION - HIDE FILTERS   //
+        // //////////////////////////////
+        $('.close-filters').on('click', function() {
+          $('.sorting-wrapper').removeClass('opened');
+          $('.filter-icon').show();
+          $('.close-filters').hide();
+        });
 
-      // //////////////////////////////
-      // COLLECTION - CLOSE SEARCH   //
-      // //////////////////////////////
-      $('.close-search').on('click', function() {
-          $('.search-wrapper').removeClass('opened');
-          $('.search-icon').show();
-          $('.close-search').hide();
-      });
+        // //////////////////////////////
+        // COLLECTION - SHOW SEARCH    //
+        // //////////////////////////////
+        $('.search-trigger').on('click', function() {
 
+            // Filter Panel
+            if ( $('.sorting-wrapper').hasClass('opened') ) {
+              $('.sorting-wrapper').removeClass('opened');
+              $('.filter-icon').show();
+              $('.close-filters').hide();
+            }
+
+            $('.search-wrapper').addClass('opened');
+            $('.close-search').show();
+            $('.search-icon').hide();
+
+        });
+
+        // //////////////////////////////
+        // COLLECTION - CLOSE SEARCH   //
+        // //////////////////////////////
+        $('.close-search').on('click', function() {
+            $('.search-wrapper').removeClass('opened');
+            $('.search-icon').show();
+            $('.close-search').hide();
+        });
+
+      })(jQuery);
     </script>
 
     {% comment %} 
@@ -615,49 +618,59 @@
       function suppressJSError() {
         return true;
       }
-      window.onerror=suppressJSError;
+      //window.onerror=suppressJSError;
     </script>
 
+    {% comment %} 
+    *
+    * Submenu
+    *
+    {% endcomment %}
     <script type="text/javascript">
-    (function($) {
+      (function($) {
 
-        // //////////////////////////////
-        // NAVBAR - MOUSE IN           //
-        // //////////////////////////////
-        $('.has-dropdown').mouseenter(function() {
-            
-            var title = $(this).attr('data-title');
+          // //////////////////////////////
+          // NAVBAR - MOUSE IN           //
+          // //////////////////////////////
+          $('.has-dropdown').mouseenter(function() {
+              
+              var title = $(this).attr('data-title');
 
-            $('[data-menu="'+ title +'"]').css({
-                display: 'flex',
-                opacity: 1,
-                transition: 'all 0.3s ease-in-out'
-            });
+              $('[data-menu="'+ title +'"]').css({
+                  display: 'flex',
+                  opacity: 1,
+                  transition: 'all 0.3s ease-in-out'
+              });
 
-            $('.more').css({
-                color: 'var(--white)'
-            });
+              $('.more').css({
+                  color: 'var(--white)'
+              });
 
-        });
+          });
 
-        // //////////////////////////////
-        // NAVBAR - MOUSE OUT          //
-        // //////////////////////////////    
-        $('#navbar').mouseleave(function() {
+          // //////////////////////////////
+          // NAVBAR - MOUSE OUT          //
+          // //////////////////////////////    
+          $('#navbar').mouseleave(function() {
 
-            $('.submenu').css({
-                display: 'none',
-                transition: 'all 0.3s ease-in-out'
-            });
-            
-            $('.more').css({
-                color: 'var(--red)'
-            });
-        });
+              $('.submenu').css({
+                  display: 'none',
+                  transition: 'all 0.3s ease-in-out'
+              });
+              
+              $('.more').css({
+                  color: 'var(--red)'
+              });
+          });
 
-    })(jQuery);
+      })(jQuery);
     </script>
     
+    {% comment %} 
+    *
+    * Cart Drawer
+    *
+    {% endcomment %}
     <script>
       (function($) {
 
