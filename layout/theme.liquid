@@ -479,7 +479,7 @@
     * subscribe to updates
     *
     {% endcomment %}
-    <script type="module">
+    <script type="module" type="text/javascript">
       import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
   
       // Show a pop-up message after adding to cart
@@ -500,6 +500,26 @@
           });
         }
       });
+    </script>
+
+
+    <script>
+      (function($) {
+
+        // //////////////////////////////
+        // THEME MODE                  //
+        // //////////////////////////////
+        $('.theme-mode').on('click', function() {
+            if ( localStorage.getItem("theme") == 'dark' ) {
+                localStorage.setItem("theme", "lite");
+                $('body').attr('data-theme', localStorage.getItem("theme"));
+            } else {
+                localStorage.setItem("theme", "dark");
+                $('body').attr('data-theme', localStorage.getItem("theme"));
+            }
+        });
+        
+      })(jQuery);
     </script>
 
     {% comment %} 
