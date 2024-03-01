@@ -190,7 +190,7 @@
                             {% endif %}
                         {% endfor %}
                       
-                        {% if stock == false %}
+                        {% if stock == false and prod.type != 'Digital' %}
                           <span class="soldout-label">{{ 'Sold Out' | escape }}</span>
                         {% endif %}
 

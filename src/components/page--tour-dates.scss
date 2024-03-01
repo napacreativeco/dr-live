@@ -79,6 +79,7 @@
                 max-width: calc(100% - 24px);
                 margin: 0 auto;
 
+                // Tour Dates
                 ul {
                     column-count: 3;
                     column-gap: 10px;
@@ -89,7 +90,7 @@
                     padding: 0;
                 }
 
-                // Date Block
+                // Tour Card
                 li.tour-block {
                     border: var(--border-blk);
                     display: flex;
@@ -102,6 +103,21 @@
                         height: auto;
                         border-bottom: var(--border-blk);
                         aspect-ratio: 4/3;
+                    }
+
+                    .lineup {
+                        padding: 10px 0px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        font-family: var(--type-writer);
+                        word-spacing: -2px;
+                        font-size: 12px;
+                        letter-spacing: -0.5px;
+                        line-height: 1.2;
+                        border-top: var(--border-blk);
+                        border-bottom: var(--border-blk);
+                        margin: 0 20px;
                     }
 
                     .artist {
@@ -169,14 +185,6 @@
         padding: 60px 0 30px 0;
     
         .tour-page-wrapper {
-    
-            .tour-spotlight {
-    
-                .spotlight-swiper {
-    
-                    .swiper-slide {}
-                }
-            }
 
             .tour-dates-container {
                 .tour-dates-wrapper {
@@ -206,12 +214,6 @@
             
                         .info {
                             padding: 10px 20px 30px 20px;
-                
-                            .title {}
-                
-                            .dates {}
-    
-                            .flier {}
                         }
     
                     }

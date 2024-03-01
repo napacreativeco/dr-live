@@ -7,6 +7,12 @@
         
         <div class="tour-dates-container">
             <div class="tour-dates-wrapper">
+
+                {% comment %}
+                *
+                * Tour Dates
+                *
+                {% endcomment %}
                 <ul class="tour-dates-list">
 
                     {% for coll in collections %}
@@ -15,35 +21,12 @@
                     
                             {% if coll.metafields.artist.tour_dates.value != blank %}
                                 
-                                <li class="tour-block">
-
-                                    <div class="image" style="background: url('{{ coll.image | image_url: width: '700' }}'); background-size: cover; background-position: center center;">
-                                        &nbsp;
-                                    </div>
-
-                                    <div class="artist">
-                                        <a href="{{ coll.url }}" title="{{ coll.title }}">
-                                            <h2>{{ coll.title }}</h2>
-                                        </a>                                     
-                                    </div>
-
-                                    {% for item in coll.metafields.artist.tour_dates.value %}
-                                        <div class="info">
-
-                                            <div class="title">
-                                                <h3>{{ item.title }}</h3>
-                                            </div>
-
-                                            <div class="dates">
-                                                {{ item.dates | metafield_tag }}
-                                            </div>
-
-                                            <div class="flier">
-                                                <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                </li>
+                                {% comment %}
+                                *
+                                * Single Date
+                                *
+                                {% endcomment %}
+                                {% render 'tour-card', coll: coll %}
                             
                             {% endif %}
                         {% endcase %}

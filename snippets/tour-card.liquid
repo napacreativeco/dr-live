@@ -1,0 +1,62 @@
+<li class="tour-block">
+
+    {% comment %}
+    *
+    * Image
+    *
+    {% endcomment %}
+    <div class="image" style="background: url('{{ coll.image | image_url: width: '700' }}'); background-size: cover; background-position: center center;">
+        &nbsp;
+    </div>
+
+    {% comment %}
+    *
+    * Artist
+    *
+    {% endcomment %}
+    <div class="artist">
+        <a href="{{ coll.url }}" title="{{ coll.title }}">
+            <h2>{{ coll.title }}</h2>
+        </a>                                     
+    </div>
+
+    {% comment %}
+    *
+    * Lineup
+    *
+    {% endcomment %}
+    {% for item in coll.metafields.artist.tour_dates.value %}
+        <div class="lineup">
+            {% for lineup in item.lineup.value %}
+                {% if forloop.last %}
+                    {{ lineup }}
+                {% else %}
+                    {{ lineup }}{{  ',&nbsp;' |  escape_html }}
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    {% comment %}
+    *
+    * Dates
+    *
+    {% endcomment %}
+    {% for item in coll.metafields.artist.tour_dates.value %}
+        <div class="info">
+
+            <div class="title">
+                <h3>{{ item.title }}</h3>
+            </div>
+
+            <div class="dates">
+                {{ item.dates | metafield_tag }}
+            </div>
+
+            <div class="flier">
+                <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
+            </div>
+        </div>
+    {% endfor %}
+
+</li>
