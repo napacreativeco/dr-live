@@ -278,6 +278,21 @@
                                 <a href="{{ prod.url }}" title="{{ prod.title }}">
                                   <img src="{{ prod.featured_image | img_url: '700x' }}" alt="{{ product.title }}" />
                                 </a>
+
+                                {% for vari in prod.variants %}
+                                  {% if vari.inventory_quantity > 0 %}
+                                      {% assign stock = true %}
+                                  {% else %}
+                                      {% assign stock = false %}
+                                  {% endif %}
+                                {% endfor %}
+                              
+                                {% if prod.available == false %}
+                                  {% if prod.type != 'Digital' %}
+                                    <span class="soldout-label">{{ 'Sold Out' | escape }}</span>
+                                  {% endif %}
+                                {% endif %}
+
                               </div>
                               <div class="vendor">
                                 <a href="{{ prod.url }}" title="{{ prod.vendor }}">
