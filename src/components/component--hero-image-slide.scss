@@ -85,8 +85,8 @@
 
         .slide__image.swiper-slide {
             display: grid;
-            grid-template-rows: 80% auto;
-            height: calc(100svh - 73px );
+            grid-template-rows: 1fr auto;
+            height: calc(100svh - var(--nav-height) );
     
             .slide-image {
                 width: 100%;

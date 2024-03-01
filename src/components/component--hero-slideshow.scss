@@ -31,8 +31,8 @@
 @media screen and (max-width: 767px) {
     
     #hero-swiper {
-        height: calc(100svh - 50px);
-        margin-top: 73px;
+        height: calc(100svh - var(--nav-height) );
+        margin-top: var(--nav-height);
 
         .slide-box { 
             width: 90vw;
