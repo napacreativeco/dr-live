@@ -5,6 +5,7 @@
 * ----------------------------
 {% endcomment %}
 {{ 'collection--single-artist.css' | asset_url | stylesheet_tag }}
+{{ 'component--tour-modal.css' | asset_url | stylesheet_tag }}
 
 <div class="single-artist">
   <div class="single-artist--wrapper">
@@ -330,12 +331,14 @@
                               {{ item.dates | metafield_tag }}
                           </div>
           
-                          {% if item.flier %}
-                            <div class="flier">
-                             
-                                <a href="{{ item.flier | image_url }}" title="Flier">Tour Flier</a>
+                          {% if item.flier.value != blank %}
+                            <div class="flier flier-trigger" data-image="{{ item.flier.value | image_url: width: '900' }}">
+                                <p>Tour Flier</p>
                             </div>
                           {% endif %}
+                
+                          <div class="tour-modal"></div>
+
                       </div>
                   {% endfor %}
                 </div>

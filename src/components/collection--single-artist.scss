@@ -265,10 +265,11 @@
                             .flier {
                                 margin: 10px 0 30px 0;
 
-                                a {
+                                p {
                                     text-transform: uppercase;
                                     text-decoration: underline;
                                     color: var(--black);
+                                    cursor: pointer;
                                 }
                             }
                         }
