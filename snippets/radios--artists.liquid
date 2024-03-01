@@ -24,12 +24,36 @@
                     {% endfor %}
                 {% endfor %}
 
-                {% if stock == true %}
-                    <label class="artist-label" for="{{ coll.title }}">
-                        <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
-                        {{ coll.title }}
+                {% if coll.title == 'ADULT.' %}
+                
+                    <label class="artist-label" for="adult">
+                        <input class="artist-radio" data-artist="ADULT." type="radio" value="adult">
+                        {{ 'ADULT.' }}
                     </label>
+
+                {% elsif coll.title == 'JH1.FS3' %}
+
+                    <label class="artist-label" for="jh1-fs3">
+                        <input class="artist-radio" data-artist="JH1.FS3" type="radio" value="jh1-fs3">
+                        {{ 'JH1.FS3' }}
+                    </label>
+
+                {% elsif coll.title == 'Merzbow + Hexa' %}
+
+                    <label class="artist-label" for="merzbow-hexa">
+                        <input class="artist-radio" data-artist="Merzbow + Hexa" type="radio" value="merzbow-hexa">
+                        {{ 'Merzbow + Hexa' }}
+                    </label>
+
+                {% else %}
+                    {% if stock == true %}
+                        <label class="artist-label" for="{{ coll.title }}">
+                            <input class="artist-radio" data-artist="{{ coll.title | replace: 'ADULT.', 'adult' }}" type="radio" value="{{ coll.title }}">
+                            {{ coll.title }}
+                        </label>
+                    {% endif %}
                 {% endif %}
+
 
         {% endcase %}
     {% endfor %}

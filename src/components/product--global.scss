@@ -308,7 +308,7 @@
     color: var(--black);
     font-size: var(--description);
 
-    ul {
+    ul, ol {
         list-style-position: inside;
     }
 }
