@@ -58,6 +58,16 @@
         "type": "textarea",
         "id": "announcement_content",
         "label": "Announcement Text"
+      },
+      {
+        "type": "url",
+        "id": "announcement_link",
+        "label": "Link"
+      },
+      {
+        "type": "text",
+        "id": "announcement_link_text",
+        "label": "Link Text"
       }
     ]
   },
