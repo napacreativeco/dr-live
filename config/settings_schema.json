@@ -57,17 +57,27 @@
       {
         "type": "textarea",
         "id": "announcement_content",
-        "label": "Announcement Text"
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "announcement_text_color",
+        "label": "Text Color"
       },
       {
         "type": "url",
         "id": "announcement_link",
-        "label": "Link"
+        "label": "Link URL"
       },
       {
         "type": "text",
         "id": "announcement_link_text",
         "label": "Link Text"
+      },
+      {
+        "type": "color",
+        "id": "announcement_link_color",
+        "label": "Link Color"
       }
     ]
   },
