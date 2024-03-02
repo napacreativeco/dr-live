@@ -373,6 +373,21 @@ body#challenge {
 
 }
 
+
+.announcement-bar {
+    padding: 4px 10px;
+}
+.announcement-wrapper {
+    display: grid;
+    grid-template-columns: 4fr auto;
+    grid-gap: 10px;
+
+    a {
+        white-space: nowrap;
+        margin-right: 20px;
+    }
+}
+
 /*
 -----------------------------------------------------------------------------------------------
 MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> 

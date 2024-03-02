@@ -1,4 +1,16 @@
+
 <div class="navbar-mobile">
+  {% if settings.announcement_showhide == true %}
+    <style>
+        @media screen and (min-width: 768px) {
+            main {
+                padding-top: calc(var(--nav-height) + 48px);
+            }
+        }
+    </style>
+  
+    {% render 'announcement-bar' %}
+  {% endif %}
   <div class="navbar-mobile--row">
 
     <div class="menu-button-holder">
