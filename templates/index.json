@@ -58,6 +58,13 @@
         "show_hero": true
       }
     },
+    "latest_news_dtQrUi": {
+      "type": "latest-news",
+      "settings": {
+        "section_title": "News",
+        "link_destination": ""
+      }
+    },
     "47457f88-b3ab-49ed-b6f1-444987656578": {
       "type": "latest-products",
       "settings": {
@@ -73,19 +80,12 @@
         "section_title": "Current Artists",
         "link_destination": ""
       }
-    },
-    "latest_news_dtQrUi": {
-      "type": "latest-news",
-      "settings": {
-        "section_title": "News",
-        "link_destination": ""
-      }
     }
   },
   "order": [
     "hero-slideshow",
+    "latest_news_dtQrUi",
     "47457f88-b3ab-49ed-b6f1-444987656578",
-    "3e3c18a1-9a10-442b-8108-d3a92f3d305c",
-    "latest_news_dtQrUi"
+    "3e3c18a1-9a10-442b-8108-d3a92f3d305c"
   ]
 }
