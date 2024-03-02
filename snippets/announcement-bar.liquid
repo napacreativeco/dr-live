@@ -7,6 +7,11 @@
     }
 </style>
 
+{% comment %}
+*
+* Marquee
+*
+{% endcomment %}
 {% if settings.announcement_marquee_mode == true %}
     <script>
         document.getElementsByTagName('body').classList.add("marquee-enabled");
@@ -22,10 +27,21 @@
             {% endfor %}
         </div>
     </div>
+
+{% comment %}
+*
+* Regular
+*
+{% endcomment %}
 {% else %}
     <div id="announcement-bar" class="announcement-bar">
         <div class="announcement-wrapper">
-            {{ settings.announcement_content | default: 'announcements' }}
+            <div class="text" style="color: {{ settings.announcement_text_color }}">
+                {{ settings.announcement_content | default: 'announcements' }}
+            </div>
+            <div class="link">
+                <a href="{{ settings.announcement_link }}">{{ settings.announcement_link_text }}</a>
+            </div>
 
             <div class="close-announcement">
                 <p class="close-announcement-icon">&times;</p>
