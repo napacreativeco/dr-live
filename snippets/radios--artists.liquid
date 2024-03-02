@@ -5,11 +5,13 @@
 {% endcomment %}
 
 <fieldset class="artist-radios">
+    {% comment %}  
     <label value="{{ 'Dais Records' }}">
         <input class="artist-radio" data-artist="{{ 'Dais Records' }}" type="radio" value="{{ 'Dais Records' }}">
         {{ 'Dais Records' }}
     </label>
-
+    {% endcomment %}
+    
     {% for coll in collections %}
         {% case coll.template_suffix %}
             {% when 'artist' %}
