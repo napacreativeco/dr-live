@@ -45,7 +45,7 @@
       {
         "type": "checkbox",
         "id": "announcement_showhide",
-        "label": "Show / Hide",
+        "label": "Show \/ Hide",
         "default": false
       },
       {
@@ -195,7 +195,7 @@
         "type": "text",
         "id": "customer_login_link",
         "label": "Link URL",
-        "default": "https://shopify.com/2512828/account"
+        "default": "https:\/\/shopify.com\/2512828\/account"
       }
     ]
   }
