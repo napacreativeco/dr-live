@@ -1,34 +1,5 @@
 (function($) {
 
-    // //////////////////////////////
-    // ANNOUNCEMENT BAR - CLOSE    //
-    // //////////////////////////////
-    $('.close-announcement-icon').on('click', function() {
-
-        $('#announcement-bar').css({
-            display: 'none'
-        });
-
-        $('main').css({
-            paddingTop: 'var(--nav-height)'
-        });
-
-        $('#hero-swiper').css({
-            height: 'calc(100vh - var(--nav-height))'
-        });
-
-    });
-    
-    // //////////////////////////////
-    // MARQUEE - CLOSE             //
-    // //////////////////////////////
-    $('.close-marquee-icon').on('click', function() {
-        $('#announcement-bar--marquee').css({
-            display: 'none'
-        });
-    });
-
-
 
     // //////////////////////////////
     // CURRENT ARTISTS             //

@@ -1,7 +1,7 @@
 {{ 'component--announcement-bar.css'| asset_url| stylesheet_tag }}
 
 <style>
-    #announcement-bar {
+    .announcement-bar {
         background-color: {{ settings.announcement_background_color | default: 'var(--black-no-change)' }};
         color: {{ settings.announcement_color | default: 'var(--white-no-change)' }};
     }
@@ -11,9 +11,9 @@
     <script>
         document.getElementsByTagName('body').classList.add("marquee-enabled");
     </script>
-    <div id="announcement-bar--marquee" class="marquee-holder">
+    <div id="announcement-bar--marquee" class="marquee-holder announcement-bar">
         <div class="close-marquee">
-            <span class="close-marquee-icon">&times;</span>
+            <p class="close-marquee-icon">&times;</p>
         </div>
 
         <div class="announcement-marquee-wrapper">
@@ -23,12 +23,12 @@
         </div>
     </div>
 {% else %}
-    <div id="announcement-bar">
+    <div id="announcement-bar" class="announcement-bar">
         <div class="announcement-wrapper">
             {{ settings.announcement_content | default: 'announcements' }}
 
             <div class="close-announcement">
-                <span class="close-announcement-icon">&times;</span>
+                <p class="close-announcement-icon">&times;</p>
             </div>
         </div>
     </div>
