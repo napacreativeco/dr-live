@@ -28,76 +28,7 @@
         });
     });
 
-    // //////////////////////////////
-    // MOBILE NAV                  //
-    // ////////////////////////////// 
-    $('.menu-button').on('click', function() {
 
-        if ( $(this).hasClass('opened') ) {
-
-            gsap.to( '.navbar-mobile--overlay', {
-                display: 'none',
-                ease: 'easeOutExpo',
-            });
-
-        } else {
-
-            gsap.to( '.navbar-mobile--overlay', {
-                display: 'block',
-                ease: 'easeOutExpo',
-            });
-
-        }
-
-    });
-
-    // //////////////////////////////
-    // MOBILE NAV - CLOSE          //
-    // ////////////////////////////// 
-    $('.close-overlay').on('click', function() {
-        gsap.to( '.navbar-mobile--overlay', {
-            display: 'none',
-            ease: 'easeOutExpo',
-        });
-    });
-
-    // //////////////////////////////
-    // MOBILE NAV - SUBMENU        //
-    // //////////////////////////////
-    $('.has-mobile-dropdown').click(function(e) {
-        // e.preventDefault();
-        var title = $(this).attr('data-title');
-
-        if ( $(this).hasClass('opened-sub') ) {
-
-            var nearest = $(this).find('.mobile-submenu');
-    
-            $(this).find('.more').text('+');
-            $(this).removeClass('opened-sub');
-
-            gsap.to( $(nearest), {
-                height: '0px',
-                duration: 0.6,
-                margin: '0 0 0 0',
-                ease: 'easeOutExpo',
-            });
-
-        } else {
-
-            var nearest = $(this).find('.mobile-submenu');
-            $(this).find('.more').text('-');
-            $(this).addClass('opened-sub');
-
-            gsap.to( $(nearest), {
-                height: '100%',
-                duration: 0.6,
-                margin: '20px 0 10px 0',
-                ease: 'easeOutExpo',
-            });
-
-        }
-
-    });
 
     // //////////////////////////////
     // CURRENT ARTISTS             //

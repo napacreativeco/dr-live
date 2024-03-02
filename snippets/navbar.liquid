@@ -2,8 +2,10 @@
     
     {% if settings.announcement_showhide == true %}
         <style>
-            main {
-                padding-top: calc(var(--nav-height) + 34px);
+            @media screen and (min-width: 768px) {
+                main {
+                    padding-top: calc(var(--nav-height));
+                }
             }
         </style>
 
