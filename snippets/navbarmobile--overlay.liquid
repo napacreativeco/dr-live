@@ -65,6 +65,10 @@
 
     </nav>
 
+    <div class="account-link">
+      <a href="{{ settings.customer_login_link }}">{% render 'icon--user', color: 'var(--white)' %}{{ 'My Account' | escape }}</a>
+    </div>
+
     {% render 'searchbar' text: 'Search the Shop' %}
 
     {% render 'social-media--dais' %}

@@ -103,6 +103,24 @@
             }
         }
 
+        .account-link {
+            padding: 18px 0;
+
+            a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                font-family: var(--type-writer);
+                text-transform: uppercase;
+    
+                svg {
+                    width: 22px;
+                }
+            }
+
+        }
+
         form.search-form {
             animation: fadeIn 0.5s ease-in-out;
             animation-delay: 300;
