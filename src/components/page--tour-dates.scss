@@ -13,7 +13,7 @@
         .tour-spotlight {
             background: var(--black-no-change);
             color: var(--white-no-change);
-            border-bottom: var(--border-blk);
+            //border-bottom: var(--border-blk);
 
             .spotlight-swiper {
                 position: relative;
@@ -198,7 +198,8 @@
 
 @media screen and (max-width: 767px) {
     .tour-page {
-        padding: 60px 0 30px 0;
+        margin-top: var(--nav-height);
+        padding: 30px 0 30px 0;
     
         .tour-page-wrapper {
 
