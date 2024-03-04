@@ -76,9 +76,11 @@
         </div>
 
         {% comment %} Pagination {% endcomment %}
-        <div class="single-artist-pagination-mobile">
-          <div class="single-artist-pagination-mobile-controls"></div>
-        </div>
+        {% if collection.metafields.dais.artist_gallery_mobile.value != blank %}
+          <div class="single-artist-pagination-mobile">
+            <div class="single-artist-pagination-mobile-controls"></div>
+          </div>
+        {% endif %}
       
         {% comment %} Navigation {% endcomment %}
         <div class="single-artist-navigation-container">
