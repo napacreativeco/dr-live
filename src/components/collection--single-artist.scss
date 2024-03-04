@@ -555,7 +555,7 @@ MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDIA QUERIES ---> MEDI
             display: block;
 
             .swiper-slide {
-                height: 48vh;
+                height: calc(100svh - 140px - var(--nav-height) );
             }
 
             /* Navigation */

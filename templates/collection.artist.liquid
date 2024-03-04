@@ -69,7 +69,7 @@
 
           {% comment %} Slides {% endcomment %}
           {% for imgmobile in collection.metafields.dais.artist_gallery_mobile.value %}
-              <div class="swiper-slide" style="background: url('{{ imgmobile | image_url }}'); background-size: cover; background-position: {{ img.presentation.focal_point }};">
+              <div class="swiper-slide" style="background: url('{{ imgmobile | image_url }}'); background-size: cover; background-position: center center;">
               </div>
           {% endfor %}
 
