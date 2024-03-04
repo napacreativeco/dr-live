@@ -1,5 +1,6 @@
 .info-page {
     color: var(--black);
+    padding-top: var(--nav-height);
 
     a {
         color: var(--black);
@@ -103,6 +104,7 @@
 @media screen and (max-width: 767px) {
     
     .info-page {
+        padding-top: 0px;
 
         .page-wrapper {
             padding: 90px var(--side-padding) 30px var(--side-padding);
