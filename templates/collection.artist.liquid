@@ -76,14 +76,12 @@
         </div>
 
         {% comment %} Pagination {% endcomment %}
-        {% if collection.metafields.dais.artist_gallery_mobile.value != blank %}
-          <div class="single-artist-pagination-mobile">
-            <div class="single-artist-pagination-mobile-controls"></div>
-          </div>
-        {% endif %}
+        <div class="single-artist-pagination-container-mobile">
+          <div class="swiper-pagination-mobile"></div>
+        </div>
       
         {% comment %} Navigation {% endcomment %}
-        <div class="single-artist-navigation-container">
+        <div class="single-artist-navigation-container-mobile">
           <div class="single-artist-prev-mobile">
             {% render 'svg--left-arrow' %}
           </div>
@@ -397,7 +395,7 @@
       },
       spaceBetween: 2,
       pagination: {
-        el: '.single-artist-pagination-mobile-controls',
+        el: '.swiper-pagination-mobile',
         clickable: true
       },
     });
@@ -408,6 +406,14 @@
     } else {
       $('.single-artist-pagination-container').hide();
       $('.single-artist-navigation-container').hide();
+    }
+
+    var amountMobile = artistswipermobile.slides.length;
+    if (amountMobile > 1) {
+
+    } else {
+      $('.single-artist-pagination-container-mobile').hide();
+      $('.single-artist-navigation-container-mobile').hide();
     }
 
   })(jQuery);
