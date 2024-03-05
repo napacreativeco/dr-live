@@ -110,7 +110,7 @@
     0 16px 16px #00000014;
 }
 
-.single-card-video:hover .single-card-image-wide {
+.single-card-video:hover .single-card-image-wide.has-shadow {
   transform: scale(1.025);
   transition: all linear 0.1s;
 }
