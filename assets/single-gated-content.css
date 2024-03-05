@@ -27,8 +27,8 @@ SOFTWARE.
   flex-direction: row;
   justify-content: space-between;
   border-radius: 5px;
-  border: 1px solid rgba(127, 127, 127,.1);
-  background: rgba(127, 127, 127,.1);
+  border: 1px solid rgba(127, 127, 127, 0.1);
+  background: rgba(127, 127, 127, 0.1);
   padding: 0.5em;
   gap: 1em;
   height: 4em;
@@ -49,8 +49,8 @@ SOFTWARE.
   flex-grow: 1;
   position: relative;
   border-radius: 2px;
-  border: 1px solid rgba(127, 127, 127,.1);
-  background: rgba(127, 127, 127,.1);
+  border: 1px solid rgba(127, 127, 127, 0.1);
+  background: rgba(127, 127, 127, 0.1);
 }
 
 .single-search-bar input {
@@ -58,7 +58,7 @@ SOFTWARE.
   width: 100%;
   padding-left: 1em;
   font-family: inherit;
-  border: 1px solid rgba(127,127,127,.1);
+  border: 1px solid rgba(127, 127, 127, 0.1);
   border-radius: 2px;
   color: inherit;
   background-color: transparent;
@@ -113,8 +113,8 @@ SOFTWARE.
 .single-dropdown-button,
 .solo-selection {
   border-radius: 2px;
-  border: 1px solid rgba(127, 127, 127,.1);
-  background: rgba(127, 127, 127,.1);
+  border: 1px solid rgba(127, 127, 127, 0.1);
+  background: rgba(127, 127, 127, 0.1);
 }
 
 .single-dropdown-button {
@@ -174,7 +174,7 @@ SOFTWARE.
     0 4px 4px hsl(0deg 0% 0% / 8%), 0 8px 8px hsl(0deg 0% 0% / 8%), 0 16px 16px hsl(0deg 0% 0% / 8%);
   width: auto;
   border-radius: 2px;
-  border: 1px solid rgba(127, 127, 127,.1);
+  border: 1px solid rgba(127, 127, 127, 0.1);
   background: #e7e7e7;
   z-index: 1;
   right: -9px;
@@ -190,7 +190,7 @@ SOFTWARE.
 
 .single-dropdown-content-row:hover,
 .single-dropdown-button:hover {
-  background: rgba(127, 127, 127,.1);
+  background: rgba(127, 127, 127, 0.1);
   transition: background-color 0.25s;
   cursor: pointer;
 }
@@ -294,7 +294,7 @@ SOFTWARE.
 }
 
 .single-card-description p:not(:first-of-type) {
-    display: none;
+  display: none;
 }
 
 .card__badge {
@@ -305,8 +305,6 @@ SOFTWARE.
 /* Exclusive Page Videos */
 .single-card-video > .single-card-image-wide {
   aspect-ratio: 16 / 9;
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 8%), 0 2px 2px hsl(0deg 0% 0% / 8%),
-    0 4px 4px hsl(0deg 0% 0% / 8%), 0 8px 8px hsl(0deg 0% 0% / 8%), 0 16px 16px hsl(0deg 0% 0% / 8%);
   background-size: cover;
   width: 100%;
   border-radius: 8px;
