@@ -69,13 +69,13 @@
 
 <script>
   if (typeof SingleVideoBarSlider === 'undefined') {
-      let scriptUrl = "{{ 'single-video-bar.js' | asset_url }}";
-      let videoBarScript = document.createElement('script');
-      videoBarScript.setAttribute('src', scriptUrl);
-      videoBarScript.setAttribute('async', false);
-      document.head.appendChild(videoBarScript);
-      videoBarScript.addEventListener('load', () => new SingleVideoBarSlider({{ row_id | json }}));
+    let scriptUrl = "{{ 'single-video-bar.js' | asset_url }}";
+    let videoBarScript = document.createElement('script');
+    videoBarScript.setAttribute('src', scriptUrl);
+    videoBarScript.setAttribute('async', false);
+    document.head.appendChild(videoBarScript);
+    videoBarScript.addEventListener('load', () => new SingleVideoBarSlider({{ row_id | json }}, {{ column_count }}));
   } else {
-      new SingleVideoBarSlider({{ row_id | json }});
+    new SingleVideoBarSlider({{ row_id | json }}, {{ column_count }});
   }
 </script>
