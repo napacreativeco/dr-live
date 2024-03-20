@@ -3,6 +3,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_YjRkdR": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS136-090_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS136-090_SITE-MOBILE.jpg",
+            "image_slide_url": "",
+            "image_slide_subtitle": "PRE ORDER",
+            "image_slide_title": "",
+            "image_slide_text_body": ""
+          }
+        },
         "image_nLEzDC": {
           "type": "image",
           "settings": {
@@ -31,7 +42,7 @@
             "image_slide_image": "shopify:\/\/shop_images\/DAIS188_SITE_80b9757e-7bce-4521-9642-1aebbf80c823.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS188_SITE-MOBILE_v2.jpg",
             "image_slide_url": "shopify:\/\/products\/coil-moons-milk-in-four-phases",
-            "image_slide_subtitle": "PRE-ORDER",
+            "image_slide_subtitle": "OUT NOW",
             "image_slide_title": "COIL - Moon's Milk (in Four Phases)",
             "image_slide_text_body": "<p>Out on CD\/LP Box Sets\/Digital - March 15<\/p>"
           }
@@ -49,6 +60,7 @@
         }
       },
       "block_order": [
+        "image_YjRkdR",
         "image_nLEzDC",
         "image_8bMx74",
         "da492805-610a-4de6-9a23-31e5f7fced45",
