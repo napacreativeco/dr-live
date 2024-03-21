@@ -2,7 +2,7 @@
     ARTIST
 {% endcomment %}
 <div class="band-name">
-    <a href="/collections/{{ product.vendor | handleize }}" title={{ product.vendor }}"><h2>{{ product.vendor }}</h2></a>
+    <a href="/collections/{{ product.vendor | handleize }}" title="{{ product.vendor }}"><h2>{{ product.vendor }}</h2></a>
 </div>
 
 {% comment %} 
@@ -53,11 +53,25 @@
                 <span>{{ 'Sold Out' | escape }}</span>
             </div>
         {% else %}
-            <input 
-                type="submit" 
-                name="add" 
-                id="add" 
-                value="{{ add_to_cart | escape }}" />
+
+            {% if product.metafields.music.preorder_status == false %}
+                
+                <input 
+                    type="submit" 
+                    name="add" 
+                    id="add" 
+                    value="{{ 'Preorder' | escape }}" />
+
+            {% else %}
+
+                <input 
+                    type="submit" 
+                    name="add" 
+                    id="add" 
+                    value="{{ 'Add to cart' | escape }}" />
+
+            {% endif %}
+
         {% endif %}
              
     </div>
@@ -315,10 +329,7 @@
         </div>
     </div>
 
-
-
 {% else %}
-
 
     {% comment %} 
     *
@@ -329,5 +340,4 @@
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
     </label>
     
-
 {% endif %}
