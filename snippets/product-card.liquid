@@ -1,44 +1,46 @@
 <li class="product-card collection-card">
     <div class="product-card-wrapper">
-        <div class="image" onclick="window.location='{{ prod.url }}';">
-
-          
-            {% for variant in prod.variants %}
-
-                {% if variant.available %}
-                    {% assign second_image = variant.image %}
-                {% endif %}
-
-            {% endfor %}
-
-
-
-            {% if prod.has_only_default_variant == false %}
-                <img 
-                    class="product-card-image has-variants"
-                    src="{{ prod.featured_image | image_url: width: '400' }}" 
-                    alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
-                    data-first="{{ prod.featured_image | image_url: width: '400' }}"
-            data-second="{% if second_image %}{{ second_image | image_url: width: '400' }}{% else %}{{ prod.featured_image | image_url: width: '400' }}{% endif %}"
-                />
-                {{ variant.type }}
-            {% else %}
-
-                <img 
-                    class="product-card-image no-variants"
-                    src="{{ prod.featured_image | image_url: width: '400' }}" 
-                    alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
-                    data-first="{{ prod.featured_image | image_url: width: '400' }}"
-                    data-second="{{ prod.featured_image | image_url: width: '400' }}"
-                />
-
-            {% endif %}
-    
-            {% if prod.metafields.music.preorder_status == true %}
-                <div class="preorder-label">
-                    <span>{{ 'Preorder' | escape }}</span>
-                </div>
-            {% endif %}
+        <div class="image">
+          <a class="image-link" href="{{  prod.url }}" style="display: block;">
+            
+              {% for variant in prod.variants %}
+  
+                  {% if variant.available %}
+                      {% assign second_image = variant.image %}
+                  {% endif %}
+  
+              {% endfor %}
+  
+  
+  
+              {% if prod.has_only_default_variant == false %}
+                  <img 
+                      class="product-card-image has-variants"
+                      src="{{ prod.featured_image | image_url: width: '400' }}" 
+                      alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
+                      data-first="{{ prod.featured_image | image_url: width: '400' }}"
+              data-second="{% if second_image %}{{ second_image | image_url: width: '400' }}{% else %}{{ prod.featured_image | image_url: width: '400' }}{% endif %}"
+                  />
+                  {{ variant.type }}
+              {% else %}
+  
+                  <img 
+                      class="product-card-image no-variants"
+                      src="{{ prod.featured_image | image_url: width: '400' }}" 
+                      alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
+                      data-first="{{ prod.featured_image | image_url: width: '400' }}"
+                      data-second="{{ prod.featured_image | image_url: width: '400' }}"
+                  />
+  
+              {% endif %}
+      
+              {% if prod.metafields.music.preorder_status == true %}
+                  <div class="preorder-label">
+                      <span>{{ 'Preorder' | escape }}</span>
+                  </div>
+              {% endif %}
+  
+          </a>
         </div>
 
         <div class="data">
