@@ -48,7 +48,7 @@
                     </label>
 
                 {% else %}
-                    {% if stock != false %}
+                    {% if stock %}
                         <label class="artist-label" for="{{ coll.title }}">
                             <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
                             {{ coll.title }}
