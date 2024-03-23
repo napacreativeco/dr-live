@@ -48,12 +48,12 @@
                     </label>
 
                 {% else %}
-                    {% if stock == true %}
+                    {% comment %}{% if stock == true %}  {% endcomment %}
                         <label class="artist-label" for="{{ coll.title }}">
-                            <input class="artist-radio" data-artist="{{ coll.title | replace: 'ADULT.', 'adult' }}" type="radio" value="{{ coll.title }}">
+                            <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
                             {{ coll.title }}
                         </label>
-                    {% endif %}
+                    {% comment %}{% endif %}{% endcomment %}
                 {% endif %}
 
 
