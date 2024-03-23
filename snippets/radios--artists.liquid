@@ -15,7 +15,9 @@
     {% for coll in collections %}
         {% case coll.template_suffix %}
             {% when 'artist' %}
-              
+
+                {% comment %}
+                original loop
                 {% for prod in coll.products %}
                     {% for vari in prod.variants %}
                         {% if vari.inventory_quantity > 0 %}
@@ -24,6 +26,17 @@
                             {% assign stock = false %}
                         {% endif %}
                     {% endfor %}
+                {% endfor %}
+                {% endcomment %}
+
+                {% for prod in coll.products %}
+                    
+                        {% if prod.available %}
+                            {% assign stock = true %}
+                        {% else %}
+                            {% assign stock = false %}
+                        {% endif %}
+                  
                 {% endfor %}
 
                 {% if coll.title == 'ADULT.' %}
@@ -48,7 +61,7 @@
                     </label>
 
                 {% else %}
-                    {% if stock %}
+                    {% if stock == true %}
                         <label class="artist-label" for="{{ coll.title }}">
                             <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
                             {{ coll.title }}
