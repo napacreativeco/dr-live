@@ -48,12 +48,12 @@
                     </label>
 
                 {% else %}
-                    {% comment %}{% if stock == true %}  {% endcomment %}
+                    {% if stock != false %}
                         <label class="artist-label" for="{{ coll.title }}">
                             <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
                             {{ coll.title }}
                         </label>
-                    {% comment %}{% endif %}{% endcomment %}
+                   {% endif %}
                 {% endif %}
 
 
