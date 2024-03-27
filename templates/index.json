@@ -3,6 +3,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_PBwC8F": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS221_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS221_SITE-MOBILE_v2.jpg",
+            "image_slide_url": "shopify:\/\/products\/a-thread-silvered-and-trembling",
+            "image_slide_subtitle": "PRE ORDER",
+            "image_slide_title": "Drew McDowall - A Thread, Silvered and Trembling",
+            "image_slide_text_body": "<p>Out on LP\/Digital - May 31<\/p>"
+          }
+        },
         "image_YjRkdR": {
           "type": "image",
           "settings": {
@@ -60,6 +71,7 @@
         }
       },
       "block_order": [
+        "image_PBwC8F",
         "image_YjRkdR",
         "image_nLEzDC",
         "image_8bMx74",
