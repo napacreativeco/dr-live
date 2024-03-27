@@ -89,6 +89,16 @@
         "link_destination": ""
       }
     },
+    "block_ad_XFekjp": {
+      "type": "block-ad",
+      "settings": {
+        "section_subtitle": "Brand New",
+        "section_title": "Coil \n\"Constant Shallowness Leads to Evil\" T-Shirt",
+        "button_link": "shopify:\/\/products\/copy-of-coil-constant-shallowness-t-shirt",
+        "section_image": "shopify:\/\/shop_images\/REF-black_2367e117-6aef-44b0-a5cc-e33321b43353.jpg",
+        "text_placement": "right"
+      }
+    },
     "47457f88-b3ab-49ed-b6f1-444987656578": {
       "type": "latest-products",
       "settings": {
@@ -104,23 +114,13 @@
         "section_title": "Current Artists",
         "link_destination": ""
       }
-    },
-    "block_ad_XFekjp": {
-      "type": "block-ad",
-      "settings": {
-        "section_subtitle": "Brand New",
-        "section_title": "Coil \n\"Constant Shallowness Leads to Evil\" T-Shirt",
-        "button_link": "shopify:\/\/products\/copy-of-coil-constant-shallowness-t-shirt",
-        "section_image": "shopify:\/\/shop_images\/REF-black_2367e117-6aef-44b0-a5cc-e33321b43353.jpg",
-        "text_placement": "right"
-      }
     }
   },
   "order": [
     "hero-slideshow",
     "latest_news_dtQrUi",
+    "block_ad_XFekjp",
     "47457f88-b3ab-49ed-b6f1-444987656578",
-    "3e3c18a1-9a10-442b-8108-d3a92f3d305c",
-    "block_ad_XFekjp"
+    "3e3c18a1-9a10-442b-8108-d3a92f3d305c"
   ]
 }
