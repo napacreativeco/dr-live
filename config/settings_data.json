@@ -112,13 +112,6 @@
               "link": "<p>contact@daisrecords.com<\/p>"
             }
           },
-          "bfcc0765-93cd-4c94-948c-b83b5d96614b": {
-            "type": "item",
-            "settings": {
-              "name": "Licensing",
-              "link": "<p><a href=\"https:\/\/www.terrorbird.com\" target=\"_blank\" title=\"https:\/\/www.terrorbird.com\">Terrorbird Media<\/a><\/p>"
-            }
-          },
           "4f23f43d-87d6-45c2-8710-59d887a0a22e": {
             "type": "item",
             "settings": {
@@ -129,7 +122,6 @@
         },
         "block_order": [
           "ed56b59d-0c48-4589-a38f-d9de7ba597c2",
-          "bfcc0765-93cd-4c94-948c-b83b5d96614b",
           "4f23f43d-87d6-45c2-8710-59d887a0a22e"
         ],
         "settings": {
