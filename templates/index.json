@@ -117,7 +117,7 @@
     "merchandise_MRi8ij": {
       "type": "merchandise",
       "settings": {
-        "section_title": "",
+        "section_title": "Merchandise",
         "use_default_collection": false,
         "merchandise_collection": "merch-apparel",
         "merchandise_collection_rows": "one"
