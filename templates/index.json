@@ -113,6 +113,15 @@
         "section_title": "Current Artists",
         "link_destination": ""
       }
+    },
+    "merchandise_MRi8ij": {
+      "type": "merchandise",
+      "settings": {
+        "section_title": "",
+        "use_default_collection": false,
+        "merchandise_collection": "merch-apparel",
+        "merchandise_collection_rows": "one"
+      }
     }
   },
   "order": [
@@ -120,6 +129,7 @@
     "latest_news_dtQrUi",
     "block_ad_XFekjp",
     "47457f88-b3ab-49ed-b6f1-444987656578",
-    "3e3c18a1-9a10-442b-8108-d3a92f3d305c"
+    "3e3c18a1-9a10-442b-8108-d3a92f3d305c",
+    "merchandise_MRi8ij"
   ]
 }
