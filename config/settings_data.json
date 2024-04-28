@@ -1,7 +1,11 @@
 {
   "current": {
-    "announcement_showhide": false,
-    "announcement_content": "Sale! 25% off with code \"NEWSITE\"<a href=\"https:\/\/www.daisrecords.com\/discount\/NEWSITE?redirect=%2Fcollections%2Fnew-website-launch-sale-20-off\" style=\"color: orange\"> <b>click here<\/b><\/a>",
+    "announcement_showhide": true,
+    "announcement_content": "25% Off With Code \"SAVE25\"",
+    "announcement_text_color": "#fff",
+    "announcement_link": "shopify:\/\/collections\/new-website-launch-sale-20-off",
+    "announcement_link_text": "Click Here!",
+    "announcement_link_color": "#000000",
     "dais_instagram": "https:\/\/www.instagram.com\/daisrecords",
     "dais_twitter": "https:\/\/www.twitter.com\/daisrecords",
     "dais_bandcamp": "https:\/\/daisrecords.bandcamp.com",
