@@ -60,7 +60,71 @@
                         {{ 'Merzbow + Hexa' }}
                     </label>
 
+                {% elsif coll.title == 'Body of Light' %}
+
+                    <label class="artist-label" for="Body of Light">
+                        <input class="artist-radio" data-artist="Body of Light" type="radio" value="Body of Light">
+                        Body of Light
+                    </label>
+
+                {% elsif coll.title == 'Cold Showers' %}
+
+                    <label class="artist-label" for="Cold Showers">
+                        <input class="artist-radio" data-artist="Cold Showers" type="radio" value="Cold Showers">
+                        Cold Showers
+                    </label>
+
+                {% elsif coll.title == 'Death Bells' %}
+
+                    <label class="artist-label" for="Death Bells">
+                        <input class="artist-radio" data-artist="Death Bells" type="radio" value="Death Bells">
+                        Death Bells
+                    </label>
+
+                {% elsif coll.title == 'Hiro Kone' %}
+
+                    <label class="artist-label" for="Hiro Kone">
+                        <input class="artist-radio" data-artist="Hiro Kone" type="radio" value="Hiro Kone">
+                        Hiro Kone
+                    </label>
+
+                {% elsif coll.title == 'Stephen Mallinder' %}
+
+                    <label class="artist-label" for="Stephen Mallinder">
+                        <input class="artist-radio" data-artist="Stephen Mallinder" type="radio" value="Stephen Mallinder">
+                        Stephen Mallinder
+                    </label>
+
+                {% elsif coll.title == 'Tor Lundvall' %}
+
+                    <label class="artist-label" for="Tor Lundvall">
+                        <input class="artist-radio" data-artist="Tor Lundvall" type="radio" value="Tor Lundvall">
+                        Tor Lundvall
+                    </label>
+
+                {% elsif coll.title == 'High-Functioning Flesh' %}
+
+                    <label class="artist-label" for="High-Functioning Flesh">
+                        <input class="artist-radio" data-artist="High-Functioning Flesh" type="radio" value="High-Functioning Flesh">
+                        High-Functioning Flesh
+                    </label>
+
+                {% elsif coll.title == 'Martial Canterel' %}
+
+                    <label class="artist-label" for="Martial Canterel">
+                        <input class="artist-radio" data-artist="Martial Canterel" type="radio" value="Martial Canterel">
+                        Martial Canterel
+                    </label>
+
+                {% elsif coll.title == 'Them Are Us Too' %}
+
+                    <label class="artist-label" for="Them Are Us Too">
+                        <input class="artist-radio" data-artist="Them Are Us Too" type="radio" value="Them Are Us Too">
+                        Them Are Us Too
+                    </label>
+
                 {% else %}
+
                     {% if stock == true %}
                         <label class="artist-label" for="{{ coll.title }}">
                             <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
@@ -68,7 +132,6 @@
                         </label>
                    {% endif %}
                 {% endif %}
-
 
         {% endcase %}
     {% endfor %}
