@@ -1,10 +1,10 @@
 {
   "current": {
-    "announcement_showhide": false,
-    "announcement_content": "25% OFF \"SALE\" SECTION - Use Code \"SAVE25\"",
+    "announcement_showhide": true,
+    "announcement_content": "20% OFF SALE SECTION - Use Code \"CICADA\"",
     "announcement_text_color": "#fff",
     "announcement_link": "shopify:\/\/collections\/summersale2024",
-    "announcement_link_text": "Here!",
+    "announcement_link_text": "Click Here",
     "announcement_link_color": "#dd1d1d",
     "dais_instagram": "https:\/\/www.instagram.com\/daisrecords",
     "dais_twitter": "https:\/\/www.twitter.com\/daisrecords",
