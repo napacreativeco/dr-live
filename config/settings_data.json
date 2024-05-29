@@ -1,6 +1,6 @@
 {
   "current": {
-    "announcement_showhide": true,
+    "announcement_showhide": false,
     "announcement_content": "20% OFF SECTION - Use Code \"CICADA\"",
     "announcement_text_color": "#fff",
     "announcement_link": "shopify:\/\/collections\/summersale2024",
