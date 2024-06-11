@@ -3,24 +3,36 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_Bekt8n": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS231_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS231_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify:\/\/products\/high-vis-mob-dla",
+            "image_slide_subtitle": "Out Now",
+            "image_slide_title": "High Vis - Mob DLA",
+            "image_slide_text_body": "<p>Digital Single<\/p>"
+          }
+        },
         "image_PBwC8F": {
           "type": "image",
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS221_SITE.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS221_SITE-MOBILE_v2.jpg",
             "image_slide_url": "shopify:\/\/products\/a-thread-silvered-and-trembling",
-            "image_slide_subtitle": "PRE ORDER",
+            "image_slide_subtitle": "ORDER",
             "image_slide_title": "Drew McDowall - A Thread, Silvered and Trembling",
             "image_slide_text_body": "<p>Out on LP\/Digital - May 31<\/p>"
           }
         },
         "image_YjRkdR": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS136-090_SITE.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS136-090_SITE-MOBILE.jpg",
             "image_slide_url": "shopify:\/\/collections\/drab-majesty",
-            "image_slide_subtitle": "PRE ORDER",
+            "image_slide_subtitle": "ORDER",
             "image_slide_title": "Drab Majesty : Modern Mirror & Demonstration Represses",
             "image_slide_text_body": "<p>Out on LP - May 3rd<\/p>"
           }
@@ -49,6 +61,7 @@
         },
         "da492805-610a-4de6-9a23-31e5f7fced45": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS188_SITE_80b9757e-7bce-4521-9642-1aebbf80c823.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS188_SITE-MOBILE_v2.jpg",
@@ -60,6 +73,7 @@
         },
         "image_NFWUP7": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS223_SITE_df943d7a-be13-4e6f-b11a-fa0168e95b9f.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS223_SITE-MOBILE_v2.jpg",
@@ -71,6 +85,7 @@
         }
       },
       "block_order": [
+        "image_Bekt8n",
         "image_PBwC8F",
         "image_YjRkdR",
         "image_nLEzDC",
