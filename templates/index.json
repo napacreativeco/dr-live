@@ -109,7 +109,7 @@
       "settings": {
         "section_title": "Merchandise",
         "use_default_collection": false,
-        "merchandise_collection": "merch-apparel",
+        "merchandise_collection": "",
         "merchandise_collection_rows": "one"
       }
     },
