@@ -106,10 +106,13 @@
     },
     "merchandise_MRi8ij": {
       "type": "merchandise",
+      "custom_css": [
+
+      ],
       "settings": {
         "section_title": "Merchandise",
         "use_default_collection": false,
-        "merchandise_collection": "",
+        "merchandise_collection": "merch-apparel",
         "merchandise_collection_rows": "one"
       }
     },
