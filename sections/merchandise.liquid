@@ -1,7 +1,7 @@
 {{ 'component--merchandise.css' | asset_url | stylesheet_tag }}
 {{ 'card--product-card.css' | asset_url | stylesheet_tag }}
 
-{% render 'section-header', data: section.settings, destination: '/collections/merch' %}
+{% render 'section-header', data: section.settings, destination: section.settings.merchandise_collection.url %}
 
 <div class="merchandise--wrapper" style="padding-bottom: 40px;">
   {% if section.settings.use_default_collection == false %}
