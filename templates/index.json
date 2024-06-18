@@ -1,8 +1,28 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_ip4LWb": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS230_SITE_v2.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS230_SITE-MOBILE_v2.jpg",
+            "image_slide_url": "shopify:\/\/products\/cold-gawd-drown",
+            "image_slide_subtitle": "PREORDER - OUT AUG 30th",
+            "image_slide_title": "Cold  Gawd - I'll Drown on This Earth",
+            "image_slide_text_body": "<p>Vinyl LP<\/p>"
+          }
+        },
         "image_Bekt8n": {
           "type": "image",
           "settings": {
@@ -39,6 +59,7 @@
         },
         "image_nLEzDC": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS227_SITE_6517b7e2-e0a7-487b-a28c-7bc7d0418642.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS227_SITE-MOBILE_v2_2.jpg",
@@ -50,6 +71,7 @@
         },
         "image_8bMx74": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image_slide_image": "shopify:\/\/shop_images\/DAIS224_SITE_df08ecef-3852-4ddd-92e3-ec168e2df033.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS224_SITE-MOBILE_v2.jpg",
@@ -85,6 +107,7 @@
         }
       },
       "block_order": [
+        "image_ip4LWb",
         "image_Bekt8n",
         "image_PBwC8F",
         "image_YjRkdR",
