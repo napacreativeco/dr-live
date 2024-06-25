@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_6kWYTT": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS234_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS234_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify:\/\/collections\/geneva-jacuzzi",
+            "image_slide_subtitle": "PREORDER - OUT AUG 23rd",
+            "image_slide_title": "Geneva Jacuzzi - Triple Fire",
+            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+          }
+        },
         "image_ip4LWb": {
           "type": "image",
           "settings": {
@@ -44,24 +55,13 @@
             "image_slide_title": "Drew McDowall - A Thread, Silvered and Trembling",
             "image_slide_text_body": "<p>Vinyl LP<\/p>"
           }
-        },
-        "image_6kWYTT": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS234_SITE.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS234_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/collections\/geneva-jacuzzi",
-            "image_slide_subtitle": "PREORDER - OUT AUG 23rd",
-            "image_slide_title": "Geneva Jacuzzi - Triple Fire",
-            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
-          }
         }
       },
       "block_order": [
+        "image_6kWYTT",
         "image_ip4LWb",
         "image_Bekt8n",
-        "image_PBwC8F",
-        "image_6kWYTT"
+        "image_PBwC8F"
       ],
       "settings": {
         "show_hero": true
