@@ -45,64 +45,15 @@
             "image_slide_text_body": "<p>Vinyl LP<\/p>"
           }
         },
-        "image_YjRkdR": {
+        "image_6kWYTT": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS136-090_SITE.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS136-090_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/collections\/drab-majesty",
-            "image_slide_subtitle": "Out Now",
-            "image_slide_title": "Drab Majesty : Modern Mirror & Demonstration Represses",
-            "image_slide_text_body": "<p>CD\/LP<\/p>"
-          }
-        },
-        "image_nLEzDC": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS227_SITE_6517b7e2-e0a7-487b-a28c-7bc7d0418642.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS227_SITE-MOBILE_v2_2.jpg",
-            "image_slide_url": "shopify:\/\/products\/kite-losing-glassy-eyes",
-            "image_slide_subtitle": "Out Now",
-            "image_slide_title": "KITE - Losing b\/w Glassy Eyes",
-            "image_slide_text_body": "<p>7\" Vinyl<\/p>"
-          }
-        },
-        "image_8bMx74": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS224_SITE_df08ecef-3852-4ddd-92e3-ec168e2df033.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS224_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify:\/\/products\/vr-sex-hard-copy",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "VR SEX - HARD COPY",
-            "image_slide_text_body": "<p>CD\/LP<\/p>"
-          }
-        },
-        "da492805-610a-4de6-9a23-31e5f7fced45": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS188_SITE_80b9757e-7bce-4521-9642-1aebbf80c823.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS188_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify:\/\/products\/coil-moons-milk-in-four-phases",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "COIL - Moon's Milk (in Four Phases)",
-            "image_slide_text_body": "<p>CD\/LP Box Sets<\/p>"
-          }
-        },
-        "image_NFWUP7": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS223_SITE_df943d7a-be13-4e6f-b11a-fa0168e95b9f.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS223_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify:\/\/products\/cassette-player-and-tape-compilation-bundle",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "DAIS x RETROSPEKT COLLAB",
-            "image_slide_text_body": "<p>cp-81 Portable Cassette Tape Player & Compilation Tape - ltd 1000<\/p>"
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS234_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS234_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify:\/\/collections\/geneva-jacuzzi",
+            "image_slide_subtitle": "PREORDER - OUT AUG 23rd",
+            "image_slide_title": "Geneva Jacuzzi - Triple Fire",
+            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
           }
         }
       },
@@ -110,11 +61,7 @@
         "image_ip4LWb",
         "image_Bekt8n",
         "image_PBwC8F",
-        "image_YjRkdR",
-        "image_nLEzDC",
-        "image_8bMx74",
-        "da492805-610a-4de6-9a23-31e5f7fced45",
-        "image_NFWUP7"
+        "image_6kWYTT"
       ],
       "settings": {
         "show_hero": true
