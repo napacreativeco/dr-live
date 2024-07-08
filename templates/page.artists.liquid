@@ -85,46 +85,6 @@
         {% endcomment %}
 
         {% comment %} Alumni {% endcomment %}
-        <div class="right alumni">
-            <div class="section-title">
-                <h2>{{ 'Full Roster' | escape }}</h2>
-            </div>
-
-            <div class="content">
-                <div class="">
-                    <ul>
-                        {% for coll in collections %}
-                            {% case coll.template_suffix %}
-                                {% when 'artist' %}
-                            
-                                {% if coll.metafields.custom.alumni_status == true %}
-            
-                                    <li class="artist">
-                                        <h4>
-                                            <a href="{{ coll.url }}" title="{{ coll.title }}">
-                                                {{ coll.title }}
-                                            </a>
-                                        </h4>
-                                    </li>
-                                {% endif %}
-
-                            {% endcase %}
-                        {% endfor %}
-                    </ul>
-                </div>
-    
-                <div class="link-blocks">
-                    <div class="link-block">
-                        <a href="{{ pages['tours'].url | default: '/pages/tours' }}">{{ 'On Tour' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
-                    </div>
-    
-                    <div class="link-block">
-                        <a href="/collections/merch-apparel/">{{ 'Merchandise' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+        {% section 'artist-page--alumni' %}
     </div>
 </div>

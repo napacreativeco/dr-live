@@ -1,0 +1,67 @@
+<div class="section-title">
+    <h2>{{ section.settings.title }}</h2>
+</div>
+
+<div class="content">
+    <div class="">
+        <ul>
+            {% for coll in collections %}
+                {% case coll.template_suffix %}
+                    {% when 'artist' %}
+                
+                    {% if coll.metafields.custom.alumni_status == true %}
+
+                        <li class="artist">
+                            <h4>
+                                <a href="{{ coll.url }}" title="{{ coll.title }}">
+                                    {{ coll.title }}
+                                </a>
+                            </h4>
+                        </li>
+                    {% endif %}
+
+                {% endcase %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="link-blocks">
+        <div class="link-block">
+            <a href="{{ pages['tours'].url | default: '/pages/tours' }}">{{ 'On Tour' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
+        </div>
+
+        <div class="link-block">
+            <a href="/collections/merch-apparel/">{{ 'Merchandise' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
+        </div>
+    </div>
+
+</div>
+
+{% schema %}
+    {
+      "name": "Alumni",
+      "tag": "div",
+      "class": "right alumni",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Alumni"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Alumni",
+          "settings": {
+            "title": "Alumni"
+          }
+        }
+      ],
+      "enabled_on": {
+        "templates": ["page"]
+      }
+    }
+{% endschema %}
+    
