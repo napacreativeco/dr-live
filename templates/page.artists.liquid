@@ -22,67 +22,30 @@
                         {% when 'artist' %}
                         
                             {% if coll.metafields.custom.alumni_status == false or coll.metafields.custom.alumni_status == blank %}
-                                 <li class="artist-card">
-                                        <div class="artist-card-wrapper">
-
-                                            <div onclick="window.location='{{ coll.url }}';" class="image" style="background: url('{{ coll.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;">
-                                            </div>
-                    
-                                            <div class="data">
-                                                <h3>
-                                                    <a href="{{ coll.url }}" title="{{ coll.title }}">
-                                                        {{ coll.title }}
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </li>
-                            {% endif %}
-                    {% endcase %}
-                {% endfor %}
-            </ul>
-
-
-        </div>
-        {% comment %}  
-        <div class="left current">
-            <div class="section-title">
-                <h1>{{ 'Current Artists' | escape }}</h1>
-            </div>
-            <ul>
-                {% for product in collections.all.products %}
-                    {% case product.type %}
-                        {% when 'Vinyl' or when 'Cassette' or when 'Digital Album' %}
-            
-                        {% for collection in collections %}
-                            {% if collection.title == product.vendor %}
-            
-                                {% if collection.metafields.custom.alumni_status == false or collection.metafields.custom.alumni_status == blank %}
+                                {% if coll.metafields.custom.reissue_status == false or coll.metafields.custom.reissue_status == blank %}
                                     <li class="artist-card">
-                                        <div class="artist-card-wrapper">
+                                            <div class="artist-card-wrapper">
 
-                                            <div onclick="window.location='{{ collection.url }}';" class="image" style="background: url('{{ collection.image | image_url: width: 900 }}'); background-size: cover; background-position: center center;">
+                                                <div onclick="window.location='{{ coll.url }}';" class="image" style="background: url('{{ coll.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;">
+                                                </div>
+                        
+                                                <div class="data">
+                                                    <h3>
+                                                        <a href="{{ coll.url }}" title="{{ coll.title }}">
+                                                            {{ coll.title }}
+                                                        </a>
+                                                    </h3>
+                                                </div>
                                             </div>
-                    
-                                            <div class="data">
-                                                <h3>
-                                                    <a href="{{ collection.url }}" title="{{ collection.title }}">
-                                                        {{ collection.title }}
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </div>
                                     </li>
                                 {% endif %}
-            
                             {% endif %}
-                        {% endfor %}
-            
                     {% endcase %}
                 {% endfor %}
             </ul>
+
+            {% section 'artist-page--reissue' %}
         </div>
-        {% endcomment %}
 
         {% comment %} Alumni {% endcomment %}
         {% section 'artist-page--alumni' %}
