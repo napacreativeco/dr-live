@@ -12,6 +12,18 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_Dxd9QV": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS231_SITE_v2.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS231_SITE-MOBILE_v2.jpg",
+            "image_slide_url": "",
+            "image_slide_subtitle": "PREORDER -  OUT OCT 18th",
+            "image_slide_title": "High Vis - Guided Tour",
+            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+          }
+        },
         "image_ydWHgB": {
           "type": "image",
           "settings": {
@@ -55,47 +67,26 @@
             "image_slide_title": "Cold  Gawd - I'll Drown on This Earth",
             "image_slide_text_body": "<p>Vinyl LP<\/p>"
           }
-        },
-        "image_Bekt8n": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS231_SITE_6a8b50ca-bd6c-44fb-a19a-d1fa1365c45a.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS231_SITE-MOBILE_710053bb-7ab7-4547-8ea5-5123d4cdf1e6.jpg",
-            "image_slide_url": "shopify:\/\/products\/high-vis-mob-dla",
-            "image_slide_subtitle": "Out Now",
-            "image_slide_title": "High Vis - Mob DLA",
-            "image_slide_text_body": "<p>Digital Single<\/p>"
-          }
-        },
-        "image_PBwC8F": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS221_SITE.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS221_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify:\/\/products\/a-thread-silvered-and-trembling",
-            "image_slide_subtitle": "Out Now",
-            "image_slide_title": "Drew McDowall - A Thread, Silvered and Trembling",
-            "image_slide_text_body": "<p>Vinyl LP<\/p>"
-          }
         }
       },
       "block_order": [
+        "image_Dxd9QV",
         "image_ydWHgB",
         "image_4A4JNP",
         "image_6kWYTT",
-        "image_ip4LWb",
-        "image_Bekt8n",
-        "image_PBwC8F"
+        "image_ip4LWb"
       ],
       "settings": {
         "show_hero": true
       }
     },
-    "latest_news_dtQrUi": {
-      "type": "latest-news",
+    "47457f88-b3ab-49ed-b6f1-444987656578": {
+      "type": "latest-products",
       "settings": {
-        "section_title": "News",
-        "link_destination": ""
+        "section_title": "Latest",
+        "use_default_collection": false,
+        "latest_collection": "frontpage",
+        "latest_collection_rows": "three"
       }
     },
     "merchandise_MRi8ij": {
@@ -110,13 +101,11 @@
         "merchandise_collection_rows": "one"
       }
     },
-    "47457f88-b3ab-49ed-b6f1-444987656578": {
-      "type": "latest-products",
+    "latest_news_dtQrUi": {
+      "type": "latest-news",
       "settings": {
-        "section_title": "Latest",
-        "use_default_collection": false,
-        "latest_collection": "frontpage",
-        "latest_collection_rows": "three"
+        "section_title": "News",
+        "link_destination": ""
       }
     },
     "3e3c18a1-9a10-442b-8108-d3a92f3d305c": {
@@ -129,9 +118,9 @@
   },
   "order": [
     "hero-slideshow",
-    "latest_news_dtQrUi",
-    "merchandise_MRi8ij",
     "47457f88-b3ab-49ed-b6f1-444987656578",
+    "merchandise_MRi8ij",
+    "latest_news_dtQrUi",
     "3e3c18a1-9a10-442b-8108-d3a92f3d305c"
   ]
 }
