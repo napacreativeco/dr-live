@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_kE9qFA": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/1_-_SF_TEXAS_ST_BASEBALL_FEILD-9-WEB.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/2_-_SF_TEXAS_ST_BASEBALL_FEILD-3-WEB.jpg",
+            "image_slide_url": "shopify:\/\/collections\/trauma-ray",
+            "image_slide_subtitle": "PREORDER -  OUT OCT 25th",
+            "image_slide_title": "Trauma Ray - Chameleon",
+            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+          }
+        },
         "image_Dxd9QV": {
           "type": "image",
           "settings": {
@@ -69,6 +80,7 @@
         }
       },
       "block_order": [
+        "image_kE9qFA",
         "image_Dxd9QV",
         "image_ydWHgB",
         "image_6kWYTT",
