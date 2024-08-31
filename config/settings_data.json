@@ -1,9 +1,18 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "announcement_showhide": false,
     "announcement_content": "20% OFF SECTION - Use Code \"CICADA\"",
     "announcement_text_color": "#fff",
-    "announcement_link": "shopify:\/\/collections\/summersale2024",
+    "announcement_link": "shopify:\/\/collections\/labordaysale2024",
     "announcement_link_text": "Click Here",
     "announcement_link_color": "#dd1d1d",
     "dais_instagram": "https:\/\/www.instagram.com\/daisrecords",
