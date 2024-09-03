@@ -15,6 +15,8 @@
         "image_ndwpGM": {
           "type": "image",
           "settings": {
+            "image_slide_image": "shopify:\/\/shop_images\/DAIS235_SITE.jpg",
+            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS235_SITE-MOBILE.jpg",
             "image_slide_url": "shopify:\/\/products\/via-negativa-in-the-doorway-light",
             "image_slide_subtitle": "PREORDER -  OUT OCT 18th",
             "image_slide_title": "Xeno & Oaklander - Via Negativa",
