@@ -9,7 +9,7 @@
 */
 {
   "current": {
-    "announcement_showhide": true,
+    "announcement_showhide": false,
     "announcement_content": "25% OFF - Use Code \"LABOR24\" at Checkout",
     "announcement_text_color": "#fff",
     "announcement_link": "shopify:\/\/collections\/labordaysale2024",
