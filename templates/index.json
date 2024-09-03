@@ -12,6 +12,15 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_ndwpGM": {
+          "type": "image",
+          "settings": {
+            "image_slide_url": "shopify:\/\/products\/via-negativa-in-the-doorway-light",
+            "image_slide_subtitle": "PREORDER -  OUT OCT 18th",
+            "image_slide_title": "Xeno & Oaklander - Via Negativa",
+            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+          }
+        },
         "image_kE9qFA": {
           "type": "image",
           "settings": {
@@ -40,7 +49,7 @@
             "image_slide_image": "shopify:\/\/shop_images\/DAIS229_SITE.jpg",
             "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS229_SITE-MOBILE.jpg",
             "image_slide_url": "shopify:\/\/collections\/trst",
-            "image_slide_subtitle": "PREORDER - OUT Sept 13th",
+            "image_slide_subtitle": "PREORDER - Out Sept 13th",
             "image_slide_title": "TR\/ST - Performance",
             "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
           }
@@ -80,6 +89,7 @@
         }
       },
       "block_order": [
+        "image_ndwpGM",
         "image_kE9qFA",
         "image_Dxd9QV",
         "image_ydWHgB",
