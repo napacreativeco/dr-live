@@ -71,29 +71,38 @@
           {% else %}
                 
             <div class="cart-drawer-empty">
-              {{ settings.cart_empty_text | default: 'Your cart is empty' }}
+              <p>{{ settings.cart_empty_text | default: 'Your cart is empty' }}</p>
+              <a class="continue-shopping" href="{{ '/collections/all' }}" title="Continue Shopping">
+                {{ 'Continue Shopping' | escape }}
+              </a>
             </div>
 
           {% endif %}
 
-          {% comment %} Cart Totals {% endcomment %}
-          <div class="cart-total">
-            <table>
-              <tr>
-                <td class="total-label"><span>{{ 'Total' | escape }}</span></td>
-                <td><span>{{ cart.total_price | money_without_trailing_zeros }}</span></td>
-              </tr>
-            </table>
-          </div>
-      
-          {% comment %} Add To Cart {% endcomment %}
-          <button type="submit" name="checkout">
-            {{ 'Checkout' | escape }}
-          </button> 
+          {% if cart.items.size > 0 %}
 
-          <div class="view-cart">
-            <a href="{{ routes.cart_url }}" title="View Cart" class="view-cart--link">{{ 'Edit Cart' | escape }}</a>
-          </div>
+            {% comment %} Cart Totals {% endcomment %}
+            <div class="cart-total">
+              <table>
+                <tr>
+                  <td class="total-label"><span>{{ 'Total' | escape }}</span></td>
+                  <td><span>{{ cart.total_price | money_without_trailing_zeros }}</span></td>
+                </tr>
+              </table>
+            </div>
+        
+            {% comment %} Checkout {% endcomment %}
+            <button type="submit" name="checkout">
+              {{ 'Checkout' | escape }}
+            </button> 
+
+            <div class="view-cart">
+              <a href="{{ routes.cart_url }}" title="View Cart" class="view-cart--link">{{ 'Edit Cart' | escape }}</a>
+            </div>
+          {% else %}
+
+
+          {% endif %}
 
         </div>
     </form>
