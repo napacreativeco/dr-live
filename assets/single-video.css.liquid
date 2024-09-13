@@ -31,11 +31,15 @@ SOFTWARE.
 .single-video-player {
   aspect-ratio: 20/9;
   background: black;
+  max-height: 75vh;
+  margin: 0 auto;
+  width: 100%;
   @media screen and (max-width: 1200px) {
     aspect-ratio: 21.25/9;
   }
   @media screen and (max-width: 990px) {
     aspect-ratio: 6/9;
+    max-height: 100%;
   }
 }
 
@@ -44,12 +48,17 @@ SOFTWARE.
 .has-max-width .single-video-player {
   aspect-ratio: 21.25/9;
   background: black;
+  width: 100%;
   @media screen and (max-width: 1090px) {
     aspect-ratio: 1/1;
   }
   @media screen and (max-width: 990px) {
     aspect-ratio: 6/9;
   }
+}
+
+.shopify-app-block .single-video-player {
+  max-height: 100% !important;
 }
 
 /** Video Info **/
