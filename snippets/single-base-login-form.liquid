@@ -48,6 +48,8 @@
     font-family: inherit;
     font-size: inherit;
     border: 1px solid;
+    color: inherit;
+    background: inherit;
   }
 
   .single-login .login-head {
@@ -114,21 +116,15 @@
     <div class="single-hidden SHOW_HEADER_ICON">
       {% render 'single-icon-lock-square' %}
     </div>
-    <h2 class="login-head">
+    <h2 class="login-head h2">
       LOGIN_TITLE
     </h2>
     {% form 'customer_login', return_to: 'LOGIN_REDIRECT_URL' %}
-      <div class="single-errors">
-        {% if form.errors %}
-          {{ form_errors | default_errors }}
-        {% endif %}
-      </div>
-
-      <div class="single-field email">
+      <div class="single-field">
         <label for="email">{{ 'single.login.email' | t }}</label>
         <input type="email" name="customer[email]" placeholder="{{ 'single.login.email' | t }}">
       </div>
-      <div class="single-field password">
+      <div class="single-field">
         <label for="password">{{ 'single.login.password' | t }}</label>
         <input type="password" name="customer[password]" placeholder="{{ 'single.login.password' | t }}">
       </div>
@@ -145,7 +141,7 @@
       <span class="SIGNUP_LINK_CLASSES">
         <span class="divider"> • </span>
         <span>
-          <a href="#" onclick="showRegisterForm(event)" id="ShowRegister">CREATE_ACCT_TITLE</a>
+          <a href="#" onclick="showRegisterForm(event)" id="ShowRegister">{{ 'single.register.title' | t }}</a>
         </span>
       </span>
     </div>
@@ -158,7 +154,7 @@
     <!-- START #form-recover -->
   {% endcomment %}
   <div id="form-recover" class="single-form single-hidden">
-    <h2 class="login-head">{{ 'single.recover_password.title' | t }}</h2>
+    <h2 class="login-head h2">{{ 'single.recover_password.title' | t }}</h2>
     <p>{{ 'single.recover_password.subtext' | t }}</p>
     {% form 'recover_customer_password', return_to: 'LOGIN_REDIRECT_URL' %}
       <div class="single-errors">
@@ -167,7 +163,7 @@
         {% endif %}
       </div>
 
-      <div class="single-field email">
+      <div class="single-field">
         <label for="email">{{ 'single.login.email' | t }}</label>
         <input type="email" name="email" placeholder="Email">
       </div>
@@ -192,7 +188,7 @@
   {% endcomment %}
   <div id="form-register" class="single-form REGISTER_CLASSES">
     <div class="customer register">
-      <h2 class="login-head">CREATE_ACCT_TITLE</h2>
+      <h2 class="login-head h2">CREATE_ACCT_TITLE</h2>
       {% form 'create_customer', return_to: 'SIGNUP_REDIRECT_URL' %}
         <div class="single-errors">
           {% if form.errors %}
@@ -203,57 +199,57 @@
         <div class="single-field">
           <label for="text">{{ 'single.register.first_name' | t }}</label>
           <input
-                  type="text"
-                  name="customer[first_name]"
-                  id="RegisterForm-FirstName"
-                  {% if form.first_name %}
-                    value="{{ form.first_name }}"
-                  {% endif %}
-                  autocomplete="given-name"
-                  placeholder="{{ 'single.register.first_name' | t }}"
+            type="text"
+            name="customer[first_name]"
+            id="RegisterForm-FirstName"
+            {% if form.first_name %}
+              value="{{ form.first_name }}"
+            {% endif %}
+            autocomplete="given-name"
+            placeholder="{{ 'single.register.first_name' | t }}"
           >
         </div>
         <div class="single-field">
           <label for="text">{{ 'single.register.last_name' | t }}</label>
           <input
-                  type="text"
-                  name="customer[last_name]"
-                  id="RegisterForm-LastName"
-                  {% if form.last_name %}
-                    value="{{ form.last_name }}"
-                  {% endif %}
-                  autocomplete="family-name"
-                  placeholder="{{ 'single.register.last_name' | t }}"
+            type="text"
+            name="customer[last_name]"
+            id="RegisterForm-LastName"
+            {% if form.last_name %}
+              value="{{ form.last_name }}"
+            {% endif %}
+            autocomplete="family-name"
+            placeholder="{{ 'single.register.last_name' | t }}"
           >
         </div>
         <div class="single-field">
           <label for="email">{{ 'single.login.email' | t }}</label>
           <input
-                  type="email"
-                  name="customer[email]"
-                  id="RegisterForm-email"
-                  {% if form.email %}
-                    value="{{ form.email }}"
-                  {% endif %}
-                  spellcheck="false"
-                  autocapitalize="off"
-                  autocomplete="email"
-                  aria-required="true"
-                  {% if form.errors contains 'email' %}
-                    aria-invalid="true"
-                    aria-describedby="RegisterForm-email-error"
-                  {% endif %}
-                  placeholder="{{ 'single.login.email' | t }}"
+            type="email"
+            name="customer[email]"
+            id="RegisterForm-email"
+            {% if form.email %}
+              value="{{ form.email }}"
+            {% endif %}
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="email"
+            aria-required="true"
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="RegisterForm-email-error"
+            {% endif %}
+            placeholder="{{ 'single.login.email' | t }}"
           >
         </div>
         <div class="single-field">
           <label for="password">{{ 'single.login.password' | t }}</label>
           <input
-                  type="password"
-                  name="customer[password]"
-                  id="RegisterForm-password"
-                  aria-required="true"
-                  placeholder="{{ 'single.login.password' | t }}"
+            type="password"
+            name="customer[password]"
+            id="RegisterForm-password"
+            aria-required="true"
+            placeholder="{{ 'single.login.password' | t }}"
           >
         </div>
 
@@ -265,9 +261,9 @@
         <input type="hidden" id="customer_tags" name="customer[tags]" value="created_via_single_app">
         <div style="margin-top: 20px" class="submit">
           <input
-                  type="submit"
-                  value="{{ 'single.register.title' | t }}"
-                  class="overlayButton single-collection-add-to-cart button add-to-cart-btn w-full btn btn-solid-primary-accent single-ignore"
+            type="submit"
+            value="{{ 'single.register.title' | t }}"
+            class="overlayButton single-collection-add-to-cart button add-to-cart-btn w-full btn btn-solid-primary-accent single-ignore"
           >
         </div>
       {%- endform -%}
@@ -314,12 +310,12 @@
 
   function getURLParameter(name) {
     return (
-            decodeURIComponent(
-                    (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(
-                            /\+/g,
-                            '%20'
-                    )
-            ) || null
+      decodeURIComponent(
+        (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(
+          /\+/g,
+          '%20'
+        )
+      ) || null
     );
   }
 
@@ -362,22 +358,24 @@
       request.onreadystatechange = () => {
         if (request.readyState === 4) {
           if (
-                  request.responseURL &&
-                  !request.responseURL.includes('/account/register') &&
-                  !request.responseURL.includes('/account/login') &&
-                  !request.responseURL.includes('/account/recover')
+            request.responseURL &&
+            !request.responseURL.includes('/account/register') &&
+            !request.responseURL.includes('/account/login') &&
+            !request.responseURL.includes('/account/recover')
           ) {
             if (
-                    request.responseURL.includes('/challenge') ||
-                    request.responseURL === returnUrl ||
-                    request.responseURL.includes(returnUrl)
+              request.responseURL.includes('/challenge') ||
+              request.responseURL === returnUrl ||
+              request.responseURL.includes(returnUrl)
             ) {
               document.location.href = request.responseURL;
               return;
             }
             const responseURL = new URL(request.responseURL);
-            if (request.responseURL.includes('/account') ||
-                    (window.location.hostname === responseURL.hostname && responseURL.pathname === '/')) {
+            if (
+              request.responseURL.includes('/account') ||
+              (window.location.hostname === responseURL.hostname && responseURL.pathname === '/')
+            ) {
               document.location.href = returnUrl;
               return;
             }
@@ -390,16 +388,16 @@
           let formMessages = '';
           if (!!formMessageElements) {
             formMessages = [...formMessageElements]
-                    .map((element) => {
-                      const text = element.innerText;
-                      const listItems = element.parentNode.querySelectorAll('li');
-                      return (
-                              text +
-                              '<ul>' +
-                              [...listItems].map((li) => '<li>' + li.innerText + '</li>').reduce((a, b) => a + b, '')
-                      );
-                    })
-                    .reduce((a, b) => a + '<div>' + b + '</div>', '');
+              .map((element) => {
+                const text = element.innerText;
+                const listItems = element.parentNode.querySelectorAll('li');
+                return (
+                  text +
+                  '<ul>' +
+                  [...listItems].map((li) => '<li>' + li.innerText + '</li>').reduce((a, b) => a + b, '')
+                );
+              })
+              .reduce((a, b) => a + '<div>' + b + '</div>', '');
           }
           const errorsElement = document.querySelector(formId + ' .single-errors');
 
