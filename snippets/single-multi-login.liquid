@@ -52,7 +52,7 @@
   }
 
   .key-products {
-    margin-bottom: 4rem;
+    margin: 4rem auto;
     justify-content: center;
   }
 
@@ -104,7 +104,7 @@
 {% if background_image | blank != true %}
   {% assign login_title = 'Log in to watch' %}
   {% assign show_header_icon = 'true' %}
-  <div class="video-overlay-wrapper page-width">
+  <div class="video-overlay-wrapper">
     <div
       class="video-overlay"
       style="background-image: url('{{ background_image }}')"
