@@ -3,13 +3,14 @@
         <div class="image">
           <a class="image-link" href="{{  prod.url }}" style="display: block;">
             
-              {% for variant in prod.variants reversed %}
+              {% for variant in prod.variants %}
   
-                  {% if variant.inventory_quantity > 0 %}
-                    {% assign second_image = variant.image %}
+                  {% if variant.available %}
+                      {% assign second_image = variant.image %}
                   {% endif %}
-
+  
               {% endfor %}
+  
   
   
               {% if prod.has_only_default_variant == false %}
@@ -18,7 +19,7 @@
                       src="{{ prod.featured_image | image_url: width: '400' }}" 
                       alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
                       data-first="{{ prod.featured_image | image_url: width: '400' }}"
-                      data-second="{% if second_image %}{{ second_image | image_url: width: '400' }}{% else %}{{ prod.featured_image | image_url: width: '400' }}{% endif %}"
+              data-second="{% if second_image %}{{ second_image | image_url: width: '400' }}{% else %}{{ prod.featured_image | image_url: width: '400' }}{% endif %}"
                   />
                   {{ variant.type }}
               {% else %}
