@@ -17,7 +17,7 @@
           "settings": {
             "image_slide_image": "shopify://shop_images/bfweb_banner.jpg",
             "image_slide_image_mobile": "shopify://shop_images/bfweb_banner_-_mobile.jpg",
-            "image_slide_url": "",
+            "image_slide_url": "shopify://collections",
             "image_slide_subtitle": "Black Friday Sale",
             "image_slide_title": "Use Code \"BF24\"",
             "image_slide_text_body": "<p>Ends Monday at Midnight.</p>"
