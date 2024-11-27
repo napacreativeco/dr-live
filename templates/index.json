@@ -1,96 +1,108 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_aMacY3": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/bfweb_banner.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/bfweb_banner_-_mobile.jpg",
+            "image_slide_url": "",
+            "image_slide_subtitle": "Black Friday Sale",
+            "image_slide_title": "Use Code \"BF24\"",
+            "image_slide_text_body": "<p>Ends Monday at Midnight.</p>"
+          }
+        },
         "image_ndwpGM": {
           "type": "image",
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS235_SITE.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS235_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/products\/via-negativa-in-the-doorway-light",
+            "image_slide_image": "shopify://shop_images/DAIS235_SITE.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS235_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify://products/via-negativa-in-the-doorway-light",
             "image_slide_subtitle": "PREORDER -  OUT NOV 15th",
             "image_slide_title": "Xeno & Oaklander - Via Negativa",
-            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
           }
         },
         "image_kE9qFA": {
           "type": "image",
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/1_-_SF_TEXAS_ST_BASEBALL_FEILD-9-WEB.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/2_-_SF_TEXAS_ST_BASEBALL_FEILD-3-WEB.jpg",
-            "image_slide_url": "shopify:\/\/collections\/trauma-ray",
+            "image_slide_image": "shopify://shop_images/1_-_SF_TEXAS_ST_BASEBALL_FEILD-9-WEB.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/2_-_SF_TEXAS_ST_BASEBALL_FEILD-3-WEB.jpg",
+            "image_slide_url": "shopify://collections/trauma-ray",
             "image_slide_subtitle": "PREORDER -  OUT OCT 25th",
             "image_slide_title": "Trauma Ray - Chameleon",
-            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
           }
         },
         "image_Dxd9QV": {
           "type": "image",
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS231_SITE_v2.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS231_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify:\/\/products\/high-vis-guided-tour",
+            "image_slide_image": "shopify://shop_images/DAIS231_SITE_v2.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS231_SITE-MOBILE_v2.jpg",
+            "image_slide_url": "shopify://products/high-vis-guided-tour",
             "image_slide_subtitle": "PREORDER -  OUT OCT 18th",
             "image_slide_title": "High Vis - Guided Tour",
-            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
           }
         },
         "image_ydWHgB": {
           "type": "image",
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS229_SITE.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS229_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/collections\/trst",
+            "image_slide_image": "shopify://shop_images/DAIS229_SITE.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS229_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify://collections/trst",
             "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "TR\/ST - Performance",
-            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+            "image_slide_title": "TR/ST - Performance",
+            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
           }
         },
         "image_6kWYTT": {
           "type": "image",
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS234_SITE_78065c48-3614-4e7e-83e8-5f0ce347a6f4.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS234_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/products\/geneva-jacuzzi-triple-fire",
+            "image_slide_image": "shopify://shop_images/DAIS234_SITE_78065c48-3614-4e7e-83e8-5f0ce347a6f4.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS234_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify://products/geneva-jacuzzi-triple-fire",
             "image_slide_subtitle": "OUT NOW",
             "image_slide_title": "Geneva Jacuzzi - Triple Fire",
-            "image_slide_text_body": "<p>Vinyl LP \/ CD<\/p>"
+            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
           }
         },
         "image_ip4LWb": {
           "type": "image",
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS230_SITE_v2.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS230_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify:\/\/products\/cold-gawd-drown",
+            "image_slide_image": "shopify://shop_images/DAIS230_SITE_v2.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS230_SITE-MOBILE_v2.jpg",
+            "image_slide_url": "shopify://products/cold-gawd-drown",
             "image_slide_subtitle": "OUT NOW",
             "image_slide_title": "Cold  Gawd - I'll Drown on This Earth",
-            "image_slide_text_body": "<p>Vinyl LP<\/p>"
+            "image_slide_text_body": "<p>Vinyl LP</p>"
           }
         },
         "image_4A4JNP": {
           "type": "image",
           "settings": {
-            "image_slide_image": "shopify:\/\/shop_images\/DAIS228_SITE.jpg",
-            "image_slide_image_mobile": "shopify:\/\/shop_images\/DAIS228_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify:\/\/products\/kite-vii",
+            "image_slide_image": "shopify://shop_images/DAIS228_SITE.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS228_SITE-MOBILE.jpg",
+            "image_slide_url": "shopify://products/kite-vii",
             "image_slide_subtitle": "OUT NOW",
             "image_slide_title": "KITE - VII",
-            "image_slide_text_body": "<p>Double Vinyl LP \/ CD<\/p>"
+            "image_slide_text_body": "<p>Double Vinyl LP / CD</p>"
           }
         }
       },
       "block_order": [
+        "image_aMacY3",
         "image_ndwpGM",
         "image_kE9qFA",
         "image_Dxd9QV",
@@ -114,9 +126,7 @@
     },
     "merchandise_MRi8ij": {
       "type": "merchandise",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "section_title": "Merchandise",
         "use_default_collection": false,
