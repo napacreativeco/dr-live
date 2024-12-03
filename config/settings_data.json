@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "announcement_showhide": true,
+    "announcement_showhide": false,
     "announcement_content": "30% OFF EVERYTHING - USE CODE \"BF24\"",
     "announcement_text_color": "#fff",
     "announcement_link": "",
