@@ -12,17 +12,6 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
-        "image_aMacY3": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/bfweb_banner.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/bfweb_banner_-_mobile.jpg",
-            "image_slide_url": "shopify://collections/all",
-            "image_slide_subtitle": "Black Friday Sale",
-            "image_slide_title": "Use Code \"BF24\"",
-            "image_slide_text_body": "<p>Ends Monday at Midnight.</p>"
-          }
-        },
         "image_ndwpGM": {
           "type": "image",
           "settings": {
@@ -102,7 +91,6 @@
         }
       },
       "block_order": [
-        "image_aMacY3",
         "image_ndwpGM",
         "image_kE9qFA",
         "image_Dxd9QV",
