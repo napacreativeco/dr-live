@@ -6,6 +6,10 @@
     background: {{ background_color }};
     color: {{ font_color }};
   }
+
+  .popup .single-login {
+    background: {{ background_color }};
+  }
 </style>
 
 <div id="chat-login-modal" class="pulogin single-hidden">
@@ -13,7 +17,7 @@
     <button onClick="closeModal('chat-login-modal')" class="close" href="#">&times;</button>
     <div class="content">
       {% capture login_section %}{% section 'single-base-login' %}{% endcapture %}
-      {{ login_section | replace: 'REGISTER_CLASSES', 'single-hidden' | replace: 'CANCEL_SIGNUP_LINK_CLASSES', 'single-hidden' | replace: 'SIGNUP_LINK_CLASSES', 'single-hidden' | replace: 'LOGIN_TITLE', 'Login' }}
+      {{ login_section | replace: 'REGISTER_CLASSES', 'single-hidden' | replace: 'CANCEL_SIGNUP_LINK_CLASSES', 'single-hidden' | replace: 'SIGNUP_LINK_CLASSES', 'single-hidden' | replace: 'LOGIN_TITLE', 'Login', | replace: 'CREATE_ACCT_TITLE', 'Create Account' }}
     </div>
   </div>
 </div>
