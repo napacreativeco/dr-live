@@ -126,6 +126,11 @@
       LOGIN_TITLE
     </h2>
     {% form 'customer_login', return_to: 'LOGIN_REDIRECT_URL' %}
+      <div class="single-errors">
+        {% if form.errors %}
+          {{ form_errors | default_errors }}
+        {% endif %}
+      </div>
       <div class="single-field">
         <label for="email">{{ 'single.login.email' | t }}</label>
         <input type="email" name="customer[email]" placeholder="{{ 'single.login.email' | t }}">
