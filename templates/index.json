@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_zX4HAT": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS138_SITE.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS138_SITE_MOBILE.jpg",
+            "image_slide_url": "shopify://products/pink-turns-blue-if-two-worlds-kiss",
+            "image_slide_subtitle": "PREORDER - OUT FEB 14th",
+            "image_slide_title": "Pink Turns Blue - If Two Worlds Kiss",
+            "image_slide_text_body": "<p>Limited Vinyl LP</p>"
+          }
+        },
         "image_ndwpGM": {
           "type": "image",
           "settings": {
@@ -91,6 +102,7 @@
         }
       },
       "block_order": [
+        "image_zX4HAT",
         "image_ndwpGM",
         "image_kE9qFA",
         "image_Dxd9QV",
