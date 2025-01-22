@@ -207,31 +207,33 @@
           {% endif %}
         </div>
 
-        <div class="single-field">
-          <label for="text">{{ 'single.register.first_name' | t }}</label>
-          <input
-            type="text"
-            name="customer[first_name]"
-            id="RegisterForm-FirstName"
-            {% if form.first_name %}
-              value="{{ form.first_name }}"
-            {% endif %}
-            autocomplete="given-name"
-            placeholder="{{ 'single.register.first_name' | t }}"
-          >
-        </div>
-        <div class="single-field">
-          <label for="text">{{ 'single.register.last_name' | t }}</label>
-          <input
-            type="text"
-            name="customer[last_name]"
-            id="RegisterForm-LastName"
-            {% if form.last_name %}
-              value="{{ form.last_name }}"
-            {% endif %}
-            autocomplete="family-name"
-            placeholder="{{ 'single.register.last_name' | t }}"
-          >
+        <div class="single-name-fields">
+          <div class="single-field">
+            <label for="text">{{ 'single.register.first_name' | t }}</label>
+            <input
+              type="text"
+              name="customer[first_name]"
+              id="RegisterForm-FirstName"
+              {% if form.first_name %}
+                value="{{ form.first_name }}"
+              {% endif %}
+              autocomplete="given-name"
+              placeholder="{{ 'single.register.first_name' | t }}"
+            >
+          </div>
+          <div class="single-field">
+            <label for="text">{{ 'single.register.last_name' | t }}</label>
+            <input
+              type="text"
+              name="customer[last_name]"
+              id="RegisterForm-LastName"
+              {% if form.last_name %}
+                value="{{ form.last_name }}"
+              {% endif %}
+              autocomplete="family-name"
+              placeholder="{{ 'single.register.last_name' | t }}"
+            >
+          </div>
         </div>
         <div class="single-field">
           <label for="email">{{ 'single.login.email' | t }}</label>
