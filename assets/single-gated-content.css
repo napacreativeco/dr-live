@@ -303,7 +303,11 @@ SOFTWARE.
 }
 
 /* Exclusive Page Videos */
-.single-card-video > .single-card-image-wide {
+.video-overlay-wrapper {
+  background: black;
+}
+
+.single-card-video>.single-card-image-wide {
   aspect-ratio: 16 / 9;
   background-size: cover;
   width: 100%;
