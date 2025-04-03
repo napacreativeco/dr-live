@@ -12,13 +12,22 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_erPPW4": {
+          "type": "image",
+          "settings": {
+            "image_slide_url": "",
+            "image_slide_subtitle": "",
+            "image_slide_title": "",
+            "image_slide_text_body": ""
+          }
+        },
         "image_KcNmWA": {
           "type": "image",
           "settings": {
             "image_slide_image": "shopify://shop_images/DAIS214_SITE.jpg",
             "image_slide_image_mobile": "shopify://shop_images/DAIS214_SITE-MOBILE.jpg",
             "image_slide_url": "shopify://products/cindytalk-camouflage-heart",
-            "image_slide_subtitle": "PREORDER - Out May 25th",
+            "image_slide_subtitle": "PREORDER - Out May 23rd",
             "image_slide_title": "Cindytalk - Camouflage Heart",
             "image_slide_text_body": "<p>Vinyl LP</p>"
           }
@@ -55,48 +64,14 @@
             "image_slide_title": "High Vis - Guided Tour",
             "image_slide_text_body": "<p>Vinyl LP / CD</p>"
           }
-        },
-        "image_ydWHgB": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS229_SITE.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS229_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify://collections/trst",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "TR/ST - Performance",
-            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
-          }
-        },
-        "image_6kWYTT": {
-          "type": "image",
-          "settings": {
-            "image_slide_image_mobile": "shopify://shop_images/DAIS234_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify://products/geneva-jacuzzi-triple-fire",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Geneva Jacuzzi - Triple Fire",
-            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
-          }
-        },
-        "image_ip4LWb": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS230_SITE_v2.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS230_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify://products/cold-gawd-drown",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Cold  Gawd - I'll Drown on This Earth",
-            "image_slide_text_body": "<p>Vinyl LP</p>"
-          }
         }
       },
       "block_order": [
+        "image_erPPW4",
         "image_KcNmWA",
         "image_ndwpGM",
         "image_kE9qFA",
-        "image_Dxd9QV",
-        "image_ydWHgB",
-        "image_6kWYTT",
-        "image_ip4LWb"
+        "image_Dxd9QV"
       ],
       "settings": {
         "show_hero": true
