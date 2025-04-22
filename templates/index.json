@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_KdjVgg": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS189_Website-Desktop-V6-centered.png",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS189_Website-Mobile.png",
+            "image_slide_url": "shopify://collections/coil",
+            "image_slide_subtitle": "PREORDER - Out 6.27",
+            "image_slide_title": "Coil - Black Antlers",
+            "image_slide_text_body": "<p>2x Vinyl LP / CD / DIGITAL</p>"
+          }
+        },
         "image_erPPW4": {
           "type": "image",
           "settings": {
@@ -69,6 +80,7 @@
         }
       },
       "block_order": [
+        "image_KdjVgg",
         "image_erPPW4",
         "image_KcNmWA",
         "image_ndwpGM",
