@@ -9,11 +9,12 @@
  */
 {
   "current": {
-    "announcement_showhide": false,
-    "announcement_content": "30% OFF EVERYTHING - USE CODE \"BF24\"",
+    "announcement_showhide": true,
+    "announcement_marquee_mode": false,
+    "announcement_content": "25% OFF SPRING SALE - USE CODE \"NEWLEAVES\" AT CHECKOUT",
     "announcement_text_color": "#fff",
-    "announcement_link": "",
-    "announcement_link_text": "",
+    "announcement_link": "https://www.daisrecords.com/discount/newleaves?redirect=%2Fcollections%2Fspringsale2025",
+    "announcement_link_text": "- CLICK HERE",
     "announcement_link_color": "#dd1d1d",
     "dais_instagram": "https://www.instagram.com/daisrecords",
     "dais_twitter": "https://bsky.app/profile/daisrecords.bsky.social",
