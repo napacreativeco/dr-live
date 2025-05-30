@@ -55,37 +55,13 @@
             "image_slide_title": "Xeno & Oaklander - Via Negativa",
             "image_slide_text_body": "<p>Vinyl LP / CD</p>"
           }
-        },
-        "image_kE9qFA": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/1_-_SF_TEXAS_ST_BASEBALL_FEILD-9-WEB.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/2_-_SF_TEXAS_ST_BASEBALL_FEILD-3-WEB.jpg",
-            "image_slide_url": "shopify://collections/trauma-ray",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Trauma Ray - Chameleon",
-            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
-          }
-        },
-        "image_Dxd9QV": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS231_SITE_v2.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS231_SITE-MOBILE_v2.jpg",
-            "image_slide_url": "shopify://products/high-vis-guided-tour",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "High Vis - Guided Tour",
-            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
-          }
         }
       },
       "block_order": [
         "image_KdjVgg",
         "image_erPPW4",
         "image_KcNmWA",
-        "image_ndwpGM",
-        "image_kE9qFA",
-        "image_Dxd9QV"
+        "image_ndwpGM"
       ],
       "settings": {
         "show_hero": true
