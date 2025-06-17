@@ -12,17 +12,6 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
-        "image_TLri7C": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS242_Website-Desktop_credit-NeddaAfsari.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS242_Website-Mobile_credit-NeddaAfsari.jpg",
-            "image_slide_url": "shopify://products/rjf-cleaning",
-            "image_slide_subtitle": "PRE ORDER - OUT 8/15",
-            "image_slide_title": "R.J.F. - Cleaning Out the Empty Administration Building",
-            "image_slide_text_body": "<p>LP / Digital</p>"
-          }
-        },
         "image_D3P7gW": {
           "type": "image",
           "settings": {
@@ -31,6 +20,17 @@
             "image_slide_url": "shopify://products/early-worm",
             "image_slide_subtitle": "PRE ORDER - OUT 7/11",
             "image_slide_title": "Genesis P-Orridge - Early Worm",
+            "image_slide_text_body": "<p>LP / Digital</p>"
+          }
+        },
+        "image_TLri7C": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS242_Website-Desktop_credit-NeddaAfsari.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS242_Website-Mobile_credit-NeddaAfsari.jpg",
+            "image_slide_url": "shopify://products/rjf-cleaning",
+            "image_slide_subtitle": "PRE ORDER - OUT 8/15",
+            "image_slide_title": "R.J.F. - Cleaning Out the Empty Administration Building",
             "image_slide_text_body": "<p>LP / Digital</p>"
           }
         },
@@ -69,8 +69,8 @@
         }
       },
       "block_order": [
-        "image_TLri7C",
         "image_D3P7gW",
+        "image_TLri7C",
         "image_KdjVgg",
         "image_erPPW4",
         "image_KcNmWA"
