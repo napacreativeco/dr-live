@@ -64,18 +64,7 @@
             "image_slide_url": "shopify://products/cindytalk-camouflage-heart",
             "image_slide_subtitle": "OUT NOW",
             "image_slide_title": "Cindytalk - Camouflage Heart",
-            "image_slide_text_body": "<p>Vinyl LP</p>"
-          }
-        },
-        "image_ndwpGM": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS235_SITE.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS235_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify://products/via-negativa-in-the-doorway-light",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Xeno & Oaklander - Via Negativa",
-            "image_slide_text_body": "<p>Vinyl LP / CD</p>"
+            "image_slide_text_body": "<p>LP / Digital</p>"
           }
         }
       },
@@ -84,8 +73,7 @@
         "image_D3P7gW",
         "image_KdjVgg",
         "image_erPPW4",
-        "image_KcNmWA",
-        "image_ndwpGM"
+        "image_KcNmWA"
       ],
       "settings": {
         "show_hero": true
