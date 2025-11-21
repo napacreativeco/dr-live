@@ -9,9 +9,9 @@
  */
 {
   "current": {
-    "announcement_showhide": false,
+    "announcement_showhide": true,
     "announcement_marquee_mode": false,
-    "announcement_content": "25% OFF FALL SALE - USE CODE \"AUTUMN25\" AT CHECKOUT",
+    "announcement_content": "25% OFF BLACK FRIDAY - USE CODE \"BF2025\" AT CHECKOUT",
     "announcement_text_color": "#fff",
     "announcement_link": "shopify://collections/blackfriday2025",
     "announcement_link_text": "- CLICK HERE",
