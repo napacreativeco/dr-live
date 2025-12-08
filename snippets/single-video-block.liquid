@@ -67,24 +67,23 @@
 
 {% if show_title == 'true' or show_artist == 'true' or show_description == 'true' %}
   <div class="single-video-info page-width">
-    <div class="single-go-back" onclick="goBack()">
-      <span>← Back</span>
+    <div class="single-video-header">
+      <div class="single-go-back" onclick="goBack()">
+        <span>← Back</span>
+      </div>
+      <div class="single-video-share"
+           onclick="share(event)">
+        {% render 'single-icon-share' %}
+        <span>Share</span>
+        <span id="single-tooltip-{{ video_id }}"
+              class="single-share-tooltip">
+          Copied!
+        </span>
+      </div>
     </div>
     {% if show_title == 'true' %}
       <div class="single-video-title-wrapper">
         <div class="{{ title_size }} single-video-title">{{ video_title }}</div>
-        <div
-                class="single-video-share"
-                onclick="share(event)"
-        >
-          {% render 'single-icon-share' %}
-          <span>Share</span>
-          <span
-                  id="single-tooltip-{{ video_id }}"
-                  class="single-share-tooltip"
-          >Copied!</span
-          >
-        </div>
       </div>
     {% endif %}
     {% if show_artist == 'true' %}

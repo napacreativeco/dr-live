@@ -17,6 +17,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+.page-width {
+  max-width: var(--page-width, 1200px);
+  margin: 0 auto;
+}
+
 .single-access-denied {
   padding-top: 3em;
   padding-bottom: 3em;
@@ -75,30 +80,20 @@ SOFTWARE.
   margin-bottom: 3rem;
 }
 
+.single-video-header {
+  display: flex;
+  align-items: center;
+  margin-top: 2em;
+}
+
 .single-go-back {
   display: none;
-  margin-top: 1em;
   cursor: pointer;
 }
 
-.single-video-title-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between
-}
-
-.single-video-title,
-.single-video-artist,
-.single-video-share {
-  margin: 1em 0 0.5em;
-}
-
-.single-video-artist {
-  opacity: 0.5;
-}
-
 .single-video-share {
   display: flex;
+  margin-left: auto;
   align-items: center;
   position: relative;
   cursor: pointer;
@@ -129,9 +124,25 @@ SOFTWARE.
   opacity: 1;
 }
 
+.single-video-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.single-video-title {
+  margin: 0.5em 0 0 0;
+}
+
+.single-video-artist {
+  margin: 1em 0 0;
+  opacity: 0.5;
+}
+
 .single-video-description-wrapper {
   overflow: hidden;
   transition: max-height 0.3s ease;
+  margin-top: 1em;
   max-height: 15em; /* Show ~2 paragraphs by default */
 }
 
@@ -144,6 +155,7 @@ SOFTWARE.
   border: none;
   color: inherit;
   cursor: pointer;
+  text-decoration: underline;
   font: inherit;
   padding: 0;
   margin-top: 0.5em;
