@@ -225,9 +225,7 @@
           class="single-tracklist"
         >
           {% for track in products %}
-            {% if track.type == 'Digital Track' %}
-              {% include 'single-music-track' with track %}
-            {% endif %}
+            {% include 'single-music-track' with track %}
           {% endfor %}
         </div>
       {% endif %}
