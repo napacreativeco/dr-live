@@ -23,17 +23,6 @@
             "image_slide_text_body": "<p>LP / Digital</p>"
           }
         },
-        "image_XDP6bY": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS231_SITE_v1.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS231_SITE-MOBILE_v1.jpg",
-            "image_slide_url": "shopify://products/high-vis-guided-tour",
-            "image_slide_subtitle": "PRE-ORDER - OUT 10/31",
-            "image_slide_title": "High Vis - Guided Tour (3rd Pressing)",
-            "image_slide_text_body": "<p>CD / LP / Digital</p>"
-          }
-        },
         "image_TLri7C": {
           "type": "image",
           "settings": {
@@ -103,7 +92,6 @@
       },
       "block_order": [
         "image_H4gTz7",
-        "image_XDP6bY",
         "image_TLri7C",
         "image_FEyER3",
         "image_D3P7gW",
