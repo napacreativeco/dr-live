@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "announcement_showhide": true,
+    "announcement_showhide": false,
     "announcement_marquee_mode": false,
     "announcement_content": "26% OFF - USE CODE \"2026\" AT CHECKOUT",
     "announcement_text_color": "#fff",
