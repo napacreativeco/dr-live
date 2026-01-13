@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_K9qiq4": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS247-DaisWebsite-Desktop-V1.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS247-DaisWebsite-Mobile-V1.jpg",
+            "image_slide_url": "shopify://products/trauma-ray-carnival",
+            "image_slide_subtitle": "PREORDER - Out Feb 20",
+            "image_slide_title": "trauma ray - Carnival EP",
+            "image_slide_text_body": "<p>Vinyl EP</p>"
+          }
+        },
         "image_H4gTz7": {
           "type": "image",
           "settings": {
@@ -91,6 +102,7 @@
         }
       },
       "block_order": [
+        "image_K9qiq4",
         "image_H4gTz7",
         "image_TLri7C",
         "image_FEyER3",
