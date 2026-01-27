@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_xKBbVB": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS248-DaisWebsite-Desktop-horzRGB_958079e7-0187-4768-a389-79cfc69e6960.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS248-DaisWebsite-Mobile-BW1_ed84f89d-2895-41e6-ad47-a2ba70e44a78.jpg",
+            "image_slide_url": "shopify://products/adult-kissing-luck-goodbye",
+            "image_slide_subtitle": "PREORDER - OUT MARCH 27",
+            "image_slide_title": "ADULT. - Kissing Luck Goodbye",
+            "image_slide_text_body": "<p>CD/LP</p>"
+          }
+        },
         "image_K9qiq4": {
           "type": "image",
           "settings": {
@@ -55,61 +66,14 @@
             "image_slide_title": "New Era x DAIS - 9FORTY CAP",
             "image_slide_text_body": "<p>Limited Edition</p>"
           }
-        },
-        "image_D3P7gW": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS001_Website-Desktop.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS001_Website-Mobile.jpg",
-            "image_slide_url": "shopify://products/early-worm",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Genesis P-Orridge - Early Worm",
-            "image_slide_text_body": "<p>LP / Digital</p>"
-          }
-        },
-        "image_KdjVgg": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS189_Website-Desktop-V6-centered.png",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS189_Website-Mobile.png",
-            "image_slide_url": "shopify://products/coil-black-antlers",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Coil - Black Antlers",
-            "image_slide_text_body": "<p>2x Vinyl LP / CD / DIGITAL</p>"
-          }
-        },
-        "image_erPPW4": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS210_Website-Home.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS210_Website-Mobile_ccb4d05a-b3f5-4dce-a8a5-10e259594670.jpg",
-            "image_slide_url": "shopify://products/soisong-xaj3z",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Soisong - xAj3z",
-            "image_slide_text_body": "<p>2x LP / Digital</p>"
-          }
-        },
-        "image_KcNmWA": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS214_SITE.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS214_SITE-MOBILE.jpg",
-            "image_slide_url": "shopify://products/cindytalk-camouflage-heart",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Cindytalk - Camouflage Heart",
-            "image_slide_text_body": "<p>LP / Digital</p>"
-          }
         }
       },
       "block_order": [
+        "image_xKBbVB",
         "image_K9qiq4",
         "image_H4gTz7",
         "image_TLri7C",
-        "image_FEyER3",
-        "image_D3P7gW",
-        "image_KdjVgg",
-        "image_erPPW4",
-        "image_KcNmWA"
+        "image_FEyER3"
       ],
       "settings": {
         "show_hero": true
