@@ -67,7 +67,7 @@ body[data-theme=lite] {
     --bright-white: #ffffff;
     --white: #F9F9F9;
     --white-dim: #efefef;
-    --grey: #8f8f8f;
+    --grey:rgb(82, 82, 82);
     --grey-dark: #242424;
     --grey-light: #e7e7e7;
     --grey-mid: #dfe1e5;
