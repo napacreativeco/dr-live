@@ -107,7 +107,7 @@
     word-spacing: -4px;
     color: var(--grey);
     letter-spacing: 0;
-    line-height: 1.2
+    line-height: 1.4;
 }
 
 .product-card .price {
