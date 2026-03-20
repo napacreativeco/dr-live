@@ -23,6 +23,17 @@
             "image_slide_text_body": "<p>CD/LP</p>"
           }
         },
+        "image_bJCYtQ": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS108-Website-Desktop-V1.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS108-Website-Mobile-V1.jpg",
+            "image_slide_url": "shopify://products/death-of-lovers-the-acrobat",
+            "image_slide_subtitle": "BACK IN STOCK",
+            "image_slide_title": "Death Of Lovers - The Acrobat",
+            "image_slide_text_body": "<p>4 new vinyl colors and new merch</p>"
+          }
+        },
         "image_K9qiq4": {
           "type": "image",
           "settings": {
@@ -70,6 +81,7 @@
       },
       "block_order": [
         "image_xKBbVB",
+        "image_bJCYtQ",
         "image_K9qiq4",
         "image_H4gTz7",
         "image_TLri7C",
