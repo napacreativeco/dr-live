@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_4VF9z4": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/ChoirBoy-2026-credit-KrisKirk-2-2000px-Web.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/ChoirBoy-2026-credit-KrisKirk-1-2000px-Web.jpg",
+            "image_slide_url": "shopify://blogs/news/choir-boy-release-new-single-ill-always-let-you-down",
+            "image_slide_subtitle": "Out now",
+            "image_slide_title": "Choir Boy - \"I'll Always Let You Down\"",
+            "image_slide_text_body": "<p>New single, on tour with AFI</p>"
+          }
+        },
         "image_bJCYtQ": {
           "type": "image",
           "settings": {
@@ -80,6 +91,7 @@
         }
       },
       "block_order": [
+        "image_4VF9z4",
         "image_bJCYtQ",
         "image_xKBbVB",
         "image_K9qiq4",
