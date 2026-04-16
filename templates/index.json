@@ -23,17 +23,6 @@
             "image_slide_text_body": "<p>New single, on tour with AFI</p>"
           }
         },
-        "image_bJCYtQ": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS108-Website-Desktop-V1.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS108-Website-Mobile-V1.jpg",
-            "image_slide_url": "shopify://products/death-of-lovers-the-acrobat",
-            "image_slide_subtitle": "BACK IN STOCK",
-            "image_slide_title": "Death Of Lovers - The Acrobat",
-            "image_slide_text_body": "<p>4 new vinyl colors and new merch</p>"
-          }
-        },
         "image_xKBbVB": {
           "type": "image",
           "settings": {
@@ -43,6 +32,17 @@
             "image_slide_subtitle": "OUT NOW",
             "image_slide_title": "ADULT. - Kissing Luck Goodbye",
             "image_slide_text_body": "<p>CD/LP</p>"
+          }
+        },
+        "image_bJCYtQ": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS108-Website-Desktop-V1.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS108-Website-Mobile-V1.jpg",
+            "image_slide_url": "shopify://products/death-of-lovers-the-acrobat",
+            "image_slide_subtitle": "BACK IN STOCK",
+            "image_slide_title": "Death Of Lovers - The Acrobat",
+            "image_slide_text_body": "<p>4 new vinyl colors and new merch</p>"
           }
         },
         "image_K9qiq4": {
@@ -66,38 +66,14 @@
             "image_slide_title": "Begging Dog's debut, DEMO 1",
             "image_slide_text_body": "<p>LP / Digital</p>"
           }
-        },
-        "image_TLri7C": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS242_Website-Desktop_credit-NeddaAfsari.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS242_Website-Mobile_credit-NeddaAfsari.jpg",
-            "image_slide_url": "shopify://products/rjf-cleaning",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "R.J.F. - Cleaning Out the Empty Administration Building",
-            "image_slide_text_body": "<p>LP / Digital</p>"
-          }
-        },
-        "image_FEyER3": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS240_Website-Desktop-V1_5d6820ab-00c6-4495-95de-f43253f6e9ad.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS240_Website-Mobile-V1_eb63bfbb-0fc0-47ee-9cf1-deebbedb8560.jpg",
-            "image_slide_url": "shopify://products/9forty-snapback",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "New Era x DAIS - 9FORTY CAP",
-            "image_slide_text_body": "<p>Limited Edition</p>"
-          }
         }
       },
       "block_order": [
         "image_4VF9z4",
-        "image_bJCYtQ",
         "image_xKBbVB",
+        "image_bJCYtQ",
         "image_K9qiq4",
-        "image_H4gTz7",
-        "image_TLri7C",
-        "image_FEyER3"
+        "image_H4gTz7"
       ],
       "settings": {
         "show_hero": true
