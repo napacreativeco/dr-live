@@ -3,7 +3,7 @@
         <div class="wrap">
             
             <div class="chopper">
-                <div class="image" onclick="window.location='{{ post.url }}';" style="background: url('{{ post.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;">
+                <div tabindex="0" role="button" class="image" onclick="window.location='{{ post.url }}';" style="background: url('{{ post.image | image_url: width: '500' }}'); background-size: cover; background-position: center center;">
                 </div>
             </div>
     
