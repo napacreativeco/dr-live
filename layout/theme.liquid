@@ -407,6 +407,10 @@
 
           }
         });
+        // After Swiper initializes, nuke any tabindex it added to slides
+        document.querySelectorAll('.swiper-pagination').forEach(slide => {
+          slide.setAttribute('tabindex', '-1');
+        });
 
         const galleryswiper = new Swiper('.product-gallery-swiper', {
           direction: 'horizontal',
