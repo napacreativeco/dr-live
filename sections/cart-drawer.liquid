@@ -34,7 +34,7 @@
                         {{ item.vendor }}
                       </a>
 
-                      <a class="title" href="{{ item.url }}" title="{{ item.title }}">
+                      <a class="title" tabindex="0" role="button" href="{{ item.url }}" title="{{ item.title }}">
                         {{ item.product.title }}
                       </a>
 
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="quantity-input">
-                      <input data-ajax-cart-quantity-input="{{ forloop.index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
+                      <input tabindex="0" role="button" data-ajax-cart-quantity-input="{{ forloop.index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
                     </div>
 
                     <div class="item-total">
@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="remove-item">
-                      <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">&times;</a>
+                      <a tabindex="0" role="button" data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">&times;</a>
                     </div>
                     
                   </div>
@@ -72,7 +72,7 @@
                 
             <div class="cart-drawer-empty">
               <p>{{ settings.cart_empty_text | default: 'Your cart is empty' }}</p>
-              <a class="continue-shopping" href="{{ '/collections/all' }}" title="Continue Shopping">
+              <a tabindex="0" role="button" class="continue-shopping" href="{{ '/collections/all' }}" title="Continue Shopping">
                 {{ 'Continue Shopping' | escape }}
               </a>
             </div>
@@ -92,12 +92,12 @@
             </div>
         
             {% comment %} Checkout {% endcomment %}
-            <button type="submit" name="checkout">
+            <button tabindex="0" role="button" type="submit" name="checkout">
               {{ 'Checkout' | escape }}
             </button> 
 
             <div class="view-cart">
-              <a href="{{ routes.cart_url }}" title="View Cart" class="view-cart--link">{{ 'Edit Cart' | escape }}</a>
+              <a tabindex="0" role="button" href="{{ routes.cart_url }}" title="View Cart" class="view-cart--link">{{ 'Edit Cart' | escape }}</a>
             </div>
           {% else %}
 
