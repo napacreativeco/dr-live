@@ -966,7 +966,8 @@ section.section header.section--header a.view-more:hover {
 ACCESSIBILITY
 --------------------
 */
-a[tabindex="0"]:focus-visible {
+a[tabindex="0"]:focus-visible,
+div[tabindex="0"]:focus-visible {
   outline: 1px solid var(--grey);
   outline-offset: -2px;
 }
