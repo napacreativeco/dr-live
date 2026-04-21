@@ -1330,6 +1330,12 @@ NAVBAR
     transform: translateY(-1px)
 }
 
+
+/*
+--------------------
+WATCH
+--------------------
+*/
 .watch {
     background: var(--black);
     color: var(--white)
@@ -1440,6 +1446,13 @@ NAVBAR
     }
 }
 
+
+
+/*
+--------------------
+ARTIST PAGE
+--------------------
+*/
 .artist-archive {
     padding: 0 0 60px 0
 }
@@ -1492,6 +1505,12 @@ NAVBAR
     min-height: 100svh
 }
 
+
+/*
+--------------------
+PAGE HEADER
+--------------------
+*/
 header.page-header .header-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1526,6 +1545,12 @@ header.page-header a.view-more:hover {
     }
 }
 
+
+/*
+--------------------
+CART DRAWER
+--------------------
+*/
 .cart-drawer {
     position: fixed;
     top: 0;
@@ -2067,6 +2092,13 @@ body#challenge input[type=submit] {
     padding: 16px 40px
 }
 
+
+
+/*
+--------------------
+ANNOUNCEMENT BAR
+--------------------
+*/
 .announcement-bar {
     padding: 4px 10px
 }
