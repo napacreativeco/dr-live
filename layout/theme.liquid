@@ -397,6 +397,10 @@
 
               removeSlideTabindex(this);
 
+              document.querySelectorAll('.swiper-pagination-bullet').forEach(bullet => {
+                bullet.setAttribute('tabindex', '-1');
+              });
+
             },
             slideChange: function(e) {
 
@@ -418,6 +422,7 @@
           });
         }
         
+
 
         const galleryswiper = new Swiper('.product-gallery-swiper', {
           direction: 'horizontal',
