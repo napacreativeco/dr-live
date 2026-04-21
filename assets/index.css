@@ -954,6 +954,21 @@ section.section header.section--header a.view-more:hover {
     }
 }
 
+
+/*
+--------------------
+ACCESSIBILITY
+--------------------
+*/
+a[role="button"]:focus-visible {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/*
+--------------------
+NAVBAR
+--------------------
+*/
 .navbar {
     width: 100%;
     max-width: 100%;
