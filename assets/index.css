@@ -792,6 +792,12 @@ section.section {
     --link: 18px
 }
 
+
+/*
+--------------------
+SECTION HEADER
+--------------------
+*/
 section.section header.section--header {
     padding: 60px var(--side-padding) 30px var(--side-padding)
 }
@@ -825,6 +831,11 @@ section.section header.section--header h2.title {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none
+}
+
+section.section header.section--header h2.title:focus-visible {
+  outline: 1px solid var(--grey);
+  outline-offset: -2px;
 }
 
 section.section header.section--header a.view-more {
