@@ -763,6 +763,7 @@ NAVBAR
 
 .submenu li:focus-visible {
   outline: 1px solid var(--red);
+  color: var(--red);
   outline-offset: -2px;
 }
 
