@@ -761,6 +761,11 @@ NAVBAR
   outline-offset: -2px;
 }
 
+.submenu a:focus-visible {
+  outline: 1px solid var(--red);
+  outline-offset: -2px;
+}
+
 .navbar .navbar--row {
     display: grid;
     grid-template-columns: 2fr 10fr 2fr;
