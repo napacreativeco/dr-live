@@ -1,6 +1,6 @@
 <li class="product-card collection-card">
     <div class="product-card-wrapper">
-        <div class="image" onclick="window.location='{{ prod.url }}';">
+        <div class="image" tabindex="0" role="button" onclick="window.location='{{ prod.url }}';">
             {% if prod.featured_image %}
                 <img 
                 class="product-card-image"
