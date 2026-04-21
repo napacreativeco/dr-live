@@ -395,6 +395,8 @@
                 opacity: 1
               });
 
+              removeSlideTabindex(this);
+
             },
             slideChange: function(e) {
 
@@ -403,14 +405,19 @@
                 opacity: 0
               });
 
+              removeSlideTabindex(this);
+
             }
 
           }
         });
-        // After Swiper initializes, nuke any tabindex it added to slides
-        document.querySelectorAll('.swiper-pagination').forEach(slide => {
-          slide.setAttribute('tabindex', '-1');
-        });
+
+        function removeSlideTabindex(swiper) {
+          swiper.slides.forEach(slide => {
+            slide.setAttribute('tabindex', '-1');
+          });
+        }
+        
 
         const galleryswiper = new Swiper('.product-gallery-swiper', {
           direction: 'horizontal',
