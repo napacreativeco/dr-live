@@ -397,7 +397,7 @@
 
               removeSlideTabindex(this);
               cleanTabindex(this);  
-              
+
               document.querySelectorAll('.swiper-pagination-bullet').forEach(bullet => {
                 bullet.setAttribute('tabindex', '-1');
               });
@@ -673,6 +673,22 @@
           // NAVBAR - MOUSE IN           //
           // //////////////////////////////
           $('.has-dropdown').mouseenter(function() {
+              
+              var title = $(this).attr('data-title');
+
+              $('[data-menu="'+ title +'"]').css({
+                  display: 'flex',
+                  opacity: 1,
+                  transition: 'all 0.3s ease-in-out'
+              });
+
+              $('.more').css({
+                  color: 'var(--white)'
+              });
+
+          });
+
+          $('.has-dropdown').on('focus', function() {
               
               var title = $(this).attr('data-title');
 
