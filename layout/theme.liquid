@@ -672,6 +672,7 @@
           // //////////////////////////////
           // NAVBAR - MOUSE IN           //
           // //////////////////////////////
+          /* OG
           $('.has-dropdown').mouseenter(function() {
               
               var title = $(this).attr('data-title');
@@ -687,26 +688,14 @@
               });
 
           });
+          */
 
-          $('.has-dropdown').on(':focus', function() {
-              
-              var title = $(this).attr('data-title');
-
-              $('[data-menu="'+ title +'"]').css({
-                  display: 'flex',
-                  opacity: 1,
-                  transition: 'all 0.3s ease-in-out'
-              });
-
-              $('.more').css({
-                  color: 'var(--white)'
-              });
-
-          });
+          
 
           // //////////////////////////////
           // NAVBAR - MOUSE OUT          //
           // //////////////////////////////    
+          /* OG
           $('#navbar').mouseleave(function() {
 
               $('.submenu').css({
@@ -717,6 +706,54 @@
               $('.more').css({
                   color: 'var(--red)'
               });
+          });
+          */
+
+          // Helper functions to open/close
+          function openMenu(item) {
+            var title = $(item).attr('data-title');
+            $('[data-menu="' + title + '"]').css({
+              display: 'flex',
+              opacity: 1,
+              transition: 'all 0.3s ease-in-out'
+            });
+            $('.more').css({ color: 'var(--white)' });
+            $(item).find('> a').attr('aria-expanded', 'true');
+          }
+
+          function closeMenu(item) {
+            var title = $(item).attr('data-title');
+            $('[data-menu="' + title + '"]').css({
+              display: 'none',
+              opacity: 0
+            });
+            $('.more').css({ color: '' }); // revert to default
+            $(item).find('> a').attr('aria-expanded', 'false');
+          }
+
+          // Hover (your original behavior)
+          $('.has-dropdown').mouseenter(function() {
+            openMenu(this);
+          }).mouseleave(function() {
+            closeMenu(this);
+          });
+
+          // Keyboard focus
+          $('.has-dropdown').on('focusin', function() {
+            openMenu(this);
+          }).on('focusout', function(e) {
+            // Only close if focus is leaving the entire dropdown group
+            if (!$(this).has(e.relatedTarget).length) {
+              closeMenu(this);
+            }
+          });
+
+          // Escape key to close
+          $('.has-dropdown').on('keydown', function(e) {
+            if (e.key === 'Escape') {
+              closeMenu(this);
+              $(this).find('> a').focus();
+            }
           });
 
       })(jQuery);
