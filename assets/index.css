@@ -534,258 +534,7 @@ h6 {
     font-family: var(--type-writer)
 }
 
-footer {
-    background-color: var(--white);
-    color: var(--black);
-    border-top: var(--border-blk);
-    --section-title: 20px;
-    --link: 14px;
-    --logo-width: 60px;
-    --icon: 20px
-}
 
-footer .footer-wrap {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    border-bottom: var(--border-blk)
-}
-
-footer .left {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr
-}
-
-footer .logo-column {
-    border-right: var(--border-blk);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center
-}
-
-footer .logo-column svg {
-    width: var(--logo-width);
-    fill: var(--black)
-}
-
-footer .footer-block {
-    padding: 10px 30px
-}
-
-footer .block-title {
-    text-transform: uppercase;
-    display: block;
-    margin: 0 0 20px 0;
-    font-size: var(--section-title)
-}
-
-footer .link-block {
-    position: relative;
-    border-right: var(--border-blk);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between
-}
-
-footer .link-block ul {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 10px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    gap: 6px
-}
-
-footer .link-block ul a {
-    text-transform: uppercase;
-    color: var(--black);
-    font-size: var(--link)
-}
-
-footer .link-block ul a:hover {
-    text-decoration: underline
-}
-
-footer .right {
-    position: relative
-}
-
-footer .right form {
-    margin-top: 30px;
-    margin-bottom: 30px
-}
-
-footer .right input[type=email] {
-    background: var(--white);
-    color: var(--black);
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0 !important;
-    border-bottom: var(--border-blk);
-    width: 80%;
-    font-family: var(--type-writer);
-    text-transform: uppercase;
-    padding: 1px 0 10px 0
-}
-
-footer .right input[type=email]::-webkit-input-placeholder {
-    color: var(--grey);
-    font-size: var(--link)
-}
-
-footer .right input[type=email]::-moz-placeholder {
-    color: var(--grey);
-    font-size: var(--link)
-}
-
-footer .right input[type=email]:-ms-input-placeholder {
-    color: var(--grey);
-    font-size: var(--link)
-}
-
-footer .right input[type=email]::-ms-input-placeholder {
-    color: var(--grey);
-    font-size: var(--link)
-}
-
-footer .right input[type=email]::placeholder {
-    color: var(--grey);
-    font-size: var(--link)
-}
-
-footer .right input[type=submit] {
-    text-transform: uppercase;
-    background: 0 0;
-    border: 0;
-    outline: 0;
-    padding: 0;
-    display: block;
-    margin: 14px 0 0 0;
-    color: var(--black);
-    border-radius: 0 !important;
-    font-family: var(--sans-serif);
-    font-weight: 400;
-    font-size: var(--link)
-}
-
-footer .attribution {
-    font-size: calc(var(--link) - 2px);
-    letter-spacing: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    gap: 20px;
-    padding: 0 30px 10px 30px
-}
-
-footer .attribution .social-media {
-    margin-top: 0
-}
-
-footer .attribution .social-media svg {
-    width: var(--icon);
-    height: var(--icon)
-}
-
-footer .attribution ul {
-    gap: 10px
-}
-
-@media screen and (min-width:1800px) {
-    footer {
-        --section-title: 20px;
-        --link: 18px;
-        --logo-width: 76px;
-        --icon: 24px
-    }
-}
-
-@media screen and (max-width:767px) {
-    footer {
-        --section-title: 16px;
-        --link: 14px;
-        --logo-width: 50px
-    }
-    footer .footer-wrap {
-        display: grid;
-        grid-template-columns: 100%;
-        border-bottom: 0
-    }
-    footer .footer-block {
-        padding: 10px 30px 10px 30px
-    }
-    footer .link-block ul {
-        padding-bottom: 0
-    }
-    footer .link-block:last-of-type {
-        border-right: 0
-    }
-    footer .left {
-        border-bottom: var(--border-blk);
-        border-right: 0
-    }
-    footer .right {
-        padding-bottom: 10px
-    }
-    footer .right form {
-        margin-top: 60px;
-        margin-bottom: 20px
-    }
-    footer .right input[type=email] {
-        width: 100%
-    }
-    footer .attribution {
-        width: 100%;
-        text-align: center;
-        border-top: var(--border-blk);
-        right: 0;
-        left: 0;
-        bottom: 0;
-        position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        line-height: 1;
-        padding-top: 20px
-    }
-    footer .attribution .social-media {
-        display: none
-    }
-}
 
 section.section {
     --title: 30px;
@@ -1894,6 +1643,283 @@ form.js-ajax-cart-form-in-progress:after {
     }
 }
 
+
+
+
+
+
+
+/*
+--------------------
+FOOTER
+--------------------
+*/
+footer {
+    background-color: var(--white);
+    color: var(--black);
+    border-top: var(--border-blk);
+    --section-title: 20px;
+    --link: 14px;
+    --logo-width: 60px;
+    --icon: 20px
+}
+
+footer .footer-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-bottom: var(--border-blk)
+}
+
+footer .left {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr
+}
+
+footer .logo-column {
+    border-right: var(--border-blk);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+footer .logo-column svg {
+    width: var(--logo-width);
+    fill: var(--black)
+}
+
+footer .footer-block {
+    padding: 10px 30px
+}
+
+footer .block-title {
+    text-transform: uppercase;
+    display: block;
+    margin: 0 0 20px 0;
+    font-size: var(--section-title)
+}
+
+footer .link-block {
+    position: relative;
+    border-right: var(--border-blk);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+footer .link-block ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 6px
+}
+
+footer .link-block ul a {
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: var(--link)
+}
+
+footer .link-block ul a:hover {
+    text-decoration: underline
+}
+
+footer .right {
+    position: relative
+}
+
+footer .right form {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+footer .right input[type=email] {
+    background: var(--white);
+    color: var(--black);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0 !important;
+    border-bottom: var(--border-blk);
+    width: 80%;
+    font-family: var(--type-writer);
+    text-transform: uppercase;
+    padding: 1px 0 10px 0
+}
+
+footer .right input[type=email]::-webkit-input-placeholder {
+    color: var(--grey);
+    font-size: var(--link)
+}
+
+footer .right input[type=email]::-moz-placeholder {
+    color: var(--grey);
+    font-size: var(--link)
+}
+
+footer .right input[type=email]:-ms-input-placeholder {
+    color: var(--grey);
+    font-size: var(--link)
+}
+
+footer .right input[type=email]::-ms-input-placeholder {
+    color: var(--grey);
+    font-size: var(--link)
+}
+
+footer .right input[type=email]::placeholder {
+    color: var(--grey);
+    font-size: var(--link)
+}
+
+footer .right input[type=submit] {
+    text-transform: uppercase;
+    background: 0 0;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    display: block;
+    margin: 14px 0 0 0;
+    color: var(--black);
+    border-radius: 0 !important;
+    font-family: var(--sans-serif);
+    font-weight: 400;
+    font-size: var(--link)
+}
+
+footer .right input[type=submit]:focus-visible {
+  outline: 1px solid var(--grey);
+  outline-offset: -2px;
+}
+
+footer .attribution {
+    font-size: calc(var(--link) - 2px);
+    letter-spacing: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 0 30px 10px 30px
+}
+
+footer .attribution .social-media {
+    margin-top: 0
+}
+
+footer .attribution .social-media svg {
+    width: var(--icon);
+    height: var(--icon)
+}
+
+footer .attribution ul {
+    gap: 10px
+}
+
+@media screen and (min-width:1800px) {
+    footer {
+        --section-title: 20px;
+        --link: 18px;
+        --logo-width: 76px;
+        --icon: 24px
+    }
+}
+
+@media screen and (max-width:767px) {
+    footer {
+        --section-title: 16px;
+        --link: 14px;
+        --logo-width: 50px
+    }
+    footer .footer-wrap {
+        display: grid;
+        grid-template-columns: 100%;
+        border-bottom: 0
+    }
+    footer .footer-block {
+        padding: 10px 30px 10px 30px
+    }
+    footer .link-block ul {
+        padding-bottom: 0
+    }
+    footer .link-block:last-of-type {
+        border-right: 0
+    }
+    footer .left {
+        border-bottom: var(--border-blk);
+        border-right: 0
+    }
+    footer .right {
+        padding-bottom: 10px
+    }
+    footer .right form {
+        margin-top: 60px;
+        margin-bottom: 20px
+    }
+    footer .right input[type=email] {
+        width: 100%
+    }
+    footer .attribution {
+        width: 100%;
+        text-align: center;
+        border-top: var(--border-blk);
+        right: 0;
+        left: 0;
+        bottom: 0;
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        line-height: 1;
+        padding-top: 20px
+    }
+    footer .attribution .social-media {
+        display: none
+    }
+}
+
+
+
+
+/*
+--------------------
+MUSIC
+--------------------
+*/
 .music-collection .music-collection-wrapper {
     min-height: 100svh
 }
