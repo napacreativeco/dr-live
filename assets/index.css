@@ -761,7 +761,7 @@ NAVBAR
   outline-offset: -2px;
 }
 
-.submenu a:focus-visible {
+.submenu li:focus-visible {
   outline: 1px solid var(--red);
   outline-offset: -2px;
 }
