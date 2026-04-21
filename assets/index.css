@@ -172,7 +172,7 @@ body {
 }
 
 :focus {
-    outline: 0
+    /*outline: 0;*/
 }
 
 input[type=search]::-ms-clear {
@@ -332,12 +332,12 @@ video {
     border: 0;
     outline: 0;
     font-size: 100%;
-    vertical-align: baseline
+    vertical-align: baseline;
 }
 
 body {
     line-height: 1;
-    font-size: 14px
+    font-size: 14px;
 }
 
 article,
@@ -351,18 +351,18 @@ hgroup,
 menu,
 nav,
 section {
-    display: block
+    display: block;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 blockquote,
 q {
-    quotes: none
+    quotes: none;
 }
 
 blockquote:after,
@@ -370,7 +370,7 @@ blockquote:before,
 q:after,
 q:before {
     content: "";
-    content: none
+    content: none;
 }
 
 a {
@@ -393,17 +393,17 @@ mark {
     background-color: #ff9;
     color: #000;
     font-style: italic;
-    font-weight: 700
+    font-weight: 700;
 }
 
 del {
-    text-decoration: line-through
+    text-decoration: line-through;
 }
 
 abbr[title],
 dfn[title] {
     border-bottom: 1px dotted;
-    cursor: help
+    cursor: help;
 }
 
 table {
@@ -417,12 +417,12 @@ hr {
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
-    padding: 0
+    padding: 0;
 }
 
 input,
 select {
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 .swiper-pagination {
@@ -432,7 +432,7 @@ select {
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
 }
 
 .swiper-horizontal>.swiper-pagination-bullets,
@@ -440,7 +440,7 @@ select {
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
     bottom: 0;
-    left: 0
+    left: 0;
 }
 
 .swiper-pagination-bullet {
@@ -450,12 +450,12 @@ select {
     opacity: 1 !important;
     padding: 4px !important;
     width: 12px;
-    height: 12px
+    height: 12px;
 }
 
 .swiper-pagination-bullet-active {
     background: var(--black) !important;
-    border: 2px solid var(--black) !important
+    border: 2px solid var(--black) !important;
 }
 
 .swiper-button-prev {
@@ -1004,6 +1004,11 @@ NAVBAR
     flex-direction: row;
     gap: 6px;
     white-space: nowrap
+}
+
+.navbar a:focus-visible {
+  outline: 1px solid var(--grey);
+  outline-offset: -2px;
 }
 
 .navbar .navbar--row {
@@ -1774,7 +1779,7 @@ header.page-header a.view-more:hover {
     color: var(--black);
     border: 1px solid #dfe1e5;
     padding: 5px 0;
-    outline: 0
+    outline: 0;
 }
 
 .cart-drawer .item .item-wrapper input[type=number]:focus-visible {
