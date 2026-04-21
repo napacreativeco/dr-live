@@ -5,9 +5,9 @@
             
               {% for variant in prod.variants reversed %}
   
-                  {% if variant.inventory_quantity > 0 %}
-                    {% assign second_image = variant.image %}
-                  {% endif %}
+                {% if variant.inventory_quantity > 0 %}
+                  {% assign second_image = variant.image %}
+                {% endif %}
 
               {% endfor %}
   
