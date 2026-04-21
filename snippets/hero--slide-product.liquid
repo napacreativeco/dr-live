@@ -71,7 +71,7 @@
             </div>
 
             <div class="buttons">
-              <a class="button" href="{{ prod.url }}" title="{{ prod.title }}{{ ' by ' }}{{ prod.vendor }}">
+              <a id="preorder_button" tabindex="0" role="button" class="button" href="{{ prod.url }}" title="{{ prod.title }}{{ ' by ' }}{{ prod.vendor }}">
                 {% if prod.metafields.product.preorder_status == true %}
                   {{ 'Pre-order' | escape }}
                 {% else %}
