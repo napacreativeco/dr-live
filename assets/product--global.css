@@ -187,6 +187,7 @@
 }
 .single-product #purchase-options .wrapper h3 {
     font-size: 14px;
+    margin: 10px 0 0 0;
 }
 .single-product #purchase-options #product-variants {
     width: 100%;
