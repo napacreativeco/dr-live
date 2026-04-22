@@ -185,6 +185,9 @@
     margin: 40px auto 0 auto;
     border-top: var(--border-blk);
 }
+.single-product #purchase-options .wrapper h3 {
+    font-size: 14px;
+}
 .single-product #purchase-options #product-variants {
     width: 100%;
     padding-top: 30px;
