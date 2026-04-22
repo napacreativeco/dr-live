@@ -13,6 +13,10 @@
     line-height: 176%;
     margin: 0;
 }
+.single-product .product-section-two .description p {
+    margin: 0 0 10px 0;
+}
+
 .single-product .product-section-two .tracklisting {
     border-top: var(--border-blk);
     margin: 0 0 30px 0;
