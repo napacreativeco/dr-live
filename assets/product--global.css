@@ -254,7 +254,7 @@
     font-size: var(--description);
 }
 .single-product .description p {
-    margin: 0 0 10px 0;
+    margin: 0 0 14px 0;
 }
 .single-product .description ol,
 .single-product .description ul {
