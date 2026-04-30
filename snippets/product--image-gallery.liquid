@@ -8,7 +8,7 @@
     *
     {% endcomment %}
     <div class="featured-image">
-        <img id="featured_image_element" src="{{ product.featured_image | image_url: width: '1000' }}" />
+        <img id="featured_image_element" src="{{ product.featured_image | image_url: width: '1000' }}" alt="{{ product.featured_image.alt }}" />
 
         {% if product.metafields.music.preorder_status == true %}
             <div class="preorder-label">
