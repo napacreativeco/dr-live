@@ -2,8 +2,9 @@
     overflow: hidden;
     width: 100%;
     max-width: 100%;
-    padding: 0 var(--side-padding) var(--side-padding) var(--side-padding);
+    padding: 0 var(--side-padding) 0 var(--side-padding);
     position: relative;
+    margin: 0 0 40px 0;
 }
 .current-artists--wrapper .controls {
     position: absolute;
