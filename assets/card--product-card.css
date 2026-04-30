@@ -115,7 +115,7 @@
 .product-card .price {
     text-align: right;
     pointer-events: none;
-    line-height: .5
+    line-height: 1
 }
 
 .product-card .price a {
