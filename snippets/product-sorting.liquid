@@ -80,7 +80,7 @@
       {%- if filter.type == "price_range" -%}
 
         {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-            <li class="active-filters__remove-filter">
+            <li tabindex="0" role="button" class="active-filters__remove-filter">
                 {%- assign min_value = filter.min_value.value | default: 0 -%}
                 {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
                 {{ min_value | money }} - {{ max_value | money }} <span class="icon"><a href="{{ filter.url_to_remove }}" title="">&times;</a></span>
@@ -95,7 +95,7 @@
         *
         {% endcomment %}
         {%- for filter_value in filter.active_values -%}
-            <li class="active-filter active-filters__remove-filter">
+            <li tabindex="0" role="button" class="active-filter active-filters__remove-filter">
               <span class="filter-name">{{ filter_value.label }}</span>
               <span class="icon">
                 <a href="{{ filter.url_to_remove }}" title="">&times;</a>
@@ -113,7 +113,7 @@
   *
   {% endcomment %}
   {% if collection.sort_by != '' %}
-      <li class="active-filter active-filters__remove-filter">
+      <li tabindex="0" role="button" class="active-filter active-filters__remove-filter">
         <span class="filter-name">
           {% case collection.sort_by %}
 
