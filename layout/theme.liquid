@@ -104,12 +104,11 @@
     <script src="{{ 'aos.js' | asset_url }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-
-    {% render 'navbar' %}
-    {% render 'navbarmobile' %}
-    {% render 'navbarmobile--overlay' %}
-
     <main role="main" class="{% if settings.announcement_showhide == true %}has-bar{% endif %}"> 
+      {% render 'navbar' %}
+      {% render 'navbarmobile' %}
+      {% render 'navbarmobile--overlay' %}
+
       {{ content_for_layout }}
     </main>
 
