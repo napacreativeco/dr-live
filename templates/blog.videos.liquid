@@ -47,10 +47,10 @@
               {% comment %} Title {% endcomment %}
               <div class="info">
                 <h2>
-                  <a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
+                  <a tabindex="0" role="button" href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
                 </h2>
                 <div class="metadata">
-                  <a href="{{ video.url }}" title="{{ video.title }} by {{ video.tags }}">
+                  <a tabindex="0" role="button" href="{{ video.url }}" title="{{ video.title }} by {{ video.tags }}">
                     <h4>{{ 'By ' | escape }} {{ article.tags }} {{ '|' | escape }} {{ article.metafields.videos.premiere_date.value | date: "%b %d, %y" }}</h4>
                   </a>
                 </div>
@@ -59,7 +59,7 @@
 
               {% comment %} Link {% endcomment %}
               <div class="read-more">
-                <a href="{{ article.url }}" title="{{ article.title }}">
+                <a tabindex="0" role="button" href="{{ article.url }}" title="{{ article.title }}">
                   {{ 'Watch' | escape }}
                 </a>
               </div>
