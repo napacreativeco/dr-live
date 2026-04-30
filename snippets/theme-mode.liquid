@@ -5,7 +5,7 @@
     * Dark
     *
     {% endcomment %}
-    <div class="dark-mode" tabindex="0" role="button">
+    <div class="dark-mode" tabindex="0" role="button" aria-label="Activate Dark Mode">
         {% render 'icon--moon' %}
 
         {% if location == 'mobile-overlay' %}
@@ -18,7 +18,7 @@
     * Lite
     *
     {% endcomment %}
-    <div class="lite-mode" tabindex="0" role="button">
+    <div class="lite-mode" tabindex="0" role="button" aria-label="Activate Lite Mode">
         {% render 'icon--sun' %}
         
         {% if location == 'mobile-overlay' %}
