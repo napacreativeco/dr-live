@@ -95,13 +95,13 @@
     opacity: 1
 }
 
-.product-card .artist h3 {
+.product-card .artist h4 {
     font-size: var(--font-size--vendor);
     font-family: var(--sans-serif);
     color: var(--black)
 }
 
-.product-card .title h4 {
+.product-card .title h3 {
     font-size: var(--font-size--title);
     font-family: var(--type-writer);
     word-spacing: -4px;
