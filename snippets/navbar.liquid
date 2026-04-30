@@ -82,7 +82,7 @@
 
             {% render 'theme-mode' location: 'navbar' %}
 
-            <div class="cart-link--wrapper" data-ajax-cart-toggle-class-button="js-my-cart-open">
+            <div class="cart-link--wrapper" data-ajax-cart-toggle-class-button="js-my-cart-open" aria-label="Cart with {{ cart.item_count }} items">
                 <div>{{ 'CART' | escape }}</div>
                 <div class="type-writer cart-link">
                     {% if cart.item_count < 10 and cart.item_count > 0 %}
