@@ -175,8 +175,8 @@ body {
     outline: 0;
 }
 
-:focus-visible {
-    outline: 0;
+a:focus {
+    color:var(--red);
 }
 
 input[type=search]::-ms-clear {
