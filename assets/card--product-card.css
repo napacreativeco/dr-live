@@ -100,6 +100,7 @@
     font-family: var(--sans-serif);
     color: var(--black);
     text-decoration: underline;
+    line-height: 1.4;
 }
 
 .product-card .title h3 {
