@@ -99,7 +99,6 @@
     font-size: var(--font-size--vendor);
     font-family: var(--sans-serif);
     color: var(--black);
-    text-decoration: underline;
     border-bottom: 1px solid var(--black);
 }
 
