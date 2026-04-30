@@ -110,7 +110,9 @@
       {% render 'navbarmobile' %}
       {% render 'navbarmobile--overlay' %}
 
-      {{ content_for_layout }}
+      <div id="MainContent">
+        {{ content_for_layout }}
+      </div>
     </main>
 
     {% comment %} 
