@@ -1,5 +1,7 @@
-<div id="navbar" class="navbar">
+<div id="navbar" tabindex="-1" class="navbar">
     
+    {% render 'skip-to-content' %}
+
     {% if settings.announcement_showhide == true %}
         {% render 'announcement-bar' %}
     {% endif %}
@@ -101,6 +103,4 @@
 
     </div>
 
-    
-    {% render 'skip-to-content' %}
 </div>
