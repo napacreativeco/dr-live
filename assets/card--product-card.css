@@ -98,7 +98,8 @@
 .product-card .artist h4 {
     font-size: var(--font-size--vendor);
     font-family: var(--sans-serif);
-    color: var(--black)
+    color: var(--black);
+    text-decoration: underline;
 }
 
 .product-card .title h3 {
