@@ -236,9 +236,9 @@ textarea:-webkit-autofill {
 }
 
 /* SKIP TO CONTENT */
-.skip-to-content--holder {
+.skip-to-content {
   position: fixed;
-  top: 120px;
+  top: 12px;
   left: 12px;
   z-index: 999999;
 
@@ -247,13 +247,13 @@ textarea:-webkit-autofill {
   padding: 6px 12px;
   text-decoration: none;
 
-  transform: translateY(-300px); 
+  transform: translateY(-150%); 
 }
 
 /* 👇 appears when you press Tab */
-.skip-to-content--holder:focus,
-.skip-to-content--holder:focus-visible {
-  transform: translateY(300px);
+.skip-to-content:focus,
+.skip-to-content:focus-visible {
+  transform: translateY(10%);
   text-transform: underline;
   color: var(--red);
 }
