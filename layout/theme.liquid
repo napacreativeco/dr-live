@@ -552,31 +552,31 @@
         // //////////////////////////////
         // NAVBAR - SHOW SEARCH        //
         // //////////////////////////////
-        $('.search-icon-nav').on('click', ':focus', function() {
-
-            $('.search-form-component-nav').css({
-                width: 'auto'
-            });
-
+        function openSearch() {
+            $('.search-form-component-nav').css({ width: 'auto' });
             $('#search-field').focus();
+            $('.search-icon-nav').css({ display: 'none' });
+        }
 
-            $('.search-icon-nav').css({
-                display: 'none'
-            });
+        function closeSearch() {
+            $('.search-form-component-nav').css({ width: '0px' });
+            $('.search-icon-nav').css({ display: 'block' });
+        }
 
+        // Click (mouse)
+        $('.search-icon-nav').on('click', openSearch);
+        $('.search-component-close').on('click', closeSearch);
+
+        // Keyboard (accessibility)
+        $('.search-icon-nav').on('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openSearch();
+            }
         });
 
-        $('.search-component-close').on('click', function() {
-
-            $('.search-form-component-nav').css({
-                width: '0px'
-            });
-
-            $('.search-icon-nav').css({
-                display: 'block'
-            });
-
-        });
+        // Optional: open on focus (tabbing into it)
+        $('.search-icon-nav').on('focus', openSearch);
 
         // //////////////////////////////
         // THEME MODE                  //
