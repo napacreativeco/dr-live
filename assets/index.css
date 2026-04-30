@@ -217,6 +217,7 @@ textarea:-webkit-autofill {
     -webkit-text-fill-color: var(--black) !important
 }
 
+/* SCREEN READER */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -227,6 +228,21 @@ textarea:-webkit-autofill {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* SKIP TO CONTENT */
+.skip-to-content--holder {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 8px 16px;
+  z-index: 9999;
+}
+
+.skip-to-content--holder:focus {
+  top: 0;
 }
 
 .four-oh-four .fof-wrapper {
