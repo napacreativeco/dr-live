@@ -98,7 +98,7 @@
             </h3>
 
             {% comment %} Messages {% endcomment %}
-            <div data-ajax-cart-messages="{{ item.key }}"></div>          
+            <div data-ajax-cart-messages="{{ item.key }}" role="alert" aria-live="assertive" id="cart-error-form"></div>          
 
             {% comment %} Variants {% endcomment %}
             <div id="product-variants" class="variants {% if hide_default_title %} hidden{% endif %}">
