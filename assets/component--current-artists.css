@@ -33,6 +33,9 @@
     border: var(--border-blk);
     cursor: pointer;
 }
+.current-artists--wrapper .controls .next {
+    margin: 0 0 -1px 0;
+}
 .current-artists--wrapper ul {
     display: -webkit-box;
     display: -webkit-flex;
