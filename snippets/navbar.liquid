@@ -83,7 +83,7 @@
             {% render 'theme-mode' location: 'navbar' %}
 
             <div class="cart-link--wrapper" tabindex="0" role="button" data-ajax-cart-toggle-class-button="js-my-cart-open" aria-label="Open cart drawer">
-                <div>{{ 'CART' | escape }}</div>
+                <div style="line-height: 0;">{{ 'CART' | escape }}</div>
                 <div class="type-writer cart-link">
                     {% if cart.item_count < 10 and cart.item_count > 0 %}
                         [0<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>]
