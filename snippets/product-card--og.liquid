@@ -19,7 +19,7 @@
                       src="{{ prod.featured_image | image_url: width: '400' }}" 
                       alt="{{ prod.title }}{{ ' by ' | escape }}{{ prod.vendor }}"
                       data-first="{{ prod.featured_image | image_url: width: '400' }}"
-              data-second="{% if second_image %}{{ second_image | image_url: width: '400' }}{% else %}{{ prod.featured_image | image_url: width: '400' }}{% endif %}"
+                      data-second="{% if second_image %}{{ second_image | image_url: width: '400' }}{% else %}{{ prod.featured_image | image_url: width: '400' }}{% endif %}"
                   />
                   {{ variant.type }}
               {% else %}
