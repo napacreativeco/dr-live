@@ -22,10 +22,35 @@
 </style>
 
 <div class="swiper-slide slide__image" data-type="image">
-    <div onclick="window.location='{{ block.settings.image_slide_url }}';" class="slide-image desktop" data-type="image" data-layout="image" style="background-image: url('{{ block.settings.image_slide_image | image_url }}'); background-size: cover; background-position: top center;">
+
+    {% comment %} DESKTOP {% endcomment %}
+    <div onclick="window.location='{{ block.settings.image_slide_url }}';" 
+        class="slide-image desktop" 
+        data-type="image" 
+        data-layout="image" 
+        role="img" 
+        aria-label="{{ block.settings.image_slide_title }} - {{ block.settings.image_slide_text_body }}" 
+        style="background-image: url('{{ block.settings.image_slide_image | image_url }}'); background-size: cover; background-position: top center;">
+
+      <div class="sr-only">
+        {{ block.settings.image_slide_title }} - {{ block.settings.image_slide_text_body }}
+      </div>
+
     </div>
 
-    <div onclick="window.location='{{ block.settings.image_slide_url }}';" class="slide-image mobile" data-type="image" data-layout="image" style="background-image: url('{{ block.settings.image_slide_image_mobile | image_url }}'); background-size: cover; background-position: top center;">
+    {% comment %} MOBILE {% endcomment %}
+    <div onclick="window.location='{{ block.settings.image_slide_url }}';" 
+        class="slide-image mobile" 
+        data-type="image" 
+        data-layout="image" 
+        role="img" 
+        aria-label="{{ block.settings.image_slide_title }} - {{ block.settings.image_slide_text_body }}" 
+        style="background-image: url('{{ block.settings.image_slide_image_mobile | image_url }}'); background-size: cover; background-position: top center;">
+
+      <div class="sr-only">
+        {{ block.settings.image_slide_title }} - {{ block.settings.image_slide_text_body }}
+      </div>
+      
     </div>
 
     {% comment %} Slide Box {% endcomment %}
@@ -46,7 +71,7 @@
           </div>
 
           <div class="texts">
-            <a tabindex="0" role="button" href="{{ block.settings.image_slide_url }}">
+            <a href="{{ block.settings.image_slide_url }}">
               {{ block.settings.image_slide_text_body | newline_to_br }}
             </a>
           </div>
