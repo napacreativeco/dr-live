@@ -1,7 +1,7 @@
 <form action="/search" method="get" class="search-form right" role="search">
     <label for ="q" class="sr-only">Search</label>
-    <input name="q" type="search" id="search-field" placeholder="{{ text }}" value="{{ search.terms | escape }}" autofocus />
-    <button type="submit" id="search-submit">
+    <input name="q" type="search" id="search-field" placeholder="{{ text }}" value="{{ search.terms | escape }}" tabindex="0" />
+    <button type="submit" tabindex="0" role="button" id="search-submit">
         {% render 'icon--search' %}
     </button>
 </form>
