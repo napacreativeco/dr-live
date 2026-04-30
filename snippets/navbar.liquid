@@ -1,13 +1,13 @@
 <div id="navbar" class="navbar">
-
     
-
     {% if settings.announcement_showhide == true %}
         {% render 'announcement-bar' %}
     {% endif %}
 
+    {% render 'skip-to-content' %}
+
     <div class="navbar--row">
-{% render 'skip-to-content' %}
+
         <div class="logo">
             {% render 'dais-text' %}
         </div>
