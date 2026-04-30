@@ -4,7 +4,7 @@
     max-width: 100%;
     padding: 0 var(--side-padding) 0 var(--side-padding);
     position: relative;
-    margin: 0 0 40px 0;
+    margin: 0 0 var(--side-padding) 0;
 }
 .current-artists--wrapper .controls {
     position: absolute;
