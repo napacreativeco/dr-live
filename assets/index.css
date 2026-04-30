@@ -238,7 +238,6 @@ textarea:-webkit-autofill {
 /* SKIP TO CONTENT */
 .skip-to-content {
   position: relative;
-  float: left;
   top: 120px;
   left: -150%;
   z-index: 999999;
