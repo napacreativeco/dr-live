@@ -1022,13 +1022,13 @@ NAVBAR
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 10px;
-    font-size: 12px;
+    gap: 12px;
+    font-size: 14px;
     color: var(--black)
 }
 
 .navbar .cart .type-writer {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .navbar .cart .cart-link--wrapper {
