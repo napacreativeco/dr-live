@@ -4,7 +4,7 @@
 {% render 'section-header', data: section.settings, destination: '/pages/artists' %}
 
 <div class="current-artists--wrapper">
-  <ul class="current-artists--list">
+  <ul class="current-artists--list" aria-roledescription="carousel" aria-label="Current Artists">
     {% for coll in collections %}
       {% case coll.template_suffix %}
           {% when 'artist' %}
