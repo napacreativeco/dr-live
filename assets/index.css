@@ -996,7 +996,7 @@ NAVBAR
 }
 
 .navbar .search-icon-nav svg:focus {
-    outline: 1px solid var(--red);
+    outline: 1px solid var(--red) !important;
 }
 
 .navbar .search-icon-nav svg {
