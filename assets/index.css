@@ -240,7 +240,7 @@ textarea:-webkit-autofill {
   position: relative;
   float: left;
   top: 120px;
-  left: 12px;
+  left: -150%;
   z-index: 999999;
 
   background: #fefefe;
