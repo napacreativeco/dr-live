@@ -1,7 +1,7 @@
 {{ 'component--latest-products.css' | asset_url | stylesheet_tag }}
 {{ 'card--product-card.css' | asset_url | stylesheet_tag }}
 
-{% render 'section-header', data: section.settings, destination: '/collections/all/' %}
+{% render 'section-header', data: section.settings, destination: '/collections/all/', index: 6 %}
 
 <div id="MainContent" class="latest-products--wrapper">
   {% if section.settings.use_default_collection == false %}
