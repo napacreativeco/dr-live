@@ -2,7 +2,7 @@
 
     <div class="left">
         <div class="logo-column">
-            <a tabindex="1" role="button" href="{{ '/' | escape }}">
+            <a tabindex="0" role="button" href="{{ '/' | escape }}">
                 {% render 'dais-full' %}
             </a>
         </div>
@@ -17,7 +17,7 @@
             <ul>
                 {% for link in linklists.footer-left.links %}
                     <li>
-                        <a tabindex="1" role="button" href="{{ link.url }}">{{ link.title }}</a> 
+                        <a tabindex="0" role="button" href="{{ link.url }}">{{ link.title }}</a> 
                     </li>
                 {% endfor %}
             </ul>
@@ -33,7 +33,7 @@
             <ul>
                 {% for link in linklists.footer-right.links %}
                     <li>
-                        <a tabindex="1" role="button" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a> 
+                        <a tabindex="0" role="button" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a> 
                     </li>
                 {% endfor %}
             </ul>
@@ -57,11 +57,11 @@
 
                         <div class="email">
                             <label for="email" style="display: none;">Email</label>
-                            <input tabindex="1" role="button" type="email" placeholder="peace@love.com" name="contact[email]" />
+                            <input tabindex="0" role="button" type="email" placeholder="peace@love.com" name="contact[email]" />
                         </div>
                         
                         <div class="submit">
-                            <input tabindex="1" role="button" type="submit" value="Subscribe" />
+                            <input tabindex="0" role="button" type="submit" value="Subscribe" />
                         </div>
                     {% endform %}
                 </div>
