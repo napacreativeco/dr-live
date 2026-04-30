@@ -48,6 +48,9 @@
                     </div>
 
                     <div class="quantity-input">
+                      <label for="updates_{{ item.key }}" class="sr-only">
+                        Quantity for {{ item.product.title }}
+                      </label>
                       <input tabindex="0" role="button" data-ajax-cart-quantity-input="{{ forloop.index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
                     </div>
 
