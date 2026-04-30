@@ -575,8 +575,15 @@
             }
         });
 
-        // Optional: open on focus (tabbing into it)
         $('.search-icon-nav').on('focus', openSearch);
+
+        $('.search-form-component-nav').on('focusout', function() {
+            setTimeout(function() {
+                if (!$('.search-form-component-nav').is(':focus-within')) {
+                    closeSearch();
+                }
+            }, 0);
+        });
 
         // //////////////////////////////
         // THEME MODE                  //
