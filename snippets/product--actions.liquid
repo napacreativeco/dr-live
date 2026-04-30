@@ -306,7 +306,7 @@
                                             data-image="{% if variant.featured_image %} {{ variant.featured_image | image_url: width: 700 }} {% endif %}"
                                             id="{{ variant.id }}" 
                                             value="{{ variant.id }}" 
-                                            name="id"
+                                            name="{{ variant.id }}"
                                             tabindex="0"
                                             role="radio"
                                             {% if variant.selected or product.selected_or_first_available_variant %}
@@ -345,7 +345,7 @@
     *
     {% endcomment %}
     <label for="{{ variant.id }}">
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
+        <input type="hidden" name="{{ variant.id }}" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
     </label>
     
 {% endif %}
