@@ -1029,6 +1029,7 @@ NAVBAR
 
 .navbar .cart .type-writer {
     font-size: 12px;
+    margin-left: 3px;
 }
 
 .navbar .cart .cart-link--wrapper {
