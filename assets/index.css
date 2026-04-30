@@ -181,10 +181,10 @@ a:focus {
     outline: 1px solid var(--red);
 }
 
-h1:focus,
-h2:focus,
-h3:focus,
-h4:focus {
+a h1:focus,
+a h2:focus,
+a h3:focus,
+a h4:focus {
     color: var(--red);
     outline: 1px solid var(--red);
 }
