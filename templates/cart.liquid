@@ -83,7 +83,7 @@
                 </div>
               
                 <div class="delete">
-                  <a href="/cart/change?line={{ forloop.index }}&quantity=0">
+                  <a tabindex="0" role="button" href="/cart/change?line={{ forloop.index }}&quantity=0">
                     &times;
                   </a>
                 </div>
@@ -111,7 +111,7 @@
               <span class="indicator">&nbsp;</span>
             </summary>
             <div class="details-body">
-              <textarea name="note">{{ cart.note }}</textarea>
+              <textarea tabindex="0" role="button" name="note">{{ cart.note }}</textarea>
             </div>
           </details>
 
@@ -121,7 +121,7 @@
           </div>
 
           <div class="continue-shopping">
-            <a href="/collections/all" title="Continue Shopping">
+            <a tabindex="0" role="button" href="/collections/all" title="Continue Shopping">
               {{ 'Continue Shopping' }}
             </a>
           </div>
@@ -148,7 +148,7 @@
         </div>
 
         <div class="continue-shopping">
-          <a 
+          <a tabindex="0" role="button"
             {% if settings.cart_continue_shopping_link == blank %}
               href="/collections/all"
             {% else %}
