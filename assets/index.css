@@ -249,6 +249,7 @@ textarea:-webkit-autofill {
 .skip-to-content:focus,
 .skip-to-content:focus-visible {
   transform: translateY(10px);
+  text-transform: underline;
 }
 /* #MainContent {
   scroll-margin-top: 80px; 
