@@ -3,14 +3,14 @@
 
 {% render 'section-header', data: section.settings, destination: '/pages/artists' %}
 
-<div class="current-artists--wrapper">
-  <ul class="current-artists--list" aria-roledescription="carousel" aria-label="Current Artists">
+<div class="current-artists--wrapper" aria-roledescription="carousel" aria-label="Current Artists">
+  <ul class="current-artists--list" aria-live="polite">
     {% for coll in collections %}
       {% case coll.template_suffix %}
           {% when 'artist' %}
           
               {% if coll.metafields.custom.alumni_status == false or coll.metafields.custom.alumni_status == blank %}
-                    {% render 'artist-card', data: coll %}
+                {% render 'artist-card', data: coll %}
               {% endif %}
             
 
@@ -19,10 +19,10 @@
   </ul>
 
   <div class="controls">
-    <div class="next">
+    <div class="next" aria-label="Next slide" aria-controls="slider-items">
       {% render 'svg--right-arrow' %}
     </div>
-    <div class="prev">
+    <div class="prev" aria-label="Next slide" aria-controls="slider-items">
       {% render 'svg--left-arrow' %}
     </div>
   </div>
