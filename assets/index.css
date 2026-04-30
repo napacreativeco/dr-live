@@ -238,7 +238,7 @@ textarea:-webkit-autofill {
 /* SKIP TO CONTENT */
 .skip-to-content--holder {
   position: fixed;
-  top: 12px;
+  top: 120px;
   left: 12px;
   z-index: 999999;
 
@@ -253,7 +253,7 @@ textarea:-webkit-autofill {
 /* 👇 appears when you press Tab */
 .skip-to-content--holder:focus,
 .skip-to-content--holder:focus-visible {
-  transform: translateY(10%);
+  transform: translateY(0);
   text-transform: underline;
   color: var(--red);
 }
