@@ -46,7 +46,7 @@
               <li class="cart-item">
 
                 <div class="image">
-                  <a href="{{ collection_url }}{{ item.url }}">
+                  <a tabindex="0" role="button" href="{{ collection_url }}{{ item.url }}">
                     <img src="{{ item | img_url: 'compact' }}"  alt="{{ item.title | escape }}" />
                   </a>
                 </div>
@@ -59,7 +59,7 @@
                   {% endif %}
                   <div class="product">
                     <h2>
-                      <a href="{{ collection_url }}{{ item.url }}">
+                      <a tabindex="0" role="button" href="{{ collection_url }}{{ item.url }}">
                         {{ item.product.title }}
                       </a>
                     </h2>
@@ -74,6 +74,7 @@
                 </div>
 
                 <div class="quantity">
+                  <label for="updates[]" class="sr-only">Quantity</label>
                   <input type="number" name="updates[]" id="updates_{{ item.id }}" class="quantity" value="{{ item.quantity }}" />
                 </div>
 
