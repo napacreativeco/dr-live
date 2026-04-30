@@ -795,7 +795,8 @@ NAVBAR
     -webkit-transition: all .3s;
     transition: all .3s;
     border-bottom: var(--border-blk);
-    --svg-size: 16px
+    --svg-size: 16px;
+    overflow: visible;
 }
 
 .navbar a {
