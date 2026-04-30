@@ -99,7 +99,7 @@
     font-size: var(--font-size--vendor);
     font-family: var(--sans-serif);
     color: var(--black);
-    border-bottom: 1px solid var(--grey-light);
+    border-bottom: 1px solid var(--grey);
 }
 
 .product-card .title h3 {
