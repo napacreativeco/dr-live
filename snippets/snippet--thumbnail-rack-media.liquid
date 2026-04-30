@@ -4,7 +4,7 @@
     
         {% if m != null %}
             <div class="media-thumbnail" data-id="{{ v.id }}" data-image="{{ m | image_url }}">
-                <img src="{{ m | image_url: width: '500' }}" />
+                <img src="{{ m | image_url: width: '500' }}" alt="{{ m.alt }}" />
             </div>
         {% endif %}
 
