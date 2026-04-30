@@ -105,6 +105,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <main role="main" class="{% if settings.announcement_showhide == true %}has-bar{% endif %}"> 
+      {% render 'skip-to-content' %}
       {% render 'navbar' %}
       {% render 'navbarmobile' %}
       {% render 'navbarmobile--overlay' %}
