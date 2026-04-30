@@ -11,7 +11,7 @@
 
         {% if paginate.current_page > 1 %}
           <li class="previous-page">
-            <a id="prev-page" href="{{ request.path }}?page={{ paginate.current_page | minus: 1 }}">
+            <a tabindex="0" role="button" id="prev-page" href="{{ request.path }}?page={{ paginate.current_page | minus: 1 }}">
               {{ paginate.current_page | minus: 1 }}
             </a>
           </li>
@@ -23,7 +23,7 @@
 
         {% if paginate.next.is_link %}
           <li class="next-page">
-            <a href="{{ paginate.next.url }}">
+            <a tabindex="0" role="button" href="{{ paginate.next.url }}">
               {{ paginate.current_page | plus: 1 }}
             </a>
           </li>
@@ -37,7 +37,7 @@
 
         {% if paginate.items > 1 %}
           <li class="total-pages">
-            <a href="{{ request.path }}?page={{ paginate.pages }}">
+            <a tabindex="0" role="button" href="{{ request.path }}?page={{ paginate.pages }}">
               {{ paginate.pages }}
             </a>
           </li>
@@ -48,21 +48,21 @@
       <div class="shortcuts">
         {% if paginate.current_page > 1 %}
             <div class="pagination-first">
-                <a href="{{ request.path }}?page=1" title="{{ 'First' | escape }}">
+                <a tabindex="0" role="button" href="{{ request.path }}?page=1" title="{{ 'First' | escape }}">
                     {{ 'First' | escape }}
                 </a>
             </div>
         {% endif %}
         {% if paginate.next.is_link == true %}
             <div class="pagination-next">
-                <a href="{{ paginate.next.url }}" title="{{ 'Next' | escape }}">
+                <a tabindex="0" role="button" href="{{ paginate.next.url }}" title="{{ 'Next' | escape }}">
                     {{ 'Next' | escape }}
                 </a>
             </div>
         {% endif %}
         {% if paginate.next.is_link == true %}
             <div class="pagination-last">
-                <a href="{{ request.path }}?page={{ paginate.pages }}" title="{{ 'Last' | escape }}">
+                <a tabindex="0" role="button" href="{{ request.path }}?page={{ paginate.pages }}" title="{{ 'Last' | escape }}">
                     {{ 'Last' | escape }}
                 </a>
             </div>
