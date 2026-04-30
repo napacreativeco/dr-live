@@ -42,84 +42,84 @@
                 {% if coll.title == 'ADULT.' %}
                 
                     <label class="artist-label" for="adult">
-                        <input class="artist-radio" data-artist="ADULT." type="radio" value="adult">
+                        <input class="artist-radio" name="adult" data-artist="ADULT." type="radio" value="adult">
                         {{ 'ADULT.' }}
                     </label>
 
                 {% elsif coll.title == 'JH1.FS3' %}
 
                     <label class="artist-label" for="jh1-fs3">
-                        <input class="artist-radio" data-artist="JH1.FS3" type="radio" value="jh1-fs3">
+                        <input class="artist-radio" name="jh1-fs3" data-artist="JH1.FS3" type="radio" value="jh1-fs3">
                         {{ 'JH1.FS3' }}
                     </label>
 
                 {% elsif coll.title == 'Merzbow + Hexa' %}
 
                     <label class="artist-label" for="Merzbow + Hexa">
-                        <input class="artist-radio" data-artist="{{ 'Merzbow + Hexa' }}" type="radio" value="Merzbow + Hexa">
+                        <input class="artist-radio" name="Merzbow + Hexa" data-artist="{{ 'Merzbow + Hexa' }}" type="radio" value="Merzbow + Hexa">
                         {{ 'Merzbow + Hexa' }}
                     </label>
 
                 {% elsif coll.title == 'Body of Light' %}
 
                     <label class="artist-label" for="Body of Light">
-                        <input class="artist-radio" data-artist="Body of Light" type="radio" value="Body of Light">
+                        <input class="artist-radio" name="Body of Light" data-artist="Body of Light" type="radio" value="Body of Light">
                         Body of Light
                     </label>
 
                 {% elsif coll.title == 'Cold Showers' %}
 
                     <label class="artist-label" for="Cold Showers">
-                        <input class="artist-radio" data-artist="Cold Showers" type="radio" value="Cold Showers">
+                        <input class="artist-radio" name="Cold Showers" data-artist="Cold Showers" type="radio" value="Cold Showers">
                         Cold Showers
                     </label>
 
                 {% elsif coll.title == 'Death Bells' %}
 
                     <label class="artist-label" for="Death Bells">
-                        <input class="artist-radio" data-artist="Death Bells" type="radio" value="Death Bells">
+                        <input class="artist-radio" name="Death Bells" data-artist="Death Bells" type="radio" value="Death Bells">
                         Death Bells
                     </label>
 
                 {% elsif coll.title == 'Hiro Kone' %}
 
                     <label class="artist-label" for="Hiro Kone">
-                        <input class="artist-radio" data-artist="Hiro Kone" type="radio" value="Hiro Kone">
+                        <input class="artist-radio" name="Hiro Kone" data-artist="Hiro Kone" type="radio" value="Hiro Kone">
                         Hiro Kone
                     </label>
 
                 {% elsif coll.title == 'Stephen Mallinder' %}
 
                     <label class="artist-label" for="Stephen Mallinder">
-                        <input class="artist-radio" data-artist="Stephen Mallinder" type="radio" value="Stephen Mallinder">
+                        <input class="artist-radio" name="Stephen Mallinder" data-artist="Stephen Mallinder" type="radio" value="Stephen Mallinder">
                         Stephen Mallinder
                     </label>
 
                 {% elsif coll.title == 'Tor Lundvall' %}
 
                     <label class="artist-label" for="Tor Lundvall">
-                        <input class="artist-radio" data-artist="Tor Lundvall" type="radio" value="Tor Lundvall">
+                        <input class="artist-radio" name="Tor Lundvall" data-artist="Tor Lundvall" type="radio" value="Tor Lundvall">
                         Tor Lundvall
                     </label>
 
                 {% elsif coll.title == 'High-Functioning Flesh' %}
 
                     <label class="artist-label" for="High-Functioning Flesh">
-                        <input class="artist-radio" data-artist="High-Functioning Flesh" type="radio" value="High-Functioning Flesh">
+                        <input class="artist-radio" name="High-Functioning Flesh" data-artist="High-Functioning Flesh" type="radio" value="High-Functioning Flesh">
                         High-Functioning Flesh
                     </label>
 
                 {% elsif coll.title == 'Martial Canterel' %}
 
                     <label class="artist-label" for="Martial Canterel">
-                        <input class="artist-radio" data-artist="Martial Canterel" type="radio" value="Martial Canterel">
+                        <input class="artist-radio" name="Martial Canterel" data-artist="Martial Canterel" type="radio" value="Martial Canterel">
                         Martial Canterel
                     </label>
 
                 {% elsif coll.title == 'Them Are Us Too' %}
 
                     <label class="artist-label" for="Them Are Us Too">
-                        <input class="artist-radio" data-artist="Them Are Us Too" type="radio" value="Them Are Us Too">
+                        <input class="artist-radio" name="Them Are Us Too" data-artist="Them Are Us Too" type="radio" value="Them Are Us Too">
                         Them Are Us Too
                     </label>
 
@@ -127,7 +127,7 @@
 
                     {% if stock == true %}
                         <label class="artist-label" for="{{ coll.title }}">
-                            <input class="artist-radio" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
+                            <input class="artist-radio" name="{{ coll.title }}" data-artist="{{ coll.title }}" type="radio" value="{{ coll.title }}">
                             {{ coll.title }}
                         </label>
                    {% endif %}
