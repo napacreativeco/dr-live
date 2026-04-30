@@ -248,13 +248,13 @@ textarea:-webkit-autofill {
   padding: 6px 12px;
   text-decoration: none;
 
-  transform: translateY(-150%); 
+  transform: translateX(-150%); 
 }
 
 /* 👇 appears when you press Tab */
 .skip-to-content:focus,
 .skip-to-content:focus-visible {
-  transform: translateY(10%);
+  transform: translateX(20px);
   text-transform: underline;
   color: var(--red);
 }
