@@ -3,7 +3,7 @@
     <div class="cart-drawer--header">
       
       <div>
-        <div class="cart-drawer--close" tabindex="0" role="button">
+        <div class="cart-drawer--close" tabindex="0" role="button" aria-label="Close cart drawer">
           &times;
         </div>
       </div>
@@ -79,7 +79,7 @@
 
               <p>{{ settings.cart_empty_text | default: 'Your cart is empty' }}</p>
 
-              <a tabindex="0" role="button" class="continue-shopping" href="{{ '/collections/all' }}" title="Continue Shopping">
+              <a tabindex="0" role="button" class="continue-shopping" aria-label="Continue Shopping" href="{{ '/collections/all' }}" title="Continue Shopping">
                 {{ 'Continue Shopping' | escape }}
               </a>
 
@@ -100,12 +100,12 @@
             </div>
         
             {% comment %} Checkout {% endcomment %}
-            <button tabindex="0" role="button" type="submit" name="checkout">
+            <button tabindex="0" role="button" type="submit" name="checkout" aria-label="Checkout">
               {{ 'Checkout' | escape }}
             </button> 
 
             <div class="view-cart">
-              <a tabindex="0" role="button" href="{{ routes.cart_url }}" title="View Cart" class="view-cart--link">{{ 'Edit Cart' | escape }}</a>
+              <a tabindex="0" role="button" href="{{ routes.cart_url }}" title="View Cart" class="view-cart--link" aria-label="Edit cart">{{ 'Edit Cart' | escape }}</a>
             </div>
           {% else %}
 
