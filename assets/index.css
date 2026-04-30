@@ -246,7 +246,7 @@ textarea:-webkit-autofill {
   padding: 6px 12px;
   text-decoration: none;
 
-  transform: translateY(-150%); /* hidden off screen */
+  transform: translateY(-150%); 
 }
 
 /* 👇 appears when you press Tab */
