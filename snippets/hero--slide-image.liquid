@@ -29,7 +29,7 @@
         data-type="image" 
         data-layout="image" 
         role="img" 
-        aria-label="{{ block.settings.image_slide_title }} - {{ block.settings.image_slide_text_body }}" 
+        aria-label="{{ block.settings.image_slide_title | strip_html }} - {{ block.settings.image_slide_text_body | strip_html }}" 
         style="background-image: url('{{ block.settings.image_slide_image | image_url }}'); background-size: cover; background-position: top center;">
 
       <div class="sr-only">
@@ -44,13 +44,13 @@
         data-type="image" 
         data-layout="image" 
         role="img" 
-        aria-label="{{ block.settings.image_slide_title }} - {{ block.settings.image_slide_text_body }}" 
+        aria-label="{{ block.settings.image_slide_title | strip_html }} - {{ block.settings.image_slide_text_body | strip_html }}" 
         style="background-image: url('{{ block.settings.image_slide_image_mobile | image_url }}'); background-size: cover; background-position: top center;">
 
       <div class="sr-only">
         {{ block.settings.image_slide_title }} - {{ block.settings.image_slide_text_body }}
       </div>
-      
+
     </div>
 
     {% comment %} Slide Box {% endcomment %}
