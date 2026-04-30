@@ -177,7 +177,16 @@ body {
 }
 
 a:focus {
-    color:var(--red);
+    color: var(--red);
+    outline: 1px solid var(--red);
+}
+
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus {
+    color: var(--red);
+    outline: 1px solid var(--red);
 }
 
 input[type=search]::-ms-clear {
