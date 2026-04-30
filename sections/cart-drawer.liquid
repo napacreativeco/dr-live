@@ -68,13 +68,18 @@
                 </li>
               {% endfor %}
             </ul>
+
           {% else %}
-                
+
+            {% comment %} Empty {% endcomment %}
             <div class="cart-drawer-empty">
+
               <p>{{ settings.cart_empty_text | default: 'Your cart is empty' }}</p>
+
               <a tabindex="0" role="button" class="continue-shopping" href="{{ '/collections/all' }}" title="Continue Shopping">
                 {{ 'Continue Shopping' | escape }}
               </a>
+
             </div>
 
           {% endif %}
