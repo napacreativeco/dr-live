@@ -231,11 +231,11 @@ textarea:-webkit-autofill {
 }
 
 /* SKIP TO CONTENT */
-#MainContent {
-  scroll-margin-top: 80px; /* height of your navbar */
-}
+/* #MainContent {
+  scroll-margin-top: 80px; 
+}*/
 
-.skip-to-content--holder {
+/* .skip-to-content--holder {
   position: absolute;
   top: -40px;
   left: 0;
@@ -243,11 +243,11 @@ textarea:-webkit-autofill {
   color: white;
   padding: 8px 16px;
   z-index: 9999;
-}
+} */
 
-.skip-to-content--holder:focus {
+/* .skip-to-content--holder:focus {
   top: 0;
-}
+} */
 
 .four-oh-four .fof-wrapper {
     min-height: 100svh;
