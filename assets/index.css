@@ -952,7 +952,7 @@ NAVBAR
     -ms-flex-pack: center;
     justify-content: center;
     border-left: 1px solid var(--white);
-    padding: 3px 16px;
+    padding: 3px 16px 0px 16px;
     cursor: pointer
 }
 
