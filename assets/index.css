@@ -995,7 +995,7 @@ NAVBAR
     height: 100%
 }
 
-.navbar .search-icon-nav:focus {
+.navbar .search-icon-nav svg:focus {
     outline: 1px solid var(--red);
 }
 
