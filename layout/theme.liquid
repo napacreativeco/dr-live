@@ -460,6 +460,13 @@
           }
         });
 
+
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('.swiper, .swiper-slide').forEach(function (el) {
+            el.removeAttribute('tabindex');
+          });
+        });
+
       })(jQuery);
     </script>
   
