@@ -92,6 +92,10 @@
         
             {% endfor %}
           </ul>
+
+          <div class="ajax-messages">
+            <div data-ajax-cart-messages="{{ item.key }}" role="alert" aria-live="assertive" id="error-{{ item.key }}"></div>
+          </div>
           
           {% comment %} Cart Totals {% endcomment %}
           <div class="cart-totals">
