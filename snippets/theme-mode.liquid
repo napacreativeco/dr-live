@@ -5,11 +5,11 @@
     * Dark
     *
     {% endcomment %}
-    <div class="dark-mode">
+    <div class="dark-mode" tabindex="0" role="button">
         {% render 'icon--moon' %}
 
         {% if location == 'mobile-overlay' %}
-            <p tabindex="0" role="button">{{ 'Dark mode' | escape }}</p>
+            <p>{{ 'Dark mode' | escape }}</p>
         {% endif %}
     </div>
 
@@ -18,11 +18,11 @@
     * Lite
     *
     {% endcomment %}
-    <div class="lite-mode">
+    <div class="lite-mode" tabindex="0" role="button">
         {% render 'icon--sun' %}
         
         {% if location == 'mobile-overlay' %}
-            <p tabindex="0" role="button">{{ 'Lite mode' | escape }}</p>
+            <p>{{ 'Lite mode' | escape }}</p>
         {% endif %}
     </div>
 
