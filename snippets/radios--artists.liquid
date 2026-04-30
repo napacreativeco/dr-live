@@ -160,13 +160,13 @@
 </fieldset>
         
 <script>
-(function($) {
-    $(document).ready(function() {
-        $(".artist-label").click(function(){
-            var val =  $(this).find('input[type="radio"]').attr('data-artist');
-            window.location="?filter.p.vendor=" + val;
-            //window.location="?filter.p.collection=" + val;
+    (function($) {
+        $(document).ready(function() {
+            $(".artist-label").click(function(){
+                var val =  $(this).find('input[type="radio"]').attr('data-artist');
+                window.location="?filter.p.vendor=" + val;
+                //window.location="?filter.p.collection=" + val;
+            });
         });
-    });
-})(jQuery);
+    })(jQuery);
 </script>
