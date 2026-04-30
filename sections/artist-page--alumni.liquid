@@ -27,11 +27,11 @@
 
     <div class="link-blocks">
         <div class="link-block">
-            <a href="{{ pages['tours'].url | default: '/pages/tours' }}">{{ 'On Tour' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
+            <a tabindex="0" role="button" href="{{ pages['tours'].url | default: '/pages/tours' }}">{{ 'On Tour' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
         </div>
 
         <div class="link-block">
-            <a href="/collections/merch-apparel/">{{ 'Merchandise' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
+            <a tabindex="0" role="button" href="/collections/merch-apparel/">{{ 'Merchandise' | escape | upcase }}{% render 'icon--arrow-down' %}</a>
         </div>
     </div>
 
