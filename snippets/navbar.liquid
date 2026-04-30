@@ -41,7 +41,7 @@
 
                         <li data-title="{{ link.title }}" class="nav-link {% if link.active or parent_link_active %} active{% endif %}{% if has_sub_menu or has_sub_categories %} has-dropdown {% else %} no-dropdown {% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
                             
-                            <a class="submenu-main-link {{ link.title }}" href="{{ link.url }}">
+                            <a tabindex="0" role="button" class="submenu-main-link {{ link.title }}" href="{{ link.url }}">
                                 {{ link.title }}{% if has_sub_menu %} <span class="more">+</span>{% endif %}
                             </a> 
                             
