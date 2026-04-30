@@ -14,7 +14,7 @@
             </span>
             {% endcomment %}
             
-            <ul>
+            <ul aria-label="Footer navigation">
                 {% for link in linklists.footer-left.links %}
                     <li>
                         <a tabindex="0" role="button" href="{{ link.url }}">{{ link.title }}</a> 
@@ -30,7 +30,7 @@
             </span>
             {% endcomment %}
             
-            <ul>
+            <ul aria-label="Additional footer navigation">
                 {% for link in linklists.footer-right.links %}
                     <li>
                         <a tabindex="0" role="button" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a> 
