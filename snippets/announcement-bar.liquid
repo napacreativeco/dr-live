@@ -40,11 +40,11 @@
                 {{ settings.announcement_content | default: 'announcements' }}
             </div>
             <div class="link">
-                <a tabindex="2" role="button" href="{{ settings.announcement_link }}">{{ settings.announcement_link_text }}</a>
+                <a tabindex="0" role="button" href="{{ settings.announcement_link }}">{{ settings.announcement_link_text }}</a>
             </div>
 
             <div class="close-announcement">
-                <p class="close-announcement-icon" tabindex="2" role="button" aria-label="Close store announcement">&times;</p>
+                <p class="close-announcement-icon" tabindex="0" role="button" aria-label="Close store announcement">&times;</p>
             </div>
         </div>
     </div>
