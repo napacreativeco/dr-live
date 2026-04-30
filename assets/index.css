@@ -253,7 +253,7 @@ textarea:-webkit-autofill {
 /* 👇 appears when you press Tab */
 .skip-to-content--holder:focus,
 .skip-to-content--holder:focus-visible {
-  transform: translateY(0);
+  transform: translateY(300px);
   text-transform: underline;
   color: var(--red);
 }
