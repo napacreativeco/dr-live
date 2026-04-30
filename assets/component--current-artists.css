@@ -8,7 +8,7 @@
 }
 .current-artists--wrapper .controls {
     position: absolute;
-    bottom: 16px;
+    bottom: 17px;
     right: var(--side-padding);
     z-index: 8;
 }
