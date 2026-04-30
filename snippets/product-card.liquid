@@ -61,7 +61,7 @@
 
             <div class="right">
                 <div class="price type-writer">
-                    <a href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">
+                    <a tabindex="-1" href="{{ prod.url }}" title="{{ prod.vendor }} - {{ prod.title }}">
                         {{ prod.price | money_without_trailing_zeros }}
                     </a>
                 </div>
