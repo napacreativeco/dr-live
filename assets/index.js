@@ -49,26 +49,48 @@
 })(jQuery);
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const list = document.querySelector(".current-artists--list");
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
+(function () {
+  function initCurrentArtistsSlider() {
+    const list = document.querySelector('.current-artists--list');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
 
-  if (!list || !prev || !next) return;
+    if (!list || !prev || !next) return;
 
-  const amountToScroll = window.innerWidth - 30;
+    const getScrollAmount = () => window.innerWidth - 30;
 
-  prev.addEventListener("click", function () {
-    list.scrollBy({
-      left: -amountToScroll,
-      behavior: "smooth"
+    function updateButtons() {
+      const maxScrollLeft = list.scrollWidth - list.clientWidth;
+
+      prev.disabled = list.scrollLeft <= 0;
+      next.disabled = list.scrollLeft >= maxScrollLeft - 1;
+    }
+
+    prev.addEventListener('click', function () {
+      list.scrollBy({
+        left: -getScrollAmount(),
+        behavior: 'smooth'
+      });
     });
-  });
 
-  next.addEventListener("click", function () {
-    list.scrollBy({
-      left: amountToScroll,
-      behavior: "smooth"
+    next.addEventListener('click', function () {
+      list.scrollBy({
+        left: getScrollAmount(),
+        behavior: 'smooth'
+      });
     });
-  });
-});
+
+    list.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
+
+    updateButtons();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCurrentArtistsSlider);
+  } else {
+    initCurrentArtistsSlider();
+  }
+
+  document.addEventListener('shopify:section:load', initCurrentArtistsSlider);
+})();
