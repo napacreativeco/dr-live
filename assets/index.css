@@ -236,23 +236,23 @@ textarea:-webkit-autofill {
 
 /* SKIP TO CONTENT */
 .skip-to-content {
-  position: relative;
+  position: fixed;
   top: 12px;
   left: 12px;
-  z-index: 9999;
+  z-index: 999999;
 
   background: #fefefe;
   color: #222222;
   padding: 6px 12px;
   text-decoration: none;
 
-  transform: translateX(-150%); /* hidden off screen */
+  transform: translateY(-150%); /* hidden off screen */
 }
 
 /* 👇 appears when you press Tab */
 .skip-to-content:focus,
 .skip-to-content:focus-visible {
-  transform: translateX(10px);
+  transform: translateY(10px);
   text-transform: underline;
 }
 /* #MainContent {
