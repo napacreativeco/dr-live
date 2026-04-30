@@ -118,7 +118,7 @@
 }
 
 .product-card .price a {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--grey);
     font-family: var(--type-writer)
 }
