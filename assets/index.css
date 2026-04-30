@@ -177,7 +177,7 @@ body {
 }
 
 a:focus {
-    color: var(--red);
+    color: var(--red) !important;
     outline: 1px solid var(--red);
 }
 
