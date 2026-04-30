@@ -3,29 +3,28 @@
 <li class="artist-card">
     <div class="artist-wrapper">
 
-
-    <div 
-        class="image" 
-        style="background: url('{{ data.image | image_url: width: 900 }}'); background-size: cover; background-position: center center;"
-        onclick="window.location='{{ data.url }}';"
-        tabindex="-1"
-    >
-        &nbsp;
-        
-        <div class="view-more">
-            <a href="{{ data.url }}" tabindex="-1" title="{{ data.title }}">
-                {% render 'icon--view-more' %}
-            </a>
+        <div 
+            class="image" 
+            style="background: url('{{ data.image | image_url: width: 900 }}'); background-size: cover; background-position: center center;"
+            onclick="window.location='{{ data.url }}';"
+            tabindex="-1"
+        >
+            &nbsp;
+            
+            <div class="view-more">
+                <a href="{{ data.url }}" tabindex="-1" title="{{ data.title }}">
+                    {% render 'icon--view-more' %}
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="artist">
-        <h3>
-            <a href="{{ data.url }}" tabindex="0" role="button" title="{{ data.title }}">
-            {{ data.title }}
-            </a>
-        </h3>
-    </div>
+        <div class="artist">
+            <h3>
+                <a href="{{ data.url }}" tabindex="0" role="button" title="{{ data.title }}">
+                {{ data.title }}
+                </a>
+            </h3>
+        </div>
 
   </div>
 </li>
