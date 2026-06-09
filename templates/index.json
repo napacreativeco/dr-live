@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_ckw8Vk": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/DAIS232-DaisWebsite-Desktop.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/DAIS232-DaisWebsite-Mobile.jpg",
+            "image_slide_url": "shopify://products/space-afrika-quiet-storm",
+            "image_slide_subtitle": "PREORDER - Out September 25",
+            "image_slide_title": "Space Afrika - Quiet Storm",
+            "image_slide_text_body": "<p>CD / LP / Digital</p>"
+          }
+        },
         "image_4VF9z4": {
           "type": "image",
           "settings": {
@@ -69,6 +80,7 @@
         }
       },
       "block_order": [
+        "image_ckw8Vk",
         "image_4VF9z4",
         "image_xKBbVB",
         "image_bJCYtQ",
