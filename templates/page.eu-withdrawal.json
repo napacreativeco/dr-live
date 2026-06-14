@@ -10,10 +10,6 @@
 {
   "wrapper": "div.page-template",
   "sections": {
-    "main": {
-      "type": "default-page",
-      "settings": {}
-    },
     "17814705341e13b711": {
       "type": "apps",
       "blocks": {
@@ -56,10 +52,15 @@
         "revoq_eu_withdrawal_button_widerrufsbutton_form_cYzqhK"
       ],
       "settings": {}
+    },
+    "main": {
+      "type": "default-page",
+      "disabled": true,
+      "settings": {}
     }
   },
   "order": [
-    "main",
-    "17814705341e13b711"
+    "17814705341e13b711",
+    "main"
   ]
 }
