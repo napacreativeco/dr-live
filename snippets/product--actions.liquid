@@ -298,7 +298,7 @@
                                 <li class="switch-field">
                                     <label for="{{ variant.id }}">
     
-                                        <input type="radio" 
+                                        {% comment %} <input type="radio" 
                                             {% if variant.compare_at_price > variant.price %}
                                                 data-compare-at-price="{{ variant.compare_at_price | money_without_trailing_zeros }}"
                                             {% endif %} 
@@ -315,6 +315,22 @@
                                             {% if found_available_variant == false %}
                                                 {% assign found_available_variant = true %} 
                                             {% endif %} 
+                                        /> {% endcomment %}
+
+                                        <input type="radio" 
+                                            {% if variant.compare_at_price > variant.price %}
+                                                data-compare-at-price="{{ variant.compare_at_price | money_without_trailing_zeros }}"
+                                            {% endif %} 
+                                            data-price="{{ variant.price | money_without_trailing_zeros }}" 
+                                            data-image="{% if variant.featured_image %}{{ variant.featured_image | image_url: width: 700 }}{% endif %}"
+                                            id="{{ variant.id }}" 
+                                            value="{{ variant.id }}" 
+                                            name="id"
+                                            tabindex="0"
+                                            role="radio"
+                                            {% if variant.id == product.selected_or_first_available_variant.id %}
+                                                checked="checked"
+                                            {% endif %}
                                         />
     
                                         <span class="variant-name">
@@ -339,13 +355,15 @@
 
 {% else %}
 
-    {% comment %} 
-    *
-    * HAS ONLY DEFAULT
-    *
-    {% endcomment %}
-    <label for="{{ variant.id }}">
-        <input type="hidden" name="{{ variant.id }}" value="{{ product.selected_or_first_available_variant.id }}" checked="checked" />
-    </label>
-    
+  {% comment %} 
+  *
+  * HAS ONLY DEFAULT
+  *
+  {% endcomment %}
+  <input
+    type="hidden"
+    name="id"
+    value="{{ product.selected_or_first_available_variant.id }}"
+  >
+
 {% endif %}
