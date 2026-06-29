@@ -619,7 +619,7 @@ DEFAULT PAGE
 }
 
 .default-page h1 {
-    font-size: var(--section-title);
+    font-size: var(--title);
     color: var(--black);
     text-transform: uppercase;
 }
