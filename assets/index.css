@@ -616,7 +616,12 @@ DEFAULT PAGE
 .default-page {
     margin-top: var(--nav-height);
     padding: 30px var(--side-padding) 0 var(--side-padding);
-    
+}
+
+.default-page h1 {
+    font-size: var(--section-title);
+    color: var(--black);
+    text-transform: uppercase;
 }
 
 /*
