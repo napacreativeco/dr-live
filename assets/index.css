@@ -625,6 +625,12 @@ DEFAULT PAGE
     border-bottom: 1px solid var(--black);
 }
 
+.default-page h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
 /*
 --------------------
 SECTION HEADER
