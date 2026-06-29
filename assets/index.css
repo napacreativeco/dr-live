@@ -614,7 +614,9 @@ DEFAULT PAGE
 --------------------
 */
 .default-page {
-    padding: var(--nav-height) var(--side-padding) 0 var(--side-padding);
+    margin-top: var(--nav-height);
+    padding: 30px var(--side-padding) 0 var(--side-padding);
+    
 }
 
 /*
