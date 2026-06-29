@@ -643,6 +643,12 @@ DEFAULT PAGE
     list-style-position: inside;
 }
 
+@media screen and (max-width: 767px) {
+    .default-page .page-wrapper {
+        padding: 0px;
+    }
+}
+
 
 /*
 --------------------
