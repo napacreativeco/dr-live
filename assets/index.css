@@ -623,6 +623,7 @@ DEFAULT PAGE
     color: var(--black);
     text-transform: uppercase;
     border-bottom: 1px solid var(--black);
+    margin: 0 0 40px 0;
 }
 
 .default-page h2 {
