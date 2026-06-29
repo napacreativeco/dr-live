@@ -631,6 +631,11 @@ DEFAULT PAGE
     font-weight: normal;
 }
 
+.default-page p {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
 /*
 --------------------
 SECTION HEADER
