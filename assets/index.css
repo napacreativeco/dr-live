@@ -619,9 +619,10 @@ DEFAULT PAGE
 }
 
 .default-page h1 {
-    font-size: var(--title);
+    font-size: 30px;
     color: var(--black);
     text-transform: uppercase;
+    border-bottom: 1px solid var(--black);
 }
 
 /*
