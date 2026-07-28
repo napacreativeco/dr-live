@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_z3txi7": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/PurestForm-2026-creditKrisKirk.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/PurestForm-2026-creditKrisKirk.jpg",
+            "image_slide_url": "shopify://products/purest-form-resistance",
+            "image_slide_subtitle": "PREORDER - Out September 4",
+            "image_slide_title": "Purest Form - RESISTANCE",
+            "image_slide_text_body": "<p>Vinyl EP / CD / Digital</p>"
+          }
+        },
         "image_3TJMag": {
           "type": "image",
           "settings": {
@@ -45,28 +56,6 @@
             "image_slide_text_body": "<p>Digital</p>"
           }
         },
-        "image_4VF9z4": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/ChoirBoy-2026-credit-KrisKirk-2-2000px-Web.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/ChoirBoy-2026-credit-KrisKirk-1-2000px-Web.jpg",
-            "image_slide_url": "shopify://blogs/news/choir-boy-release-new-single-ill-always-let-you-down",
-            "image_slide_subtitle": "Out now",
-            "image_slide_title": "Choir Boy - \"I'll Always Let You Down\"",
-            "image_slide_text_body": "<p>New single, on tour with AFI</p>"
-          }
-        },
-        "image_xKBbVB": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS248-DaisWebsite-Desktop-horzRGB_958079e7-0187-4768-a389-79cfc69e6960.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS248-DaisWebsite-Mobile-BW1_ed84f89d-2895-41e6-ad47-a2ba70e44a78.jpg",
-            "image_slide_url": "shopify://products/adult-kissing-luck-goodbye",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "ADULT. - Kissing Luck Goodbye",
-            "image_slide_text_body": "<p>CD/LP</p>"
-          }
-        },
         "image_bJCYtQ": {
           "type": "image",
           "settings": {
@@ -88,28 +77,15 @@
             "image_slide_title": "trauma ray - Carnival EP",
             "image_slide_text_body": "<p>Vinyl EP</p>"
           }
-        },
-        "image_H4gTz7": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS245-Website-Desktop-V2.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS245-Website-Mobile-V2.jpg",
-            "image_slide_url": "shopify://products/begging-dog-demo-1",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Begging Dog's debut, DEMO 1",
-            "image_slide_text_body": "<p>LP / Digital</p>"
-          }
         }
       },
       "block_order": [
+        "image_z3txi7",
         "image_3TJMag",
         "image_ckw8Vk",
         "image_jpe3fx",
-        "image_4VF9z4",
-        "image_xKBbVB",
         "image_bJCYtQ",
-        "image_K9qiq4",
-        "image_H4gTz7"
+        "image_K9qiq4"
       ],
       "settings": {
         "show_hero": true
