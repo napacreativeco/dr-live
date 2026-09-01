@@ -34,17 +34,6 @@
             "image_slide_text_body": "<p>Vinyl EP / CD / Digital</p>"
           }
         },
-        "image_3TJMag": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/StephenOMalley-BanksViolette-B-2000px-creditIrisDelafortry.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/StephenOMalley-BanksViolette-A-2000px-creditIrisDelafortry.jpg",
-            "image_slide_url": "shopify://products/avaeken",
-            "image_slide_subtitle": "OUT NOW",
-            "image_slide_title": "Stephen O'Malley - Avaeken",
-            "image_slide_text_body": "<p>LP / Digital</p>"
-          }
-        },
         "image_ckw8Vk": {
           "type": "image",
           "settings": {
@@ -54,6 +43,17 @@
             "image_slide_subtitle": "PREORDER - Out September 25",
             "image_slide_title": "Space Afrika - Quiet Storm",
             "image_slide_text_body": "<p>CD / LP / Digital</p>"
+          }
+        },
+        "image_3TJMag": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/StephenOMalley-BanksViolette-B-2000px-creditIrisDelafortry.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/StephenOMalley-BanksViolette-A-2000px-creditIrisDelafortry.jpg",
+            "image_slide_url": "shopify://products/avaeken",
+            "image_slide_subtitle": "OUT NOW",
+            "image_slide_title": "Stephen O'Malley - Avaeken",
+            "image_slide_text_body": "<p>LP / Digital</p>"
           }
         },
         "image_jpe3fx": {
@@ -82,8 +82,8 @@
       "block_order": [
         "image_bJCYtQ",
         "image_z3txi7",
-        "image_3TJMag",
         "image_ckw8Vk",
+        "image_3TJMag",
         "image_jpe3fx",
         "image_K9qiq4"
       ],
