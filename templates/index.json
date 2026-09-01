@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_bJCYtQ": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/AaronDilloway-2026-byDougCoombe-1.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/AaronDilloway-2026-byDougCoombe-2.jpg",
+            "image_slide_url": "shopify://products/no-skill-comedy-mind-reading",
+            "image_slide_subtitle": "PREORDER - Out October 30",
+            "image_slide_title": "Aaron Dilloway - No Skill Comedy Mind Reading",
+            "image_slide_text_body": "<p>On vinyl and digital</p>"
+          }
+        },
         "image_z3txi7": {
           "type": "image",
           "settings": {
@@ -56,17 +67,6 @@
             "image_slide_text_body": "<p>Digital</p>"
           }
         },
-        "image_bJCYtQ": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/DAIS108-Website-Desktop-V1.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/DAIS108-Website-Mobile-V1.jpg",
-            "image_slide_url": "shopify://products/death-of-lovers-the-acrobat",
-            "image_slide_subtitle": "BACK IN STOCK",
-            "image_slide_title": "Death Of Lovers - The Acrobat",
-            "image_slide_text_body": "<p>4 new vinyl colors and new merch</p>"
-          }
-        },
         "image_K9qiq4": {
           "type": "image",
           "settings": {
@@ -80,11 +80,11 @@
         }
       },
       "block_order": [
+        "image_bJCYtQ",
         "image_z3txi7",
         "image_3TJMag",
         "image_ckw8Vk",
         "image_jpe3fx",
-        "image_bJCYtQ",
         "image_K9qiq4"
       ],
       "settings": {
