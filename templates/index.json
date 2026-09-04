@@ -23,17 +23,6 @@
             "image_slide_text_body": "<p>LP / Digital</p>"
           }
         },
-        "image_z3txi7": {
-          "type": "image",
-          "settings": {
-            "image_slide_image": "shopify://shop_images/PurestForm-2026-creditKrisKirk.jpg",
-            "image_slide_image_mobile": "shopify://shop_images/PurestForm-2026-creditKrisKirk.jpg",
-            "image_slide_url": "shopify://products/purest-form-resistance",
-            "image_slide_subtitle": "PREORDER - Out September 4",
-            "image_slide_title": "Purest Form - RESISTANCE",
-            "image_slide_text_body": "<p>Vinyl EP / CD / Digital</p>"
-          }
-        },
         "image_ckw8Vk": {
           "type": "image",
           "settings": {
@@ -43,6 +32,17 @@
             "image_slide_subtitle": "PREORDER - Out September 25",
             "image_slide_title": "Space Afrika - Quiet Storm",
             "image_slide_text_body": "<p>CD / LP / Digital</p>"
+          }
+        },
+        "image_z3txi7": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/PurestForm-2026-creditKrisKirk.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/PurestForm-2026-creditKrisKirk.jpg",
+            "image_slide_url": "shopify://products/purest-form-resistance",
+            "image_slide_subtitle": "OUT NOW",
+            "image_slide_title": "Purest Form - RESISTANCE",
+            "image_slide_text_body": "<p>Vinyl EP / CD / Digital</p>"
           }
         },
         "image_3TJMag": {
@@ -81,8 +81,8 @@
       },
       "block_order": [
         "image_bJCYtQ",
-        "image_z3txi7",
         "image_ckw8Vk",
+        "image_z3txi7",
         "image_3TJMag",
         "image_jpe3fx",
         "image_K9qiq4"
