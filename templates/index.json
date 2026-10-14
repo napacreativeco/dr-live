@@ -12,6 +12,17 @@
     "hero-slideshow": {
       "type": "hero-slideshow",
       "blocks": {
+        "image_YgGLAP": {
+          "type": "image",
+          "settings": {
+            "image_slide_image": "shopify://shop_images/VS55-2026-creditTheFoundry-3000px.jpg",
+            "image_slide_image_mobile": "shopify://shop_images/VS55-2026-creditTheFoundry-3000px.jpg",
+            "image_slide_url": "shopify://products/vs55-ch000001",
+            "image_slide_subtitle": "PRE-ORDER, OUT NOVEMBER 27",
+            "image_slide_title": "VS--55 - CH0 0:00:01",
+            "image_slide_text_body": "<p>LP / Digital</p>"
+          }
+        },
         "image_bJCYtQ": {
           "type": "image",
           "settings": {
@@ -80,6 +91,7 @@
         }
       },
       "block_order": [
+        "image_YgGLAP",
         "image_bJCYtQ",
         "image_ckw8Vk",
         "image_z3txi7",
